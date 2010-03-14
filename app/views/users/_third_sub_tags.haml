@@ -1,0 +1,22 @@
+%h1
+   =get_parent_tag(@tag).tag_names.find_by_language(get_locale.to_s).value
+   (
+   = link_to t('common.close'), '', :class => 'hide_tag_third'
+   )
+%div.tag_left
+   %h2
+      = t('tag.available')
+   -get_available_tags(@tag).each do |tag|
+      %p
+         = link_to t('common.add'), add_taggings_path(:tag => tag, :taggable_id => current_user, :taggable_type => tag.taggable_type, :level  => 3), :class => 'add_tag_third'
+         =tag.tag_names.find_by_language(get_locale.to_s).value
+
+%div.tag_right    
+   %h2
+      = t('tag.added')
+   -unless get_user_tags(@tag).empty?      
+      -get_user_tags(@tag).each do |tag|
+         %p
+            =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => current_user, :taggable_type => tag.taggable_type, :level  => 3), :class => 'remove_tag_third'
+            =tag.tag_names.find_by_language(get_locale.to_s).value
+

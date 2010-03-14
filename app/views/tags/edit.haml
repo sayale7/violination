@@ -1,0 +1,28 @@
+-title @tag.tag_names.find_by_language(get_locale.to_s).value
+%p
+   -for tag in @tag.ancestors.reverse
+      = link_to h(tag.tag_names.find_by_language(get_locale.to_s).value), edit_tag_path(tag, :taggable_type => taggable_type)
+      &gt;
+   =h yield(:title)
+
+
+-form_for @tag do |f|
+   = render 'form', :f => f
+   %p
+      =f.submit t('common.update')
+      -if @tag.parent_id.nil?
+         /  = link_to t('common.back'), edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => taggable_type)
+         / -else
+         =t('common.or')
+         = link_to t('common.back'), tags_path(:taggable_type => taggable_type)
+
+-unless child_tags(@tag).empty?   
+   %ul
+      - child_tags(@tag).each do |tag|
+         = render 'tag_list', :tag => tag
+
+
+-unless reached_depth(@tag)
+   %p
+      =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type, :parent_tag => @tag.id)
+

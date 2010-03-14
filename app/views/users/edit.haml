@@ -1,0 +1,5 @@
+-title t('user.edit')
+-form_for @user do |f| 
+   = render 'form', :f => f
+   %p
+      = f.submit t('common.update')

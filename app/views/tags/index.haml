@@ -1,0 +1,7 @@
+%ul
+   - @tags.each do |tag|
+      = render 'tag_list', :tag => tag
+
+
+%p
+   =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type)

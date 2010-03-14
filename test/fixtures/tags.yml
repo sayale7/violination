@@ -1,0 +1,7 @@
+one:
+  taggable_type: MyString
+  taggable_id: 1
+
+two:
+  taggable_type: MyString
+  taggable_id: 1

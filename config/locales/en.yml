@@ -1,0 +1,57 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  common:
+    update: Save Changes
+    or: or
+    destroy: Destroy
+    edit: Edit
+    show: Show
+    new: New
+    add: Add
+    remove: Remove
+    german_name: German Name
+    english_name: English Name
+    back: Back
+    index: View all
+    cancel: Cancel
+    confirm: Are you shure?
+    up: Up
+    down: Down
+    close: Close
+  user:
+    username:Username
+    email: Email Address
+    password: Password
+    password_confirmation: Confirm Password
+    edit: Edit User
+    show: Show User
+    update: Update User
+    save: Signup
+    signup: Signup
+    have_account: Already have an accaount?
+    dont_have_account: Dont't have an account? 
+    login: Login
+    logout: Logout
+    my_workshop: My Workshop
+    admin:
+      could_be_in_my_workshop: What is in my workshop?
+      in_my_workshop: What could be in my workshop?
+  tag:
+    index: All Tags
+    name: Name of the Tag
+    create: Create Tag
+    new: New Tag
+    edit: Edit Tag
+    sub: Subcategories
+    available: Available Tags
+    added: Available in my Workshop
+    user:
+      index: All User Tags
+    instrument:
+      index: All Instrument Tags
+  session:
+    created: You are successfully logged in!
+    destroyed: You are successfully logged out!
+    invalid_credentials: Your Login or Password are invalid!

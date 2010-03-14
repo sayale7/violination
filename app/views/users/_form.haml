@@ -1,0 +1,21 @@
+=f.error_messages
+%p
+   = f.label :username, t('user.username' )
+   %br
+   = f.text_field :username
+  
+%p
+   = f.label :email, t('user.email')
+   %br
+   = f.text_field :email 
+  
+%p
+   = f.label :password, t('user.password')
+   %br
+   = f.password_field :password
+      
+%p
+   = f.label :password_confirmation, t('user.password_confirmation')
+   %br
+   = f.password_field :password_confirmation 
+  

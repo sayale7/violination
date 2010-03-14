@@ -1,0 +1,16 @@
+=f.error_messages
+
+=f.hidden_field :taggable_type, :value  => taggable_type
+-if request.url.include?('parent_tag')
+   =hidden_field_tag :parent_id, request.url.scan(/parent_tag=(\w+)/)
+
+%p
+   %strong
+      = f.label :german_name, t('common.german_name')
+      = f.text_field :german_name
+         
+%p
+   %strong
+      = f.label :english_name, t('common.english_name')
+      = f.text_field :english_name
+   

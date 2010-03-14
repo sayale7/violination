@@ -1,0 +1,21 @@
+-title t('user.login')
+
+%p
+   =t('user.dont_have_account')
+   =link_to t('user.signup'), signup_path
+
+-form_tag sessions_path do
+   %p
+      = label_tag :login,
+      = t('user.email')
+      = t('common.or')
+      = t('user.username')
+      %br
+      = text_field_tag :login, params[:login]
+   %p
+      =label_tag :password, t('user.password') 
+      %br
+      =password_field_tag :password
+   %p
+      =submit_tag t('user.login')
+

@@ -1,0 +1,12 @@
+<% if @level.to_i == 0 %>
+  $("#root_tags").html("<%= escape_javascript(render('/users/root_tags.haml')) %>");
+<% end %>
+<% if @level.to_i == 1 %>
+  $("#first_sub_tags").html("<%= escape_javascript(render('/users/first_sub_tags.haml')) %>");
+<% end %>
+<% if @level.to_i == 2 %>
+  $("#second_sub_tags").html("<%= escape_javascript(render('/users/second_sub_tags.haml')) %>");
+<% end %>
+<% if @level.to_i == 3 %>
+  $("#third_sub_tags").html("<%= escape_javascript(render('/users/third_sub_tags.haml')) %>");
+<% end %>

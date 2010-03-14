@@ -1,0 +1,24 @@
+-@user.tags.find_all_by_parent_id(nil, :order => 'position').each do |tag|
+   %div.show_user_tags_container
+      %p
+         =tag.tag_names.find_by_language(get_locale.to_s).value
+         =link_to t('common.edit'), edit_user_taggings_path(:parent_id => tag.parent_id), :method => :post
+      
+      -user_child_tags(tag, @user).each do |tag|
+         %div.show_user_tags_container_first_sub_level
+            %p
+               =tag.tag_names.find_by_language(get_locale.to_s).value
+               =link_to t('common.edit'), edit_user_taggings_path(:parent_id => tag.parent_id), :method => :post
+               
+            -user_child_tags(tag, @user).each do |tag|
+               %div.show_user_tags_container_second_sub_level
+                  %p
+                     =tag.tag_names.find_by_language(get_locale.to_s).value
+                     =link_to t('common.edit'), edit_user_taggings_path(:parent_id => tag.parent_id), :method => :post
+                    
+               -user_child_tags(tag, @user).each do |tag|
+                  %div.show_user_tags_container_third_sub_level
+                     %p
+                        =tag.tag_names.find_by_language(get_locale.to_s).value
+                        =link_to t('common.edit'), edit_user_taggings_path(:parent_id => tag.parent_id), :method => :post
+      

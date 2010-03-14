@@ -1,0 +1,10 @@
+- if !logged_in?
+   -title t('user.signup')
+
+   %p
+      =t('user.have_account')
+      = link_to t('user.login'), login_path
+      -form_for @user do |f| 
+         = render 'form', :f => f
+         %p
+            = f.submit t('user.save')

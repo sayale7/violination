@@ -1,0 +1,9 @@
+one:
+  tag_id: 1
+  value: MyString
+  language: MyString
+
+two:
+  tag_id: 1
+  value: MyString
+  language: MyString

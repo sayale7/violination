@@ -1,0 +1,9 @@
+- title t('tag.new')
+
+-form_for @tag do |f|
+   = render 'form', :f => f
+   %p
+      =f.submit t('tag.create')
+
+%p
+   =link_to t('common.back'), tags_path(:taggable_type => taggable_type)
