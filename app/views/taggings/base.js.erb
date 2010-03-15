@@ -8,7 +8,7 @@
 <% end %>
 <% if @level.to_i == 2 %>
   $("#second_sub_tags").html("<%= escape_javascript(render('/users/second_sub_tags.haml')) %>");
-  $("#second_sub_tags").find('.tag_right').effect("highlight", {}, 700);
+  $("#second_sub_tags").effect("highlight", {}, 700);
 <% end %>
 <% if @level.to_i == 3 %>
   $("#third_sub_tags").html("<%= escape_javascript(render('/users/third_sub_tags.haml')) %>");
