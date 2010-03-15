@@ -1,15 +1,37 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-// jQuery.fn.extend({
-//   setDivDisabled:function(){ 
-//     $(this).append('<div class="disabled"/>');
-//     $('.disabled').css('width', $(this).css('width'));
-//     $('.disabled').css('height', $(this).css('height'));
-//   },
-//   setDivEnabled:function(){
-//     
-//   },
-// });
+
+
+jQuery.fn.extend({
+  fadeAllOut:function(){
+    $('#third_sub_tags').fadeOut('slow');
+    $('#second_sub_tags').fadeOut('slow');
+    $('#first_sub_tags').fadeOut('slow');
+  },
+  fadeLastTwoOut:function(){
+    $('#third_sub_tags').fadeOut('slow');
+    $('#second_sub_tags').fadeOut('slow');
+  },
+  fadeLastOut:function(){
+    $('#third_sub_tags').fadeOut('slow');
+  },
+  hideAll:function(){
+    $('#third_sub_tags').hide();
+    $('#second_sub_tags').hide();
+    $('#first_sub_tags').hide();
+  },
+  hideLastTwo:function(){
+    $('#third_sub_tags').fadeOut('slow');
+    $('#second_sub_tags').fadeOut('slow');
+  },
+  hideLast:function(){
+    $('#third_sub_tags').fadeOut('slow');
+  },
+  fadeThisIn:function(){
+    $(this).fadeIn('slow');
+    $(this).html('<img src="/images/ajax-loader.gif"/>');
+  },
+});
 
 // ready when document has loaded
 $(document).ready(function() {
@@ -22,53 +44,88 @@ $(document).ready(function() {
   
   //!!!add tag to user the ajax way!!!
   $('.add_tag_root').live('click', function() {
-    $('#third_sub_tags').fadeOut('slow');
-    $('#second_sub_tags').fadeOut('slow');
-    $('#first_sub_tags').fadeOut('slow');
+    $(this).hideAll();
+    $('#root_tags').find('.tag_left').fadeThisIn();
+    $('#root_tags').find('.tag_right').fadeThisIn();
     $.getScript(this.href);
     return false;
   });
   
   $('.add_tag_first').live('click', function() {
-    $('#third_sub_tags').fadeOut('slow');
-    $('#second_sub_tags').fadeOut('slow');
+    $(this).hideLastTwo();
+    $('#first_sub_tags').find('.tag_left').fadeThisIn();
+    $('#first_sub_tags').find('.tag_right').fadeThisIn();
     $.getScript(this.href);
     return false;
   });
   
   $('.add_tag_second').live('click', function() {
-    $('#third_sub_tags').fadeOut('slow');
+    $(this).hideLast();
+    $('#second_sub_tags').find('.tag_left').fadeThisIn();
+    $('#second_sub_tags').find('.tag_right').fadeThisIn();
     $.getScript(this.href);
     return false;
   });
   
   $('.add_tag_third').live('click', function() {
+    $('#third_sub_tags').find('.tag_left').fadeThisIn();
+    $('#third_sub_tags').find('.tag_right').fadeThisIn();
+    $.getScript(this.href);
+    return false;
+  });
+  
+  
+  //!!!remove ajax calls!!
+  $('.remove_tag_root').live('click', function() {
+    $(this).hideAll();
+    $('#root_tags').find('.tag_left').fadeThisIn();
+    $('#root_tags').find('.tag_right').fadeThisIn();
+    $.getScript(this.href);
+    return false;
+  });
+  
+  
+  $('.remove_tag_first').live('click', function() {
+    $(this).hideLastTwo();
+    $('#first_sub_tags').find('.tag_left').fadeThisIn();
+    $('#first_sub_tags').find('.tag_right').fadeThisIn();
+    $.getScript(this.href);
+    return false;
+  });
+  
+  $('.remove_tag_second').live('click', function() {
+    $(this).hideLast();
+    $('#second_sub_tags').find('.tag_left').fadeThisIn();
+    $('#second_sub_tags').find('.tag_right').fadeThisIn();
+    $.getScript(this.href);
+    return false;
+  });
+  
+  $('.remove_tag_third').live('click', function() {
+    $('#third_sub_tags').find('.tag_left').fadeThisIn();
+    $('#third_sub_tags').find('.tag_right').fadeThisIn();
     $.getScript(this.href);
     return false;
   });
     
   //!!!edit ajax calls!!!
   $('.edit_tag_first').live('click', function() {
+    $(this).hideAll();
     $('#edit_specific_user_tags').css('display', 'block');
-    $('#third_sub_tags').fadeOut('fast');
-    $('#second_sub_tags').fadeOut('fast');
-    $('#first_sub_tags').fadeIn('slow');
-    $('#first_sub_tags').html('<img src="/images/ajax-loader.gif"/>');
+    $('#first_sub_tags').fadeThisIn();
     $.getScript(this.href);
     return false;
   });
   
   $('.edit_tag_second').live('click', function() {
-    $('#third_sub_tags').fadeOut('fast');
-    $('#second_sub_tags').fadeIn('slow');
-    $('#second_sub_tags').html('<img src="/images/ajax-loader.gif"/>');
+    $(this).hideLastTwo();
+    $('#second_sub_tags').fadeThisIn();
     $.getScript(this.href);
     return false;
   });
   
   $('.edit_tag_third').live('click', function() {
-    $('#third_sub_tags').fadeIn('slow');
-    $('#third_sub_tags').html('<img src="/images/ajax-loader.gif"/>');
+    $('#third_sub_tags').fadeThisIn();
     $.getScript(this.href);
     return false;
   });
@@ -76,50 +133,20 @@ $(document).ready(function() {
   
   //!!!hide_call!!
   $('.hide_tag_first').live('click', function() {
-    $('#first_sub_tags').fadeOut('slow');
-    $('#second_sub_tags').fadeOut('slow');
-    $('#third_sub_tags').fadeOut('slow');
+    $(this).fadeAllOut();
     return false;
   });
   
   $('.hide_tag_second').live('click', function() {
-    $('#second_sub_tags').fadeOut('slow');
-    $('#third_sub_tags').fadeOut('slow');
+    $(this).fadeLastTwoOut();
     return false;
   });
   
   $('.hide_tag_third').live('click', function() {
-    $('#third_sub_tags').fadeOut('slow');
+    $(this).fadeLastOut();
     return false;
   });
   
-  //!!!remove ajax calls!!
-  $('.remove_tag_root').live('click', function() {
-    $('#third_sub_tags').fadeOut('slow');
-    $('#second_sub_tags').fadeOut('slow');
-    $('#first_sub_tags').fadeOut('slow');
-    $('#edit_specific_user_tags').fadeOut('slow');
-    $.getScript(this.href);
-    return false;
-  });
-  
-  
-  $('.remove_tag_first').live('click', function() {
-    $('#third_sub_tags').fadeOut('slow');
-    $('#second_sub_tags').fadeOut('slow');
-    $.getScript(this.href);
-    return false;
-  });
-  
-  $('.remove_tag_second').live('click', function() {
-    $('#third_sub_tags').fadeOut('slow');
-    $.getScript(this.href);
-    return false;
-  });
-  
-  $('.remove_tag_third').live('click', function() {
-    $.getScript(this.href);
-    return false;
-  });
+
 
 });

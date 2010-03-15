@@ -9,7 +9,7 @@
          %p
             = link_to t('common.add'), add_taggings_path(:tag => tag, :taggable_id => current_user, :taggable_type => tag.taggable_type, :level  => 0), :class => 'add_tag_root'
             =tag.tag_names.find_by_language(get_locale.to_s).value
-
+ 
 %div.tag_right
    %h2
       = t('tag.added')

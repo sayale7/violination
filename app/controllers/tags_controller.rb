@@ -100,8 +100,8 @@ class TagsController < ApplicationController
     clone_tag = tag.clone
     clone_tag.position = Tag.find_all_by_taggable_type_and_parent_id(tag.taggable_type, tag.parent_id).size
     clone_tag.save
-    clone_tag.english_name = tag.english_name.to_s << ' clone'
-    clone_tag.german_name = tag.german_name << ' clone'
+    clone_tag.english_name = tag.english_name.to_s << ' Kopie'
+    clone_tag.german_name = tag.german_name << ' Kopie'
     clone_tag.save
     @tag = clone_tag
     Tag.find_all_by_parent_id(tag.id).each do |tag|
