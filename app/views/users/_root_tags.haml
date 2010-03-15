@@ -1,3 +1,6 @@
+- if request.url.include?('parent_id')
+   %h1
+      =get_parent_tag(@tag).tag_names.find_by_language(get_locale.to_s).value
 %div.tag_left
    %h2
       = t('tag.available')
