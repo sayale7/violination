@@ -4,7 +4,7 @@
       %title
          = h(yield(:title) || "Untitled")
       = stylesheet_link_tag 'application', 'style'
-      = javascript_include_tag 'jquery', 'application'
+      = javascript_include_tag 'jquery', 'jquery.ui', 'application'
       = yield(:head) 
    %body
       %div#container

@@ -22,9 +22,11 @@ p { font-size: .8em; }
 .show_user_tags_container_third_sub_level { padding-left: 3em; }
 .show_user_tags_container_third_sub_level p { font-size: 0.8em; }
 
-#edit_user_tags { display: none; padding: 10px; background-color: #0d9911; margin-bottom: 10px; clear: both; overflow: hidden; border: thin solid black; }
-#edit_user_tags .tag_left { float: left; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
-#edit_user_tags .tag_right { float: right; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
+#edit_user_tags { display: none; }
+
+.root_tags { padding: 10px; background-color: #0d9911; margin-bottom: 10px; clear: both; overflow: hidden; border: thin solid black; }
+.root_tags .tag_left { float: left; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
+.root_tags .tag_right { float: right; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
 
 #edit_specific_user_tags { display: none; }
 
