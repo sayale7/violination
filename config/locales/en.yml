@@ -20,6 +20,7 @@ en:
     up: Up
     down: Down
     close: Close
+    clone: Clone
   user:
     username:Username
     email: Email Address

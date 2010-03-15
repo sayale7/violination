@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.update_tag 'update_tag', :controller => 'tags', :action => 'update'
   map.move_tag_up 'move_tag_up', :controller => 'tags', :action => 'move_tag_up'
   map.move_tag_down 'move_tag_down', :controller => 'tags', :action => 'move_tag_down'
+  map.clone_tag_with_sub_tags 'clone_tag_with_sub_tags', :controller => 'tags', :action => 'clone_tag_with_sub_tags'
   
   #routes for user_taggings 
   map.edit_user_taggings 'edit_user_taggings', :controller => 'users', :action => 'edit_user_taggings'

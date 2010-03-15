@@ -88,10 +88,34 @@ class TagsController < ApplicationController
     end
   end
   
+  def clone_tag_with_sub_tags
+    tag = Tag.find(params[:tag])
+    clone_tag = tag.clone
+    clone_tag.position = Tag.find_all_by_taggable_type_and_parent_id(tag.taggable_type, tag.parent_id).size
+    clone_tag.save
+    clone_tag.english_name = tag.english_name.to_s << ' clone'
+    clone_tag.german_name = tag.german_name << ' clone'
+    clone_tag.save
+    @tag = clone_tag
+    Tag.find_all_by_parent_id(tag.id).each do |tag|
+      clone_tag = tag.clone
+      clone_tag.parent_id = @tag.id
+      clone_tag.save
+      clone_tag.english_name = tag.english_name
+      clone_tag.german_name = tag.german_name
+      clone_tag.save
+    end
+    if @tag.parent_id.nil?
+      redirect_to tags_path(@tag, :taggable_type => @tag.taggable_type)
+    else
+      redirect_to edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => @tag.taggable_type)
+    end
+  end
+  
   private
  
   def set_position(parent_id)
-    tags = Tag.find_all_by_parent_id(parent_id)
+    tags = Tag.find_all_by_parent_id(parent_id, :order => 'position')
     tags.each_with_index do |_tag, index|
       _tag.german_name = _tag.german_name
       _tag.english_name = _tag.english_name

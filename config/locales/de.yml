@@ -17,6 +17,7 @@ de:
     up: Rauf
     down: Runter
     close: Schließen
+    clone: Kopieren
   user:
     username: Benutzername
     email: Email Adresse

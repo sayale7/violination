@@ -4,7 +4,10 @@
       = link_to h(tag.tag_names.find_by_language(get_locale.to_s).value), edit_tag_path(tag, :taggable_type => taggable_type)
       &gt;
    =h yield(:title)
-
+   %p
+   -unless to_deep_to_clone(@tag)
+      = @tag.tag_names.find_by_language(get_locale.to_s).value
+      = link_to t('common.clone'), clone_tag_with_sub_tags_path(:tag => @tag)
 
 -form_for @tag do |f|
    = render 'form', :f => f

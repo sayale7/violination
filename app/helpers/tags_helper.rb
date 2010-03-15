@@ -69,4 +69,14 @@ module TagsHelper
       return false
     end
   end
+  
+  def to_deep_to_clone(tag)
+    tag = Tag.find(tag)
+    tag.children.each do |child_tag|
+      unless child_tag.children.empty?
+        return true
+      end
+    end
+    return false
+  end
 end
