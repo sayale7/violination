@@ -16,6 +16,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(params[:tag])
     @tag.german_name = params[:tag][:german_name]
     @tag.english_name = params[:tag][:english_name]
+    @tag.position = Tag.find_all_by_taggable_type_and_parent_id(@tag.taggable_type, @tag.parent_id).size
     if params[:parent_id]
       @tag.parent_id = params[:parent_id]
     else
@@ -24,7 +25,13 @@ class TagsController < ApplicationController
     respond_to do |format|
       if @tag.save
         set_position(@tag.parent_id)
-        format.html { redirect_to edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => @tag.taggable_type) }
+        format.html { 
+          if @tag.parent_id.nil?
+            redirect_to tags_path(@tag, :taggable_type => @tag.taggable_type)
+          else
+            redirect_to edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => @tag.taggable_type)
+          end
+        }
         format.xml  { render :xml => @tag, :status => :created, :location => @tag }
       else
         format.html { render :action => "new" }
