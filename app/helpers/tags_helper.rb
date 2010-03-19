@@ -21,26 +21,44 @@ module TagsHelper
     return child_tags
   end
   
-  def get_available_tags(tag)
+  def get_available_tags(tag, taggable_id)
+    the_class = Kernel.const_get(tag.taggable_type.to_s)
+    the_instance = the_class.find(taggable_id)
     if request.url.include?('parent_id')
-      return Tag.find_all_by_parent_id_and_taggable_type(request.url.scan(/parent_id=(\w+)/).to_s, 'User', :order => "position") - current_user.tags
+      return Tag.find_all_by_parent_id_and_taggable_type(request.url.scan(/parent_id=(\w+)/).to_s, tag.taggable_type, :order => "position") - the_instance.tags
     else
       if tag.nil?
-        return Tag.find_all_by_parent_id_and_taggable_type(nil, 'User', :order => "position") - current_user.tags
+        return Tag.find_all_by_parent_id_and_taggable_type(nil, 'User', :order => "position") - the_instance.tags
       else
-        return Tag.find_all_by_parent_id_and_taggable_type(tag.parent_id, 'User', :order => "position") - current_user.tags
+        return Tag.find_all_by_parent_id_and_taggable_type(tag.parent_id, tag.taggable_type, :order => "position") - the_instance.tags
       end
     end
   end
   
-  def get_user_tags(tag)
+  def get_all_tags(tag, taggable_id)
+    the_class = Kernel.const_get(tag.taggable_type.to_s)
+    the_instance = the_class.find(taggable_id)
     if request.url.include?('parent_id')
-      return current_user.tags.find_all_by_parent_id_and_taggable_type(request.url.scan(/parent_id=(\w+)/).to_s, 'User', :order => "position")
+      return Tag.find_all_by_parent_id_and_taggable_type(request.url.scan(/parent_id=(\w+)/).to_s, tag.taggable_type, :order => "position") 
     else
       if tag.nil?
-        return current_user.tags.find_all_by_parent_id_and_taggable_type(nil, 'User', :order => "position")
+        return Tag.find_all_by_parent_id_and_taggable_type(nil, 'User', :order => "position") 
       else
-        return current_user.tags.find_all_by_parent_id_and_taggable_type(tag.parent_id, 'User', :order => "position")
+        return Tag.find_all_by_parent_id_and_taggable_type(tag.parent_id, tag.taggable_type, :order => "position")
+      end
+    end
+  end
+  
+  def get_added_tags(tag, taggable_id) 
+    the_class = Kernel.const_get(tag.taggable_type.to_s)
+    the_instance = the_class.find(taggable_id)
+    if request.url.include?('parent_id')
+      return the_instance.tags.find_all_by_parent_id_and_taggable_type(request.url.scan(/parent_id=(\w+)/).to_s, tag.taggable_type, :order => "position")
+    else
+      if tag.nil?
+        return the_instance.tags.find_all_by_parent_id_and_taggable_type(nil, 'User', :order => "position")
+      else
+        return the_instance.tags.find_all_by_parent_id_and_taggable_type(tag.parent_id, tag.taggable_type, :order => "position")
       end
     end
   end
@@ -79,4 +97,26 @@ module TagsHelper
     end
     return false
   end
+  
+  def tagged_tag_name(tag, the_instance)
+    child_tags(tag).each do |child|
+      child.taggings.each do |tagging|
+        tmp_instance = the_instance.class.find(tagging.taggable_id)
+        if(tmp_instance.id == the_instance.id)
+          return Tag.find(tagging.tag_id).tag_names.find_by_language(get_locale.to_s).value
+        end
+      end
+    end
+    return ''
+  end
+  
+  def get_selected_child_tag_id(tag, the_instance)
+    tagging = Tagging.find_by_tag_id_and_taggable_id(tag.children, the_instance.id)
+    unless tagging.nil?
+      return tagging.tag_id
+    else
+      return nil
+    end
+  end
+  
 end

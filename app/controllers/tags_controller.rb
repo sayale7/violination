@@ -14,8 +14,6 @@ class TagsController < ApplicationController
   
   def create
     @tag = Tag.new(params[:tag])
-    @tag.german_name = params[:tag][:german_name]
-    @tag.english_name = params[:tag][:english_name]
     @tag.position = Tag.find_all_by_taggable_type_and_parent_id(@tag.taggable_type, @tag.parent_id).size
     if params[:parent_id]
       @tag.parent_id = params[:parent_id]
@@ -24,7 +22,6 @@ class TagsController < ApplicationController
     end
     respond_to do |format|
       if @tag.save
-        set_position(@tag.parent_id)
         format.html { 
           if @tag.parent_id.nil?
             redirect_to tags_path(@tag, :taggable_type => @tag.taggable_type)
@@ -46,12 +43,10 @@ class TagsController < ApplicationController
   
   def update
     @tag = Tag.find(params[:id])
-    @tag.german_name = params[:tag][:german_name]
-    @tag.english_name = params[:tag][:english_name]
-    
     if @tag.update_attributes(params[:tag])
       redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type)
     else
+      flash[:error] = 'uijeee'
       render :action => 'edit'
     end
   end
@@ -148,6 +143,12 @@ class TagsController < ApplicationController
       ancestor_tag.english_name = ancestor_tag.english_name
       ancestor_tag.update_attribute(:position, ancestor_tag.position-1)
     end
+  end
+  
+  
+  def get_taggable_type
+    the_class = Kernel.const_get(params[:taggable_type].to_s)
+    @the_instance = the_class.find(params[:taggable_id].to_s)
   end
   
 end

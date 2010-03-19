@@ -1,0 +1,27 @@
+%h2
+  =t('instrument.added_tags')
+    
+-get_added_tags(@tag, @the_instance.id).each do |tag|
+  %p
+  -if child_tags(tag).empty?
+    %div#instrument_tag_without_children.instrument_tag
+      %strong   
+        =tag.tag_names.find_by_language(get_locale.to_s).value
+      -form_tag update_tag_values_url do 
+        
+        = render 'tags_without_children', :tag => tag
+        
+        =submit_tag t('common.update')
+        =t('common.or')
+        =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+  -else
+    %div#instrument_tag_with_children.instrument_tag
+      -form_tag add_tagging_and_remove_the_rest_path do
+      
+        = render 'tags_with_children', :tag => tag
+
+        =submit_tag t('common.update')
+        =t('common.or')
+        =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+    
+

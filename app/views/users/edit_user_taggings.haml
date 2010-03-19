@@ -9,14 +9,14 @@
       %h1
          =get_parent_tag(@tag).tag_names.find_by_language(get_locale.to_s).value
     
-   -get_available_tags(@tag).each do |tag|
+   -get_available_tags(@tag, @the_instance.id).each do |tag|
       %p
          =link_to t('common.add'), add_taggings_path(:parent_id => tag.id, :tag => tag, :taggable_id => current_user, :taggable_type => tag.taggable_type), :method => :post
          =tag.tag_names.find_by_language(get_locale.to_s).value
         
    ='-------'
 
-   -get_user_tags(@tag).each do |tag|
+   -get_added_tags(@tag, @the_instance.id).each do |tag|
       %p
          -unless Tag.find_all_by_parent_id(tag.id).empty?
             =link_to t('common.edit'), edit_user_taggings_path(:parent_id => tag.id), :method => :post

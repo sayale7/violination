@@ -1,4 +1,5 @@
-!big_tags_container = #0D9911
+!green_one = #0D9911
+!gray = #EAEAEA
 
 =opacity(!value)
   :opacity= !value
@@ -6,19 +7,37 @@
   :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{!value*100})"
 
 h1
-  :font-size 1.2em
+  :font-size 18px
   :width 100%
+
 h2
-  :font-size 1em
+  :font-size 16px
 
 p
-  :font-size .8em
+  :font-size 14px
+
+a
+  :text-decoration none
+  :color #0000FF
+  
+  img
+    :border none
+
+.text_area
+  :width 300px
+  :height 200px
+  :font-size 13px
+  :padding 3px
+
+.text_box
+  :width 300px
+  :height 30px
+  :font-size 13px
+  :padding 1px
 
 #nav_top
   :float right
   :margin-bottom 20px
-  a
-    :color grey
 
 #content
   :clear both
@@ -26,32 +45,22 @@ p
 .show_user_tags_container
   :margin 1em
   :float left
-  a
-    :font-size .7em
-  p
-    :font-size 1em
 
 .show_user_tags_container_first_sub_level
   :padding-left 1em
-  p
-    :font-size 0.9em
 
 .show_user_tags_container_second_sub_level
   :padding-left 2em
-  p
-    :font-size 0.8em
     
 .show_user_tags_container_third_sub_level
   :padding-left 3em
-  p
-    :font-size 0.8em
 
 #edit_user_tags
   :display none
 
 .root_tags
   :padding 10px
-  :background-color = !big_tags_container
+  :background-color = !green_one
   :margin-bottom 10px
   :clear both
   :overflow hidden
@@ -78,7 +87,7 @@ p
   
 .tag_sub_container
   :padding 10px
-  :background-color = !big_tags_container
+  :background-color = !green_one
   :margin-bottom 10px
   :clear both
   :overflow hidden
@@ -97,9 +106,26 @@ p
     :padding 1%
     :width 47%
     :border thin solid black
-      
-.disabled
-  :background black
-  :position absolute
-  :z-index 9999999
-  +opacity(0.5)
+
+#available_instrument_tags
+  :background = !green_one
+  :border thin solid black
+  :float right
+  :width 20%
+  :padding 10px
+    
+#added_instrument_tags
+  :background = !green_one
+  :border thin solid black
+  :float left
+  :width 60%
+  :padding 10px
+
+.instrument_tag
+  :border thin solid black
+  :background-color = !gray
+  :padding 10px
+
+.instrument_tag_js
+  :border-bottom thin solid black
+  :padding 10px

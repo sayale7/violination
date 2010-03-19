@@ -38,8 +38,12 @@ $(document).ready(function() {
   
   //remove non-js section if js is enabled
   $('#edit_user_tags_no_js').remove();
+  $('#edit_instrument_tags_no_js').remove();
+  $('.number').css('display', 'none');
   //set js section visible if js ist enabled
   $('#edit_user_tags').css('display', 'block');
+  $('#edit_instrument_tags').css('display', 'block');
+  
   
   
   //!!!add tag to user the ajax way!!!

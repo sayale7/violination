@@ -18,6 +18,9 @@ de:
     down: Runter
     close: Schließen
     clone: Kopieren
+    german: Deutsch
+    english: Englisch
+    number_format: Bitte verwenden Sie dieses Format für Zahlen. Z.B. '1.200,00'
   user:
     username: Benutzername
     email: Email Adresse
@@ -44,6 +47,7 @@ de:
     sub: Unterkategorien
     available: Verfügbare Kategorien
     added: In meiner Werkstatt vorhanden
+    is_area: Beschreibungsfeld
     user:
       index: Alle User Kategorien
     instrument:
@@ -52,6 +56,12 @@ de:
     created: Sie haben sich erfolgreich eingeloggt!
     destroyed: Sie haben sich erfolgreich ausgeloggt!
     invalid_credentials: Login oder Passwort sind nicht korrekt!
+  instrument:
+    all: Alle Instrumente
+    tags_to_add: Verfügbare Intrument Attribute
+    added_tags: Attribute meines Instruments
+    add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
+  
   
   date:
     formats:

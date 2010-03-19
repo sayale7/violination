@@ -1,0 +1,45 @@
+-if request.url.to_s.include?('parent_id')
+   %h1
+      = get_parent_tag(@tag).tag_names.find_by_language(get_locale.to_s).value
+ 
+
+%div#available_instrument_tags
+   = render 'available_instrument_attributes.haml'
+     
+-get_added_tags(@tag, @the_instance.id).each do |tag|
+   %p
+      -if child_tags(tag).empty? && !request.url.to_s.include?('parent_id')
+         -form_tag update_free_text_path do
+            =hidden_field_tag :german_name, tag.german_name
+            =hidden_field_tag :english_name, tag.english_name
+            =hidden_field_tag :taggable_type, @the_instance.class
+            =hidden_field_tag :taggable_id, @the_instance.id
+            =hidden_field_tag :id, tag.id
+            %strong   
+               =tag.tag_names.find_by_language(get_locale.to_s).value
+            %br
+               -if tag.is_area
+                  / text_area_tag :free_text, tag.free_text, :class => 'text_area'
+               -else
+                  / text_field_tag :free_text, tag.free_text, :class => 'text_box'
+            %br
+               =submit_tag t('common.update')
+               =t('common.or')
+               =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type), :method => :post
+      -else
+         -if request.url.to_s.include?('parent_id') 
+            %strong
+               =tag.tag_names.find_by_language(get_locale.to_s).value
+            = tagged_tag_name(tag, @the_instance)
+            =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type), :method => :post
+         -else
+            %strong
+               =tag.tag_names.find_by_language(get_locale.to_s).value
+               = ':'
+            = tagged_tag_name(tag, @the_instance)
+            =link_to t('common.edit'), edit_instrument_taggings_path(:instance => @the_instance.id, :parent_id => tag.id), :method => :post
+            =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type), :method => :post
+
+-if request.url.to_s.include?('parent_id')
+   %p
+      = link_to t('common.back'), edit_instrument_taggings_url(:instance => @the_instance.id)

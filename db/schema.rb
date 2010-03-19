@@ -9,12 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100311154524) do
+ActiveRecord::Schema.define(:version => 20100319134627) do
+
+  create_table "instruments", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tag_names", :force => true do |t|
     t.integer  "tag_id"
     t.string   "value"
     t.string   "language"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tag_values", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.string   "language"
+    t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20100311154524) do
     t.datetime "updated_at"
     t.integer  "parent_id"
     t.integer  "position"
+    t.boolean  "is_area",       :default => false
+    t.string   "value_type"
   end
 
   create_table "users", :force => true do |t|

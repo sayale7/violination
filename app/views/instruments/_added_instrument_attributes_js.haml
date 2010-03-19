@@ -1,0 +1,17 @@
+%h2
+  =t('instrument.added_tags')
+    
+-get_added_tags(@tag, @the_instance.id).each do |tag|
+  %p
+  -if child_tags(tag).empty?
+    %div#instrument_tag_without_children.instrument_tag_js
+      = render 'tags_without_children_js', :tag => tag
+        
+        
+  -else
+    %div#instrument_tag_with_children.instrument_tag_js
+      = render 'tags_with_children_js', :tag => tag
+        
+
+    
+

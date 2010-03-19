@@ -5,11 +5,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    if logged_in?
-      @user = current_user
-    else
-      @user = User.find(params[:id])
-    end
+    @user = User.find(params[:id])
     respond_to do |format|
       format.html {user_path(@user)}
     end
@@ -43,21 +39,21 @@ class UsersController < ApplicationController
   end
   
   def edit_user_taggings
-    @user = current_user
+    @the_instance = current_user
     @level = 0
     if params[:parent_id]
-      @tags = Tag.find_all_by_taggable_type_and_parent_id('User', params[:parent_id]) - @user.tags
+      @tags = Tag.find_all_by_taggable_type_and_parent_id('User', params[:parent_id]) - @the_instance.tags
       @tag = Tag.find_all_by_taggable_type_and_parent_id('User', params[:parent_id]).first
     else
-      @tags = Tag.find_all_by_taggable_type_and_parent_id('User', nil) - @user.tags
+      @tags = Tag.find_all_by_taggable_type_and_parent_id('User', nil) - @the_instance.tags
       @tag = Tag.find_all_by_taggable_type_and_parent_id('User', nil).first
     end
   end
   
   def edit_inner_user_taggings
-    @user = current_user
+    @the_instance = current_user
     @level = params[:level]
-    @tags = Tag.find_all_by_taggable_type_and_id('User', params[:parent_id]) - @user.tags
+    @tags = Tag.find_all_by_taggable_type_and_id('User', params[:parent_id]) - @the_instance.tags
     @tag = Tag.find_all_by_taggable_type_and_id('User', params[:parent_id]).first
     respond_to do |format|
       format.js { render '/users/edit_inner_user_taggings.js.erb' }

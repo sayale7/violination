@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tag_id: 1
+  taggable_id: 1
+  taggable_type: MyString
+  language: MyString
+  value: MyString
+
+two:
+  tag_id: 1
+  taggable_id: 1
+  taggable_type: MyString
+  language: MyString
+  value: MyString

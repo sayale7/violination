@@ -1,0 +1,15 @@
+-title "Instrument"
+
+%p
+  = link_to "Destroy", @the_instance, :confirm => 'Are you sure?', :method => :delete
+
+%div#edit_instrument_tags_js
+  -unless get_available_tags(@tag, @the_instance.id).empty?
+    %div#available_instrument_tags
+      = render 'available_instrument_attributes.haml'
+   
+  %div#added_instrument_tags
+    = render 'added_instrument_attributes_js.haml'
+
+
+

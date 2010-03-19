@@ -21,6 +21,9 @@ en:
     down: Down
     close: Close
     clone: Clone
+    german: German
+    english: English
+    number_format: Please use this format. E.g. '1.200,00'
   user:
     username:Username
     email: Email Address
@@ -48,6 +51,7 @@ en:
     sub: Subcategories
     available: Available Tags
     added: Available in my Workshop
+    is_area: Text Area
     user:
       index: All User Tags
     instrument:
@@ -56,3 +60,8 @@ en:
     created: You are successfully logged in!
     destroyed: You are successfully logged out!
     invalid_credentials: Your Login or Password are invalid!
+  instrument:
+    all: All Instruments
+    tags_to_add: Available Instrument Attributes
+    added_tags: Attributes of my Instrument
+    add_through_click: (Click an Attribute to add it to your Instrument)
