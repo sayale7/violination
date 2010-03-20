@@ -2,3 +2,9 @@
   =tag.tag_names.find_by_language(get_locale.to_s).value
   =':'
 =tag.tag_values.find_by_language(get_locale.to_s).value
+
+-if current_user.id == @the_instance.user_id
+  %div.edit_tag_links
+    =link_to t('common.edit'), '', :rel => 'edit'
+    =t('common.or')
+    =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)

@@ -4,5 +4,5 @@
 %strong   
   =tag.tag_names.find_by_language(get_locale.to_s).value
 %br
-= select ("child_tag", "id", options_for_select(child_tags(tag).map {|u| [u.tag_names.find_by_language(get_locale.to_s).value, u.id]}, :selected => (get_selected_child_tag_id(tag, @the_instance))), { :include_blank => true })
+= select ("child_tag", "id", options_for_select(child_tags(tag).map {|u| [u.tag_names.find_by_language(get_locale.to_s).value, u.id]}, :selected => (get_selected_child_tag_id(tag, @the_instance))), { :include_blank => false })
 %br

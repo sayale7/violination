@@ -53,7 +53,9 @@ class TaggingsController < ApplicationController
   end
   
   def add_tagging_and_remove_the_rest
+    @update = true
     get_taggable_type(params[:taggable_type].to_s)
+    @tag = Tag.find(params[:tag])
     tags_to_remove = Tag.find_all_by_parent_id(params[:tag])
     tags_to_remove.each do |tag|
       unless tag.taggings.find_by_tag_id_and_taggable_id(tag.id, params[:taggable_id]).nil?

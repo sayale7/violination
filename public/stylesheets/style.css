@@ -35,10 +35,16 @@ a img { border: none; }
 .tag_sub_container .tag_left { float: left; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
 .tag_sub_container .tag_right { float: right; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
 
-#available_instrument_tags { background: #0d9911; border: thin solid black; float: right; width: 20%; padding: 10px; }
+#available_instrument_tags, #available_instrument_tags_js { background: #0d9911; border: thin solid black; float: right; width: 30%; padding: 10px; }
 
 #added_instrument_tags { background: #0d9911; border: thin solid black; float: left; width: 60%; padding: 10px; }
 
 .instrument_tag { border: thin solid black; background-color: #eaeaea; padding: 10px; }
 
-.instrument_tag_js { border-bottom: thin solid black; padding: 10px; }
+.instrument_tag_js { border-bottom: thin solid black; padding: 10px; display: :block; }
+
+.hidden { display: none; }
+
+.visible { display: block; }
+
+.edit_tag_links { display: none; float: right; }

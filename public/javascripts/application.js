@@ -151,6 +151,33 @@ $(document).ready(function() {
     return false;
   });
   
+  $('.instrument_tag_js').live('mouseover', function(){
+    $(this).find('.edit_tag_links').css('display', 'block');
+  }).live('mouseout', function(){
+    $(this).find('.edit_tag_links').css('display', 'none');
+  });
+  
+  $('#instrument_tag_without_children a, #instrument_tag_with_children a, #available_instrument_tags_js a').live('click', function(){
+    if($(this).attr('rel') == 'edit'){
+      $(this).parent().parent().removeClass('visible').addClass('hidden');
+      $(this).parent().parent().parent().find('#instrument_tag_edit').removeClass('hidden').addClass('visible');
+      return false;
+    }else if($(this).attr('rel') == 'close'){
+      $(this).parent().parent().removeClass('visible').addClass('hidden');
+      $(this).parent().parent().parent().find('#instrument_tag_show').removeClass('hidden').addClass('visible');
+      return false;
+    }else{
+      $(this).html('<img src="/images/ajax-loader.gif"/>');
+      $.getScript(this.href);
+      return false;
+    }  
+    
+  });
+  
+  $('#instrument_tag_edit form, #instrument_tag_show form').live('submit', function(){
+    $.post($(this).attr("action"), $(this).serialize(), null, 'script');
+    return false;
+  });
 
 
 });
