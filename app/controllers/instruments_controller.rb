@@ -5,7 +5,9 @@ class InstrumentsController < ApplicationController
   end
   
   def show
-    @the_instance = Instrument.find(params[:id])
+    if params[:id]
+      @the_instance = Instrument.find(params[:id])
+    end
     @tags = Tag.find_all_by_taggable_type_and_parent_id('Instrument', nil) - @the_instance.tags
     @tag = Tag.find_all_by_taggable_type_and_parent_id('Instrument', nil).first
   end
@@ -14,7 +16,8 @@ class InstrumentsController < ApplicationController
     @the_instance = Instrument.new
     @the_instance.user_id = current_user.id
     if @the_instance.save
-      redirect_to edit_instrument_taggings_url(:instance => @the_instance.id)
+      show
+      render :action  => 'show'
     end
   end
   

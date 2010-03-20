@@ -1,7 +1,8 @@
 %strong   
   =tag.tag_names.find_by_language(get_locale.to_s).value
   =':'
-= Tag.find(get_selected_child_tag_id(tag, @the_instance)).tag_names.find_by_language('de').value
+-unless get_selected_child_tag_id(tag, @the_instance).nil?
+  =Tag.find(get_selected_child_tag_id(tag, @the_instance)).tag_names.find_by_language('de').value
 
 
 -if current_user.id == @the_instance.user_id
