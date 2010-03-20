@@ -14,8 +14,8 @@
             =tag.tag_names.find_by_language(get_locale.to_s).value
             =':'
           =tagged_tag_name(tag, instrument)
-        %br
-      = link_to "Show", instrument 
+  %p
+    = link_to "Show", instrument 
 
 
 = link_to "New Instrument", new_instrument_path 
