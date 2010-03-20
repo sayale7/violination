@@ -1,20 +1,21 @@
 -title "Instruments"
 
 -for instrument in @instruments
-  %p
-    -get_added_tags(instrument.tags.find_by_parent_id(nil), instrument.id).each do |tag|
-      -if tag.children.empty?
-        %strong   
-          =tag.tag_names.find_by_language(get_locale.to_s).value
-          =':'
-        =tag.tag_values.find_by_language(get_locale.to_s).value
-      -else
-        %strong   
-          =tag.tag_names.find_by_language(get_locale.to_s).value
-          =':'
-        =tagged_tag_name(tag, instrument)
-      %br
-    = link_to "Show", instrument 
+  -unless instrument.tags.empty?
+    %p
+      -get_added_tags(instrument.tags.find_by_parent_id(nil), instrument.id).each do |tag|
+        -if tag.children.empty?
+          %strong   
+            =tag.tag_names.find_by_language(get_locale.to_s).value
+            =':'
+          =tag.tag_values.find_by_language(get_locale.to_s).value
+        -else
+          %strong   
+            =tag.tag_names.find_by_language(get_locale.to_s).value
+            =':'
+          =tagged_tag_name(tag, instrument)
+        %br
+      = link_to "Show", instrument 
 
 
 = link_to "New Instrument", new_instrument_path 
