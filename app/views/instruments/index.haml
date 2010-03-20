@@ -12,7 +12,10 @@
             %strong   
               =tag.tag_names.find_by_language(get_locale.to_s).value
               =':'
-            =tag.tag_values.find_by_language(get_locale.to_s).value
+            -if tag.value_type.to_s.eql?('zahlenfeld')
+              ='Euro '+ TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, instrument.id).value
+            -else
+              =tag.tag_values.find_by_language(get_locale.to_s).value
           -else
             %strong   
               =tag.tag_names.find_by_language(get_locale.to_s).value
