@@ -14,7 +14,7 @@ class InstrumentsController < ApplicationController
     @the_instance = Instrument.new
     @the_instance.user_id = current_user.id
     if @the_instance.save
-      redirect_to edit_instrument_taggings_url(:instrument => @the_instance.id)
+      redirect_to edit_instrument_taggings_url(:instance => @the_instance.id)
     end
   end
   
