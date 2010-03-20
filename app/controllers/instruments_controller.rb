@@ -16,8 +16,7 @@ class InstrumentsController < ApplicationController
     @the_instance = Instrument.new
     @the_instance.user_id = current_user.id
     if @the_instance.save
-      show
-      render :action  => 'show'
+      redirect_to '/instruments/'+@the_instance.id.to_s
     end
   end
   

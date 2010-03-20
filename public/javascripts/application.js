@@ -176,6 +176,7 @@ $(document).ready(function() {
   
   $('#instrument_tag_edit form, #instrument_tag_show form').live('submit', function(){
     $.post($(this).attr("action"), $(this).serialize(), null, 'script');
+    $(this).html('<img src="/images/ajax-loader.gif"/>');
     return false;
   });
 
