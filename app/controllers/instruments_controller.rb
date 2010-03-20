@@ -1,7 +1,7 @@
 class InstrumentsController < ApplicationController
   
   def index
-    @instruments = Instrument.find_all_by_user_id(params[:user_id])
+    @instruments = Instrument.all #find_all_by_user_id(params[:user_id])
   end
   
   def show

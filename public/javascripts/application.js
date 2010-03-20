@@ -44,6 +44,8 @@ $(document).ready(function() {
   $('#edit_user_tags').css('display', 'block');
   $('#edit_instrument_tags').css('display', 'block');
   
+  //hide edit link if js is enabled (show instrument)
+  $('.edit_instrument').remove();
   
   
   //!!!add tag to user the ajax way!!!
@@ -159,12 +161,12 @@ $(document).ready(function() {
   
   $('#instrument_tag_without_children a, #instrument_tag_with_children a, #available_instrument_tags_js a').live('click', function(){
     if($(this).attr('rel') == 'edit'){
-      $(this).parent().parent().removeClass('visible').addClass('hidden');
-      $(this).parent().parent().parent().find('#instrument_tag_edit').removeClass('hidden').addClass('visible');
+      $(this).parent().parent().hide(); //.removeClass('visible').addClass('hidden');
+      $(this).parent().parent().parent().find('#instrument_tag_edit').fadeIn('slow'); //.removeClass('hidden').addClass('visible');
       return false;
     }else if($(this).attr('rel') == 'close'){
-      $(this).parent().parent().removeClass('visible').addClass('hidden');
-      $(this).parent().parent().parent().find('#instrument_tag_show').removeClass('hidden').addClass('visible');
+      $(this).parent().parent().hide(); //.removeClass('visible').addClass('hidden');
+      $(this).parent().parent().parent().find('#instrument_tag_show').fadeIn('slow'); //.removeClass('hidden').addClass('visible');
       return false;
     }else{
       $(this).html('<img src="/images/ajax-loader.gif"/>');

@@ -23,4 +23,5 @@
   $("#added_instrument_tags").effect("highlight", {}, 700);
 <% else %>
   $("#added_instrument_tags").html("<%= escape_javascript(render('/instruments/added_instrument_attributes_js.haml')) %>");
+  $("#added_instrument_tags").effect("highlight", {}, 1500);
 <% end %>

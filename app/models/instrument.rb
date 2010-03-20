@@ -3,7 +3,7 @@ class Instrument < ActiveRecord::Base
   
   has_many :taggings, :as => :taggable, :dependent => :destroy
   has_many :tag_values, :as => :taggable, :dependent => :destroy
-  has_many :tags, :through => :taggings
+  has_many :tags, :order => 'position', :through => :taggings
   has_many :tags_over_value, :through => :tag_values
   belongs_to :user
   

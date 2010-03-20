@@ -5,8 +5,6 @@
   %p
   -if child_tags(tag).empty?
     %div#instrument_tag_without_children.instrument_tag
-      %strong   
-        =tag.tag_names.find_by_language(get_locale.to_s).value
       -form_tag update_tag_values_url do 
         
         = render 'tags_without_children', :tag => tag
