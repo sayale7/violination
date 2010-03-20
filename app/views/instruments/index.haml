@@ -1,7 +1,7 @@
 -title "Instruments"
 
 -for instrument in @instruments
-  -unless instrument.tags.empty?
+  -unless instrument.tags.find_by_parent_id(nil).nil?
     %p
       -get_added_tags(instrument.tags.find_by_parent_id(nil), instrument.id).each do |tag|
         -if tag.children.empty?
