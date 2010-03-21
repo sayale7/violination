@@ -9,7 +9,7 @@ class InstrumentsController < ApplicationController
       @the_instance = Instrument.find(params[:id])
     end
     @tags = Tag.find_all_by_taggable_type_and_parent_id('Instrument', nil) - @the_instance.tags
-    @tag = Tag.find_all_by_taggable_type_and_parent_id('Instrument', nil).first
+    @tag = Tag.find_by_taggable_type_and_parent_id('Instrument', nil)
   end
   
   def new
@@ -42,10 +42,10 @@ class InstrumentsController < ApplicationController
     @level = 0
     if params[:parent_id]
       @tags = Tag.find_all_by_taggable_type_and_parent_id('Instrument', params[:parent_id]) - @the_instance.tags
-      @tag = Tag.find_all_by_taggable_type_and_parent_id('Instrument', params[:parent_id]).first
+      @tag = Tag.find_by_taggable_type_and_parent_id('Instrument', params[:parent_id])
     else
       @tags = Tag.find_all_by_taggable_type_and_parent_id('Instrument', nil) - @the_instance.tags
-      @tag = Tag.find_all_by_taggable_type_and_parent_id('Instrument', nil).first
+      @tag = Tag.find_by_taggable_type_and_parent_id('Instrument', nil)
     end
   end
   
@@ -53,7 +53,7 @@ class InstrumentsController < ApplicationController
     @the_instance = current_user
     @level = params[:level]
     @tags = Tag.find_all_by_taggable_type_and_id('User', params[:parent_id]) - @the_instance.tags
-    @tag = Tag.find_all_by_taggable_type_and_id('User', params[:parent_id]).first
+    @tag = Tag.find_by_taggable_type_and_id('User', params[:parent_id])
     respond_to do |format|
       format.js { render '/users/edit_inner_user_taggings.js.erb' }
     end

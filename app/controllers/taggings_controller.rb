@@ -10,24 +10,14 @@ class TaggingsController < ApplicationController
     else
       parent_id = '?parent_id='+@tag.parent_id.to_s
     end
-    if tagging.save
-      respond_to do |format|
-        if parent_id.to_s.eql?('')
-          format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
-        else
-          format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings' << parent_id.to_s << '&instance=' << @the_instance.id.to_s }
-        end
-        format.js { render '/taggings/base.js.erb' }
+    tagging.save
+    respond_to do |format|
+      if parent_id.to_s.eql?('')
+        format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
+      else
+        format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings' << parent_id.to_s << '&instance=' << @the_instance.id.to_s }
       end
-    else
-      respond_to do |format|
-        if parent_id.to_s.eql?('')
-          format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
-        else
-          format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings' << parent_id.to_s << '&instance=' << @the_instance.id.to_s }
-        end
-        format.js { render '/taggings/base.js.erb' }
-      end
+      format.js { render '/taggings/base.js.erb' }
     end
   end
   
@@ -53,7 +43,6 @@ class TaggingsController < ApplicationController
   end
   
   def add_tagging_and_remove_the_rest
-    @update = true
     get_taggable_type(params[:taggable_type].to_s)
     @tag = Tag.find(params[:tag])
     tags_to_remove = Tag.find_all_by_parent_id(params[:tag])
@@ -66,6 +55,8 @@ class TaggingsController < ApplicationController
       tagging = build_tagging_and_set_tag_values_taggable_id(params[:child_tag][:id])
       tagging.save
     end
+    # for base.js.erb
+    @update = true
     respond_to do |format|
       format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
       format.js { render '/taggings/base.js.erb' }

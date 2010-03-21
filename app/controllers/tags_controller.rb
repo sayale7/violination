@@ -15,11 +15,6 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new(params[:tag])
     @tag.position = Tag.find_all_by_taggable_type_and_parent_id(@tag.taggable_type, @tag.parent_id).size
-    if params[:parent_id]
-      @tag.parent_id = params[:parent_id]
-    else
-      @tag.parent_id = nil
-    end
     respond_to do |format|
       if @tag.save
         format.html { 
@@ -46,7 +41,6 @@ class TagsController < ApplicationController
     if @tag.update_attributes(params[:tag])
       redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type)
     else
-      flash[:error] = 'uijeee'
       render :action => 'edit'
     end
   end
@@ -55,7 +49,9 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     taggable_type = @tag.taggable_type
     parent_id = @tag.parent_id
+    taggable_type = @tag.taggable_type
     @tag.destroy
+    set_position(parent_id, taggable_type)
     if parent_id.nil?
       redirect_to tags_path(:taggable_type => @tag.taggable_type)
     else
@@ -102,7 +98,6 @@ class TagsController < ApplicationController
     Tag.find_all_by_parent_id(tag.id).each do |tag|
       clone_tag = tag.clone
       clone_tag.parent_id = @tag.id
-      clone_tag.save
       clone_tag.english_name = tag.english_name
       clone_tag.german_name = tag.german_name
       clone_tag.save
@@ -116,8 +111,8 @@ class TagsController < ApplicationController
   
   private
  
-  def set_position(parent_id)
-    tags = Tag.find_all_by_parent_id(parent_id, :order => 'position')
+  def set_position(parent_id, taggable_type)
+    tags = Tag.find_all_by_parent_id_and_taggable_type(parent_id, taggable_type, :order => 'position')
     tags.each_with_index do |_tag, index|
       _tag.german_name = _tag.german_name
       _tag.english_name = _tag.english_name

@@ -1,7 +1,7 @@
 -title "Instruments"
 
 %p
-  = link_to "New Instrument", new_instrument_path
+  = link_to t('common.new'), new_instrument_path
 
 -for instrument in @instruments
   %div.instrument_index_element
@@ -23,6 +23,6 @@
             =tagged_tag_name(tag, instrument)
           %br
     %p
-      = link_to "Show", instrument 
+      = link_to t('common.show'), instrument 
 
  

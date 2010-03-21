@@ -5,10 +5,9 @@ class TagValuesController < ApplicationController
     english_tag_value = TagValue.find(params[:id].to_i + 1)
     german_value = params[:german_value].to_s
     english_value = params[:english_value].to_s
-    tag = Tag.find(german_tag_value.tag_id)
     @tag = Tag.find(german_tag_value.tag_id)
     get_taggable_type(german_tag_value.taggable_type, german_tag_value.taggable_id)
-    if tag.value_type.to_s.eql?('zahlenfeld')
+    if @tag.value_type.to_s.eql?('zahlenfeld')
       german_value = german_value.match(/[\d]*.?[\d]{3},?[\d]*/).to_s
       english_value = english_value.match(/[\d]*.?[\d]{3},?[\d]*/).to_s
     end
