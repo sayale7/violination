@@ -15,6 +15,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new(params[:tag])
     @tag.position = Tag.find_all_by_taggable_type_and_parent_id(@tag.taggable_type, @tag.parent_id).size
+    @tag.value_type = 'textfeld'
     respond_to do |format|
       if @tag.save
         format.html { 
