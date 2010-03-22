@@ -21,7 +21,7 @@
   %p.error
     =t('common.number_validate_error')
     
--if tag.value_type.to_s.eql?('zahlenfeld_mit_sonderzeichen')
+-if tag.value_type.to_s.eql?('einzelfeld')
   %strong 
     =tag.tag_names.find_by_language(get_locale.to_s).value
   %p
