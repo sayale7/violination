@@ -57,6 +57,8 @@ en:
       index: All User Tags
     instrument:
       index: All Instrument Tags
+    bow:
+      index: All Bow Tags
   session:
     created: You are successfully logged in!
     destroyed: You are successfully logged out!
@@ -66,3 +68,5 @@ en:
     tags_to_add: Available Instrument Attributes
     added_tags: Attributes of my Instrument
     add_through_click: (Click an Attribute to add it to your Instrument)
+  bow:
+    all: All Bows

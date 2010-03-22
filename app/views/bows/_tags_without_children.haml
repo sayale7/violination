@@ -1,0 +1,36 @@
+=hidden_field_tag :id, TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).id
+-if tag.value_type.to_s.eql?('beschreibungsfeld')
+  %strong 
+    =tag.tag_names.find_by_language(get_locale.to_s).value
+  %p
+    = t('common.german')
+    %br
+    =text_area_tag :german_value, TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).value, :class => 'text_area'
+  %p
+    = t('common.english')
+    %br
+    =text_area_tag :english_value, TagValue.find_by_language_and_tag_id_and_taggable_id('en', tag.id, @the_instance.id).value, :class => 'text_area'
+
+-if tag.value_type.to_s.eql?('zahlenfeld')
+  %strong 
+    =tag.tag_names.find_by_language(get_locale.to_s).value
+  %p
+    =t('common.number_format')
+  %p
+    =text_field_tag :german_value, TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).value, :class => 'text_box', :id => 'price_number'
+  %p.error
+    =t('common.number_validate_error')
+  
+  
+-if tag.value_type.to_s.eql?('textfeld')
+  %strong 
+    =tag.tag_names.find_by_language(get_locale.to_s).value
+  %p
+    = t('common.german')
+    %br
+    =text_area_tag :german_value, TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).value, :class => 'text_box'
+  %p
+    = t('common.english')
+    %br
+    =text_area_tag :english_value, TagValue.find_by_language_and_tag_id_and_taggable_id('en', tag.id, @the_instance.id).value, :class => 'text_box'
+

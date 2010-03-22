@@ -11,6 +11,10 @@ ActionController::Routing::Routes.draw do |map|
   map.edit_user_taggings 'edit_user_taggings', :controller => 'users', :action => 'edit_user_taggings'
   map.edit_inner_user_taggings 'edit_inner_user_taggings', :controller => 'users', :action => 'edit_inner_user_taggings'
   
+  #routes for bows and bows taggings
+  map.resources :bows
+  map.edit_bow_taggings 'edit_bow_taggings', :controller => 'bows', :action => 'edit_bow_taggings'
+  
   #routes for intrument and instrument taggings
   map.resources :instruments
   map.edit_instrument_taggings 'edit_instrument_taggings', :controller => 'instruments', :action => 'edit_instrument_taggings'

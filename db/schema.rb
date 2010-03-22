@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100319134627) do
+ActiveRecord::Schema.define(:version => 20100322170144) do
+
+  create_table "bows", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "instruments", :force => true do |t|
     t.integer  "user_id"
@@ -49,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20100319134627) do
     t.datetime "updated_at"
     t.integer  "parent_id"
     t.integer  "position"
-    t.boolean  "is_area",       :default => false
     t.string   "value_type"
   end
 

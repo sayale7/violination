@@ -53,6 +53,8 @@ de:
       index: Alle User Kategorien
     instrument:
       index: Alle Instrumenten Kategorien
+    bow:
+      index: Alle Bogen Kategorien
   session:
     created: Sie haben sich erfolgreich eingeloggt!
     destroyed: Sie haben sich erfolgreich ausgeloggt!
@@ -62,6 +64,8 @@ de:
     tags_to_add: Verfügbare Intrument Attribute
     added_tags: Attribute meines Instruments
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
+  bow:
+    all: Alle Bögen
   
   
   date:

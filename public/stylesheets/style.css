@@ -52,3 +52,5 @@ a img { border: none; }
 .edit_tag_links { display: none; float: right; }
 
 .instrument_index_element { background: #eaeaea; border-bottom: solid thin black; padding: 10px; }
+
+.bow_index_element { background: #eaeaea; border-bottom: solid thin black; padding: 10px; }

@@ -20,9 +20,13 @@
                |
                =link_to t('instrument.all'), instruments_path(:user_id  => current_user)
                |
+               =link_to t('bow.all'), bows_path(:user_id  => current_user)
+               |
                = link_to t('tag.user.index'), tags_path(:taggable_type => 'User')
                |
                = link_to t('tag.instrument.index'), tags_path(:taggable_type => 'Instrument')
+               |
+               = link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow')
             -else
                = link_to t('user.signup'), signup_path
                |
