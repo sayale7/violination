@@ -7,20 +7,26 @@ class TagValuesController < ApplicationController
     english_value = params[:english_value].to_s
     @tag = Tag.find(german_tag_value.tag_id)
     get_taggable_type(german_tag_value.taggable_type, german_tag_value.taggable_id)
-    if @tag.value_type.to_s.eql?('zahlenfeld')
-      german_value = german_value.match(/[\d]*.?[\d]{3},?[\d]*/).to_s
-      english_value = english_value.match(/[\d]*.?[\d]{3},?[\d]*/).to_s
+    error = false
+    if @tag.value_type.to_s.eql?('zahlenfeld') && german_value.match(/^\d+\,\d{2}$/)
+      english_value = german_value
+      german_tag_value.update_attribute(:value, german_value)
+      english_tag_value.update_attribute(:value, english_value)
+    else
+      error = true
     end
-    if german_tag_value.update_attribute(:value, german_value) && english_tag_value.update_attribute(:value, english_value)
-      respond_to do |format|
-        format.html { redirect_to '/edit_' << german_tag_value.taggable_type.to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
-        format.js { 
-          @update = true
-          render '/taggings/base.js.erb' 
-        }
-      end
+    respond_to do |format|
+      format.html { 
+        if error
+          flash[:error] = t('common.number_validate_error')
+        end
+        redirect_to '/edit_' << german_tag_value.taggable_type.to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s 
+      }
+      format.js { 
+        @update = true
+        render '/taggings/base.js.erb' 
+      }
     end
-   
   end
 
   private

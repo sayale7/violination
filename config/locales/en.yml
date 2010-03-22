@@ -23,7 +23,8 @@ en:
     clone: Clone
     german: German
     english: English
-    number_format: Please use this format. E.g. '1.200,00'
+    number_format: Please use this format. E.g. '12000,00'
+    number_validate_error: Please fill in the right format
   user:
     username:Username
     email: Email Address

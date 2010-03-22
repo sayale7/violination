@@ -174,11 +174,15 @@ $(document).ready(function() {
       return false;
     }  
     
-  });
+  });//"/^[0-9]{1,2}.[0-9]{3},[0-9]{2}$/"
   
   $('#instrument_tag_edit form, #instrument_tag_show form').live('submit', function(){
-    $.post($(this).attr("action"), $(this).serialize(), null, 'script');
-    $(this).html('<img src="/images/ajax-loader.gif"/>');
+    if($(this).find('#german_value').val().toString().match(/^[1-9]{1}\d*\,\d{2}$/)){
+      $.post($(this).attr("action"), $(this).serialize(), null, 'script');
+      $(this).html('<img src="/images/ajax-loader.gif"/>');
+    }else{
+      $('.error').show();
+    }
     return false;
   });
 

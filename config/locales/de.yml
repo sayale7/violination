@@ -20,7 +20,8 @@ de:
     clone: Kopieren
     german: Deutsch
     english: Englisch
-    number_format: Bitte verwenden Sie dieses Format für Zahlen. Z.B. '1.200,00'
+    number_format: Bitte verwenden Sie dieses Format für Zahlen. Z.B. '12000,00'
+    number_validate_error: Bitte beachten Sie das Format bei der Eingabe
   user:
     username: Benutzername
     email: Email Adresse

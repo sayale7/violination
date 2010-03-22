@@ -119,4 +119,21 @@ module TagsHelper
     end
   end
   
+  def get_price_format(tag_value)
+    comma = tag_value.to_s[tag_value.to_s.size - 3 ,tag_value.to_s.size]
+    string_to_split = tag_value.to_s[0 ,tag_value.to_s.size - 3].reverse
+    times_to_loop = string_to_split.to_s.size / 3
+    i = 1
+    times_to_loop.times do
+      string_to_split = string_to_split.insert((i*3)+(i-1), '.')
+      i = i + 1
+    end
+    return_string = string_to_split.reverse << comma
+    if return_string[0, 1].to_s.eql?('.')
+      return return_string[1 ,return_string.size]
+    else
+      return return_string
+    end
+  end
+  
 end
