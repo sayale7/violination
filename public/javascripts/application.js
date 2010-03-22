@@ -175,13 +175,19 @@ $(document).ready(function() {
     }  
     
   });//"/^[0-9]{1,2}.[0-9]{3},[0-9]{2}$/"
-  
+
   $('#instrument_tag_edit form, #instrument_tag_show form').live('submit', function(){
-    if($(this).find('#german_value').val().toString().match(/^[1-9]{1}\d*\,\d{2}$/)){
+    if($(this).find('#price_number').attr('id') == 'price_number'){
+      if($(this).find('#price_number').val().toString().match(/^[1-9]{1}\d*\,\d{2}$/)){
+        $.post($(this).attr("action"), $(this).serialize(), null, 'script');
+        $(this).html('<img src="/images/ajax-loader.gif"/>');
+      }
+      else{
+        $('.error').show();
+      }
+    }else{
       $.post($(this).attr("action"), $(this).serialize(), null, 'script');
       $(this).html('<img src="/images/ajax-loader.gif"/>');
-    }else{
-      $('.error').show();
     }
     return false;
   });
