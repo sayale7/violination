@@ -1,7 +1,7 @@
 %div#edit_instrument_tags
    -unless get_available_tags(@tag, @the_instance.id).empty?
       %div#available_instrument_tags
-         = render 'available_instrument_attributes.haml'
+         = render '/taggables/available_instrument_attributes.haml'
    
    %div#added_instrument_tags
-      = render 'added_instrument_attributes.haml'
+      = render '/taggables/added_instrument_attributes.haml'

@@ -7,7 +7,7 @@
     %div#instrument_tag_without_children.instrument_tag
       -form_tag update_tag_values_url do 
         
-        = render 'tags_without_children', :tag => tag
+        = render '/taggables/tags_without_children', :tag => tag
         
         =submit_tag t('common.update')
         =t('common.or')
@@ -16,7 +16,7 @@
     %div#instrument_tag_with_children.instrument_tag
       -form_tag add_tagging_and_remove_the_rest_path do
       
-        = render 'tags_with_children', :tag => tag
+        = render '/taggables/tags_with_children', :tag => tag
 
         =submit_tag t('common.update')
         =t('common.or')
