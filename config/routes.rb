@@ -7,9 +7,9 @@ ActionController::Routing::Routes.draw do |map|
   map.move_tag_down 'move_tag_down', :controller => 'tags', :action => 'move_tag_down'
   map.clone_tag_with_sub_tags 'clone_tag_with_sub_tags', :controller => 'tags', :action => 'clone_tag_with_sub_tags'
   
-  #routes for user taggings 
+  #routes for user taggings edit_user_taggings_new
   map.edit_user_taggings 'edit_user_taggings', :controller => 'users', :action => 'edit_user_taggings'
-  map.edit_inner_user_taggings 'edit_inner_user_taggings', :controller => 'users', :action => 'edit_inner_user_taggings'
+  map.edit_user_taggings_js 'edit_user_taggings_js', :controller => 'users', :action => 'edit_user_taggings_js'
   
   #routes for bows and bows taggings
   map.resources :bows

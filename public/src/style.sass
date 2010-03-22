@@ -1,4 +1,4 @@
-!green_one = #0D9911
+!green_one = white
 !gray = #EAEAEA
 
 =opacity(!value)
@@ -40,8 +40,9 @@ a
   :padding 1px
 
 #nav_top
-  :float right
+  :float left
   :margin-bottom 20px
+  
 
 #content
   :clear both
@@ -59,78 +60,28 @@ a
 .show_user_tags_container_third_sub_level
   :padding-left 3em
 
-#edit_user_tags
-  :display none
-
-.root_tags
-  :padding 10px
-  :background-color = !green_one
-  :margin-bottom 10px
-  :clear both
-  :overflow hidden
-  :border thin solid black
-  
-  .tag_left
-    :float left
-    :background-color = white
-    :padding 1%
-    :width 47%
-    :border thin solid black
-
-  .tag_right
-    :float right
-    :background-color = white
-    :padding 1%
-    :width 47%
-    :border thin solid black
 
 
-#edit_specific_user_tags
-  :display none
-
-  
-.tag_sub_container
-  :padding 10px
-  :background-color = !green_one
-  :margin-bottom 10px
-  :clear both
-  :overflow hidden
-  :border thin solid black
-  
-  .tag_left
-    :float left
-    :background-color = white
-    :padding 1%
-    :width 47%
-    :border thin solid black
-
-  .tag_right
-    :float right
-    :background-color = white
-    :padding 1%
-    :width 47%
-    :border thin solid black
-
-#available_instrument_tags, #available_instrument_tags_js
+#available_instance_tags, #available_instance_tags_js
   :background = !green_one
   :border thin solid black
   :float right
   :width 30%
   :padding 10px
     
-#added_instrument_tags
+#added_instance_tags
   :background = !green_one
   :border thin solid black
   :float left
   :width 60%
   :padding 10px
 
-.instrument_tag
+.instance_tag
   :border thin solid black
   :background-color = !gray
   :padding 10px
 
-.instrument_tag_js
+.instance_tag_js
   :border-bottom thin solid black
   :padding 10px
   :display :block
@@ -145,12 +96,8 @@ a
   :display none
   :float right
 
-.instrument_index_element
+.instance_index_element
   :background = !gray
   :border-bottom solid thin black 
   :padding 10px
   
-.bow_index_element
-  :background = !gray
-  :border-bottom solid thin black 
-  :padding 10px

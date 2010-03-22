@@ -8,7 +8,7 @@ class TagValuesController < ApplicationController
     @tag = Tag.find(german_tag_value.tag_id)
     get_taggable_type(german_tag_value.taggable_type, german_tag_value.taggable_id)
     error = false
-    if @tag.value_type.to_s.eql?('zahlenfeld') && german_value.match(/^\d+\,\d{2}$/)
+    if @tag.value_type.to_s.eql?('preisfeld') && german_value.match(/^[1-9]{1}\d*\,\d{2}$/)
       english_value = german_value
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
@@ -20,7 +20,7 @@ class TagValuesController < ApplicationController
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
     end
-    if !@tag.value_type.to_s.eql?('zahlenfeld')
+    if !@tag.value_type.to_s.eql?('preisfeld')
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
     end
@@ -29,7 +29,11 @@ class TagValuesController < ApplicationController
         if error
           flash[:error] = t('common.number_validate_error')
         end
-        redirect_to '/edit_' << german_tag_value.taggable_type.to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s 
+        unless @tag.parent_id.nil?
+          redirect_to '/edit_' << german_tag_value.taggable_type.to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s << '&parent_id=' << @tag.parent_id.to_s
+        else
+          redirect_to '/edit_' << german_tag_value.taggable_type.to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s
+        end
       }
       format.js { 
         @update = true

@@ -58,7 +58,13 @@ class TaggingsController < ApplicationController
     # for base.js.erb
     @update = true
     respond_to do |format|
-      format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
+      format.html { 
+        unless @tag.parent_id.nil?
+          redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s << '&parent_id=' << @tag.parent_id.to_s
+        else
+          redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s
+        end
+      }
       format.js { render '/taggings/base.js.erb' }
     end
   end

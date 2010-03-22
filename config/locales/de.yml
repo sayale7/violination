@@ -22,6 +22,10 @@ de:
     english: Englisch
     number_format: Bitte verwenden Sie dieses Format für Zahlen. Z.B. '12000,00'
     number_validate_error: Bitte beachten Sie das Format bei der Eingabe
+    account: Mein Konto
+    instrument: Instrumente
+    bows: Bögen
+    admin: Administration
   user:
     username: Benutzername
     email: Email Adresse
@@ -61,11 +65,13 @@ de:
     invalid_credentials: Login oder Passwort sind nicht korrekt!
   instrument:
     all: Alle Instrumente
+    mine: Meine Instrumente
     tags_to_add: Verfügbare Intrument Attribute
     added_tags: Attribute meines Instruments
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
   bow:
     all: Alle Bögen
+    mine: Meine Bögen
   
   
   date:

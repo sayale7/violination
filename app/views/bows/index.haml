@@ -4,7 +4,7 @@
   = link_to t('common.new'), new_bow_path
 
 -for bow in @bows
-  %div.bow_index_element
+  %div.instance_index_element
     -unless bow.tags.find_by_parent_id(nil).nil?
       %p
         -get_added_tags(bow.tags.find_by_parent_id(nil), bow.id).each do |tag|

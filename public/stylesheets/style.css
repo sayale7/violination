@@ -13,7 +13,7 @@ a img { border: none; }
 
 .text_box { width: 300px; height: 30px; font-size: 13px; padding: 1px; }
 
-#nav_top { float: right; margin-bottom: 20px; }
+#nav_top { float: left; margin-bottom: 20px; }
 
 #content { clear: both; }
 
@@ -25,25 +25,13 @@ a img { border: none; }
 
 .show_user_tags_container_third_sub_level { padding-left: 3em; }
 
-#edit_user_tags { display: none; }
+#available_instance_tags, #available_instance_tags_js { background: white; border: thin solid black; float: right; width: 30%; padding: 10px; }
 
-.root_tags { padding: 10px; background-color: #0d9911; margin-bottom: 10px; clear: both; overflow: hidden; border: thin solid black; }
-.root_tags .tag_left { float: left; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
-.root_tags .tag_right { float: right; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
+#added_instance_tags { background: white; border: thin solid black; float: left; width: 60%; padding: 10px; }
 
-#edit_specific_user_tags { display: none; }
+.instance_tag { border: thin solid black; background-color: #eaeaea; padding: 10px; }
 
-.tag_sub_container { padding: 10px; background-color: #0d9911; margin-bottom: 10px; clear: both; overflow: hidden; border: thin solid black; }
-.tag_sub_container .tag_left { float: left; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
-.tag_sub_container .tag_right { float: right; background-color: white; padding: 1%; width: 47%; border: thin solid black; }
-
-#available_instrument_tags, #available_instrument_tags_js { background: #0d9911; border: thin solid black; float: right; width: 30%; padding: 10px; }
-
-#added_instrument_tags { background: #0d9911; border: thin solid black; float: left; width: 60%; padding: 10px; }
-
-.instrument_tag { border: thin solid black; background-color: #eaeaea; padding: 10px; }
-
-.instrument_tag_js { border-bottom: thin solid black; padding: 10px; display: :block; }
+.instance_tag_js { border-bottom: thin solid black; padding: 10px; display: :block; }
 
 .hidden { display: none; }
 
@@ -51,6 +39,4 @@ a img { border: none; }
 
 .edit_tag_links { display: none; float: right; }
 
-.instrument_index_element { background: #eaeaea; border-bottom: solid thin black; padding: 10px; }
-
-.bow_index_element { background: #eaeaea; border-bottom: solid thin black; padding: 10px; }
+.instance_index_element { background: #eaeaea; border-bottom: solid thin black; padding: 10px; }

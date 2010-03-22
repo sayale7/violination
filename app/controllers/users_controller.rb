@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   
   def edit_user_taggings
     @the_instance = current_user
-    @level = 0
     if params[:parent_id]
       @tags = Tag.find_all_by_taggable_type_and_parent_id('User', params[:parent_id]) - @the_instance.tags
       @tag = Tag.find_all_by_taggable_type_and_parent_id('User', params[:parent_id]).first
@@ -50,14 +49,15 @@ class UsersController < ApplicationController
     end
   end
   
-  def edit_inner_user_taggings
-    @the_instance = current_user
-    @level = params[:level]
-    @tags = Tag.find_all_by_taggable_type_and_id('User', params[:parent_id]) - @the_instance.tags
-    @tag = Tag.find_all_by_taggable_type_and_id('User', params[:parent_id]).first
-    respond_to do |format|
-      format.js { render '/users/edit_inner_user_taggings.js.erb' }
+  
+  def edit_user_taggings_js
+    if params[:id]
+      @the_instance = User.find(params[:id])
+    else
+      @the_instance = current_user
     end
+    @tags = Tag.find_all_by_taggable_type_and_parent_id('User', nil) - @the_instance.tags
+    @tag = Tag.find_by_taggable_type_and_parent_id('User', nil)
   end
   
 end

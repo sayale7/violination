@@ -1,0 +1,9 @@
+%div#edit_instance_tags_js
+  -if current_user && current_user.id == @the_instance.id
+    %div#available_instance_tags_js
+      -unless @tag.nil?
+        = render '/taggables/available_instance_attributes_js.haml'
+   
+  %div#added_instance_tags
+    -unless @tag.nil?
+      = render '/taggables/added_instance_attributes_js.haml'

@@ -4,7 +4,7 @@
   = link_to t('common.new'), new_instrument_path
 
 -for instrument in @instruments
-  %div.instrument_index_element
+  %div.instance_index_element
     -unless instrument.tags.find_by_parent_id(nil).nil?
       %p
         -get_added_tags(instrument.tags.find_by_parent_id(nil), instrument.id).each do |tag|

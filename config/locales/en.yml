@@ -25,6 +25,10 @@ en:
     english: English
     number_format: Please use this format. E.g. '12000,00'
     number_validate_error: Please fill in the right format
+    account: Account
+    instruments: Instruments
+    bows: Bows
+    admin: Administration
   user:
     username:Username
     email: Email Address
@@ -65,8 +69,10 @@ en:
     invalid_credentials: Your Login or Password are invalid!
   instrument:
     all: All Instruments
+    mine: My Instruments
     tags_to_add: Available Instrument Attributes
     added_tags: Attributes of my Instrument
     add_through_click: (Click an Attribute to add it to your Instrument)
   bow:
     all: All Bows
+    mine: My Bows

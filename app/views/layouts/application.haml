@@ -1,39 +1,19 @@
 !!! Strict
 %html
-   %head
-      %title
-         = h(yield(:title) || "Untitled")
-      = stylesheet_link_tag 'application', 'style'
-      = javascript_include_tag 'jquery', 'jquery.ui', 'application'
-      = yield(:head) 
-   %body
-      %div#container
-         %div#nav_top
-            -if logged_in?
-               = link_to t('user.logout'), logout_path
-               |
-               = link_to t('user.edit'), edit_user_path(current_user)
-               |
-               = link_to t('user.show'), user_path(current_user)
-               |
-               = link_to t('user.my_workshop'), edit_user_taggings_path
-               |
-               =link_to t('instrument.all'), instruments_path(:user_id  => current_user)
-               |
-               =link_to t('bow.all'), bows_path(:user_id  => current_user)
-               |
-               = link_to t('tag.user.index'), tags_path(:taggable_type => 'User')
-               |
-               = link_to t('tag.instrument.index'), tags_path(:taggable_type => 'Instrument')
-               |
-               = link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow')
-            -else
-               = link_to t('user.signup'), signup_path
-               |
-               = link_to t('user.login'), login_path
-         %div#flash
-            - flash.each do |name, msg|
-               = content_tag :div, msg, :id => "flash_#{name}"
-         %div#content
-            =yield
+  %head
+    %title
+      = h(yield(:title) || "Untitled")
+    = stylesheet_link_tag 'menu', 'application', 'style'
+    = javascript_include_tag 'jquery', 'jquery.ui', 'application'
+    = yield(:head) 
+  %body
+    %div#container
+      %div#nav_top
+        =render '/layouts/menu.html.erb'
+                    
+      %div#flash
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+      %div#content
+        =yield
 

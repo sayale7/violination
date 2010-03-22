@@ -1,27 +1,9 @@
-<% if @level %>
-  <% if @level.to_i == 0 %>
-  $("#root_tags").html("<%= escape_javascript(render('/users/root_tags.haml')) %>");
-  $("#root_tags").effect("highlight", {}, 700);
-  <% end %>
-  <% if @level.to_i == 1 %>
-  $("#first_sub_tags").html("<%= escape_javascript(render('/users/first_sub_tags.haml')) %>");
-  $("#first_sub_tags").effect("highlight", {}, 700);
-  <% end %>
-  <% if @level.to_i == 2 %>
-  $("#second_sub_tags").html("<%= escape_javascript(render('/users/second_sub_tags.haml')) %>");
-  $("#second_sub_tags").effect("highlight", {}, 700);
-  <% end %>
-  <% if @level.to_i == 3 %>
-  $("#third_sub_tags").html("<%= escape_javascript(render('/users/third_sub_tags.haml')) %>");
-  $("#third_sub_tags").effect("highlight", {}, 700);
-  <% end %>
-<% end %>
 <% unless @update %>
-  $("#available_instrument_tags_js").html("<%= escape_javascript(render('/taggables/available_instrument_attributes_js.haml')) %>");
-  $("#available_instrument_tags_js").effect("highlight", {}, 700);
-  $("#added_instrument_tags").html("<%= escape_javascript(render('/taggables/added_instrument_attributes_js.haml')) %>");
-  $("#added_instrument_tags").effect("highlight", {}, 700);
+  $("#available_instance_tags_js").html("<%= escape_javascript(render('/taggables/available_instance_attributes_js.haml')) %>");
+  $("#available_instance_tags_js").effect("highlight", {}, 700);
+  $("#added_instance_tags").html("<%= escape_javascript(render('/taggables/added_instance_attributes_js.haml')) %>");
+  $("#added_instance_tags").effect("highlight", {}, 700);
 <% else %>
-  $("#added_instrument_tags").html("<%= escape_javascript(render('/taggables/added_instrument_attributes_js.haml')) %>");
-  $("#added_instrument_tags").effect("highlight", {}, 1500);
+  $("#added_instance_tags").html("<%= escape_javascript(render('/taggables/added_instance_attributes_js.haml')) %>");
+  $("#added_instance_tags").effect("highlight", {}, 1500);
 <% end %>

@@ -1,7 +1,11 @@
 class BowsController < ApplicationController
   
   def index
-    @bows = Bow.all #find_all_by_user_id(params[:user_id])
+    if params[:user_id]
+      @bows = Bow.find_all_by_user_id(params[:user_id])
+    else
+      @bows = Bow.all
+    end
   end
   
   def show

@@ -1,39 +1,7 @@
-/ will be rendered if js is not activated
-%div#edit_user_tags_no_js
-   -if request.url.to_s.include?('parent_id')
-      %p
-         -get_parent_tag(@tag).ancestors.reverse.each do |tag|
-            = link_to h(tag.tag_names.find_by_language(get_locale.to_s).value), edit_user_taggings_path(:parent_id => tag.id), :method => :post
-            &gt;
-         
-      %h1
-         =get_parent_tag(@tag).tag_names.find_by_language(get_locale.to_s).value
-    
-   -get_available_tags(@tag, @the_instance.id).each do |tag|
-      %p
-         =link_to t('common.add'), add_taggings_path(:parent_id => tag.id, :tag => tag, :taggable_id => current_user, :taggable_type => tag.taggable_type), :method => :post
-         =tag.tag_names.find_by_language(get_locale.to_s).value
-        
-   ='-------'
-
-   -get_added_tags(@tag, @the_instance.id).each do |tag|
-      %p
-         -unless Tag.find_all_by_parent_id(tag.id).empty?
-            =link_to t('common.edit'), edit_user_taggings_path(:parent_id => tag.id), :method => :post
-         =link_to t('common.remove'), remove_taggings_path(:parent_id => tag.id, :tag => tag, :taggable_id => current_user, :taggable_type => tag.taggable_type), :method => :post
-         =tag.tag_names.find_by_language(get_locale.to_s).value
-
-/ will be rendered if js is  activated
-%div#edit_user_tags
-
-   /tags available to add by the user
-   %div#root_tags.root_tags
-      =render 'root_tags.haml'
-         
-      
-%div#edit_specific_user_tags
-   %div#first_sub_tags.tag_sub_container
-   %div#second_sub_tags.tag_sub_container
-   %div#third_sub_tags.tag_sub_container
+%div#edit_instance_tags
+   -unless get_available_tags(@tag, @the_instance.id).empty?
+      %div#available_instance_tags
+         = render '/taggables/available_instance_attributes.haml'
    
-   
+   %div#added_instance_tags
+      = render '/taggables/added_instance_attributes.haml'

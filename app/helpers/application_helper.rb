@@ -9,4 +9,9 @@ module ApplicationHelper
     end
   end
   
+  def get_added_tags_for_menu(taggable_id) 
+    user = User.find(taggable_id)
+    return user.tags.find_all_by_parent_id(nil)
+  end
+  
 end
