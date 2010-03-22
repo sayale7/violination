@@ -6,8 +6,15 @@
 -else
   =TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).value
 
--if current_user.id == @the_instance.user_id
-  %div.edit_tag_links
-    =link_to t('common.edit'), '', :rel => 'edit'
-    =t('common.or')
-    =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+-if @the_instance.class.to_s.eql?('User')
+  -if current_user.id == @the_instance.id
+    %div.edit_tag_links
+      =link_to t('common.edit'), '', :rel => 'edit'
+      =t('common.or')
+      =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+-else
+  -if current_user.id == @the_instance.user_id
+    %div.edit_tag_links
+      =link_to t('common.edit'), '', :rel => 'edit'
+      =t('common.or')
+      =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
