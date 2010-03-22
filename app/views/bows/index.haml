@@ -13,7 +13,8 @@
               =tag.tag_names.find_by_language(get_locale.to_s).value
               =':'
             -if tag.value_type.to_s.eql?('preisfeld')
-              ='Euro '+ get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, bow.id).value)
+              -unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, bow.id).value.nil?
+                ='Euro '+ get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, bow.id).value)
             -else
               =TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, bow.id).value
           -else

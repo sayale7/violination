@@ -10,11 +10,11 @@
   -if current_user && current_user.id == @the_instance.user_id
     %div#available_instrument_tags_js
       -unless @tag.nil?
-        = render 'available_instrument_attributes_js.haml'
+        = render '/taggables/available_instrument_attributes_js.haml'
    
   %div#added_instrument_tags
     -unless @tag.nil?
-      = render 'added_instrument_attributes_js.haml'
+      = render '/taggables/added_instrument_attributes_js.haml'
 
 
 

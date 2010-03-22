@@ -120,6 +120,7 @@ module TagsHelper
   end
   
   def get_price_format(tag_value)
+    return_string = ''
     unless tag_value.to_s.eql?('')
       comma = tag_value.to_s[tag_value.to_s.size - 3 ,tag_value.to_s.size]
       string_to_split = tag_value.to_s[0 ,tag_value.to_s.size - 3].reverse
