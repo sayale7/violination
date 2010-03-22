@@ -6,7 +6,7 @@
    =f.hidden_field :parent_id, :value => request.url.scan(/parent_tag=(\w+)/).to_s
 
 -if @tag.children.empty? && @tag.parent_id.nil? && !request.url.include?('new')
-   =f.select :value_type, options_for_select(%w{zahlenfeld textfeld beschreibungsfeld}, :selected => (@tag.value_type))
+   =f.select :value_type, options_for_select(%w{preisfeld zahlenfeld_mit_sonderzeichen textfeld beschreibungsfeld}, :selected => (@tag.value_type))
 
 %p
    %strong
