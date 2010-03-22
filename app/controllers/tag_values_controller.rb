@@ -15,6 +15,11 @@ class TagValuesController < ApplicationController
     else
       error = true
     end
+    if @tag.value_type.to_s.eql?('zahlenfeld_mit_sonderzeichen')
+      english_value = german_value
+      german_tag_value.update_attribute(:value, german_value)
+      english_tag_value.update_attribute(:value, english_value)
+    end
     if !@tag.value_type.to_s.eql?('zahlenfeld')
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
