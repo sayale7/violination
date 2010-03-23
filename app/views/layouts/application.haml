@@ -10,10 +10,11 @@
     %div#container
       %div#nav_top
         =render '/layouts/menu.html.erb'
+        
+        %div#flash
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}"
                     
-      %div#flash
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}"
       %div#content
         =yield
 

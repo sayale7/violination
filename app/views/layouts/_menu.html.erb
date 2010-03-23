@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <ul class="pureCssMenu pureCssMenum">
 	<li class="pureCssMenui"><a class="pureCssMenui" href="#">
 	  <span><%= t('common.account') %></span>
@@ -56,6 +57,13 @@
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
 	<li class="pureCssMenui">
-	  <a class="pureCssMenui" href="#"><%= t('user.logout') %></a>
+	  <%= link_to t('user.logout'), logout_path, :class => 'pureCssMenui' %>
 	</li>
 </ul>
+<% else %>
+  <ul class="pureCssMenu pureCssMenum">
+    <li class="pureCssMenui">
+  	  <%= link_to t('user.login'), login_path, :class => 'pureCssMenui' %>
+  	</li>
+  </ul>
+<% end %>

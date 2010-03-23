@@ -6,4 +6,7 @@
    
   %div#added_instance_tags
     -unless @tag.nil?
-      = render '/taggables/added_instance_attributes_js.haml'
+      -if request.url.to_s.include?('edit_user_taggings')
+        = render '/taggables/added_user_attributes_js.haml'
+      -else
+        = render '/taggables/added_instance_attributes_js.haml'
