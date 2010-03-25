@@ -10,6 +10,8 @@ class TaggingsController < ApplicationController
       parent_id = '?parent_id='+@tag.parent_id.to_s
     end
     tagging.save
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(@tag.parent_id)
+    @available_tags =  Tag.find_all_by_parent_id(@tag.parent_id) - @added_tags
     respond_to do |format|
       if parent_id.to_s.eql?('')
         format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
@@ -30,6 +32,8 @@ class TaggingsController < ApplicationController
       parent_id = '?parent_id='+@tag.parent_id.to_s
     end
     tagging.destroy
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(@tag.parent_id)
+    @available_tags =  Tag.find_all_by_parent_id(@tag.parent_id) - @added_tags
     respond_to do |format|
       if parent_id.to_s.eql?('')
         format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
@@ -68,8 +72,9 @@ class TaggingsController < ApplicationController
   end
   
   def refresh_available_tags
-    @tag = Tag.find(params[:tag])
     get_taggable_type(params[:taggable_type].to_s)
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(params[:tag])
+    @available_tags =  Tag.find_all_by_parent_id(params[:tag]) - @added_tags
     respond_to do |format|
       format.js { render '/taggings/refresh.js.erb' }
     end
