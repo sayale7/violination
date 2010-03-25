@@ -113,7 +113,7 @@ ul.pureCssMenu a:hover ul,ul.pureCssMenu a:hover a:hover ul,ul.pureCssMenu a:hov
 ul.pureCssMenu a:hover ul ul,ul.pureCssMenu a:hover a:hover ul ul{display:none}
 ul.pureCssMenu span{
 	display:block;
-	background-image:url('/stylesheets/iimages/arrv_anim_1.gif');
+	background-image:url('/stylesheets/images/arrv_anim_1.gif');
 	background-position:right center;
 	background-repeat: no-repeat;
    padding-right:11px;}

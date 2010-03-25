@@ -7,6 +7,23 @@ module TagsHelper
   def child_tags(tag)
     return Tag.find_all_by_parent_id(tag.id, :order => "position")
   end
+  
+  def added_child_tags(tag, instance_id)
+    the_class = Kernel.const_get(tag.taggable_type.to_s)
+    the_instance = the_class.find(instance_id)
+    return the_instance.tags.find_all_by_parent_id(tag.id, :order => "position")
+  end
+  
+  def available_child_tags(tag, instance_id, ajax)
+    return get_available_tags(tag, instance_id)
+  end
+  
+  def find_leveled_child_tag(tag, level)
+    level.to_i.times do 
+      tag = Tag.find_by_parent_id(tag.id)
+    end
+    return tag
+  end
 
   def user_child_tags(tag, user)
     tag_id_list = Array.new

@@ -1,0 +1,5 @@
+-unless added_child_tags(sub_tag, @the_instance.id).empty?
+  -added_child_tags(sub_tag, @the_instance.id).each do |sub_sub_tag|
+    %p
+      =sub_sub_tag.tag_names.find_by_language(get_locale.to_s).value
+      =link_to t('common.remove'), remove_taggings_path(:tag => sub_sub_tag.id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => sub_sub_tag.taggable_type, :level => 1)

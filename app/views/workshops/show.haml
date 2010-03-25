@@ -1,0 +1,15 @@
+-title "Workshop"
+
+-if current_user && current_user.id == @the_instance.user_id
+  %p
+    = link_to "Edit", edit_workshop_taggings_url(:instance => @the_instance), :class => 'edit_instrument'
+
+%div#edit_instance_tags_js
+  -if current_user && current_user.id == @the_instance.user_id
+    %div#available_instance_tags_js
+      -unless @tag.nil?
+        = render '/taggables/workshop/available_workshop_attributes_js.haml'
+   
+  %div#added_instance_tags
+    -unless @tag.nil?
+      = render '/taggables/workshop/ajax_workshop_attributes.haml'

@@ -1,0 +1,13 @@
+%h2
+  =t('user.my_workshop')
+    
+-get_added_tags(@tag, @the_instance.id).each do |tag|
+  %p
+    %div#instance_tag_with_children.instance_tag_js
+    
+      %div.instance_tag_show.visible
+        = render '/taggables/workshop/tags_with_children_show', :tag => tag
+        
+      %div.instance_tag_edit.hidden
+        = render '/taggables/workshop/tags_with_children_edit', :tag => tag
+        = link_to t('common.cancel'), refresh_available_tags_path(:taggable_type => tag.taggable_type, :taggable_id => @the_instance.id, :tag => tag.parent_id), :rel => 'edit_workshop_tags', :rel => 'close_workshop'

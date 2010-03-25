@@ -13,14 +13,14 @@
 	  <span><%= t('user.my_workshop') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('user.my_workshop'), edit_user_taggings_js_path, :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('user.my_workshop'), workshop_url, :class => 'pureCssMenui' %></li>
 		    <% base_tag = Tag.find_by_taggable_type_and_parent_id('User', nil) %>
 		    <% unless get_added_tags_for_menu(current_user.id) .empty? %>
 		      <% get_added_tags_for_menu(current_user.id) .each do |tag| %>
 		        <% unless Tag.find_by_parent_id(tag.id).nil? %>
-		          <li class="pureCssMenui"><%= link_to tag.tag_names.find_by_language(get_locale.to_s).value, edit_user_taggings_js_path(:parent_id => tag.id), :class => 'pureCssMenui' %></li>
+		          <li class="pureCssMenui"><%= link_to tag.tag_names.find_by_language(get_locale.to_s).value, edit_workshop_taggings_js_path(:parent_id => tag.id), :class => 'pureCssMenui' %></li>
 		        <% else %>
-		          <li class="pureCssMenui"><%= link_to tag.tag_names.find_by_language(get_locale.to_s).value, edit_user_taggings_js_path, :class => 'pureCssMenui' %></li>
+		          <li class="pureCssMenui"><%= link_to tag.tag_names.find_by_language(get_locale.to_s).value, edit_workshop_taggings_js_path, :class => 'pureCssMenui' %></li>
 		        <% end %>
 		      <% end %>
 		    <% end %>
@@ -50,7 +50,7 @@
 	  <span><%= t('common.admin') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('tag.user.index'), tags_path(:taggable_type => 'User'), :class => 'pureCssMenu' %></li>
+		    <li class="pureCssMenui"><%= link_to t('tag.workshop.index'), tags_path(:taggable_type => 'Workshop'), :class => 'pureCssMenu' %></li>
 		    <li class="pureCssMenui"><%= link_to t('tag.instrument.index'), tags_path(:taggable_type => 'Instrument'), :class => 'pureCssMenu' %></li>
 		    <li class="pureCssMenui"><%= link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow'), :class => 'pureCssMenu' %></li>
 	    </ul>

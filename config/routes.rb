@@ -8,8 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.clone_tag_with_sub_tags 'clone_tag_with_sub_tags', :controller => 'tags', :action => 'clone_tag_with_sub_tags'
   
   #routes for user taggings edit_user_taggings_new
-  map.edit_user_taggings 'edit_user_taggings', :controller => 'users', :action => 'edit_user_taggings'
-  map.edit_user_taggings_js 'edit_user_taggings_js', :controller => 'users', :action => 'edit_user_taggings_js'
+  map.workshop 'workshop', :controller => 'workshops', :action => 'show'
+  map.edit_workshop_taggings 'edit_workshop_taggings', :controller => 'workshops', :action => 'edit_workshop_taggings'
   
   #routes for bows and bows taggings
   map.resources :bows
@@ -24,6 +24,7 @@ ActionController::Routing::Routes.draw do |map|
   map.add_taggings 'add_taggings', :controller => 'taggings', :action => 'create'
   map.remove_taggings 'remove_taggings', :controller => 'taggings', :action => 'destroy'
   map.add_tagging_and_remove_the_rest 'add_tagging_and_remove_the_rest', :controller => 'taggings', :action => 'add_tagging_and_remove_the_rest'
+  map.refresh_available_tags 'refresh_available_tags', :controller => 'taggings', :action => 'refresh_available_tags'
   
   #routes for tag_values
   map.update_tag_values 'update_tag_values', :controller => 'tag_values', :action => 'update_tag_values'

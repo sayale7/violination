@@ -1,0 +1,10 @@
+%strong   
+  =@tag.tag_names.find_by_language(get_locale.to_s).value
+%br
+  -unless added_child_tags(@tag, @the_instance.id).empty?
+    %div.test
+      = render '/taggables/workshop/tags_with_children_edit_ajax.haml'
+
+
+
+  

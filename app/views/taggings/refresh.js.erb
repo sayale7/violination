@@ -1,0 +1,4 @@
+$("#available_instance_tags_js").html("<%= escape_javascript(render('/taggables/workshop/available_workshop_attributes_js.haml')) %>");
+$("#available_instance_tags_js").effect("highlight", {}, 700);
+$("#added_instance_tags").html("<%= escape_javascript(render('/taggables/workshop/ajax_workshop_attributes.haml')) %>");
+$("#added_instance_tags").effect("highlight", {}, 700);

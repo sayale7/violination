@@ -41,11 +41,11 @@ class UsersController < ApplicationController
   def edit_user_taggings
     @the_instance = current_user
     if params[:parent_id]
-      @tags = Tag.find_all_by_taggable_type_and_parent_id('User', params[:parent_id]) - @the_instance.tags
-      @tag = Tag.find_all_by_taggable_type_and_parent_id('User', params[:parent_id]).first
+      @tags = Tag.find_all_by_taggable_type_and_parent_id('Workshop', params[:parent_id]) - @the_instance.tags
+      @tag = Tag.find_all_by_taggable_type_and_parent_id('Workshop', params[:parent_id]).first
     else
-      @tags = Tag.find_all_by_taggable_type_and_parent_id('User', nil) - @the_instance.tags
-      @tag = Tag.find_all_by_taggable_type_and_parent_id('User', nil).first
+      @tags = Tag.find_all_by_taggable_type_and_parent_id('Workshop', nil) - @the_instance.tags
+      @tag = Tag.find_all_by_taggable_type_and_parent_id('Workshop', nil).first
     end
   end
   
@@ -56,8 +56,8 @@ class UsersController < ApplicationController
     else
       @the_instance = current_user
     end
-    @tags = Tag.find_all_by_taggable_type_and_parent_id('User', nil) - @the_instance.tags
-    @tag = Tag.find_by_taggable_type_and_parent_id('User', nil)
+    @tags = Tag.find_all_by_taggable_type_and_parent_id('Workshop', nil) - @the_instance.tags
+    @tag = Tag.find_by_taggable_type_and_parent_id('Workshop', nil)
   end
   
 end

@@ -5,12 +5,15 @@ class User < ActiveRecord::Base
   has_many :tags, :through => :taggings
   has_many :tags_over_value, :through => :tag_values
   has_many :instruments
+  has_many :bows
+  has_one :workshop
   
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :username, :email, :password, :password_confirmation
   
   attr_accessor :password
   before_save :prepare_password
+  after_save :create_workshop
   
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true
@@ -41,5 +44,11 @@ class User < ActiveRecord::Base
   
   def encrypt_password(pass)
     Digest::SHA1.hexdigest([pass, password_salt].join)
+  end
+  
+  def create_workshop
+    workshop = Workshop.new
+    workshop.user_id = self.id
+    workshop.save
   end
 end

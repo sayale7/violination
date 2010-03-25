@@ -59,6 +59,8 @@ de:
       index: Alle Instrumenten Kategorien
     bow:
       index: Alle Bogen Kategorien
+    workshop:
+      index: Alle Werkstatt Kategorien
   session:
     created: Sie haben sich erfolgreich eingeloggt!
     destroyed: Sie haben sich erfolgreich ausgeloggt!

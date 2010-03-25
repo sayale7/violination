@@ -1,4 +1,4 @@
-class Bow < ActiveRecord::Base
+class Workshop < ActiveRecord::Base
   attr_accessible :user_id
   
   has_many :taggings, :as => :taggable, :dependent => :destroy
@@ -16,5 +16,4 @@ class Bow < ActiveRecord::Base
   def assign_english_tag_value
     self.tag_values.find_by_language('en').update_attributes(:language => 'en', :tag_id => self.id, :taggable_type  => @taggable_type, :type => @type)
   end
-  
 end

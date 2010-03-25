@@ -1,0 +1,16 @@
+-get_added_tags(@tag, @the_instance.id).each do |tag|
+  %p
+    %div#instance_tag_with_children.instance_tag_js
+    
+      %div.instance_tag_show.visible
+        %strong   
+          =tag.tag_names.find_by_language(get_locale.to_s).value
+        -unless added_child_tags(tag, @the_instance.id).empty?
+          =':'
+          =added_child_tags(tag, @the_instance.id).collect {|tag| tag.tag_names.find_by_language(get_locale.to_s).value}.join(", ")
+
+        %span.edit_tag_links
+          =link_to t('common.edit'), refresh_available_tags_path(:taggable_type => tag.taggable_type, :taggable_id => @the_instance.id, :tag => tag.id), :rel => 'edit_workshop_tags'
+          =t('common.or')
+          =link_to t('common.remove'), remove_taggings_path(:tag => tag.parent_id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+        

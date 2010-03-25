@@ -1,0 +1,1 @@
+update tags set taggable_type = 'Workshop' where taggable_type = 'User'

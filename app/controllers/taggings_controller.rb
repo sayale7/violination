@@ -3,7 +3,6 @@ class TaggingsController < ApplicationController
   def create
     tagging = build_tagging_and_set_tag_values_taggable_id(params[:tag])
     get_taggable_type(params[:taggable_type].to_s)
-    @level = params[:level]
     @tag = Tag.find(tagging.tag_id)
     if @tag.parent_id.nil?
       parent_id = ''
@@ -22,7 +21,6 @@ class TaggingsController < ApplicationController
   end
   
   def destroy
-    @level = params[:level]
     get_taggable_type(params[:taggable_type].to_s)
     tagging = Tagging.find_by_taggable_type_and_taggable_id_and_tag_id(params[:taggable_type], params[:taggable_id], params[:tag])
     @tag = Tag.find(tagging.tag_id)
@@ -66,6 +64,18 @@ class TaggingsController < ApplicationController
         end
       }
       format.js { render '/taggings/base.js.erb' }
+    end
+  end
+  
+  def refresh_available_tags
+    if params[:tag]
+      @tag = Tag.find(params[:tag])
+    else
+      @tag = Tag.find_by_parent_id(nil)
+    end
+    get_taggable_type(params[:taggable_type].to_s)
+    respond_to do |format|
+      format.js { render '/taggings/refresh.js.erb' }
     end
   end
   

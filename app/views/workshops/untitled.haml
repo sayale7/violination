@@ -1,0 +1,33 @@
+-else
+  =available_child_tags(find_leveled_child_tag(@level, @tag), @the_instance.id, @ajax).collect {|tag| link_to(tag.tag_names.find_by_language(get_locale.to_s).value, add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type))}.join(", ")
+  
+    -unless @level
+      
+      
+      <% if false %>
+      <% if @the_instance.class.to_s.eql?('Workshop') %>
+        <% if @level.to_s.eql?('0') %>
+          $("#available_instance_tags_js").html("<%= escape_javascript(render('/taggables/workshop/available_workshop_attributes_js.haml')) %>");
+          $("#available_instance_tags_js").effect("highlight", {}, 700);
+          $("#added_instance_tags").html("<%= escape_javascript(render('/taggables/workshop/added_workshop_attributes_js.haml')) %>");
+          $("#added_instance_tags").effect("highlight", {}, 700);
+        <% end %>
+        <% if @level.to_s.eql?('1') %>
+          $("#available_instance_tags_js").html("<%= escape_javascript(render('/taggables/workshop/tags_with_children_edit_ajax.haml')) %>");
+          $("#available_instance_tags_js").effect("highlight", {}, 700);
+          $(".test").html("<%= escape_javascript(render('/taggables/workshop/tags_with_children_edit_ajax.haml')) %>");
+          $(".test").effect("highlight", {}, 700);
+        <% end %>
+        <% if @level.to_s.eql?('2') %>
+          $("#available_instance_tags_js").html("<%= escape_javascript(render('/taggables/workshop/available_workshop_attributes_js.haml')) %>");
+          $("#available_instance_tags_js").effect("highlight", {}, 700);
+          $("#added_instance_tags").html("<%= escape_javascript(render('/taggables/workshop/added_workshop_attributes_js.haml')) %>");
+          $("#added_instance_tags").effect("highlight", {}, 700);
+        <% end %>
+      <% end %>
+      <% end %>
+      
+      
+      %div#added_instance_tags
+        -unless @tag.nil?
+          = render '/taggables/workshop/ajax_workshop_attributes.haml'

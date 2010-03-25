@@ -6,10 +6,10 @@
   -if child_tags(tag).empty?
     %div#instance_tag_without_children.instance_tag_js
     
-      %div#instance_tag_show.visible
+      %div.instance_tag_show.visible
         = render '/taggables/tags_without_children_js', :tag => tag
       
-      %div#instance_tag_edit.hidden
+      %div.instance_tag_edit.hidden
         -form_tag update_tag_values_url do 
           = render '/taggables/tags_without_children', :tag => tag
           =submit_tag t('common.update')
@@ -20,10 +20,10 @@
   -else
     %div#instance_tag_with_children.instance_tag_js
     
-      %div#instance_tag_show.visible
+      %div.instance_tag_show.visible
         = render '/taggables/tags_with_children_js', :tag => tag
         
-      %div#instance_tag_edit.hidden
+      %div.instance_tag_edit.hidden
         -form_tag add_tagging_and_remove_the_rest_path do
           = render '/taggables/tags_with_children', :tag => tag
           =submit_tag t('common.update')
