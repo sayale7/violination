@@ -68,11 +68,7 @@ class TaggingsController < ApplicationController
   end
   
   def refresh_available_tags
-    if params[:tag]
-      @tag = Tag.find(params[:tag])
-    else
-      @tag = Tag.find_by_parent_id(nil)
-    end
+    @tag = Tag.find(params[:tag])
     get_taggable_type(params[:taggable_type].to_s)
     respond_to do |format|
       format.js { render '/taggings/refresh.js.erb' }
