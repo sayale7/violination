@@ -62,7 +62,6 @@ a
   :padding-left 3em
 
 #available_instance_tags, #available_instance_tags_js
-  :background = !gray
   :border medium solid 
   :border-color = !dark_gray
   :float left
@@ -80,8 +79,11 @@ a
     
   
 .available_tags_body
-  :background = !gray
   :padding 5%
+  a
+    :float right
+  img
+    :height 15px
 
     
 #added_instance_tags
@@ -110,7 +112,10 @@ a
 
 .edit_tag_links
   :display none
+  :width 10%
   :float right
+  a
+    :float right
 
 .instance_index_element
   :background = !gray

@@ -2,8 +2,11 @@
   -unless above_base_level(@added_tags, @available_tags).nil?
     =Tag.find(above_base_level(@added_tags, @available_tags)).tag_names.find_by_language(get_locale.to_s).value
     =link_to image_tag('/images/back.png'), refresh_available_tags_path(:taggable_type => @the_instance.class.to_s, :taggable_id => @the_instance.id, :tag => Tag.find(above_base_level(@added_tags, @available_tags)).parent_id), :rel => 'edit_workshop_tags'
+  -else
+    =t('user.my_workshop')
 
 %div.available_tags_body  
   -@available_tags.each do |tag|
     %p  
-      =link_to tag.tag_names.find_by_language(get_locale.to_s).value, add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+      =tag.tag_names.find_by_language(get_locale.to_s).value
+      =link_to image_tag('/images/plus.jpg'), add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)

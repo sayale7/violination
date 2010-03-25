@@ -11,10 +11,9 @@
 
 
         -unless added_child_tags(tag, @the_instance.id).empty?  
-          %span.edit_tag_links
-            =link_to t('common.edit'), refresh_available_tags_path(:taggable_type => tag.taggable_type, :taggable_id => @the_instance.id, :tag => tag.id), :rel => 'edit_workshop_tags'
-            =t('common.or')
-            =link_to t('common.remove'), remove_taggings_path(:tag => tag.id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+          %div.edit_tag_links
+            =link_to image_tag('/images/forward.png', :width => 20), refresh_available_tags_path(:taggable_type => tag.taggable_type, :taggable_id => @the_instance.id, :tag => tag.id), :rel => 'edit_workshop_tags'
+            =link_to image_tag('/images/delete.png', :width => 20), remove_taggings_path(:tag => tag.id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
         -else
-          %span.edit_tag_links
-            =link_to t('common.remove'), remove_taggings_path(:tag => tag.id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+          %div.edit_tag_links
+            =link_to image_tag('/images/delete.png', :width => 20), remove_taggings_path(:tag => tag.id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)

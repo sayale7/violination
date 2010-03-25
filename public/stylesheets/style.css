@@ -25,13 +25,15 @@ a img { border: none; }
 
 .show_user_tags_container_third_sub_level { padding-left: 3em; }
 
-#available_instance_tags, #available_instance_tags_js { background: #eaeaea; border: medium solid; border-color: #666666; float: left; width: 20%; }
+#available_instance_tags, #available_instance_tags_js { border: medium solid; border-color: #666666; float: left; width: 20%; }
 
 .available_tags_header { background: #666666; padding: 5%; color: white; font-weight: bold; }
 .available_tags_header a { float: right; }
 .available_tags_header img { height: 20px; }
 
-.available_tags_body { background: #eaeaea; padding: 5%; }
+.available_tags_body { padding: 5%; }
+.available_tags_body a { float: right; }
+.available_tags_body img { height: 15px; }
 
 #added_instance_tags { background: #eaeaea; border: medium solid; border-color: #666666; float: right; width: 75%; padding: 1%; }
 
@@ -43,6 +45,7 @@ a img { border: none; }
 
 .visible { display: block; }
 
-.edit_tag_links { display: none; float: right; }
+.edit_tag_links { display: none; width: 10%; float: right; }
+.edit_tag_links a { float: right; }
 
 .instance_index_element { background: #eaeaea; border-bottom: solid thin black; padding: 10px; }
