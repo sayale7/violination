@@ -1,5 +1,6 @@
-!green_one = white
+!green_one = #464646
 !gray = #EAEAEA
+!dark_gray = #666
 
 =opacity(!value)
   :opacity= !value
@@ -28,13 +29,13 @@ a
     :border none
 
 .text_area
-  :width 300px
+  :width 100%
   :height 200px
   :font-size 13px
   :padding 3px
 
 .text_box
-  :width 300px
+  :width 100%
   :height 30px
   :font-size 13px
   :padding 1px
@@ -61,18 +62,35 @@ a
   :padding-left 3em
 
 #available_instance_tags, #available_instance_tags_js
-  :background = !green_one
-  :border thin solid black
+  :background = !gray
+  :border medium solid 
+  :border-color = !dark_gray
   :float left
-  :width 30%
-  :padding 10px
+  :width 20%
+
+.available_tags_header
+  :background = !dark_gray
+  :padding 5%
+  :color white
+  :font-weight bold
+  a
+    :float right
+  img
+    :height 20px
+    
+  
+.available_tags_body
+  :background = !gray
+  :padding 5%
+
     
 #added_instance_tags
-  :background = !green_one
-  :border thin solid black
+  :background = !gray
+  :border medium solid 
+  :border-color = !dark_gray
   :float right
-  :width 60%
-  :padding 10px
+  :width 75%
+  :padding 1%
 
 .instance_tag
   :border thin solid black
