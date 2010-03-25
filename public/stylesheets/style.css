@@ -25,9 +25,9 @@ a img { border: none; }
 
 .show_user_tags_container_third_sub_level { padding-left: 3em; }
 
-#available_instance_tags, #available_instance_tags_js { background: white; border: thin solid black; float: right; width: 30%; padding: 10px; }
+#available_instance_tags, #available_instance_tags_js { background: white; border: thin solid black; float: left; width: 30%; padding: 10px; }
 
-#added_instance_tags { background: white; border: thin solid black; float: left; width: 60%; padding: 10px; }
+#added_instance_tags { background: white; border: thin solid black; float: right; width: 60%; padding: 10px; }
 
 .instance_tag { border: thin solid black; background-color: #eaeaea; padding: 10px; }
 
