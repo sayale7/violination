@@ -17,7 +17,7 @@ module TagsHelper
   def available_child_tags(tag, instance_id)
     the_class = Kernel.const_get(tag.taggable_type.to_s)
     the_instance = the_class.find(instance_id)
-    return Tag.find_all_by_parent_id_and_taggable_type(tag.id, the_instance.class.to_s, :order => "position") - the_instance.tags
+    return Tag.find_all_by_parent_id_and_taggable_type(tag.parent_id, the_instance.class.to_s, :order => "position") - the_instance.tags
   end
   
   def find_leveled_child_tag(tag, level)
