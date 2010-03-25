@@ -37,6 +37,8 @@ a img { border: none; }
 
 #added_instance_tags { border: medium solid; border-color: #666666; float: right; width: 75%; padding: 1%; }
 
+#added_instance_tags_full { border: medium solid; border-color: #666666; float: right; width: 90%; padding: 1%; }
+
 .instance_tag { border: thin solid black; background-color: #eaeaea; padding: 10px; }
 
 .instance_tag_js { border-bottom: thin solid black; padding: 10px; display: :block; min-height: 30px; }
