@@ -1,5 +1,6 @@
-%h2
-  =t('instrument.tags_to_add')
+-unless above_base_level(@added_tags, @available_tags).nil?
+  =link_to t('common.back'), refresh_available_tags_path(:taggable_type => @the_instance.class.to_s, :taggable_id => @the_instance.id, :tag => Tag.find(above_base_level(@added_tags, @available_tags)).parent_id), :rel => 'edit_workshop_tags'
 %p
   =t('instrument.add_through_click')
+%p  
   =@available_tags.collect {|tag| link_to(tag.tag_names.find_by_language(get_locale.to_s).value, add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type))}.join(", ")

@@ -10,8 +10,7 @@ class TaggingsController < ApplicationController
       parent_id = '?parent_id='+@tag.parent_id.to_s
     end
     tagging.save
-    @added_tags =  @the_instance.tags.find_all_by_parent_id(@tag.parent_id)
-    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(@tag.parent_id, @tag.taggable_type) - @added_tags
+    get_tags
     respond_to do |format|
       if parent_id.to_s.eql?('')
         format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
@@ -32,8 +31,7 @@ class TaggingsController < ApplicationController
       parent_id = '?parent_id='+@tag.parent_id.to_s
     end
     tagging.destroy
-    @added_tags =  @the_instance.tags.find_all_by_parent_id(@tag.parent_id)
-    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(@tag.parent_id, @tag.taggable_type) - @added_tags
+    get_tags
     respond_to do |format|
       if parent_id.to_s.eql?('')
         format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
@@ -82,6 +80,11 @@ class TaggingsController < ApplicationController
   
   private
   
+  def get_tags
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(@tag.parent_id)
+    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(@tag.parent_id, @tag.taggable_type) - @added_tags
+  end
+  
   def get_taggable_type(type)
     the_class = Kernel.const_get(type)
     @the_instance = the_class.find(params[:taggable_id])
@@ -92,7 +95,6 @@ class TaggingsController < ApplicationController
     tagging.taggable_type = params[:taggable_type]
     tagging.tag_id = tag_id
     tagging.taggable_id = params[:taggable_id]
-    
     return tagging
   end
 end

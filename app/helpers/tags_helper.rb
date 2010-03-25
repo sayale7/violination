@@ -156,4 +156,12 @@ module TagsHelper
     end
   end
   
+  def above_base_level(added, availables)
+    unless added.empty?
+      added.first.parent_id
+    else
+      availables.first.parent_id
+    end
+  end
+  
 end
