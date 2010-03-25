@@ -35,17 +35,21 @@ a img { border: none; }
 .available_tags_body a { float: right; }
 .available_tags_body img { height: 15px; }
 
-#added_instance_tags { background: #eaeaea; border: medium solid; border-color: #666666; float: right; width: 75%; padding: 1%; }
+#added_instance_tags { border: medium solid; border-color: #666666; float: right; width: 75%; padding: 1%; }
 
 .instance_tag { border: thin solid black; background-color: #eaeaea; padding: 10px; }
 
-.instance_tag_js { border-bottom: thin solid black; padding: 10px; display: :block; }
+.instance_tag_js { border-bottom: thin solid black; padding: 10px; display: :block; min-height: 30px; }
 
 .hidden { display: none; }
 
 .visible { display: block; }
 
-.edit_tag_links { display: none; width: 10%; float: right; }
+.edit_tag_links { display: none; float: right; }
 .edit_tag_links a { float: right; }
+
+.tag_text { width: 80%; float: left; }
+
+.instance_tag_show { overflow: hidden; }
 
 .instance_index_element { background: #eaeaea; border-bottom: solid thin black; padding: 10px; }

@@ -4,15 +4,7 @@
 -unless get_selected_child_tag_id(tag, @the_instance).nil?
   =Tag.find(get_selected_child_tag_id(tag, @the_instance)).tag_names.find_by_language('de').value
 
--if @the_instance.class.to_s.eql?('User')
-  -if current_user.id == @the_instance.id
-    %div.edit_tag_links
-      =link_to t('common.edit'), '', :rel => 'edit'
-      =t('common.or')
-      =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
--else
-  -if current_user.id == @the_instance.user_id
-    %div.edit_tag_links
-      =link_to t('common.edit'), '', :rel => 'edit'
-      =t('common.or')
-      =link_to t('common.remove'), remove_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+-if current_user.id == @the_instance.user_id
+  %div.edit_tag_links
+    =link_to image_tag('/images/delete.png', :width => 20), remove_taggings_path(:tag => tag.id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+    =link_to image_tag('/images/edit.jpg', :width => 20), '', :rel => 'edit'

@@ -87,7 +87,6 @@ a
 
     
 #added_instance_tags
-  :background = !gray
   :border medium solid 
   :border-color = !dark_gray
   :float right
@@ -103,6 +102,7 @@ a
   :border-bottom thin solid black
   :padding 10px
   :display :block
+  :min-height 30px
 
 .hidden
   :display none
@@ -112,13 +112,21 @@ a
 
 .edit_tag_links
   :display none
-  :width 10%
   :float right
   a
     :float right
+    
+.tag_text
+  :width 80%
+  :float left
+  
+.instance_tag_show
+  :overflow hidden
 
 .instance_index_element
   :background = !gray
   :border-bottom solid thin black 
   :padding 10px
+
+
   

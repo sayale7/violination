@@ -72,9 +72,11 @@ en:
   instrument:
     all: All Instruments
     mine: My Instruments
+    mine_singular: My Instrument
     tags_to_add: Available Instrument Attributes
     added_tags: Attributes of my Instrument
     add_through_click: (Click an Attribute to add it to your Instrument)
   bow:
     all: All Bows
     mine: My Bows
+    mine_singular: My Bow

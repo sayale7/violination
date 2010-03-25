@@ -68,12 +68,14 @@ de:
   instrument:
     all: Alle Instrumente
     mine: Meine Instrumente
+    mine_singular: Mein Instrument
     tags_to_add: Verfügbare Intrument Attribute
     added_tags: Attribute meines Instruments
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
   bow:
     all: Alle Bögen
     mine: Meine Bögen
+    mine_singular: Mein Bogen
   
   
   date:
