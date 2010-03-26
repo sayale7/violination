@@ -1,9 +1,14 @@
 class InstrumentsController < ApplicationController
   
   def index
-    if params[:user_id]
+    debugger
+    if params[:user_id] && !params[:instrument_kind]
       @instruments = Instrument.find_all_by_user_id(params[:user_id])
-    else
+    end
+    if !params[:user_id] && params[:instrument_kind] 
+      @instruments = Instrument.find_all_by_instrument_kind(params[:instrument_kind])
+    end
+    if !params[:user_id] && !params[:instrument_kind] 
       @instruments = Instrument.all
     end
   end

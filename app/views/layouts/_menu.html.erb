@@ -24,6 +24,9 @@
 	    <ul class="pureCssMenum">
 		    <li class="pureCssMenui"><%= link_to t('instrument.all'), instruments_url(), :class => 'pureCssMenui' %></li>
 		    <li class="pureCssMenui"><%= link_to t('instrument.mine'), instruments_url(:user_id => current_user.id), :class => 'pureCssMenui' %></li>
+		    <% Instrument.new.instrument_kind_choose.each do |kind| %>
+		      <li class="pureCssMenui"><%= link_to kind, instruments_url(:instrument_kind => kind), :class => 'pureCssMenu' %></li>
+		    <% end %>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
