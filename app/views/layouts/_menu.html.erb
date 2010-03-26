@@ -41,11 +41,11 @@
 	  <span><%= t('common.admin') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('tag.workshop.index'), tags_path(:taggable_type => 'Workshop'), :class => 'pureCssMenu' %></li>
+		    <li class="pureCssMenui"><%= link_to t('tag.workshop.index'), tags_path(:taggable_type => 'Workshop', :taggable_kind =>  'Workshop'), :class => 'pureCssMenu' %></li>
 		    <% Instrument.new.instrument_kind.each do |kind| %>
 		      <li class="pureCssMenui"><%= link_to kind, tags_path(:taggable_type => 'Instrument', :taggable_kind => kind), :class => 'pureCssMenu' %></li>
 		    <% end %>
-		    <li class="pureCssMenui"><%= link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow'), :class => 'pureCssMenu' %></li>
+		    <li class="pureCssMenui"><%= link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow', :taggable_kind =>  'Bow'), :class => 'pureCssMenu' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
