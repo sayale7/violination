@@ -13,6 +13,7 @@ class InstrumentsController < ApplicationController
       @the_instance = Instrument.find(params[:id])
     end
     @added_tags =  @the_instance.tags.find_all_by_parent_id(nil, 'Instrument')
+    debugger
     @available_tags =  Tag.find_all_by_parent_id_and_taggable_type_and_taggable_kind(nil, 'Instrument', @the_instance.instrument_kind) - @added_tags
     @tag = Tag.find_by_taggable_type_and_parent_id_and_taggable_kind(@the_instance.class.to_s, nil, @the_instance.instrument_kind)
   end
@@ -20,7 +21,7 @@ class InstrumentsController < ApplicationController
   def new
     if params[:instrument_kind]
       @the_instance = Instrument.new
-      @the_instance.instrument_kind = params[:instrument_kind].to_s
+      @the_instance.instrument_kind = params[:instrument_kind]
       @the_instance.user_id = current_user.id
       if @the_instance.save
         redirect_to '/instruments/'+@the_instance.id.to_s
