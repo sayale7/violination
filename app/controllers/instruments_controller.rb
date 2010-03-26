@@ -13,8 +13,8 @@ class InstrumentsController < ApplicationController
       @the_instance = Instrument.find(params[:id])
     end
     @added_tags =  @the_instance.tags.find_all_by_parent_id(nil, 'Instrument')
-    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(nil, 'Instrument') - @added_tags
-    @tag = Tag.find_by_taggable_type_and_parent_id(@the_instance.class.to_s, nil)
+    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type_and_taggable_kind(nil, 'Instrument', @the_instance.instrument_kind) - @added_tags
+    @tag = Tag.find_by_taggable_type_and_parent_id_and_taggable_kind(@the_instance.class.to_s, nil, @the_instance.instrument_kind)
   end
   
   def new
