@@ -18,10 +18,15 @@ class InstrumentsController < ApplicationController
   end
   
   def new
-    @the_instance = Instrument.new
-    @the_instance.user_id = current_user.id
-    if @the_instance.save
-      redirect_to '/instruments/'+@the_instance.id.to_s
+    if params[:instrument_kind]
+      @the_instance = Instrument.new
+      @the_instance.instrument_kind = params[:instrument_kind].to_s
+      @the_instance.user_id = current_user.id
+      if @the_instance.save
+        redirect_to '/instruments/'+@the_instance.id.to_s
+      end
+    else
+      redirect_to instruments_path
     end
   end
   

@@ -1,7 +1,11 @@
 -title "Instruments"
 
 %p
-  = link_to t('common.new'), new_instrument_path
+  = link_to t('common.new'), '#', :class => 'new_instrument hidden'
+  %div.instrument_kind.visible
+    -form_tag new_instrument_path do
+      =select_tag :instrument_kind, options_for_select(Instrument.new.instrument_kind)
+      =submit_tag 'submit'
 
 -for instrument in @instruments
   %div.instance_index_element

@@ -5,7 +5,12 @@ $(document).ready(function() {
 
   //hide edit link if js is enabled (show instrument)
   $('.edit_instrument').remove();
+  $('a.new_instrument').show();
+  $('.instrument_kind').hide();
 
+  $('a.new_instrument').click(function(){
+    $('.instrument_kind').show();
+  });
 
   $('.instance_tag_js').live('mouseover', function(){
     $(this).find('.edit_tag_links').css('display', 'block');

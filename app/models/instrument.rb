@@ -7,6 +7,10 @@ class Instrument < ActiveRecord::Base
   has_many :tags_over_value, :through => :tag_values
   belongs_to :user
   
+  def instrument_kind
+    %w{Streichinstrument Blasinstrument}
+  end
+  
   private
   
   def assign_german_tag_value

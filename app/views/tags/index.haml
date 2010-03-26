@@ -3,4 +3,4 @@
       = render 'tag_list', :tag => tag
 
 %p
-   =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type)
+   =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type, :taggable_kind => taggable_kind)

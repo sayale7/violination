@@ -1,7 +1,7 @@
 -title @tag.tag_names.find_by_language(get_locale.to_s).value
 %p
    -for tag in @tag.ancestors.reverse
-      = link_to h(tag.tag_names.find_by_language(get_locale.to_s).value), edit_tag_path(tag, :taggable_type => taggable_type)
+      = link_to h(tag.tag_names.find_by_language(get_locale.to_s).value), edit_tag_path(tag, :taggable_type => taggable_type, :taggable_kind => taggable_kind)
       &gt;
    =h yield(:title)
    %p
@@ -17,7 +17,7 @@
          /  = link_to t('common.back'), edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => taggable_type)
          / -else
          =t('common.or')
-         = link_to t('common.back'), tags_path(:taggable_type => taggable_type)
+         = link_to t('common.back'), tags_path(:taggable_type => taggable_type, :taggable_kind => taggable_kind)
 
 -unless child_tags(@tag).empty?   
    %ul
@@ -27,5 +27,5 @@
 
 -unless reached_depth(@tag) || (taggable_type.to_s.eql?('Instrument') && !@tag.parent_id.nil?)
    %p
-      =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type, :parent_tag => @tag.id)
+      =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type, :taggable_kind => taggable_kind, :parent_tag => @tag.id)
 

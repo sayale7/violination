@@ -4,6 +4,10 @@ module TagsHelper
     return request.url.scan(/taggable_type=(\w+)/).to_s
   end
   
+  def taggable_kind
+    return request.url.scan(/taggable_kind=(\w+)/).to_s
+  end
+  
   def child_tags(tag)
     return Tag.find_all_by_parent_id(tag.id, :order => "position")
   end
