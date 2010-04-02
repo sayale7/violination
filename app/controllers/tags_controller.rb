@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
   
   def index
-    @tags = Tag.find_all_by_taggable_type_and_taggable_kind_and_parent_id(params[:taggable_type], params[:taggable_kind], nil, :order => "position")
+    @tags = Tag.find_all_by_taggable_type_and_parent_id(params[:taggable_type], nil, :order => "position")
   end
 
   def new
@@ -14,18 +14,15 @@ class TagsController < ApplicationController
   
   def create
     @tag = Tag.new(params[:tag])
-    if @tag.taggable_kind.nil?
-      @tag.taggable_kind = @tag.taggable_type
-    end
     @tag.position = Tag.find_all_by_taggable_type_and_parent_id(@tag.taggable_type, @tag.parent_id).size
     @tag.value_type = 'textfeld'
     respond_to do |format|
       if @tag.save
         format.html { 
           if @tag.parent_id.nil?
-            redirect_to tags_path(@tag, :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+            redirect_to tags_path(@tag, :taggable_type => @tag.taggable_type)
           else
-            redirect_to edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+            redirect_to edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => @tag.taggable_type)
           end
         }
         format.xml  { render :xml => @tag, :status => :created, :location => @tag }
@@ -42,11 +39,8 @@ class TagsController < ApplicationController
   
   def update
     @tag = Tag.find(params[:id])
-    if @tag.taggable_kind.nil?
-      @tag.taggable_kind = @tag.taggable_type
-    end
     if @tag.update_attributes(params[:tag])
-      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type)
     else
       render :action => 'edit'
     end
@@ -57,17 +51,13 @@ class TagsController < ApplicationController
     taggable_type = @tag.taggable_type
     parent_id = @tag.parent_id
     taggable_type = @tag.taggable_type
-    if @tag.taggable_kind.nil?
-      @tag.taggable_kind = @tag.taggable_type
-    end
-    taggable_kind = @tag.taggable_kind
     @tag.destroy
-    set_position(parent_id, taggable_type, taggable_kind)
+    set_position(parent_id, taggable_type)
     if parent_id.nil?
-      redirect_to tags_path(:taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+      redirect_to tags_path(:taggable_type => @tag.taggable_type)
     else
       @tag = Tag.find(parent_id)
-      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type)
     end
   end
   
@@ -77,10 +67,10 @@ class TagsController < ApplicationController
       change_pos(true, tag)
     end
     if tag.parent_id.nil?
-      redirect_to tags_path(:taggable_type => tag.taggable_type, :taggable_kind => tag.taggable_kind)
+      redirect_to tags_path(:taggable_type => tag.taggable_type)
     else
       @tag = Tag.find(tag.parent_id)
-      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type)
     end
   end
   
@@ -90,17 +80,17 @@ class TagsController < ApplicationController
       change_pos(false, tag)
     end
     if tag.parent_id.nil?
-      redirect_to tags_path(:taggable_type => tag.taggable_type, :taggable_kind => tag.taggable_kind)
+      redirect_to tags_path(:taggable_type => tag.taggable_type)
     else
       @tag = Tag.find(tag.parent_id)
-      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+      redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type)
     end
   end
   
   def clone_tag_with_sub_tags
     tag = Tag.find(params[:tag])
     clone_tag = tag.clone
-    clone_tag.position = Tag.find_all_by_taggable_type_and_taggable_kind_and_parent_id(tag.taggable_type, tag.taggable_kind, tag.parent_id).size
+    clone_tag.position = Tag.find_all_by_taggable_type_and_parent_id(tag.taggable_type, tag.parent_id).size
     clone_tag.save
     clone_tag.english_name = tag.english_name.to_s << ' Kopie'
     clone_tag.german_name = tag.german_name << ' Kopie'
@@ -114,15 +104,15 @@ class TagsController < ApplicationController
       clone_tag.save
     end
     if @tag.parent_id.nil?
-      redirect_to tags_path(@tag, :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+      redirect_to tags_path(@tag, :taggable_type => @tag.taggable_type)
     else
-      redirect_to edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => @tag.taggable_type, :taggable_kind => @tag.taggable_kind)
+      redirect_to edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => @tag.taggable_type)
     end
   end
   
   private
  
-  def set_position(parent_id, taggable_type, taggable_kind)
+  def set_position(parent_id, taggable_type)
     tags = Tag.find_all_by_parent_id_and_taggable_type(parent_id, taggable_type, :order => 'position')
     tags.each_with_index do |_tag, index|
       _tag.german_name = _tag.german_name
@@ -135,7 +125,7 @@ class TagsController < ApplicationController
     tag.german_name = tag.german_name
     tag.english_name = tag.english_name
     if up
-      ancestor_tag = Tag.find_by_position_and_parent_id_and_taggable_type_and_taggable_kind((tag.position - 1), tag.parent_id, params[:taggable_type], params[:taggable_kind])
+      ancestor_tag = Tag.find_by_position_and_parent_id_and_taggable_type((tag.position - 1), tag.parent_id, params[:taggable_type])
       debugger
       new_id = ancestor_tag.position
       tag.update_attribute(:position, ancestor_tag.position)
@@ -143,7 +133,7 @@ class TagsController < ApplicationController
       ancestor_tag.english_name = ancestor_tag.english_name
       ancestor_tag.update_attribute(:position, ancestor_tag.position+1)
     else
-      ancestor_tag = Tag.find_by_position_and_parent_id_and_taggable_type_and_taggable_kind((tag.position + 1), tag.parent_id, params[:taggable_type], params[:taggable_kind])
+      ancestor_tag = Tag.find_by_position_and_parent_id_and_taggable_type((tag.position + 1), tag.parent_id, params[:taggable_type])
       new_id = ancestor_tag.position
       tag.update_attribute(:position, ancestor_tag.position)
       ancestor_tag.german_name = ancestor_tag.german_name

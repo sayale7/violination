@@ -1,11 +1,11 @@
 -content_tag_for :li, tag do   
    =tag.tag_names.find_by_language(get_locale.to_s).value
    -unless (tag.position == 0)
-      =link_to t('common.up'), move_tag_up_path(:tag => tag, :taggable_type => taggable_type, :taggable_kind => taggable_kind)
+      =link_to t('common.up'), move_tag_up_path(:tag => tag, :taggable_type => taggable_type)
       |
-   -unless (tag.position == (Tag.find_all_by_parent_id_and_taggable_type_and_taggable_kind(tag.parent_id, taggable_type, taggable_kind).size-1))
-      =link_to t('common.down'), move_tag_down_path(:tag => tag, :taggable_type => taggable_type, :taggable_kind => taggable_kind)
+   -unless (tag.position == (Tag.find_all_by_parent_id_and_taggable_type(tag.parent_id, taggable_type).size-1))
+      =link_to t('common.down'), move_tag_down_path(:tag => tag, :taggable_type => taggable_type)
       |
-   =link_to t('common.edit'), edit_tag_path(tag, :taggable_type => taggable_type, :taggable_kind => taggable_kind)
+   =link_to t('common.edit'), edit_tag_path(tag, :taggable_type => taggable_type)
    |
    =link_to t('common.destroy'), tag_path(tag), :method => :delete, :confirm => t('common.confirm')

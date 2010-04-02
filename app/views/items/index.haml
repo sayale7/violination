@@ -1,0 +1,29 @@
+-title "Items"
+
+%p
+  = link_to t('common.new'),  request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize << "/new?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
+
+-for item in @the_instance
+  %div.instance_index_element
+    -unless item.tags.find_by_parent_id(nil).nil?
+      %p
+        -get_added_tags(item.tags.find_by_parent_id(nil), item.id).each do |tag|
+          -if tag.children.empty?
+            %strong   
+              =tag.tag_names.find_by_language(get_locale.to_s).value
+              =':'
+            -if tag.value_type.to_s.eql?('preisfeld')
+              -unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value.nil?
+                ='Euro '+ get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value)
+            -else
+              =TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value
+          -else
+            %strong   
+              =tag.tag_names.find_by_language(get_locale.to_s).value
+              =':'
+            =tagged_tag_name(tag, item)
+          %br
+    %p
+      = link_to t('common.show'), "/#{request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize}/#{item.id}?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
+
+ 

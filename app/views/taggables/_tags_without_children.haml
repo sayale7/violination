@@ -1,4 +1,5 @@
 =hidden_field_tag :id, TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).id
+
 -if tag.value_type.to_s.eql?('beschreibungsfeld')
   %strong 
     =tag.tag_names.find_by_language(get_locale.to_s).value

@@ -1,15 +1,12 @@
-class Instrument < ActiveRecord::Base
-  attr_accessible :user_id, :instrument_kind
+class Stringg < ActiveRecord::Base
+  
+  attr_accessible :user_id
   
   has_many :taggings, :as => :taggable, :dependent => :destroy
   has_many :tag_values, :as => :taggable, :dependent => :destroy
   has_many :tags, :order => 'position', :through => :taggings
   has_many :tags_over_value, :through => :tag_values
   belongs_to :user
-  
-  def instrument_kind_choose
-    %w{Streichinstrument Blasinstrument}
-  end
   
   private
   

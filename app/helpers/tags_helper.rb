@@ -4,10 +4,6 @@ module TagsHelper
     return request.url.scan(/taggable_type=(\w+)/).to_s
   end
   
-  def taggable_kind
-    return request.url.scan(/taggable_kind=(\w+)/).to_s
-  end
-  
   def child_tags(tag)
     return Tag.find_all_by_parent_id(tag.id, :order => "position")
   end
@@ -100,6 +96,15 @@ module TagsHelper
     end
   end
   
+  def root_tag_names(kind)
+    tag_names = Array.new
+    Tag.find_all_by_parent_id_and_taggable_type(nil, kind).each do |tag|
+      tag_names.push(tag.tag_names.find_by_language(get_locale.to_s).value)
+    end
+    return tag_names
+  end
+  
+  
   def reached_depth(tag)
     tag = Tag.find(tag)
     if tag.ancestors.size > 2
@@ -161,7 +166,7 @@ module TagsHelper
   end
   
   def above_base_level(added, availables)
-    unless added.empty?
+    unless added.empty? 
       added.first.parent_id
     else
       availables.first.parent_id

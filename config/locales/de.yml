@@ -55,8 +55,8 @@ de:
     is_area: Beschreibungsfeld
     user:
       index: Alle User Kategorien
-    instrument:
-      index: Alle Instrumenten Kategorien
+    stringg:
+      index: Alle Streichinstrument Kategorien
     bow:
       index: Alle Bogen Kategorien
     workshop:
@@ -66,11 +66,11 @@ de:
     destroyed: Sie haben sich erfolgreich ausgeloggt!
     invalid_credentials: Login oder Passwort sind nicht korrekt!
   instrument:
-    all: Alle Instrumente
-    mine: Meine Instrumente
-    mine_singular: Mein Instrument
-    tags_to_add: Verfügbare Intrument Attribute
-    added_tags: Attribute meines Instruments
+    all: Alle Streichinstrumente
+    mine: Meine Streichinstrumente
+    mine_singular: Mein Streichinstrument
+    tags_to_add: Verfügbare Streichinstrument Attribute
+    added_tags: Attribute meines Streichinstruments
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
   bow:
     all: Alle Bögen

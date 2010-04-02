@@ -7,7 +7,9 @@
     -unless tagvalue.nil?
       ='Euro ' << tagvalue.to_s
   -else
-    =TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).value
+    -tagvalue = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id)
+    -unless tagvalue.nil?
+      =tagvalue.value
 
 -if current_user.id == @the_instance.user_id
   %div.edit_tag_links

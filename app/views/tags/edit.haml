@@ -1,11 +1,11 @@
 -title @tag.tag_names.find_by_language(get_locale.to_s).value
 %p
    -for tag in @tag.ancestors.reverse
-      = link_to h(tag.tag_names.find_by_language(get_locale.to_s).value), edit_tag_path(tag, :taggable_type => taggable_type, :taggable_kind => taggable_kind)
+      = link_to h(tag.tag_names.find_by_language(get_locale.to_s).value), edit_tag_path(tag, :taggable_type => taggable_type)
       &gt;
    =h yield(:title)
    %p
-   -unless to_deep_to_clone(@tag)
+   -unless true #to_deep_to_clone(@tag)
       = @tag.tag_names.find_by_language(get_locale.to_s).value
       = link_to t('common.clone'), clone_tag_with_sub_tags_path(:tag => @tag)
 
@@ -17,7 +17,7 @@
          /  = link_to t('common.back'), edit_tag_path(Tag.find(@tag.parent_id), :taggable_type => taggable_type)
          / -else
          =t('common.or')
-         = link_to t('common.back'), tags_path(:taggable_type => taggable_type, :taggable_kind => taggable_kind)
+         = link_to t('common.back'), tags_path(:taggable_type => taggable_type)
 
 -unless child_tags(@tag).empty?   
    %ul
@@ -25,7 +25,7 @@
          = render 'tag_list', :tag => tag
 
 
--unless reached_depth(@tag) || (taggable_type.to_s.eql?('Instrument') && !@tag.parent_id.nil?)
+-unless reached_depth(@tag)
    %p
-      =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type, :taggable_kind => taggable_kind, :parent_tag => @tag.id)
+      =link_to t('common.new'), new_tag_url(:taggable_type => taggable_type, :parent_tag => @tag.id)
 

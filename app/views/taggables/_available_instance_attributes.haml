@@ -1,5 +1,0 @@
-%h2
-   =t('instrument.tags_to_add')
-%p
-   =t('instrument.add_through_click')
-=get_available_tags(@tag, @the_instance.id).collect {|tag| link_to(tag.tag_names.find_by_language(get_locale.to_s).value, add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type))}.join(", ")

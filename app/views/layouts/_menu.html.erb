@@ -22,11 +22,8 @@
 	  <span><%= t('common.instrument') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('instrument.all'), instruments_url(), :class => 'pureCssMenui' %></li>
-		    <li class="pureCssMenui"><%= link_to t('instrument.mine'), instruments_url(:user_id => current_user.id), :class => 'pureCssMenui' %></li>
-		    <% Instrument.new.instrument_kind_choose.each do |kind| %>
-		      <li class="pureCssMenui"><%= link_to kind, instruments_url(:instrument_kind => kind), :class => 'pureCssMenu' %></li>
-		    <% end %>
+		    <li class="pureCssMenui"><%= link_to t('instrument.all'), stringgs_url(:taggable_type => 'Stringg'), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('instrument.mine'), stringgs_url(:user_id => current_user.id, :taggable_type => 'Stringg'), :class => 'pureCssMenui' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
@@ -35,8 +32,8 @@
 	  <span><%= t('common.bows') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('bow.all'), bows_url(), :class => 'pureCssMenui' %></li>
-		    <li class="pureCssMenui"><%= link_to t('bow.mine'), bows_url(:user_id => current_user.id), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('bow.all'), bows_url(:taggable_type => 'Bow'), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('bow.mine'), bows_url(:user_id => current_user.id, :taggable_type => 'Bow'), :class => 'pureCssMenui' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
@@ -45,9 +42,7 @@
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
 		    <li class="pureCssMenui"><%= link_to t('tag.workshop.index'), tags_path(:taggable_type => 'Workshop', :taggable_kind =>  'Workshop'), :class => 'pureCssMenu' %></li>
-		    <% Instrument.new.instrument_kind_choose.each do |kind| %>
-		      <li class="pureCssMenui"><%= link_to kind, tags_path(:taggable_type => 'Instrument', :taggable_kind => kind), :class => 'pureCssMenu' %></li>
-		    <% end %>
+		    <li class="pureCssMenui"><%= link_to t('tag.stringg.index'), tags_path(:taggable_type => 'Stringg'), :class => 'pureCssMenu' %></li>
 		    <li class="pureCssMenui"><%= link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow', :taggable_kind =>  'Bow'), :class => 'pureCssMenu' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->

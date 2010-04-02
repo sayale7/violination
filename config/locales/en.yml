@@ -59,8 +59,8 @@ en:
     is_area: Text Area
     user:
       index: All User Tags
-    instrument:
-      index: All Instrument Tags
+    stringg:
+      index: All String Tags
     bow:
       index: All Bow Tags
     workshop:
@@ -70,11 +70,11 @@ en:
     destroyed: You are successfully logged out!
     invalid_credentials: Your Login or Password are invalid!
   instrument:
-    all: All Instruments
-    mine: My Instruments
-    mine_singular: My Instrument
-    tags_to_add: Available Instrument Attributes
-    added_tags: Attributes of my Instrument
+    all: All Strings
+    mine: My String
+    mine_singular: My String
+    tags_to_add: Available String Attributes
+    added_tags: Attributes of my String
     add_through_click: (Click an Attribute to add it to your Instrument)
   bow:
     all: All Bows

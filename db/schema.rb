@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(:version => 20100326182506) do
     t.integer  "user_id"
   end
 
-  create_table "instruments", :force => true do |t|
+  create_table "stringgs", :force => true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "instrument_kind"
   end
 
   create_table "tag_names", :force => true do |t|

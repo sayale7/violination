@@ -1,0 +1,3 @@
+class StringgsController < ItemsController
+  
+end

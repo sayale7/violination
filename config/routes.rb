@@ -16,8 +16,8 @@ ActionController::Routing::Routes.draw do |map|
   map.edit_bow_taggings 'edit_bow_taggings', :controller => 'bows', :action => 'edit_bow_taggings'
   
   #routes for intrument and instrument taggings
-  map.resources :instruments
-  map.edit_instrument_taggings 'edit_instrument_taggings', :controller => 'instruments', :action => 'edit_instrument_taggings'
+  map.resources :stringgs
+  map.edit_instrument_taggings 'edit_instrument_taggings', :controller => 'stringgs', :action => 'edit_instrument_taggings'
   
   #routes for add/remove Taggings for Users and Instruments
   map.resources :taggings

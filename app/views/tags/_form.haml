@@ -1,7 +1,6 @@
 =f.error_messages
 
 =f.hidden_field :taggable_type, :value  => taggable_type
-=f.hidden_field :taggable_kind, :value  => taggable_kind
 
 -if request.url.include?('parent_tag')
    =f.hidden_field :parent_id, :value => request.url.scan(/parent_tag=(\w+)/).to_s

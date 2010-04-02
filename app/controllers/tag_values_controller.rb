@@ -5,22 +5,22 @@ class TagValuesController < ApplicationController
     english_tag_value = TagValue.find(params[:id].to_i + 1)
     german_value = params[:german_value].to_s
     english_value = params[:english_value].to_s
-    @tag = Tag.find(german_tag_value.tag_id)
+    tag = Tag.find(german_tag_value.tag_id)
     get_taggable_type(german_tag_value.taggable_type, german_tag_value.taggable_id)
     error = false
-    if @tag.value_type.to_s.eql?('preisfeld') && german_value.match(/^[1-9]{1}\d*\,\d{2}$/)
+    if tag.value_type.to_s.eql?('preisfeld') && german_value.match(/^[1-9]{1}\d*\,\d{2}$/)
       english_value = german_value
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
     else
       error = true
     end
-    if @tag.value_type.to_s.eql?('zahlenfeld_mit_sonderzeichen')
+    if tag.value_type.to_s.eql?('zahlenfeld_mit_sonderzeichen')
       english_value = german_value
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
     end
-    if !@tag.value_type.to_s.eql?('preisfeld')
+    if !tag.value_type.to_s.eql?('preisfeld')
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
     end
@@ -47,6 +47,7 @@ class TagValuesController < ApplicationController
   def get_taggable_type(type, id)
     the_class = Kernel.const_get(type)
     @the_instance = the_class.find(id)
+    @added_tags =  Tag.find_all_by_parent_id_and_taggable_type(nil, @the_instance.class.to_s)
   end
   
 end

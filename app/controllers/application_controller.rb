@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   helper :all
-  helper_method :get_locale
+  helper_method :get_locale, :instrument_kind_choose
   
   #Setting the locale through subdomains
   # def set_locale
@@ -26,6 +26,15 @@ class ApplicationController < ActionController::Base
   def get_locale
     return I18n.locale
   end
+  
+  # def instrument_kind_choose
+  #   if get_locale.to_s.downcase.eql?('de')
+  #     return %w{Streichinstrumente Blasinstrumente}
+  #   end
+  #   if get_locale.to_s.downcase.eql?('en')
+  #     return %w{Strings Windinstruments}
+  #   end
+  # end
   
   
 end
