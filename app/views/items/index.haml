@@ -13,7 +13,6 @@
               %td
                 %strong   
                   =tag.tag_names.find_by_language(get_locale.to_s).value
-                  =':'
               %td
                 -if tag.value_type.to_s.eql?('preisfeld')
                   -unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value.nil?
@@ -24,7 +23,6 @@
               %td
                 %strong   
                   =tag.tag_names.find_by_language(get_locale.to_s).value
-                  =':'
               %td
                 =tagged_tag_name(tag, item)
         
