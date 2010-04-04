@@ -47,7 +47,8 @@ class TagValuesController < ApplicationController
   def get_taggable_type(type, id)
     the_class = Kernel.const_get(type)
     @the_instance = the_class.find(id)
-    @added_tags =  Tag.find_all_by_parent_id_and_taggable_type(nil, @the_instance.class.to_s)
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(nil)
+    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(nil, @the_instance.class.to_s) - @added_tags
   end
   
 end
