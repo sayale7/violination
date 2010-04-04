@@ -68,6 +68,7 @@ a img { border: none; }
 
 #instance_info { float: left; width: 55%; }
 #instance_info table { padding: 10px; }
-#instance_info table td { padding: 3px; vertical-align: top; }
+#instance_info table tr { border: thin solid black; }
+#instance_info table tr td { padding: 3px; vertical-align: top; }
 
 #thumbnails_show { float: right; width: 45%; }
