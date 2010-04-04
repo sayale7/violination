@@ -1,0 +1,16 @@
+<%= javascript 'popup' %>
+
+<% @photos.each do |photo| %>
+<div class="new_thumbs_out">
+	<div class="new_thumbs">
+	    <%= link_to image_tag("#{photo.public_filename(:thumb)}"),  photo.public_filename, :title => photo.description, :class => 'group', :rel  => 'group1' %>
+	</div>
+	<% if current_user && current_user.id == @the_instance.user_id %>  
+	  <div class="new_thumbs_edit_delete">
+  	  <%= link_to image_tag("edit.jpg", :width => '20'), edit_photo_path(photo), :class => 'popup', :rel => "popup#{photo.id}" %>
+  	  <%= render '/photos/popup', :photo => photo %>
+  		<%= link_to image_tag("delete.png", :width => '20'), photo, :confirm => t('common.confirm'), :method => :delete %>
+  	</div>
+	<% end %>	
+</div>
+<% end %>

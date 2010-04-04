@@ -17,6 +17,21 @@ ActiveRecord::Schema.define(:version => 20100326182506) do
     t.integer  "user_id"
   end
 
+  create_table "photos", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "photo_container_id"
+    t.string   "description",          :limit => 1000
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_container_type"
+  end
+
   create_table "stringgs", :force => true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
@@ -56,7 +71,6 @@ ActiveRecord::Schema.define(:version => 20100326182506) do
     t.integer  "parent_id"
     t.integer  "position"
     t.string   "value_type"
-    t.string   "taggable_kind"
   end
 
   create_table "users", :force => true do |t|

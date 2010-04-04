@@ -1,0 +1,13 @@
+<form>
+	<div class="spanButtonPlaceholderDiv">
+	  <p>
+	  <%= t('photo.upload_text') %>
+	  </p>
+	  <p>
+    <%= t('photo.remaining_counts') %>
+    <%= ': ' %>
+    <%= @the_instance.maximum_file_size - @the_instance.photos.find_all_by_parent_id(nil).size  %>
+    </p>
+		<span id="spanButtonPlaceholder"></span>
+	</div>
+</form>

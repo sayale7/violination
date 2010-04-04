@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   has_many :tag_values, :as => :value_taggable, :dependent => :destroy
   has_many :tags, :through => :taggings
   has_many :tags_over_value, :through => :tag_values
-  has_many :instruments
-  has_many :bows
+  has_many :instruments, :dependent => :destroy
+  has_many :bows, :dependent => :destroy
+  has_many :photos, :dependent => :destroy, :foreign_key => 'photo_container_id'
   has_one :workshop
   
   # new columns need to be added here to be writable through mass assignment
@@ -31,6 +32,10 @@ class User < ActiveRecord::Base
   
   def matching_password?(pass)
     self.password_hash == encrypt_password(pass)
+  end
+  
+  def maximum_file_size
+    return 1
   end
   
   private

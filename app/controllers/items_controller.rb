@@ -16,6 +16,8 @@ class ItemsController < ApplicationController
     end
     @added_tags =  @the_instance.tags.find_all_by_parent_id(nil)
     @available_tags = Tag.find_all_by_taggable_type_and_parent_id(@the_instance.class.to_s, nil) - @added_tags
+    @photo = Photo.new
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
     render :action => 'show', :template  => '/items/show.haml'
   end
   
@@ -23,8 +25,7 @@ class ItemsController < ApplicationController
     @the_instance = get_taggable_type(params[:taggable_type].to_s).new
     @the_instance.user_id = current_user.id
     if @the_instance.save
-      show
-      
+      redirect_to "/#{params[:taggable_type].to_s.downcase.pluralize}/#{@the_instance.id}?taggable_type=#{params[:taggable_type].to_s}"
     end
   end
   

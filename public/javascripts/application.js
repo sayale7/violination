@@ -3,6 +3,46 @@
 // ready when document has loaded
 $(document).ready(function() {
 
+
+  /* This is basic - uses default settings */
+
+  $("a#single_image").fancybox({
+    'transitionIn'	:	'elastic',
+    'transitionOut'	:	'elastic',
+    'speedIn'		:	400, 
+    'speedOut'		:	200, 
+    'overlayShow'	:	true,
+    'overlayOpacity' : 0.7,
+    'titlePosition': 'over',
+    'autoScale': true
+  });
+
+  /* Using custom settings */
+
+  $("a#inline").fancybox({
+    'transitionIn'	:	'elastic',
+    'transitionOut'	:	'elastic',
+    'speedIn'		:	400, 
+    'speedOut'		:	200, 
+    'overlayShow'	:	true,
+    'overlayOpacity' : 0.7,
+    'hideOnContentClick': false,
+    'titleShow': false
+  });
+
+  /* Apply fancybox to multiple items */
+
+  $("a.group").fancybox({
+    'transitionIn'	:	'elastic',
+    'transitionOut'	:	'elastic',
+    'speedIn'		:	400, 
+    'speedOut'		:	200, 
+    'overlayShow'	:	true,
+    'overlayOpacity' : 0.7,
+    'titlePosition': 'over',
+    'autoScale': true
+  });
+
   //hide edit link if js is enabled (show instrument)
   $('.edit_instrument').remove();
   $('a.new_instrument').show();
@@ -39,37 +79,6 @@ $(document).ready(function() {
       $.getScript(this.href);
       return false;
     }
-    
-    //edit for first level in workshops
-    // else if($(this).attr('rel') == 'edit_workshop_tags'){
-    //       $('#available_instance_tags_js').html('<img src="/images/ajax-loader.gif"/>');
-    //       $('.instance_tag_edit').hide();
-    //       $('.instance_tag_show').show();
-    //       $(this).parent().parent().hide();
-    //       $(this).parent().parent().parent().find('.instance_tag_edit').fadeIn('slow'); 
-    //       $.getScript(this.href);
-    //       return false;
-    //     }
-    
-    //edit for second level in workshops
-    // else if($(this).attr('rel') == 'edit_workshop_sub_tags'){
-    //   $('#available_instance_tags_js').html('<img src="/images/ajax-loader.gif"/>');
-    //   $(this).parent().parent().parent().parent().find('.instance_sub_tag_show').hide();
-    //   $(this).parent().parent().parent().find('.instance_sub_tag_edit').fadeIn('slow');
-    //   $.getScript(this.href);
-    //   return false;
-    // }
-    
-    //close for workshops (first level)
-    // else if($(this).attr('rel') == 'close_workshop'){
-    //   $('#available_instance_tags_js').html('<img src="/images/ajax-loader.gif"/>');
-    //   $('.instance_sub_tag_edit').hide();
-    //   $('.instance_tag_edit').hide();
-    //   $('.instance_sub_tag_show').show();
-    //   $('.instance_tag_show').fadeIn('slow');
-    //   $.getScript(this.href);
-    //   return false;
-    // }
     else{
       $(this).html('<img src="/images/ajax-loader.gif"/>');
       $.getScript(this.href);

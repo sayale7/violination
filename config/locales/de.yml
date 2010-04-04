@@ -76,6 +76,11 @@ de:
     all: Alle Bögen
     mine: Meine Bögen
     mine_singular: Mein Bogen
+  photo:
+    select: Bilder auswählen
+    upload_text: Bitte verwenden sie nur die Formate JPG, JPEG, GIF und PNG. 
+    remaining_counts: Verbleibende Anzahl
+    description: Beschreibung des Bildes
   
   
   date:

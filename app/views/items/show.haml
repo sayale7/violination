@@ -17,5 +17,30 @@
   -else
     %div#added_instance_tags_full
       = render '/taggables/added_instance_attributes_js.haml'
+      
+      
+      
+-if current_user && current_user.id == @the_instance.user_id  
+  =render '/photos/file_upload_js'
+
+  %div.photo_upload
+    -unless @photos.size > @the_instance.maximum_file_size - 1
+      %div#divFileProgressContainer
+      
+      %div.new_image_upload_form
+        =render '/photos/upload_form' 
+  
+    %div#thumbnails
+      =render '/photos/thumbnails'
+      
+-else
+  %div#thumbnails
+    =render '/photos/thumbnails'
+    
+  
+    	
+  
+  
+
 
 

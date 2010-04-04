@@ -80,3 +80,7 @@ en:
     all: All Bows
     mine: My Bows
     mine_singular: My Bow
+  photo:
+    select: Choose Images
+    remaining_counts: Remaining Counts
+    description: Description of the Image

@@ -11,12 +11,16 @@ ActionController::Routing::Routes.draw do |map|
   map.workshop 'workshop', :controller => 'workshops', :action => 'show'
   map.edit_workshop_taggings 'edit_workshop_taggings', :controller => 'workshops', :action => 'edit_workshop_taggings'
   
+  
+  # Added custom post action (swfupload) to the photo resource
+   map.resources :photos, :collection => { :swfupload => :post }
+  
   #routes for bows and bows taggings
-  map.resources :bows
+  map.resources :bows, :has_many  => :photos
   map.edit_bow_taggings 'edit_bow_taggings', :controller => 'bows', :action => 'edit_bow_taggings'
   
   #routes for intrument and instrument taggings
-  map.resources :stringgs
+  map.resources :stringgs, :has_many  => :photos
   map.edit_instrument_taggings 'edit_instrument_taggings', :controller => 'stringgs', :action => 'edit_instrument_taggings'
   
   #routes for add/remove Taggings for Users and Instruments
