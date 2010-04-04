@@ -96,7 +96,7 @@ $(document).ready(function() {
       return false;
     }
     else{
-      $(this).html('<img src="/images/ajax-loader.gif"/>');
+      $(this).parent().parent().html('<img src="/images/ajax-loader.gif"/>');
       $.getScript(this.href);
       return false;
     }
