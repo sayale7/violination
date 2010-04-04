@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   has_attachment :content_type => :image,
                  :storage => :file_system,
                  :size => 1 .. 5000.kilobytes,
-                 :thumbnails => {:thumb => '150x150!', :large => '500x500>', :max  => '1000x1000>' },
+                 :thumbnails => { :thumb => '150x150!' },
                  :processor => :MiniMagick
                  
   validates_as_attachment
