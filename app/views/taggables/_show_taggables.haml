@@ -5,7 +5,6 @@
         %td
           %strong   
             =tag.tag_names.find_by_language(get_locale.to_s).value
-            =':'
         %td
           -if tag.children.empty?
             -if tag.value_type.to_s.eql?('preisfeld')
