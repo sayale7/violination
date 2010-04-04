@@ -10,10 +10,11 @@ class PhotosController < ApplicationController
     photo = Photo.find(params[:id])
     get_taggable_type(photo.photo_container_type, photo.photo_container_id)
     if photo.update_attribute("description", params[:description].to_s)
-        flash[:notice] = t("common.updated")
+        #flash[:notice] = t("common.updated")
+        get_instance_tags_and_photos
         respond_to do |format|
           format.html { redirect_to "/items/show?taggable_type=#{@the_instance.class.to_s}&id=#{@the_instance.id}" }
-          format.js
+          format.js { render '/photos/update.js.erb'}
         end
     end
   end
@@ -69,12 +70,14 @@ class PhotosController < ApplicationController
     photo = Photo.find(params[:id])
     get_taggable_type(photo.photo_container_type, photo.photo_container_id)
     if photo.destroy
-      flash[:notice] = t("common.delete_success")
+      #flash[:notice] = t("common.delete_success")
+      get_instance_tags_and_photos
       respond_to do |format|
         format.html { redirect_to "/items/show?taggable_type=#{@the_instance.class.to_s}&id=#{@the_instance.id}" }
-        format.js { }
+        format.js { 
+          render '/photos/destroy.js.erb'
+        }
       end
-     
     end
   end
   
@@ -84,4 +87,12 @@ class PhotosController < ApplicationController
     the_class = Kernel.const_get(type)
     @the_instance = the_class.find(id)
   end
+  
+  def get_instance_tags_and_photos
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(nil)
+    @available_tags = Tag.find_all_by_taggable_type_and_parent_id(@the_instance.class.to_s, nil) - @added_tags
+    @photo = Photo.new
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
+  end
+  
 end

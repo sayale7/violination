@@ -44,20 +44,36 @@ $(document).ready(function() {
   });
 
   //hide edit link if js is enabled (show instrument)
-  $('.edit_instrument').remove();
-  $('a.new_instrument').show();
-  $('.instrument_kind').hide();
+   $('.edit_instrument').remove();
+  // $('a.new_instrument').show();
+  // $('.instrument_kind').hide();
+  // 
+  // $('a.new_instrument').click(function(){
+  //   $('.instrument_kind').show();
+  // });
 
-  $('a.new_instrument').click(function(){
-    $('.instrument_kind').show();
-  });
 
+  // delete images
+  $('a.delete_photo').live('click', function(){
+		$.getScript(this.href);
+		$(this).parent().parent().html('<img src="/images/ajax-loader.gif"/>');
+		return false;
+	});
+	
+	//update images
+	$('.id_of_photo').live('submit', function(e){
+		$.post($('.id_of_photo').attr("action"), $('.id_of_photo').serialize(), null, 'script');
+		$('.popupContact').fadeOut('slow');
+		return false;
+	});
+
+  // for toggle edit links 
   $('.instance_tag_js').live('mouseover', function(){
     $(this).find('.edit_tag_links').css('display', 'block');
   }).live('mouseout', function(){
     $(this).find('.edit_tag_links').css('display', 'none');
   });
-
+  
   $('#instance_tag_without_children a, #instance_tag_with_children a, #available_instance_tags_js a').live('click', function(){
     if($(this).attr('rel') == 'edit'){
       $('.instance_tag_edit').hide();

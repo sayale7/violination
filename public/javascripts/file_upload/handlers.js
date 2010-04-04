@@ -66,17 +66,20 @@ function fileDialogComplete(numFilesSelected, numFilesQueued) {
 function uploadProgress(file, bytesLoaded) {
 
 	try {
-		var percent = Math.ceil((bytesLoaded / file.size) * 100);
-
-		var progress = new FileProgress(file,  this.customSettings.upload_target);
-		progress.setProgress(percent);
-		if (percent === 100) {
-			progress.setStatus("Creating thumbnail...");
-			progress.toggleCancel(false, this);
-		} else {
-			progress.setStatus("Uploading...");
-			progress.toggleCancel(true, this);
-		}
+	  // var background = document.getElementById("popup_background");
+	  //     fadeIn(background, 0);
+	  $("#popup_background").fadeIn("slow");
+    // var percent = Math.ceil((bytesLoaded / file.size) * 100);
+    // 
+    // var progress = new FileProgress(file,  this.customSettings.upload_target);
+    // progress.setProgress(percent);
+    // if (percent === 100) {
+    //  progress.setStatus("Creating thumbnail...");
+    //  progress.toggleCancel(false, this);
+    // } else {
+    //  progress.setStatus("Uploading...");
+    //  progress.toggleCancel(true, this);
+    // }
 	} catch (ex) {
 		this.debug(ex);
 	}

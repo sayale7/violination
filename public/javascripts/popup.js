@@ -6,7 +6,7 @@ var popupStatus = 0;
 function loadPopup(element){
 	//loads popup only if it is disabled
 	if (popupStatus == 0) {
-		$("#backgroundPopup").fadeIn("fast");
+		$("#popup_background").fadeIn("fast");
 		$('#'+ element).fadeIn("fast");
 		popupStatus = 1;
 	}
@@ -31,7 +31,7 @@ function centerPopup(element){
 		"position": "absolute",
 		"top": windowHeight / 2 - popupHeight / 2,
 		"left": windowWidth / 2 - popupWidth / 2
-	}).fadeIn(1500);
+	}).fadeIn(500);
 	//only need force for IE6
 
   $("#popup_background").fadeIn("fast");

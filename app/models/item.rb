@@ -1,7 +1,7 @@
 module Item
   
   def maximum_file_size
-    return 5
+    return 6
   end
 
   private

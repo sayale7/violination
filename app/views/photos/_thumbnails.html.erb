@@ -9,7 +9,7 @@
 	  <div class="new_thumbs_edit_delete">
   	  <%= link_to image_tag("edit.jpg", :width => '20'), edit_photo_path(photo), :class => 'popup', :rel => "popup#{photo.id}" %>
   	  <%= render '/photos/popup', :photo => photo %>
-  		<%= link_to image_tag("delete.png", :width => '20'), photo, :confirm => t('common.confirm'), :method => :delete %>
+  		<%= link_to image_tag("delete.png", :width => '20'), "/photos/destroy/#{photo.id}", :class => 'delete_photo' %>
   	</div>
 	<% end %>	
 </div>

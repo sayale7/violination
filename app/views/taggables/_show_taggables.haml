@@ -1,0 +1,20 @@
+%div#instance_info
+  -@added_tags.each do |tag|
+    %div.tag_text
+      -if tag.children.empty?
+        -if tag.value_type.to_s.eql?('preisfeld')
+          -tagvalue = get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).value)
+          -unless tagvalue.nil?
+            ='Euro ' << tagvalue.to_s
+        -else
+          -tagvalue = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id)
+          -unless tagvalue.nil?
+            =tagvalue.value
+      -else
+        -unless get_selected_child_tag_id(tag, @the_instance).nil?
+          =Tag.find(get_selected_child_tag_id(tag, @the_instance)).tag_names.find_by_language('de').value
+  
+%div#thumbnails_show
+  %h2
+    =t('common.photo_gallery')
+  =render '/photos/thumbnails'

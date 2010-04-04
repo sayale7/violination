@@ -29,6 +29,7 @@ en:
     instruments: Instruments
     bows: Bows
     admin: Administration
+    photo_gallery: Image Gallery
   user:
     username:Username
     email: Email Address
@@ -76,10 +77,12 @@ en:
     tags_to_add: Available String Attributes
     added_tags: Attributes of my String
     add_through_click: (Click an Attribute to add it to your Instrument)
+    of: Instrument of
   bow:
     all: All Bows
     mine: My Bows
     mine_singular: My Bow
+    of: Bow of
   photo:
     select: Choose Images
     remaining_counts: Remaining Counts

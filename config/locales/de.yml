@@ -26,6 +26,7 @@ de:
     instrument: Instrumente
     bows: Bögen
     admin: Administration
+    photo_gallery: Bilder Gallerie
   user:
     username: Benutzername
     email: Email Adresse
@@ -72,10 +73,12 @@ de:
     tags_to_add: Verfügbare Streichinstrument Attribute
     added_tags: Attribute meines Streichinstruments
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
+    of: Instrument von
   bow:
     all: Alle Bögen
     mine: Meine Bögen
     mine_singular: Mein Bogen
+    of: Bogen von
   photo:
     select: Bilder auswählen
     upload_text: Bitte verwenden sie nur die Formate JPG, JPEG, GIF und PNG. 

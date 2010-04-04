@@ -1,4 +1,8 @@
--title @the_instance.class.to_s
+-if @the_instance.class.to_s.eql?('Bow')
+  -title t('bow.of') << ' ' << @the_instance.user.username
+-else
+  -title t('instrument.of') << ' ' << @the_instance.user.username
+
 
 -if current_user && current_user.id == @the_instance.user_id
   %p
@@ -16,7 +20,7 @@
       = render '/taggables/added_instance_attributes_js.haml'
   -else
     %div#added_instance_tags_full
-      = render '/taggables/added_instance_attributes_js.haml'
+      = render '/taggables/show_taggables.haml'
       
       
       
@@ -24,18 +28,16 @@
   =render '/photos/file_upload_js'
 
   %div.photo_upload
-    -unless @photos.size > @the_instance.maximum_file_size - 1
-      %div#divFileProgressContainer
+    %div.new_image_upload_form
+      -unless @photos.size > @the_instance.maximum_file_size - 1
+        =render '/photos/upload_form'
       
-      %div.new_image_upload_form
-        =render '/photos/upload_form' 
-  
     %div#thumbnails
       =render '/photos/thumbnails'
       
--else
-  %div#thumbnails
-    =render '/photos/thumbnails'
+  
+%div#divFileProgressContainer
+      
     
   
     	

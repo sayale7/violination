@@ -97,6 +97,7 @@ a
 #added_instance_tags_full
   :width 98%
   :padding 1%
+  :overflow hidden
 
 .instance_tag
   :border thin solid black
@@ -144,8 +145,7 @@ a
   :display none 
 
 .new_thumbs_out
-  :width 155px
-  :margin-top 10px
+  :width 153px
   :overflow hidden
   :float left
   :clear none
@@ -157,18 +157,30 @@ a
   :position absolute
   :background #FFFFFF 
   :border 5px solid #000000  
-  :z-index 2 
+  :z-index 99999999 
   :padding 12px 
   :font-size 13px
 
 #popup_background
-  :width 99%
-  :height 3000px
+  :width 100%
+  :height 100%
+  :margin -10px
+  :margin-top -20px
   :display none
   :background black
   :position fixed
-  :z-index 1
-  +opacity(0.3)
+  :z-index 99999998
+  :background-image url('/images/ajax-loader_balken.gif')
+  :background-repeat no-repeat
+  :background-position center
+  +opacity(0.9)
 
+#instance_info
+  :float left
+  :width 55%
+
+#thumbnails_show
+  :float right
+  :width 45%
 
   
