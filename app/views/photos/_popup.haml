@@ -1,13 +1,12 @@
 %div{:class => 'popupContact', :id => "popup#{photo.id}"}
   %h2
     = t("photo.description") 
-  -form_tag photo, :class => 'id_of_photo', :method  => 'put' do
+  -form_for photo, :method => :put, :class => 'id_of_photo' do |f|
     %br
     %p
-      = hidden_field :id, photo.id
-      = text_area :description, '', :class  => 'tb_area', :value => photo.description
+      = f.text_area :description, :class  => 'tb_area'
     
     %p
-      = submit_tag t('common.update')
+      = f.submit t('common.update')
       =t('common.or')
       = link_to t('common.cancel'), '', :rel => 'popupContact', :class => 'popupContactClose'

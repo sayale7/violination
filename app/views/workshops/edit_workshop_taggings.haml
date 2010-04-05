@@ -1,9 +1,0 @@
-%div#edit_instance_tags_js
-  -if current_user && current_user.id == @the_instance.id
-    %div#available_instance_tags_js
-      -unless @tag.nil?
-        = render '/taggables/workshop/available_workshop_attributes.haml'
-   
-  %div#added_instance_tags
-    -unless @tag.nil?
-      = render '/taggables/workshop/added_workshop_attributes.haml'

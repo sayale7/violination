@@ -46,8 +46,9 @@ $(document).ready(function(){
 	$(".popup").live('click', function(){
 		//centering with css
 		
-    // $('.id_of_photo').attr('action', '/photos/'+ $(this).attr("id"));
-    // $('.id_of_photo').find('.tb_area').attr('value', $(this).attr("title"));
+    //$('.id_of_photo').attr('action', '/photos/'+ $(this).attr("id"));
+    //$('.id_of_photo').find('.hidden_id').attr('value', $(this).attr("title"));
+    //$('.id_of_photo').find('.hidden_id').attr('value', $(this).attr("title"));
 		centerPopup($(this).attr('rel'));
 		//load popup
 		loadPopup($(this).attr('rel'));

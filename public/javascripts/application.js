@@ -61,8 +61,8 @@ $(document).ready(function() {
 	});
 	
 	//update images
-	$('.id_of_photo').live('submit', function(e){
-		$.post($('.id_of_photo').attr("action"), $('.id_of_photo').serialize(), null, 'script');
+	$('.edit_photo').live('submit', function(e){
+		$.post($(this).attr("action"), $(this).serialize(), null, 'script');
 		$('.popupContact').fadeOut('slow');
 		return false;
 	});

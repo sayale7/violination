@@ -3,11 +3,15 @@
 <% @photos.each do |photo| %>
 <div class="new_thumbs_out">
 	<div class="new_thumbs">
+	  <% if photo.description.nil? || photo.description.to_s.eql?('') %>
+	    <%= link_to image_tag("#{photo.public_filename(:thumb)}"),  photo.public_filename, :title => 'Violination.com', :class => 'group', :rel  => 'group1' %>
+	  <% else %>
 	    <%= link_to image_tag("#{photo.public_filename(:thumb)}"),  photo.public_filename, :title => photo.description, :class => 'group', :rel  => 'group1' %>
+	  <% end %>
 	</div>
 	<% if current_user && current_user.id == @the_instance.user_id %>  
 	  <div class="new_thumbs_edit_delete">
-  	  <%= link_to image_tag("edit.jpg", :width => '20'), edit_photo_path(photo), :class => 'popup', :rel => "popup#{photo.id}" %>
+  	  <%= link_to image_tag("edit.jpg", :width => '20'), edit_photo_path(photo), :class => 'popup', :rel => "popup#{photo.id}", :title => photo.id %>
   	  <%= render '/photos/popup', :photo => photo %>
   		<%= link_to image_tag("delete.png", :width => '20'), "/photos/destroy/#{photo.id}", :class => 'delete_photo' %>
   	</div>

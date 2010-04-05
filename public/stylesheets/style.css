@@ -60,16 +60,16 @@ a img { border: none; }
 
 #divFileProgressContainer { display: none; }
 
-.new_thumbs_out { width: 153px; overflow: hidden; float: left; clear: none; }
+.new_thumbs_out { width: 155px; overflow: hidden; float: left; clear: none; padding: 5px; }
 
 .popupContact { display: none; position: fixed; text-align: center; position: absolute; background: #FFFFFF; border: 5px solid #000000; z-index: 99999999; padding: 12px; font-size: 13px; }
 
 #popup_background { width: 100%; height: 100%; margin: -10px; margin-top: -20px; display: none; background: black; position: fixed; z-index: 99999998; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; opacity: 0.9; filter: alpha(opacity=90); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; }
 
-#instance_info { float: left; width: 55%; }
+#instance_info { float: left; width: 50%; }
 
 table { padding: 10px; }
 table tr { border: thin solid black; }
 table tr td { padding: 3px; vertical-align: top; }
 
-#thumbnails_show { float: right; width: 45%; }
+#thumbnails_show { float: right; width: 50%; }

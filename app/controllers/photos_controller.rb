@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
   def update
     photo = Photo.find(params[:id])
     get_taggable_type(photo.photo_container_type, photo.photo_container_id)
-    if photo.update_attribute("description", params[:description].to_s)
+    if photo.update_attribute("description", params[:photo][:description].to_s)
         #flash[:notice] = t("common.updated")
         get_instance_tags_and_photos
         respond_to do |format|
