@@ -74,6 +74,10 @@ de:
     added_tags: Attribute meines Streichinstruments
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
     of: Instrument von
+  workshop:
+    edit: Meine Werkstatt bearbeiten
+    show: Meine Werkstatt anzeigen
+    description: Beschreibung meiner Werkstätte
   bow:
     all: Alle Bögen
     mine: Meine Bögen
@@ -81,8 +85,9 @@ de:
     of: Bogen von
   photo:
     select: Bilder auswählen
-    upload_text: Bitte verwenden sie nur die Formate JPG, JPEG, GIF und PNG. 
+    upload_text: Bitte verwenden sie nur die Formate JPG, JPEG, GIF und PNG.
     remaining_counts: Verbleibende Anzahl
+    max_file_size: Maximale Größe
     description: Beschreibung des Bildes
   
   

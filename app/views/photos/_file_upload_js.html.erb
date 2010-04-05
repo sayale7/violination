@@ -2,7 +2,7 @@
 <script type="text/javascript">
 
 var swfu;
-var max_file_size = <%= @the_instance.maximum_file_size %> - <%= @photos.size %>;
+var max_file_size = <%= @the_instance.maximum_file_count %> - <%= @photos.size %>;
 
 window.onload = function(){
 	swfu = new SWFUpload({
@@ -10,7 +10,7 @@ window.onload = function(){
 		upload_url: '<%= swfupload_photos_path -%>?token=<%= @the_instance.id %>;type=<%= @the_instance.class.to_s %>',
 		// flash_url : '/assets/swfupload_f9.swf',
 
-		file_size_limit: '5 MB',
+		file_size_limit: "1024",
 		file_types: "*.jpg;*.jpeg;*.gif;*.png",
 		file_types_description: 'All',
 		file_upload_limit: max_file_size,

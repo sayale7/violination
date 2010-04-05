@@ -1,5 +1,6 @@
 class Workshop < ActiveRecord::Base
-  attr_accessible :user_id
+  
+  attr_accessible :user_id, :description
   
   has_many :taggings, :as => :taggable, :dependent => :destroy
   has_many :tag_values, :as => :taggable, :dependent => :destroy
@@ -9,7 +10,11 @@ class Workshop < ActiveRecord::Base
   belongs_to :user
   
   def maximum_file_size
-    return 5
+    return '1 MB'
+  end
+  
+  def maximum_file_count
+    return 6
   end
   
   private

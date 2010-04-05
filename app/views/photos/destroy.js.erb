@@ -2,7 +2,7 @@ $('.new_image_upload_form').html("<%= escape_javascript(render('/photos/upload_f
 $('#thumbnails').html("<%= escape_javascript(render('/photos/thumbnails')) %>");
 
 var swfu;
-var max_file_size = <%= @the_instance.maximum_file_size %> - <%= @photos.size %>;
+var max_file_size = <%= @the_instance.maximum_file_count %> - <%= @photos.size %>;
 
 swfu = new SWFUpload({
 	// Create the custom swfupload_photos_path in the routes.rb file

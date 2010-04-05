@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
   end
   
   def maximum_file_size
+    return '1 MB'
+  end
+  
+  def maximum_file_count
     return 1
   end
   

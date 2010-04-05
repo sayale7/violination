@@ -78,6 +78,10 @@ en:
     added_tags: Attributes of my String
     add_through_click: (Click an Attribute to add it to your Instrument)
     of: Instrument of
+  workshop:
+    edit: Edit my workshop
+    show: Show my workshop
+    description: Description of my workshop
   bow:
     all: All Bows
     mine: My Bows
@@ -86,4 +90,5 @@ en:
   photo:
     select: Choose Images
     remaining_counts: Remaining Counts
+    max_file_size: Maximum File Size
     description: Description of the Image

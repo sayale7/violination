@@ -8,8 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   map.clone_tag_with_sub_tags 'clone_tag_with_sub_tags', :controller => 'tags', :action => 'clone_tag_with_sub_tags'
   
   #routes for user taggings edit_user_taggings_new
-  map.workshop 'workshop', :controller => 'workshops', :action => 'show'
-  map.edit_workshop 'edit', :controller => 'workshops', :action => 'edit'
+  map.resource :workshop
+  # map.workshop 'workshop', :controller => 'workshops', :action => 'show'
+  # map.edit_workshop 'edit', :controller => 'workshops', :action => 'edit'
   
   
   # Added custom post action (swfupload) to the photo resource

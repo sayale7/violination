@@ -1,6 +1,10 @@
 module Item
   
   def maximum_file_size
+    return '1 MB'
+  end
+  
+  def maximum_file_count
     return 6
   end
 

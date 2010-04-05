@@ -52,6 +52,21 @@ $(document).ready(function() {
   //   $('.instrument_kind').show();
   // });
 
+  // hide workshop_description
+  $('#workshop_description_form').hide();
+  
+  //toggle workshop description  
+	$("#workshop_description_open_link").live('click', function () { 
+		$(this).fadeOut(500);
+		$('#workshop_description_form').show(300);
+		return false
+	});
+	
+	$("#workshop_description_cancel_link").live('click', function () { 
+		$('#workshop_description_form').hide(300);
+		$("#workshop_description_open_link").fadeIn(500);
+		return false
+	});
 
   // delete images
   $('a.delete_photo').live('click', function(){

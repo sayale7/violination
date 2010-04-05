@@ -6,7 +6,12 @@
 	  <p>
     <%= t('photo.remaining_counts') %>
     <%= ': ' %>
-    <%= @the_instance.maximum_file_size - @the_instance.photos.find_all_by_parent_id(nil).size  %>
+    <%= @the_instance.maximum_file_count - @the_instance.photos.find_all_by_parent_id(nil).size  %>
+    </p>
+    <p>
+      <%= t('photo.max_file_size') %>
+      <%= ': ' %>
+      <%= @the_instance.maximum_file_size %>
     </p>
 		<span id="spanButtonPlaceholder"></span>
 	</div>

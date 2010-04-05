@@ -29,7 +29,7 @@
 
   %div.photo_upload
     %div.new_image_upload_form
-      -unless @photos.size > @the_instance.maximum_file_size - 1
+      -unless @photos.size > @the_instance.maximum_file_count - 1
         =render '/photos/upload_form'
       
     %div#thumbnails

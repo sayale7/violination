@@ -1,8 +1,8 @@
 h1 { font-size: 18px; width: 100%; }
 
-h2 { font-size: 16px; }
+h2 { font-size: 13px; }
 
-p { font-size: 14px; }
+p { font-size: 12px; }
 
 p.error { display: none; color: red; }
 
@@ -36,6 +36,9 @@ a img { border: none; }
 .available_tags_body img { height: 15px; }
 
 #added_instance_tags { border: medium solid; border-color: #666666; float: right; width: 75%; padding: 1%; }
+
+#workshop_description { margin-top: 10px; border: medium solid; border-color: #666666; float: right; width: 75%; padding: 1%; }
+#workshop_description textarea { width: 98%; height: 400px; border: thin solid; }
 
 #added_instance_tags_full { width: 98%; padding: 1%; overflow: hidden; }
 
@@ -73,3 +76,9 @@ table tr { border: thin solid black; }
 table tr td { padding: 3px; vertical-align: top; }
 
 #thumbnails_show { float: right; width: 50%; }
+
+#workshop_thumbnails_show { width: 100%; }
+
+#show_workshop_description { width: 48%; padding: 1%; float: left; }
+
+#show_workshop_tags { width: 48%; padding: 1%; float: right; }

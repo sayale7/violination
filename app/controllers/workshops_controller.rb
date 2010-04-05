@@ -8,6 +8,8 @@ class WorkshopsController < ApplicationController
       @the_instance = current_user.workshop
     end
     @added_tags =  @the_instance.tags.find_all_by_parent_id(nil, 'Workshop')
+    @photo = Photo.new
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
   end
   
   def edit
@@ -20,6 +22,14 @@ class WorkshopsController < ApplicationController
     @added_tags =  @the_instance.tags.find_all_by_parent_id(nil, 'Workshop')
     @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(nil, 'Workshop') - @added_tags
     @tag = Tag.find_by_taggable_type_and_parent_id(@the_instance.class.to_s, nil)
+    @photo = Photo.new
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
+  end
+  
+  def update
+    @the_instance = Workshop.find(params[:format])
+    @the_instance.update_attribute(:description, params[:description])
+    redirect_to "/workshop/edit.#{@the_instance.id}"
   end
 
 

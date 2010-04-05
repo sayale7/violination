@@ -1,9 +1,30 @@
--title "Workshop"
+-title t('workshop.mine')
 
-%div#edit_instance_tags_js
-  -if current_user && current_user.id == @the_instance.user_id
-    %div#available_instance_tags_js
-      = render '/taggables/workshop/available_workshop_attributes_js.haml'
-   
-  %div#added_instance_tags
-    = render '/taggables/workshop/ajax_workshop_attributes.haml'
+%div#available_instance_tags_js
+  = render '/taggables/workshop/available_workshop_attributes_js.haml'
+ 
+%div#added_instance_tags
+  = render '/taggables/workshop/ajax_workshop_attributes.haml'
+
+
+%div#workshop_description
+  %h2
+    =link_to t('workshop.description'), '', :id => 'workshop_description_open_link'
+  %div#workshop_description_form
+    -form_tag workshop_path(@the_instance.id), :method => :put, :class => 'workshop_description_form' do
+      =text_area_tag :description, @the_instance.description
+      =submit_tag t('common.update')
+      =t('common.or')
+      =link_to t('common.cancel'), '', :id => 'workshop_description_cancel_link'
+
+=render '/photos/file_upload_js.html.erb'
+%div.photo_upload
+  %div.new_image_upload_form
+    -unless @photos.size > @the_instance.maximum_file_count - 1
+      =render '/photos/upload_form.html.erb'
+
+  %div#thumbnails
+    =render '/photos/thumbnails.html.erb'
+
+
+%div#divFileProgressContainer
