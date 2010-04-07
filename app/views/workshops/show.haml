@@ -1,4 +1,6 @@
 %div#show_workshop_tags
+  %h2
+    =t('workshop.my_tags')
   -@added_tags.each do |tag|
     %div.show_workshop_tags_item
       %h2
@@ -12,6 +14,8 @@
           %br
 -unless @the_instance.photos.empty?
   %div#workshop_thumbnails_show
+    %h2
+      =t('common.photo_gallery')
     =render '/photos/show_thumbnails.html.erb'
   
 %div#show_workshop_description
