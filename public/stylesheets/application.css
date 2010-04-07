@@ -4,7 +4,9 @@ html{
 }
 
 body {
-  background-color: #FFCF73;
+/*  gelb
+  background-color: #FFCF73;*/
+  background-color: silver;
   font-family: Verdana, Helvetica, Arial;
   font-size: 12px;
   height:100%; /* this is the key! */ 
@@ -23,7 +25,7 @@ body {
   background-color: white;
   padding: 15px;
   overflow:hidden;
-  border: thin solid #A66D00;
+  border: medium solid #250672;
   min-height: 500px;
 }
 
