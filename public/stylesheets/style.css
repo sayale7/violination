@@ -65,7 +65,11 @@ a img { border: none; }
 
 .instance_index_element { padding: 10px; }
 
-.photo_upload { float: right; clear: both; width: 100%; margin-top: 10px; border-top: medium solid #7147D7; }
+.photo_upload { float: right; clear: both; width: 98.5%; margin-top: 10px; padding: 5px; border: medium solid #FFF3FE; }
+.photo_upload h2 { background-color: #FFF3FE; color: #7147D7; margin: -5px; margin-bottom: 5px; padding: 5px; }
+
+.photo_upload:hover { border: medium solid #7147D7; }
+.photo_upload:hover h2 { background-color: #7147D7; color: #fff; }
 
 #divFileProgressContainer { display: none; }
 
