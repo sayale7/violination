@@ -3,14 +3,6 @@
     =t('instrument.info')
   
   %table
-    %tr
-      %td
-        %strong
-          =t('user.contact')
-      %td
-        =@the_instance.user.full_name
-        =' '
-        =mail_to @the_instance.user.email, "(Email)", :encode => "javascript"
           
     -@added_tags.each do |tag|
       %tr
