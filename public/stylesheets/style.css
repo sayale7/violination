@@ -15,11 +15,11 @@ a img { border: none; }
 
 #container { clear: both; width: 90%; margin: 0 auto; background: #C0D1E5; padding: 15px; overflow: hidden; border: medium solid #250672; min-height: 500px; }
 
-#header { width: 90%; margin: 0 auto; margin-top: 20px; height: 40px; background-color: #7147D7; border: medium solid #4013AF; padding: 15px; overflow: visible; border-bottom: none; }
+#header { width: 90%; margin: 0 auto; margin-top: 20px; height: 40px; background-color: #250672; border: medium solid #4013AF; padding: 15px; overflow: visible; border-bottom: none; }
 
-#nav_left { width: 89%; float: left; background: #7147D7; height: 40px; }
+#nav_left { width: 89%; float: left; background: #250672; height: 40px; }
 
-#nav_right { width: 9%; padding-top: 5px; padding-right: 1%; float: right; text-align: right; background: #7147D7; height: 35px; }
+#nav_right { width: 9%; padding-top: 5px; padding-right: 1%; float: right; text-align: right; background: #250672; height: 35px; }
 
 #content { clear: both; }
 

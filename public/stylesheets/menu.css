@@ -7,7 +7,7 @@ ul.pureCssMenu,ul.pureCssMenu ul {
 	margin:0px;
 	list-style:none;
 	padding:0px 0px 0px 0px;
-  border-color:#7147D7;
+  border-color:#250672;
   border-width:1px;
   border-style:solid;
 }
@@ -29,7 +29,7 @@ outline-style:none;
 ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
 	display:block;
 	vertical-align:middle;
-  background-color: #7147D7;
+  background-color: #250672;
 	border-width:0px;
 	border-color:#7147D7;
 	border-style:solid;
@@ -75,7 +75,7 @@ ul.pureCssMenu li:hover{
 	position:relative;
 }
 ul.pureCssMenu li:hover>a{
-	background-color:#250672;
+	background-color:#7147D7;
 	border-color:#665500;
 	border-style:solid;
 	font:14px Trebuchet MS;
@@ -84,7 +84,7 @@ ul.pureCssMenu li:hover>a{
 }
 ul.pureCssMenu li a:hover{
 	position:relative;
-	background-color:#250672;
+	background-color:#7147D7;
 	border-color:#665500;
 	border-style:solid;
 	font:14px Trebuchet MS;
