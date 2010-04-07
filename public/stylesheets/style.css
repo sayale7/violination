@@ -83,7 +83,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #thumbnails_show { float: right; width: 46%; padding: 2%; background: #FFCF73; border: thin solid #A66D00; overflow: hidden; }
 
-#workshop_thumbnails_show { width: 98%; padding: 1%; margin-bottom: 10px; overflow: hidden; background: #FFCF73; border: thin solid #A66D00; }
+#workshop_thumbnails_show { float: right; width: 46%; padding: 2%; background: #FFCF73; border: thin solid #A66D00; overflow: hidden; }
 
 #show_workshop_description { width: 47%; padding-left: 1%; float: left; }
 
