@@ -88,4 +88,4 @@ table tr td { padding: 3px; vertical-align: top; }
 #show_workshop_description { width: 47%; padding-left: 1%; float: left; }
 
 #show_workshop_tags { width: 43%; padding-left: 3%; float: right; }
-#show_workshop_tags .show_workshop_tags_item { float: left; }
+#show_workshop_tags .show_workshop_tags_item { padding: 10px; float: left; height: 200px; }
