@@ -65,7 +65,7 @@ a img { border: none; }
 
 .instance_index_element { padding: 10px; }
 
-.photo_upload { float: right; clear: both; width: 75%; padding: 15px; }
+.photo_upload { float: right; clear: both; width: 100%; margin-top: 10px; border-top: medium solid #7147D7; }
 
 #divFileProgressContainer { display: none; }
 
@@ -81,7 +81,7 @@ table { padding: 10px; }
 table tr { border: thin solid black; }
 table tr td { padding: 3px; vertical-align: top; }
 
-#thumbnails { width: 100.7%; margin-top: 10px; margin-left: -1.9%; padding: 1%; background: transparent; border: medium solid #7147D7; overflow: hidden; }
+#thumbnails { width: 97.5%; margin-top: 10px; padding: 1%; background: transparent; overflow: hidden; }
 
 #thumbnails_show { float: right; width: 46%; padding: 2%; background: transparent; border: medium solid #7147D7; overflow: hidden; }
 

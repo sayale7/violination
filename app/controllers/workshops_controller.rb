@@ -1,8 +1,8 @@
 class WorkshopsController < ApplicationController
   
   def show
-    if params[:id]
-      user = User.find(params[:id])
+    if params[:format]
+      user = User.find(params[:format])
       @the_instance = user.workshop
     else
       @the_instance = current_user.workshop
