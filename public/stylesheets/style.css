@@ -87,5 +87,5 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #show_workshop_description { margin-top: 10px; float: right; width: 48%; padding: 1%; background: #FFCF73; border: thin solid #A66D00; overflow: hidden; }
 
-#show_workshop_tags { width: 47%; float: left; background: #FFCF73; border: thin solid #A66D00; }
-#show_workshop_tags .show_workshop_tags_item { padding: 5px; float: left; height: 140px; width: 20%; background-color: #FFA700; border: thin solid #A66D00; margin: 5px; }
+#show_workshop_tags { width: 49%; float: left; background: #FFCF73; border: thin solid #A66D00; }
+#show_workshop_tags .show_workshop_tags_item { padding: 5px; float: left; height: 140px; width: 21.5%; background-color: #BF8E30; border: thin solid #FFF; margin: 5px; }
