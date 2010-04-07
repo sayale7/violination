@@ -81,6 +81,7 @@ en:
     added_tags: Attributes of my String
     add_through_click: (Click an Attribute to add it to your Instrument)
     of: Instrument of
+    info: To the instrument
   workshop:
     edit: Edit my workshop
     show: Show my workshop

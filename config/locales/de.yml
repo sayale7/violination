@@ -77,6 +77,7 @@ de:
     added_tags: Attribute meines Streichinstruments
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
     of: Instrument von
+    info: Über dieses Instrument
   workshop:
     edit: Meine Werkstatt bearbeiten
     show: Meine Werkstatt anzeigen
