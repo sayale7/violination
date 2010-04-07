@@ -6,7 +6,7 @@ html{
 body {
 /*  gelb
   background-color: #FFCF73;*/
-  background-color: silver;
+  background-color: white;
   font-family: Verdana, Helvetica, Arial;
   font-size: 12px;
   height:100%; /* this is the key! */ 
@@ -18,16 +18,7 @@ body {
   overflow: hidden;
 }
 
-#container {
-  clear: both;
-  width: 90%;
-  margin: 0 auto;
-  background-color: white;
-  padding: 15px;
-  overflow:hidden;
-  border: medium solid #250672;
-  min-height: 500px;
-}
+
 
 #flash_notice, #flash_error {
   float:left;

@@ -1,6 +1,6 @@
 h1 { font-size: 18px; width: 100%; }
 
-h2 { font-size: 13px; }
+h2 { font-size: 13px; color: #4013AF; }
 
 p { font-size: 12px; }
 
@@ -12,6 +12,8 @@ a img { border: none; }
 .text_area { width: 100%; height: 200px; font-size: 12px; padding: 3px; font-family: Verdana; }
 
 .text_box { width: 100%; height: 30px; font-size: 13px; padding: 1px; }
+
+#container { clear: both; width: 90%; margin: 0 auto; background-color: white; padding: 15px; overflow: hidden; border: medium solid #250672; min-height: 500px; }
 
 #header { width: 90%; margin: 0 auto; margin-top: 20px; height: 40px; background-color: #7147D7; border: medium solid #4013AF; padding: 15px; overflow: visible; border-bottom: none; }
 
@@ -46,7 +48,7 @@ a img { border: none; }
 
 #added_instance_tags_full { width: 98%; padding: 1%; overflow: hidden; }
 
-.instance_tag { border: thin solid black; background-color: #eaeaea; padding: 10px; }
+.instance_tag { border: thin solid black; background-color: #000017; padding: 10px; }
 
 .instance_tag_js { border-bottom: thin solid black; padding: 10px; display: :block; min-height: 30px; }
 
@@ -79,13 +81,14 @@ table { padding: 10px; }
 table tr { border: thin solid black; }
 table tr td { padding: 3px; vertical-align: top; }
 
-#thumbnails { width: 100.7%; margin-top: 10px; margin-left: -1.9%; padding: 1%; background: transparent; border: medium solid #250672; overflow: hidden; }
+#thumbnails { width: 100.7%; margin-top: 10px; margin-left: -1.9%; padding: 1%; background: transparent; border: medium solid #7147D7; overflow: hidden; }
 
-#thumbnails_show { float: right; width: 46%; padding: 2%; background: transparent; border: medium solid #250672; overflow: hidden; }
+#thumbnails_show { float: right; width: 46%; padding: 2%; background: transparent; border: medium solid #7147D7; overflow: hidden; }
 
-#workshop_thumbnails_show { float: right; width: 48%; padding: 1%; background: transparent; border: medium solid #250672; overflow: hidden; }
+#workshop_thumbnails_show { float: right; width: 48%; padding: 1%; background: transparent; border: medium solid #7147D7; overflow: hidden; }
 
-#show_workshop_description { margin-top: 10px; float: right; width: 48%; padding: 1%; background: transparent; border: medium solid #250672; overflow: hidden; }
+#show_workshop_description { margin-top: 10px; float: right; width: 48%; padding: 1%; background: transparent; border: medium solid #7147D7; overflow: hidden; }
 
 #show_workshop_tags { width: 49%; float: left; background: transparent; }
-#show_workshop_tags .show_workshop_tags_item { padding: 5px; float: left; height: 140px; background: transparent; border: medium solid #250672; margin: 5px; }
+#show_workshop_tags .show_workshop_tags_item { padding: 5px; float: left; height: 140px; background: transparent; border: medium solid #666; margin: 5px; }
+#show_workshop_tags .show_workshop_tags_item h2 { background-color: #666666; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
