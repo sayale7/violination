@@ -25,7 +25,7 @@ class TaggingsController < ApplicationController
   
   def destroy
     get_taggable_type(params[:taggable_type].to_s)
-    tagging = Tagging.find_by_taggable_type_and_taggable_id_and_tag_id(params[:taggable_type], params[:taggable_id], params[:tag])
+    tagging = Tagging.find_by_taggable_type_and_taggable_id_and_tag_id(@the_instance.class.to_s, @the_instance.id, params[:tag])
     tag = Tag.find(tagging.tag_id)
     if tag.parent_id.nil?
       parent_id = nil
@@ -78,8 +78,7 @@ class TaggingsController < ApplicationController
   
   def refresh_available_tags
     get_taggable_type(params[:taggable_type].to_s)
-    @added_tags =  @the_instance.tags.find_all_by_parent_id(params[:tag])
-    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(params[:tag], @the_instance.class.to_s) - @added_tags
+    get_tags(params[:tag])
     respond_to do |format|
       format.js { render '/taggings/refresh.js.erb' }
     end
@@ -89,27 +88,32 @@ class TaggingsController < ApplicationController
   
   def get_tags(parent_id)
     @added_tags =  @the_instance.tags.find_all_by_parent_id(parent_id)
-    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(parent_id, @the_instance.class.to_s) - @added_tags
+    if @the_instance.class.to_s.eql?('Item')
+      the_class = @the_instance.item_type.to_s
+    else
+      the_class = @the_instance.class.to_s
+    end
+    @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(parent_id, the_class) - @added_tags
   end
   
   def get_taggable_type(type)
     the_class = Kernel.const_get(type)
+    if the_class.superclass.to_s.eql?('Item')
+      the_class = Kernel.const_get('Item')
+    end
     @the_instance = the_class.find(params[:taggable_id])
   end
   
   def build_tagging_and_set_tag_values_taggable_id(tag_id)
     tagging = Tagging.new
-    tagging.taggable_type = params[:taggable_type]
+    the_class = Kernel.const_get(params[:taggable_type].to_s)
+    if the_class.superclass.to_s.eql?('Item')
+      the_class = Kernel.const_get('Item')
+    end
+    tagging.taggable_type = the_class.to_s
     tagging.tag_id = tag_id
     tagging.taggable_id = params[:taggable_id]
     return tagging
   end
   
-  def root_tag(instrument_kind)
-    Tag.find_all_by_parent_id_and_taggable_type(nil, 'Instrument').each do |tag|
-      if tag.id == instrument_kind
-        @tag = tag
-      end
-    end
-  end
 end

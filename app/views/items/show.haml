@@ -7,8 +7,6 @@
 -if current_user && current_user.id == @the_instance.user_id
   %p
     = link_to "Destroy", "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?'
-  %p
-    = link_to "Edit", edit_instrument_taggings_url(:instance => @the_instance), :class => 'edit_instrument'
 
 %div#edit_instance_tags_js
   -if current_user && current_user.id == @the_instance.user_id
@@ -31,9 +29,10 @@
     %div.new_image_upload_form
       -unless @photos.size > @the_instance.maximum_file_count - 1
         =render '/photos/upload_form'
-      
-    %div#thumbnails
-      =render '/photos/thumbnails'
+    
+    -if @photos.size > 0
+      %div#thumbnails
+        =render '/photos/thumbnails'
       
   
 %div#divFileProgressContainer

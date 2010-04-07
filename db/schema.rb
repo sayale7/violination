@@ -9,12 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100405085014) do
+ActiveRecord::Schema.define(:version => 20100407082749) do
 
   create_table "bows", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "contact"
+    t.string   "item_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "photos", :force => true do |t|
@@ -36,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20100405085014) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "contact"
   end
 
   create_table "tag_names", :force => true do |t|
@@ -51,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20100405085014) do
     t.integer  "taggable_id"
     t.string   "taggable_type"
     t.string   "language"
-    t.string   "value"
+    t.string   "value",         :limit => 2000
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,6 +89,8 @@ ActiveRecord::Schema.define(:version => 20100405085014) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "firstname"
+    t.string   "lastname"
   end
 
   create_table "workshops", :force => true do |t|

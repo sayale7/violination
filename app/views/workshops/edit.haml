@@ -12,7 +12,7 @@
     =link_to t('workshop.description'), '', :id => 'workshop_description_open_link'
   %div#workshop_description_form
     -form_tag workshop_path(@the_instance.id), :method => :put, :class => 'workshop_description_form' do
-      =text_area_tag :description, @the_instance.description
+      =text_area_tag :description, @the_instance.description, :class => 'text_area'
       =submit_tag t('common.update')
       =t('common.or')
       =link_to t('common.cancel'), '', :id => 'workshop_description_cancel_link'
@@ -22,7 +22,6 @@
   %div.new_image_upload_form
     -unless @photos.size > @the_instance.maximum_file_count - 1
       =render '/photos/upload_form.html.erb'
-
   %div#thumbnails
     =render '/photos/thumbnails.html.erb'
 

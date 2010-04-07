@@ -1,4 +1,4 @@
-!green_one = #464646
+!header_color = #464646
 !gray = #EAEAEA
 !dark_gray = #666
 
@@ -23,7 +23,7 @@ p.error
 
 a
   :text-decoration none
-  :color #0000FF
+  :color = !dark_gray
   
   img
     :border none
@@ -31,19 +31,41 @@ a
 .text_area
   :width 100%
   :height 200px
-  :font-size 13px
+  :font-size 12px
   :padding 3px
+  :font-family Verdana
 
 .text_box
   :width 100%
   :height 30px
   :font-size 13px
   :padding 1px
-
-#nav_top
-  :float left
-  :margin-bottom 20px
   
+#header  
+  :width 90%
+  :margin 0 auto
+  :margin-top 20px
+  :height 40px
+  :background-color #FFA700
+  :padding 15px
+  :overflow visible
+  :border thin solid #A66D00
+  :border-bottom none
+
+#nav_left
+  :width 89%
+  :float left
+  :background #FFA700
+  :height 40px
+
+#nav_right
+  :width 9%
+  :padding-top 5px
+  :padding-right 1%
+  :float right
+  :text-align right
+  :background #FFA700
+  :height 35px
 
 #content
   :clear both
@@ -143,8 +165,6 @@ a
   :overflow hidden
 
 .instance_index_element
-  :background = !gray
-  :border-bottom solid thin black 
   :padding 10px
 
   
@@ -158,7 +178,7 @@ a
   :display none 
 
 .new_thumbs_out
-  :width 155px
+  :width 85px
   :overflow hidden
   :float left
   :clear none
@@ -174,6 +194,7 @@ a
   :z-index 99999999 
   :padding 12px 
   :font-size 13px
+  :width 50%
 
 #popup_background
   :width 100%
@@ -203,21 +224,42 @@ table
       :padding 3px
       :vertical-align top
 
+#thumbnails
+  :width 102%
+  :margin-left -1%
+  :margin-top 10px
+  :padding-top 0px
+  :background #FFCF73
+  :border medium solid #A66D00
+  :overflow hidden
+
 #thumbnails_show
   :float right
-  :width 50%
+  :width 46%
+  :padding 2%
+  :background #FFCF73
+  :border thin solid #A66D00
+  :overflow hidden
   
 #workshop_thumbnails_show
-  :width 100%
+  :width 98%
+  :padding 1%
+  :margin-bottom 10px
+  :overflow hidden
+  :background #FFCF73
+  :border thin solid #A66D00
   
 #show_workshop_description
-  :width 48%
-  :padding 1%
+  :width 47%
+  :padding-left 1%
   :float left
 
 #show_workshop_tags
-  :width 48%
-  :padding 1%
+  :width 43%
+  :padding-left 3%
   :float right
+  
+  .show_workshop_tags_item
+    :float left
 
   

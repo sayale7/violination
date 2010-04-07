@@ -41,6 +41,9 @@ de:
     login: Einloggen
     logout: Ausloggen
     my_workshop: Meine Werkstätte
+    firstname: Vorname
+    lastname: Nachname
+    contact: Kontakt
     admin:
       could_be_in_my_workshop: Was biete ich in meiner Werkstätte an?
       in_my_workshop: Was kann ich in meiner Werkstätte anbieten?

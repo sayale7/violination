@@ -7,7 +7,7 @@ class WorkshopsController < ApplicationController
     else
       @the_instance = current_user.workshop
     end
-    @added_tags =  @the_instance.tags.find_all_by_parent_id(nil, 'Workshop')
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(nil)
     @photo = Photo.new
     @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
   end

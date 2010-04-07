@@ -45,6 +45,9 @@ en:
     login: Login
     logout: Logout
     my_workshop: My Workshop
+    firstname: Firstname
+    lastname: Lastname
+    contact: Contact
     admin:
       could_be_in_my_workshop: What is in my workshop?
       in_my_workshop: What could be in my workshop?

@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_one :workshop
   
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation
+  attr_accessible :username, :email, :password, :password_confirmation, :firstname, :lastname
   
   attr_accessor :password
   before_save :prepare_password
@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
   
   def maximum_file_count
     return 1
+  end
+  
+  def full_name
+    return self.firstname << ' '<< self.lastname
   end
   
   private
