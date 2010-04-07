@@ -94,7 +94,7 @@ ul.pureCssMenu li a:hover{
 ul.pureCssMenu li.dis a {
 	color: #AAAAAA !important;
 }
-ul.pureCssMenu img {border: none;float:left;_float:none;margin-right:4px;width:16px;
+/*ul.pureCssMenu img {border: none;float:left;_float:none;margin-right:4px;width:16px;
 height:16px;
 }
 ul.pureCssMenu ul img {width:16px;
@@ -110,15 +110,15 @@ ul.pureCssMenu a:hover img.def,ul.pureCssMenu a:hover ul img.over,ul.pureCssMenu
 ul.pureCssMenu a:hover ul,ul.pureCssMenu a:hover a:hover ul,ul.pureCssMenu a:hover a:hover a:hover ul{display:block}
 ul.pureCssMenu a:hover ul ul,ul.pureCssMenu a:hover a:hover ul ul{display:none}
 ul.pureCssMenu span{
-	display:block;
-	background-image:url('/stylesheets/images/arrv_anim_1.gif');
-	background-position:right center;
-	background-repeat: no-repeat;
+  display:block;
+  background-image:url('/stylesheets/images/arrv_anim_1.gif');
+  background-position:right center;
+  background-repeat: no-repeat;
    padding-right:11px;}
-ul.pureCssMenu li:hover>a>span{	background-image:url('/stylesheets/images/arrv_anim_1o.gif');
+ul.pureCssMenu li:hover>a>span{ background-image:url('/stylesheets/images/arrv_anim_1o.gif');
 }
-ul.pureCssMenu a:hover span{	_background-image:url('/stylesheets/images/arrv_anim_1o.gif')}
+ul.pureCssMenu a:hover span{  _background-image:url('/stylesheets/images/arrv_anim_1o.gif')}
 ul.pureCssMenu ul span,ul.pureCssMenu a:hover table span{background-image:url('/stylesheets/images/arr_double_1.gif')}
-ul.pureCssMenu ul li:hover > a span{	background-image:url('/stylesheets/images/arr_double_1o.gif');}
+ul.pureCssMenu ul li:hover > a span{  background-image:url('/stylesheets/images/arr_double_1o.gif');}
 ul.pureCssMenu table a:hover span,ul.pureCssMenu table a:hover a:hover span,ul.pureCssMenu table a:hover a:hover a:hover span{background-image:url('/stylesheets/images/arr_double_1o.gif')}
-ul.pureCssMenu table a:hover table span,ul.pureCssMenu table a:hover a:hover table span{background-image:url('/stylesheets/images/arr_double_1.gif')}
+ul.pureCssMenu table a:hover table span,ul.pureCssMenu table a:hover a:hover table span{background-image:url('/stylesheets/images/arr_double_1.gif')}*/
