@@ -24,6 +24,7 @@ body {
   padding: 15px;
   overflow:hidden;
   border: thin solid #A66D00;
+  min-height: 500px;
 }
 
 #flash_notice, #flash_error {
