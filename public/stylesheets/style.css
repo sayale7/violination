@@ -90,5 +90,5 @@ table tr td { padding: 3px; vertical-align: top; }
 #show_workshop_description { margin-top: 10px; float: right; width: 48%; padding: 1%; background: transparent; border: medium solid #7147D7; overflow: hidden; }
 
 #show_workshop_tags { width: 49%; float: left; background: transparent; }
-#show_workshop_tags .show_workshop_tags_item { padding: 5px; float: left; height: 140px; background: transparent; border: medium solid #666; margin: 5px; }
+#show_workshop_tags .show_workshop_tags_item { clear: both; width: 90%; padding: 5px; float: left; background: transparent; border: medium solid #666; margin: 5px; }
 #show_workshop_tags .show_workshop_tags_item h2 { background-color: #666666; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
