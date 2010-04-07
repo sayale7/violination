@@ -67,7 +67,7 @@ a img { border: none; }
 
 #divFileProgressContainer { display: none; }
 
-.new_thumbs_out { width: 85px; overflow: hidden; float: left; clear: none; padding: 5px; }
+.new_thumbs_out { width: 85px; overflow: hidden; float: left; clear: none; }
 
 .popupContact { display: none; position: fixed; text-align: center; position: absolute; background: #FFFFFF; border: 5px solid #000000; z-index: 99999999; padding: 12px; font-size: 13px; width: 50%; }
 
@@ -79,13 +79,13 @@ table { padding: 10px; }
 table tr { border: thin solid black; }
 table tr td { padding: 3px; vertical-align: top; }
 
-#thumbnails { width: 102%; margin-left: -1%; margin-top: 10px; padding-top: 0px; background: #FFCF73; border: medium solid #A66D00; overflow: hidden; }
+#thumbnails { width: 100.7%; margin-top: 10px; margin-left: -1.9%; padding: 1%; background: #FFCF73; border: medium solid #A66D00; overflow: hidden; }
 
 #thumbnails_show { float: right; width: 46%; padding: 2%; background: #FFCF73; border: thin solid #A66D00; overflow: hidden; }
 
-#workshop_thumbnails_show { float: right; width: 46%; padding: 2%; background: #FFCF73; border: thin solid #A66D00; overflow: hidden; }
+#workshop_thumbnails_show { float: right; width: 48%; padding: 1%; background: #FFCF73; border: thin solid #A66D00; overflow: hidden; }
 
-#show_workshop_description { width: 47%; padding-left: 1%; float: left; }
+#show_workshop_description { margin-top: 10px; float: right; width: 48%; padding: 1%; background: #FFCF73; border: thin solid #A66D00; overflow: hidden; }
 
-#show_workshop_tags { width: 43%; padding-left: 3%; float: right; }
+#show_workshop_tags { width: 43%; padding-left: 3%; float: left; }
 #show_workshop_tags .show_workshop_tags_item { padding: 10px; float: left; height: 200px; }

@@ -1,11 +1,3 @@
--unless @the_instance.photos.empty?
-  %div#workshop_thumbnails_show
-    =render '/photos/show_thumbnails.html.erb'
-  
-%div#show_workshop_description
-  %h2
-    =t('workshop.description')
-  = simple_format(h @the_instance.description)
 %div#show_workshop_tags
   -@added_tags.each do |tag|
     %div.show_workshop_tags_item
@@ -18,3 +10,11 @@
             =' - '
             =added_child_tags(tag, @the_instance.id).collect {|_tag| _tag.tag_names.find_by_language(get_locale.to_s).value}.join(", ")
           %br
+-unless @the_instance.photos.empty?
+  %div#workshop_thumbnails_show
+    =render '/photos/show_thumbnails.html.erb'
+  
+%div#show_workshop_description
+  %h2
+    =t('workshop.description')
+  = simple_format(h @the_instance.description)
