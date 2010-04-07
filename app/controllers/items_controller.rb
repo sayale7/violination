@@ -2,10 +2,10 @@ class ItemsController < ApplicationController
   
   def index
     if params[:user_id]
-      @the_instance = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id(params[:user_id])
+      @the_instance = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
     end
     if !params[:user_id]
-      @the_instance = get_taggable_type(params[:taggable_type].to_s).all
+      @the_instance = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
     end
     render :template  => '/items/index.haml'
   end
