@@ -19,6 +19,8 @@
 
 =render '/photos/file_upload_js.html.erb'
 %div.photo_upload
+  %h2
+    =t('common.photo_gallery')
   %div.new_image_upload_form
     -unless @photos.size > @the_instance.maximum_file_count - 1
       =render '/photos/upload_form.html.erb'

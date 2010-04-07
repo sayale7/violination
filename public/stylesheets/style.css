@@ -65,8 +65,8 @@ a img { border: none; }
 
 .instance_index_element { padding: 10px; }
 
-.photo_upload { float: right; clear: both; width: 98.5%; margin-top: 10px; padding: 5px; border: medium solid #FFF3FE; }
-.photo_upload h2 { background-color: #FFF3FE; color: #7147D7; margin: -5px; margin-bottom: 5px; padding: 5px; }
+.photo_upload { float: right; clear: both; width: 98.5%; margin-top: 10px; padding: 5px; border: medium solid #250672; }
+.photo_upload h2 { background-color: #250672; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 
 .photo_upload:hover { border: medium solid #7147D7; }
 .photo_upload:hover h2 { background-color: #7147D7; color: #fff; }
@@ -79,11 +79,11 @@ a img { border: none; }
 
 #popup_background { width: 100%; height: 100%; margin: -10px; margin-top: -20px; display: none; background: black; position: fixed; z-index: 99999998; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; opacity: 0.9; filter: alpha(opacity=90); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; }
 
-#instance_info { float: left; width: 48%; background: transparent; border: medium solid #FFF3FE; overflow: hidden; padding: 5px; }
-#instance_info h2 { background-color: #FFF3FE; color: #7147D7; margin: -5px; margin-bottom: 5px; padding: 5px; }
+#instance_info { float: left; width: 48%; background: transparent; border: medium solid #250672; overflow: hidden; padding: 5px; }
+#instance_info h2 { background-color: #250672; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 
-#instance_info:hover { border: medium solid #7147D7; }
-#instance_info:hover h2 { background-color: #7147D7; color: #fff; }
+#instance_info:hover { border: medium solid #250672; }
+#instance_info:hover h2 { background-color: #250672; color: #fff; }
 
 table { padding: 10px; }
 table tr { border: thin solid black; }
@@ -91,26 +91,28 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #thumbnails { width: 97.5%; margin-top: 10px; padding: 1%; background: transparent; overflow: hidden; }
 
-#thumbnails_show { float: right; width: 46%; background: transparent; border: medium solid #FFF3FE; overflow: hidden; padding: 5px; }
-#thumbnails_show h2 { background-color: #FFF3FE; color: #7147D7; margin: -5px; margin-bottom: 5px; padding: 5px; }
+#thumbnails_show { float: right; width: 46%; background: transparent; border: medium solid #250672; overflow: hidden; padding: 5px; }
+#thumbnails_show h2 { background-color: #250672; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 
 #thumbnails_show:hover { border: medium solid #7147D7; }
 #thumbnails_show:hover h2 { background-color: #7147D7; color: #fff; }
 
-#workshop_thumbnails_show { float: right; width: 49%; background: transparent; border: medium solid #FFF3FE; overflow: hidden; padding: 5px; }
-#workshop_thumbnails_show h2 { background-color: #FFF3FE; color: #7147D7; margin: -5px; margin-bottom: 5px; padding: 5px; }
+#workshop_thumbnails_show { float: right; width: 49%; background: transparent; border: medium solid #250672; overflow: hidden; padding: 5px; }
+#workshop_thumbnails_show h2 { background-color: #250672; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 
 #workshop_thumbnails_show:hover { border: medium solid #7147D7; }
 #workshop_thumbnails_show:hover h2 { background-color: #7147D7; color: #fff; }
 
-#show_workshop_description { float: right; width: 49%; background: transparent; border: medium solid #FFF3FE; overflow: hidden; padding: 5px; margin-top: 5px; }
-#show_workshop_description h2 { background-color: #FFF3FE; color: #7147D7; margin: -5px; margin-bottom: 5px; padding: 5px; }
+#show_workshop_description { float: right; width: 49%; background: transparent; border: medium solid #250672; overflow: hidden; padding: 5px; margin-top: 5px; }
+#show_workshop_description h2 { background-color: #250672; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 
 #show_workshop_description:hover { border: medium solid #7147D7; }
 #show_workshop_description:hover h2 { background-color: #7147D7; color: #fff; }
 
 #show_workshop_tags { width: 49%; float: left; background: transparent; }
-#show_workshop_tags .show_workshop_tags_item { clear: both; width: 90%; padding: 5px; float: left; background: transparent; border: medium solid #FFF3FE; margin: 5px; }
-#show_workshop_tags .show_workshop_tags_item h2 { background-color: #FFF3FE; color: #7147D7; margin: -5px; margin-bottom: 5px; padding: 5px; }
+#show_workshop_tags .show_workshop_tags_item { clear: both; width: 90%; padding: 5px; float: left; background: transparent; border: medium solid #250672; margin: 5px; }
+#show_workshop_tags .show_workshop_tags_item h2 { background-color: #250672; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 #show_workshop_tags .show_workshop_tags_item:hover { border: medium solid #7147D7; }
 #show_workshop_tags .show_workshop_tags_item:hover h2 { background-color: #7147D7; color: #fff; }
+
+.spanButtonPlaceholderDiv { width: 150px; height: 40px; }
