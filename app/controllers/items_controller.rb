@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def update
     @the_instance = get_taggable_type(params[:taggable_type].to_s).find(params[:id])
     @the_instance = get_taggable_type(params[:taggable_type].to_s).find(params[:id])
-    if params[:item][:contact].to_s.eql?('true')
+    if params[:item][:contact].to_s.eql?('1')
       contact = 1
     else
       contact = 0
