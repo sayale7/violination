@@ -7,7 +7,7 @@ ul.pureCssMenu,ul.pureCssMenu ul {
 	margin:0px;
 	list-style:none;
 	padding:0px 0px 0px 0px;
-  border-color:#250672;
+  border-color:transparent;
   border-width:1px;
   border-style:solid;
 }
@@ -29,9 +29,11 @@ outline-style:none;
 ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
 	display:block;
 	vertical-align:middle;
-  background-color: #250672;
+  background-color: transparent;
+  background-image: url('/images/bg.jpg');
+  background-repeat: repeat-x;
 	border-width:0px;
-	border-color:#7147D7;
+	border-color:#fff;
 	border-style:solid;
 	text-align:center;
 	text-decoration:none;
@@ -75,8 +77,8 @@ ul.pureCssMenu li:hover{
 	position:relative;
 }
 ul.pureCssMenu li:hover>a{
-	background-color:#7147D7;
-	border-color:#665500;
+	background-color:#666;
+	border-color:#666;
 	border-style:solid;
 	font:14px Trebuchet MS;
 	color: #ffffff;
@@ -84,11 +86,11 @@ ul.pureCssMenu li:hover>a{
 }
 ul.pureCssMenu li a:hover{
 	position:relative;
-	background-color:#7147D7;
-	border-color:#665500;
+	background-color:#666;
+	border-color:#666;
 	border-style:solid;
 	font:14px Trebuchet MS;
-	color: #ffffff;
+	color: #999;
 	text-decoration:none;
 }
 ul.pureCssMenu li.dis a {

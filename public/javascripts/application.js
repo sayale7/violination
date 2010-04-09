@@ -55,18 +55,34 @@ $(document).ready(function() {
   // hide workshop_description
   $('#workshop_description_form').hide();
   
-  //toggle workshop description  
-	$("#workshop_description_open_link").live('click', function () { 
-		$(this).fadeOut(500);
-		$('#workshop_description_form').show(300);
-		return false
-	});
+  //toggle workshop description    
+  $("#workshop_description_open_link").live('click', function () { 
+   $(this).fadeOut(200);
+   $('#workshop_description_form').show(500).fadeIn(100);
+   return false
+  });
+  $("#workshop_description_cancel_link").live('click', function () { 
+   $('#workshop_description_form').hide(800).fadeOut(500);
+   $("#workshop_description_open_link").fadeIn(500);
+   return false
+  });
 	
-	$("#workshop_description_cancel_link").live('click', function () { 
-		$('#workshop_description_form').hide(300);
-		$("#workshop_description_open_link").fadeIn(500);
-		return false
-	});
+	// toggle photo_upload
+  $('.new_image_upload_form, #thumbnails, .close img').hide();
+  
+	$('.photo_upload h2').toggle(function() {
+    $('.open img').fadeOut('slow', function(){
+	    $(".close img").fadeIn('slow');
+	  });
+		$('.new_image_upload_form, #thumbnails').show(500).fadeIn(100);
+  }, function() {
+    $('.close img').fadeOut('slow', function(){
+	    $(".open img").fadeIn('slow');
+	  });
+		$('.new_image_upload_form, #thumbnails').hide(800).fadeOut(500);
+  });
+	
+
 
   // delete images
   $('a.delete_photo').live('click', function(){

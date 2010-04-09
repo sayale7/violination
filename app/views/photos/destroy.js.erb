@@ -9,7 +9,7 @@ swfu = new SWFUpload({
 	upload_url: '<%= swfupload_photos_path -%>?token=<%= @the_instance.id %>;type=<%= @the_instance.class.to_s %>',
 	// flash_url : '/assets/swfupload_f9.swf',
 
-	file_size_limit: '5 MB',
+	file_size_limit: "1024",
 	file_types: "*.jpg;*.jpeg;*.gif;*.png",
 	file_types_description: 'All',
 	file_upload_limit: max_file_size,
@@ -21,7 +21,6 @@ swfu = new SWFUpload({
 	upload_error_handler: uploadError,
 	upload_success_handler: uploadSuccess,
 	upload_complete_handler: uploadComplete,
-	button_image_url: "/images/file_upload_button.png",
 	button_placeholder_id: "spanButtonPlaceholder",
 	button_text_style : '.button { font-family: Verdana; font-size: 14pt; }',
 	button_text : '<span class="button"><%= t("photo.select") %></span>',
@@ -40,6 +39,7 @@ swfu = new SWFUpload({
   },
 
 	debug: false
+
 });
 
 /* Apply fancybox to multiple items */

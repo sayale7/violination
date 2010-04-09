@@ -6,9 +6,10 @@ html{
 body {
 /*  gelb
   background-color: #FFCF73;*/
-  background-color: silver;
+  background-image: url('/images/bg.jpg');
+  background-repeat: repeat-x;
   font-family: Verdana, Helvetica, Arial;
-  font-size: 12px;
+  font-size: 11px;
   height:100%; /* this is the key! */ 
 }
 
