@@ -8,9 +8,10 @@
         %strong
           =t('user.contact') 
       %td
+        =@the_instance.contact.to_s
         -if @the_instance.contact.to_s.eql?('1')
           =@the_instance.user.firstname.to_s << ' ' << @the_instance.user.lastname.to_s
-          =" (Email: #{mail_to item.user.email})"
+          =" (Email: #{mail_to @the_instance.user.email})"
         -else
           ='Violination.com'
           =" (Email: #{mail_to 'post@violination.com'})"     
