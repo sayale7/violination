@@ -28,7 +28,13 @@
   %div.photo_upload
     %h2
       =t('common.photo_gallery')
+      %span.open
+        =image_tag '/images/down.png'
+      %span.close
+        =image_tag '/images/up.png'
+    
     %div.new_image_upload_form
+      
       -unless @photos.size > @the_instance.maximum_file_count - 1
         =render '/photos/upload_form'
     

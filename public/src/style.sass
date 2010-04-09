@@ -2,6 +2,14 @@
 !gray = #8C6DD7 - silver
 !dark_gray = #666
 
+=thin_border
+  :border thin solid 
+  :border-color = !dark_gray
+  
+=thick_border
+  :border medium solid 
+  :border-color = !dark_gray
+
 =opacity(!value)
   :opacity= !value
   :filter alpha(opacity=#{!value * 100})
@@ -83,8 +91,7 @@ a
 
 
 #available_instance_tags, #available_instance_tags_js
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
   :float left
   :width 20%
 
@@ -115,17 +122,15 @@ a
 
     
 #added_instance_tags
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
   :float right
   :width 77%
 
 #workshop_description
   :margin-top 10px
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
   :float right
-  :width 98.5%
+  :width 99%
   :padding 5px
   
   textarea
@@ -151,8 +156,7 @@ a
   :overflow hidden
 
 .instance_tag
-  :border thin solid black
-  :background-color = !gray
+  +thin_border
   :padding 10px
 
 .instance_tag_js
@@ -186,11 +190,10 @@ a
 .photo_upload
   :float right
   :clear both
-  :width 98.5%
+  :width 99%
   :margin-top 10px
   :padding 5px
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
 
   h2
     :background-image url("/images/h2bg.png")
@@ -206,7 +209,7 @@ a
     
 
 .photo_upload:hover
-  :border medium solid !dark_gray
+  +thin_border
 
   h2
     :background-color = !dark_gray
@@ -252,8 +255,7 @@ a
   :float left
   :width 48%
   :background transparent
-  :border medium solid  
-  :border-color = !dark_gray
+  +thin_border
   :overflow hidden
   :padding 5px
 
@@ -266,8 +268,7 @@ a
     :padding 5px
 
 #instance_info:hover
-  :border medium solid  
-  :border-color = !dark_gray
+  +thin_border
 
   h2
     :background-color #250672
@@ -294,8 +295,7 @@ table
   :float right
   :width 46%
   :background transparent
-  :border medium solid  
-  :border-color = !dark_gray
+  +thin_border
   :overflow hidden
   :padding 5px
   
@@ -308,8 +308,7 @@ table
     :padding 5px
     
 #thumbnails_show:hover
-  :border medium solid  
-  :border-color = !dark_gray
+  +thin_border
 
   h2
     :background-color #7147D7
@@ -319,8 +318,7 @@ table
   :float right
   :width 49%
   :background transparent
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
   :overflow hidden
   :padding 5px
 
@@ -333,8 +331,7 @@ table
     :padding 5px
 
 #workshop_thumbnails_show:hover
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
 
   h2
     :background-color #7147D7
@@ -345,8 +342,7 @@ table
   :float right
   :width 49%
   :background transparent
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
   :overflow hidden
   :padding 5px
   :margin-top 5px
@@ -360,8 +356,7 @@ table
     :padding 5px
 
 #show_workshop_description:hover
-  :border medium solid 
-  :border-color = !dark_gray
+  +thin_border
 
   h2
     :background-color #7147D7
@@ -378,8 +373,7 @@ table
     :padding 5px
     :float left
     :background transparent
-    :border medium solid 
-    :border-color = !dark_gray
+    +thin_border
     :margin 5px
     
     h2
@@ -391,8 +385,7 @@ table
       :padding 5px
       
   .show_workshop_tags_item:hover
-    :border medium solid 
-    :border-color = !dark_gray
+    +thin_border
     
     h2
       :background-color #7147D7
