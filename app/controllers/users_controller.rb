@@ -60,4 +60,12 @@ class UsersController < ApplicationController
     @tag = Tag.find_by_taggable_type_and_parent_id('Workshop', nil)
   end
   
+  def personals
+    @the_instance = current_user
+    @added_tags =  @the_instance.tags.find_all_by_parent_id(nil)
+    @available_tags = Tag.find_all_by_taggable_type_and_parent_id('User', nil) - @added_tags
+    @photo = Photo.new
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail_and_photo_container_type(@the_instance.id, nil, 'User')
+  end
+  
 end

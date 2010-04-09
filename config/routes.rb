@@ -40,6 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sessions
 
   map.resources :users
+  map.personals 'personals', :controller => 'users', :action => 'personals'
   
   map.root :controller => "users", :action => "index"
 

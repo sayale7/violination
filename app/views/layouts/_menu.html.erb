@@ -6,6 +6,7 @@
 	    <ul class="pureCssMenum">
 		    <li class="pureCssMenui"><%= link_to t('user.show'), user_path(current_user), :class => 'pureCssMenui' %></li>
 		    <li class="pureCssMenui"><%= link_to t('user.edit'), edit_user_path(current_user), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('user.personals'), personals_path, :class => 'pureCssMenui' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
@@ -41,9 +42,10 @@
 	  <span><%= t('common.admin') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('tag.workshop.index'), tags_path(:taggable_type => 'Workshop', :taggable_kind =>  'Workshop'), :class => 'pureCssMenu' %></li>
+	      <li class="pureCssMenui"><%= link_to t('tag.user.index'), tags_path(:taggable_type => 'User'), :class => 'pureCssMenu' %></li>
+		    <li class="pureCssMenui"><%= link_to t('tag.workshop.index'), tags_path(:taggable_type => 'Workshop'), :class => 'pureCssMenu' %></li>
 		    <li class="pureCssMenui"><%= link_to t('tag.stringg.index'), tags_path(:taggable_type => 'Stringg'), :class => 'pureCssMenu' %></li>
-		    <li class="pureCssMenui"><%= link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow', :taggable_kind =>  'Bow'), :class => 'pureCssMenu' %></li>
+		    <li class="pureCssMenui"><%= link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow'), :class => 'pureCssMenu' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>

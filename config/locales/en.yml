@@ -48,6 +48,7 @@ en:
     firstname: Firstname
     lastname: Lastname
     contact: Contact
+    personals: Personal Info
     admin:
       could_be_in_my_workshop: What is in my workshop?
       in_my_workshop: What could be in my workshop?

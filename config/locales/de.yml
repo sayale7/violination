@@ -44,6 +44,7 @@ de:
     firstname: Vorname
     lastname: Nachname
     contact: Kontakt
+    personals: Persönliches
     admin:
       could_be_in_my_workshop: Was biete ich in meiner Werkstätte an?
       in_my_workshop: Was kann ich in meiner Werkstätte anbieten?
