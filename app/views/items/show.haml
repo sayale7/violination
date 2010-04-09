@@ -6,7 +6,7 @@
 
 -if current_user && current_user.id == @the_instance.user_id
   %p
-    = link_to "Destroy", "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?'
+    = link_to t('common.destroy'), "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?'
 
 %div#edit_instance_tags_js
   -if current_user && current_user.id == @the_instance.user_id

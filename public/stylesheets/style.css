@@ -2,7 +2,7 @@ h1 { font-size: 18px; width: 100%; }
 
 h2 { font-size: 13px; color: #4013AF; }
 
-p { font-size: 11px; }
+p { font-size: 12px; }
 
 p.error { display: none; color: red; }
 
@@ -28,6 +28,7 @@ a img { border: none; }
 .tags_header { background: #666666; padding: 5px; color: white; font-weight: bold; }
 .tags_header a { float: right; }
 .tags_header img { height: 15px; }
+.tags_header h2 { font-size: 13px; color: white; padding: 0; margin: 0; }
 
 .tags_body { padding: 5%; }
 .tags_body a { float: right; }

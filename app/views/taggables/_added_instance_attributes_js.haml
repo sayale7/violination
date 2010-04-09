@@ -1,3 +1,7 @@
+%div.tags_header
+  %h2
+    =t('instrument.attributes')
+    
 -@added_tags.each do |tag|
   %p
   -if child_tags(tag).empty?

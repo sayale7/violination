@@ -1,10 +1,12 @@
-%div.available_tags_header
+%div.tags_header
+  %h2
+    =t('tag.available')
   -if @the_instance.class.to_s.eql?('Instrument')
     =t('instrument.mine_singular')
   -if @the_instance.class.to_s.eql?('Bow')
     =t('bow.mine_singular')
 
-%div.available_tags_body  
+%div.tags_body  
   -@available_tags.each do |tag|
     %p  
       =tag.tag_names.find_by_language(get_locale.to_s).value

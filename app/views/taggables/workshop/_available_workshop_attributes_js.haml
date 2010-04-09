@@ -3,7 +3,8 @@
     =Tag.find(above_base_level(@added_tags, @available_tags)).tag_names.find_by_language(get_locale.to_s).value
     =link_to image_tag('/images/back.png'), refresh_available_tags_path(:taggable_type => @the_instance.class.to_s, :taggable_id => @the_instance.id, :tag => Tag.find(above_base_level(@added_tags, @available_tags)).parent_id), :rel => 'edit_workshop_tags'
   -else
-    =t('user.my_workshop')
+    %h2
+      =t('tag.available')
 
 %div.tags_body  
   -@available_tags.each do |tag|

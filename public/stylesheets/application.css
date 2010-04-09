@@ -8,8 +8,8 @@ body {
   background-color: #FFCF73;*/
   background-image: url('/images/bg.jpg');
   background-repeat: repeat-x;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 11px;
+  font-family: 'Trebuchet MS', Tahoma, Sans-serif;
+  font-size: 12px;
   height:100%; /* this is the key! */ 
 }
 
