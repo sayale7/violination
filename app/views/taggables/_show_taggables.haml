@@ -3,7 +3,16 @@
     =t('instrument.info')
   
   %table
-          
+    %tr
+      %td
+        %strong
+          =t('user.contact') << ':'
+        -if @the_instance.contact.to_s.eql?('1')
+          =@the_instance.user.firstname.to_s << ' ' << @the_instance.user.lastname.to_s
+          =" (Email: #{mail_to item.user.email})"
+        -else
+          ='Violination.com'
+          =" (Email: #{mail_to 'post@violination.com'})"     
     -@added_tags.each do |tag|
       %tr
         %td
