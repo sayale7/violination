@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
   
   def update
     @the_instance = get_taggable_type(params[:taggable_type].to_s).find(params[:id])
-    if @the_instance.update_attributes(params[:item])
+    if @the_instance.update_attribute(:contact, params[:item][:contact])
       redirect_to "/#{params[:taggable_type].to_s.downcase.pluralize}/#{@the_instance.id}?taggable_type=#{params[:taggable_type].to_s}"
     else
       render :action => 'edit'
