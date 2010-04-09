@@ -10,6 +10,7 @@
         %tr
           %td
             %strong
+              =item.contact.to_s
               =t('user.contact') << ':'
             -if item.contact.to_s.eql?('true')
               =item.user.firstname.to_s << ' ' << item.user.lastname.to_s
