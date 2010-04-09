@@ -92,7 +92,7 @@ class PhotosController < ApplicationController
     @added_tags =  @the_instance.tags.find_all_by_parent_id(nil)
     @available_tags = Tag.find_all_by_taggable_type_and_parent_id(@the_instance.class.to_s, nil) - @added_tags
     @photo = Photo.new
-    @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail_and_photo_container_type(@the_instance.id, nil, @the_instance.class.to_s)
   end
   
 end
