@@ -11,7 +11,7 @@
           %td
             %strong
               =t('user.contact') << ':'
-            -if item.contact
+            -if item.contact.to_s.eql?('true')
               =item.user.firstname.to_s << ' ' << item.user.lastname.to_s
               =" (Email: #{mail_to item.user.email})"
             -else
