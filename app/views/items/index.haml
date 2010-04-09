@@ -3,10 +3,21 @@
 %p
   = link_to t('common.new'),  request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize << "/new?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
 
--for item in @the_instance
+-for item in @the_instances
   %div.instance_index_element
     -unless item.tags.find_by_parent_id(nil).nil?
       %table
+        %tr
+          %td
+            %strong
+              =t('user.contact') << ':'
+            -if item.contact
+              =item.user.firstname.to_s << ' ' << item.user.lastname.to_s
+              =" (Email: #{mail_to item.user.email})"
+            -else
+              ='Violination.com'
+              =" (Email: #{mail_to 'post@violination.com'})"
+              
         -get_added_tags(item.tags.find_by_parent_id(nil), item.id).each do |tag|
           %tr
             -if tag.children.empty?

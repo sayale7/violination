@@ -44,7 +44,9 @@ de:
     firstname: Vorname
     lastname: Nachname
     contact: Kontakt
-    personals: Persönliches
+    personals: Persönliches bearbeiten
+    my_profile: Mein Profil
+    edit_account: Konto bearbeiten
     admin:
       could_be_in_my_workshop: Was biete ich in meiner Werkstätte an?
       in_my_workshop: Was kann ich in meiner Werkstätte anbieten?
@@ -80,6 +82,8 @@ de:
     of: Instrument von
     info: Über dieses Instrument
     attributes: Dieses Instrument hat folgende Attribute
+    self_contact: Meine Kontaktdaten verwenden
+    violination_contact: Anonym über die Seite
   workshop:
     edit: Meine Werkstatt bearbeiten
     show: Meine Werkstatt anzeigen

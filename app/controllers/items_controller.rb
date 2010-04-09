@@ -2,10 +2,10 @@ class ItemsController < ApplicationController
   
   def index
     if params[:user_id]
-      @the_instance = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
+      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
     end
     if !params[:user_id]
-      @the_instance = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
+      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
     end
     render :template  => '/items/index.haml'
   end
@@ -32,8 +32,8 @@ class ItemsController < ApplicationController
   
   def update
     @the_instance = get_taggable_type(params[:taggable_type].to_s).find(params[:id])
-    if @the_instance.update_attributes(params[:instrument])
-      redirect_to @the_instance
+    if @the_instance.update_attributes(params[:item])
+      redirect_to "/#{params[:taggable_type].to_s.downcase.pluralize}/#{@the_instance.id}?taggable_type=#{params[:taggable_type].to_s}"
     else
       render :action => 'edit'
     end

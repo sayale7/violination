@@ -3,10 +3,17 @@
 -else
   -title t('instrument.of') << ' ' << @the_instance.user.username
 
-
 -if current_user && current_user.id == @the_instance.user_id
+  %span.right
+    -form_for Item.find(@the_instance.id), :method => :put do |f|
+      =hidden_field :taggable_type, '', :value => @the_instance.class.to_s
+      =f.select :contact, { t('instrument.self_contact') => true, t('instrument.violination_contact') => false }
+      =f.submit t('common.update')
+    
   %p
     = link_to t('common.destroy'), "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?'
+    
+
 
 %div#edit_instance_tags_js
   -if current_user && current_user.id == @the_instance.user_id

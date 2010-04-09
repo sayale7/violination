@@ -9,6 +9,8 @@ p.error { display: none; color: red; }
 a { text-decoration: none; color: #666666; }
 a img { border: none; }
 
+.right { float: right; }
+
 .text_area { width: 98%; height: 200px; font-size: 12px; padding: 3px; font-family: Verdana; }
 
 .text_box { width: 98%; height: 30px; font-size: 13px; padding: 1px; }

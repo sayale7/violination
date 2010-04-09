@@ -48,7 +48,9 @@ en:
     firstname: Firstname
     lastname: Lastname
     contact: Contact
-    personals: Personal Info
+    personals: Edit Personal Info
+    my_profile: My Profile
+    edit_account: Edit Account
     admin:
       could_be_in_my_workshop: What is in my workshop?
       in_my_workshop: What could be in my workshop?
@@ -84,6 +86,8 @@ en:
     of: Instrument of
     info: To the instrument
     attributes: Attributes of this Instrument
+    self_contact: Use my contact info
+    violination_contact: Anonymous contact through the site
   workshop:
     edit: Edit my workshop
     show: Show my workshop
