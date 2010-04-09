@@ -6,7 +6,8 @@
     %tr
       %td
         %strong
-          =t('user.contact') << ':'
+          =t('user.contact') 
+      %td
         -if @the_instance.contact.to_s.eql?('1')
           =@the_instance.user.firstname.to_s << ' ' << @the_instance.user.lastname.to_s
           =" (Email: #{mail_to item.user.email})"

@@ -1,7 +1,8 @@
--if @the_instance.class.to_s.eql?('Bow')
-  -title t('bow.of') << ' ' << @the_instance.user.username
--else
-  -title t('instrument.of') << ' ' << @the_instance.user.username
+-if @the_instance.contact.to_s.eql?('1')
+  -if @the_instance.class.to_s.eql?('Bow')
+    -title t('bow.of') << ' ' << @the_instance.user.username
+    -else
+    -title t('instrument.of') << ' ' << @the_instance.user.username
 
 -if current_user && current_user.id == @the_instance.user_id
   %span.right
