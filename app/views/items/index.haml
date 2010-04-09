@@ -10,9 +10,8 @@
         %tr
           %td
             %strong
-              =item.contact.to_s
               =t('user.contact') << ':'
-            -if item.contact.to_s.eql?('true')
+            -if item.contact.to_s.eql?('1')
               =item.user.firstname.to_s << ' ' << item.user.lastname.to_s
               =" (Email: #{mail_to item.user.email})"
             -else
