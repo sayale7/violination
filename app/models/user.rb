@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   has_many :taggings, :as => :taggable, :dependent => :destroy
   has_many :tag_values, :as => :value_taggable, :dependent => :destroy
-  has_many :tags, :through => :taggings
+  has_many :tags, :through => :taggings, :order  => 'position'
   has_many :tags_over_value, :through => :tag_values
   has_many :instruments, :dependent => :destroy
   has_many :bows, :dependent => :destroy
