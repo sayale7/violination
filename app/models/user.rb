@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :tag_values, :as => :value_taggable, :dependent => :destroy
   has_many :tags, :through => :taggings, :order  => 'position'
   has_many :tags_over_value, :through => :tag_values
-  has_many :instruments, :dependent => :destroy
+  has_many :items, :dependent => :destroy
   has_many :bows, :dependent => :destroy
   has_many :photos, :dependent => :destroy, :foreign_key => 'photo_container_id'
   has_one :workshop

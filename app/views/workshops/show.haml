@@ -1,3 +1,11 @@
+%p
+  =link_to t('user.me'), "/users/#{@the_instance.user.id}"
+  %br
+  -unless @the_instance.user.items.find_all_by_item_type('Stringg').size == 0
+    = link_to t('user.stringgs'), stringgs_url(:user_id => @the_instance.user.id, :taggable_type => 'Stringg')
+    %br
+  -unless @the_instance.user.items.find_all_by_item_type('Bow').size == 0
+    = link_to t('user.bows'), bows_url(:user_id => @the_instance.user.id, :taggable_type => 'Bow')
 %div#show_workshop_tags
   %h2
     =t('workshop.my_tags')

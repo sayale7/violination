@@ -11,7 +11,14 @@
     %br
     =mail_to @user.email
     %p
-      =link_to t('workshop.my'), "/workshop.#{@user.workshop.id}"
+      =link_to t('user.workshop'), "/workshop.#{@user.workshop.id}"
+      %br
+      -unless @user.items.find_all_by_item_type('Stringg').size == 0
+        = link_to t('user.stringgs'), stringgs_url(:user_id => @user.id, :taggable_type => 'Stringg')
+        %br
+      -unless @user.items.find_all_by_item_type('Bow').size == 0
+        = link_to t('user.bows'), bows_url(:user_id => @user.id, :taggable_type => 'Bow')
+        
     
 %div#show_user_tags
   -@added_tags.each do |tag|

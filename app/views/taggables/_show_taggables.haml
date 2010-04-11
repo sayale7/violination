@@ -9,7 +9,10 @@
           =t('user.contact') 
       %td
         -if @the_instance.contact.to_s.eql?('1')
-          =@the_instance.user.firstname.to_s << ' ' << @the_instance.user.lastname.to_s
+          -unless @the_instance.user.full_name.size == 1 
+            =link_to @the_instance.user.full_name, @the_instance.user 
+          -else 
+            =link_to @the_instance.user.username, @the_instance.user 
           =" (Email: #{mail_to @the_instance.user.email})"
         -else
           ='Violination.com'

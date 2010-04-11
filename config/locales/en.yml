@@ -51,6 +51,10 @@ en:
     personals: Edit Personal Info
     my_profile: My Profile
     edit_account: Edit Account
+    workshop: Workshop
+    stringgs: Strings
+    bows: Bows
+    me: To my person
     admin:
       could_be_in_my_workshop: What is in my workshop?
       in_my_workshop: What could be in my workshop?
