@@ -10,6 +10,11 @@
 
 %p
    %strong
+      =t('common.visible')
+   =f.check_box :visible 
+
+%p
+   %strong
       = f.label :german_name, t('common.german_name')
       = f.text_field :german_name, :class => 'text_box'
          

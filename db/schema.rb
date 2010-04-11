@@ -9,13 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100407082749) do
-
-  create_table "bows", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
+ActiveRecord::Schema.define(:version => 20100411133639) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -34,17 +28,10 @@ ActiveRecord::Schema.define(:version => 20100407082749) do
     t.integer  "width"
     t.integer  "height"
     t.integer  "photo_container_id"
-    t.string   "description",          :limit => 1000
+    t.string   "description",          :limit => 1000, :default => "Violination.com"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_container_type"
-  end
-
-  create_table "stringgs", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "contact"
   end
 
   create_table "tag_names", :force => true do |t|
@@ -80,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20100407082749) do
     t.integer  "parent_id"
     t.integer  "position"
     t.string   "value_type"
+    t.boolean  "visible"
   end
 
   create_table "users", :force => true do |t|
@@ -89,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20100407082749) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "firstname"
-    t.string   "lastname"
+    t.string   "firstname",     :default => ""
+    t.string   "lastname",      :default => ""
   end
 
   create_table "workshops", :force => true do |t|
