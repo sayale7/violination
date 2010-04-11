@@ -55,6 +55,30 @@
 </ul>
 <% else %>
   <ul class="pureCssMenu pureCssMenum">
+    <li class="pureCssMenui"><a class="pureCssMenui" href="#">
+  	  <span><%= t('common.users') %></span>
+  	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+  	    <ul class="pureCssMenum">
+  		    <li class="pureCssMenui"><%= link_to t('user.all'), users_url, :class => 'pureCssMenui' %></li>
+  	    </ul>
+  	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+  	</li>
+    <li class="pureCssMenui"><a class="pureCssMenui" href="#">
+  	  <span><%= t('common.instrument') %></span>
+  	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+  	    <ul class="pureCssMenum">
+  		    <li class="pureCssMenui"><%= link_to t('instrument.all'), stringgs_url(:taggable_type => 'Stringg'), :class => 'pureCssMenui' %></li>
+  	    </ul>
+  	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+  	</li>
+  	<li class="pureCssMenui"><a class="pureCssMenui" href="#">
+  	  <span><%= t('common.bows') %></span>
+  	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+  	    <ul class="pureCssMenum">
+  		    <li class="pureCssMenui"><%= link_to t('bow.all'), bows_url(:taggable_type => 'Bow'), :class => 'pureCssMenui' %></li>
+  	    </ul>
+  	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+  	</li>
     <li class="pureCssMenui">
   	  <%= link_to t('user.login'), login_path, :class => 'pureCssMenui' %>
   	</li>

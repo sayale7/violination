@@ -30,6 +30,7 @@ en:
     bows: Bows
     admin: Administration
     photo_gallery: Image Gallery
+    users: Violinmaker
   user:
     username:Username
     email: Email Address
@@ -55,6 +56,7 @@ en:
     stringgs: Strings
     bows: Bows
     me: To my person
+    all: All
     admin:
       could_be_in_my_workshop: What is in my workshop?
       in_my_workshop: What could be in my workshop?

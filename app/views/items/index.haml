@@ -1,7 +1,8 @@
 -title "Items"
 
-%p
-  = link_to t('common.new'),  request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize << "/new?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
+-if current_user
+  %p
+    = link_to t('common.new'),  request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize << "/new?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
 
 -for item in @the_instances
   %div.instance_index_element

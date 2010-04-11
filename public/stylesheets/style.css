@@ -122,3 +122,9 @@ table tr td { padding: 3px; vertical-align: top; }
 .spanButtonPlaceholderDiv { background: black; width: 150px; height: 40px; }
 
 #profile_info { width: 19%; float: left; }
+
+.user_index { clear: both; margin-bottom: 10px; overflow: hidden; }
+
+.image { float: left; }
+
+.info { float: left; padding-left: 10px; }

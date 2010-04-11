@@ -12,7 +12,7 @@
           -unless @the_instance.user.full_name.size == 1 
             =link_to @the_instance.user.full_name, @the_instance.user 
           -else 
-            =link_to @the_instance.user.username, @the_instance.user 
+            =link_to @the_instance.user.username
           =" (Email: #{mail_to @the_instance.user.email})"
         -else
           ='Violination.com'
