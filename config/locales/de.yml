@@ -88,7 +88,8 @@ de:
     edit: Meine Werkstatt bearbeiten
     show: Meine Werkstatt anzeigen
     description: Beschreibung meiner Werkstätte
-    my_tags: In meiner Werkstatt betreibe ich
+    my_tags: In meiner Werkstätte betreibe ich
+    my: Meine Werkstätte
   bow:
     all: Alle Bögen
     mine: Meine Bögen

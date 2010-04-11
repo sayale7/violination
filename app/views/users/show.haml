@@ -10,3 +10,23 @@
       =@user.username
     %br
     =mail_to @user.email
+    %p
+      =link_to t('workshop.my'), "/workshop.#{@user.workshop.id}"
+    
+%div#show_user_tags
+  -@added_tags.each do |tag|
+    %div.show_user_tags_item
+      %h2
+        =tag.tag_names.find_by_language(get_locale.to_s).value
+      -if tag.children.empty?
+        -if tag.value_type.to_s.eql?('preisfeld')
+          -tagvalue = get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @user.id).value)
+          -unless tagvalue.nil?
+            ='Euro ' << tagvalue.to_s
+        -else
+          -tagvalue = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @user.id)
+          -unless tagvalue.nil?
+            =tagvalue.value
+      -else
+        -unless get_selected_child_tag_id(tag, @user).nil?
+          =Tag.find(get_selected_child_tag_id(tag, @user)).tag_names.find_by_language('de').value

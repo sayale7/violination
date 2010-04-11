@@ -1,10 +1,11 @@
 <form>
+  <%= @the_instance.class.to_s %>
   <p>
   <%= t('photo.upload_text') %>
   <br/>
   <%= t('photo.remaining_counts') %>
   <%= ': ' %>
-  <%= @the_instance.maximum_file_count - @the_instance.photos.find_all_by_parent_id(nil).size  %>
+  <%= @the_instance.maximum_file_count - @the_instance.photos.find_all_by_parent_id_and_photo_container_type(nil, @the_instance.class.to_s).size  %>
   <br/>
     <%= t('photo.max_file_size') %>
     <%= ': ' %>

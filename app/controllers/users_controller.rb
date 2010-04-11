@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @added_tags =  @user.tags.find_all_by_parent_id(nil)
     respond_to do |format|
       format.html {user_path(@user)}
     end

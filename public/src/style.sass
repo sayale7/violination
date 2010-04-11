@@ -395,6 +395,36 @@ table
     h2
       :background-color #7147D7
       :color #fff
+  
+#show_user_tags
+  :width 80%
+  :float right
+  :background transparent
+  :clear none
+
+  .show_user_tags_item
+    :clear none
+    :width 97%
+    :padding 5px
+    :float right
+    :background transparent
+    +thin_border
+    :margin 5px
+
+    h2
+      :background-image url("/images/h2bg.png")
+      :background-repeat repeat-x
+      :color #fff
+      :margin -5px
+      :margin-bottom 5px
+      :padding 5px
+
+  .show_user_tags_item:hover
+    +thin_border
+
+    h2
+      :background-color #7147D7
+      :color #fff
 
 .spanButtonPlaceholderDiv
   :background black
@@ -402,12 +432,5 @@ table
   :height 40px
   
 #profile_info
+  :width 19%
   :float left
-  
-  #profile_image
-    :float left
-    
-  #account_info
-    :padding 10px
-    :padding-top 0
-    :float right

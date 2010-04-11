@@ -93,6 +93,7 @@ en:
     show: Show my workshop
     description: Description of my workshop
     my_tags: My Workshop
+    my: My Workshop
   bow:
     all: All Bows
     mine: My Bows

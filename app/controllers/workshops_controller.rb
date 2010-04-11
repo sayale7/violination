@@ -9,7 +9,7 @@ class WorkshopsController < ApplicationController
     end
     @added_tags =  @the_instance.tags.find_all_by_parent_id(nil)
     @photo = Photo.new
-    @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail_and_photo_container_type(@the_instance.id, nil, @the_instance.class.to_s)
   end
   
   def edit
@@ -23,7 +23,7 @@ class WorkshopsController < ApplicationController
     @available_tags =  Tag.find_all_by_parent_id_and_taggable_type(nil, 'Workshop') - @added_tags
     @tag = Tag.find_by_taggable_type_and_parent_id(@the_instance.class.to_s, nil)
     @photo = Photo.new
-    @photos = Photo.find_all_by_photo_container_id_and_thumbnail(@the_instance.id, nil)
+    @photos = Photo.find_all_by_photo_container_id_and_thumbnail_and_photo_container_type(@the_instance.id, nil, @the_instance.class.to_s)
   end
   
   def update
