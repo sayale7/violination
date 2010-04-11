@@ -15,7 +15,7 @@ a img { border: none; }
 
 .text_box { width: 98%; height: 30px; font-size: 13px; padding: 1px; }
 
-#container { clear: both; width: 90%; margin: 0 auto; margin-top: 10px; background-image: url("/images/gradientbg.jpg"); background-repeat: repeat-x; padding: 15px; overflow: hidden; min-height: 500px; }
+#container { clear: both; width: 90%; margin: 0 auto; margin-top: 10px; background: transparent; padding: 15px; overflow: hidden; min-height: 500px; }
 
 #header { width: 90%; margin: 0 auto; margin-top: 20px; height: 40px; padding: 15px; overflow: visible; }
 
