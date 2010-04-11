@@ -95,22 +95,26 @@ table tr td { padding: 3px; vertical-align: top; }
 #thumbnails_show:hover { border: thin solid; border-color: #666666; }
 #thumbnails_show:hover h2 { background-color: #7147D7; color: #fff; }
 
-#workshop_thumbnails_show { float: right; width: 49%; background: transparent; border: thin solid; border-color: #666666; overflow: hidden; padding: 5px; }
+#workshop_thumbnails_show { float: left; width: 49%; background: transparent; border: thin solid; border-color: #666666; overflow: hidden; padding: 5px; clear: both; margin-top: 10px; }
 #workshop_thumbnails_show h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 
 #workshop_thumbnails_show:hover { border: thin solid; border-color: #666666; }
 #workshop_thumbnails_show:hover h2 { background-color: #7147D7; color: #fff; }
 
-#show_workshop_description { float: right; width: 49%; background: transparent; border: thin solid; border-color: #666666; overflow: hidden; padding: 5px; margin-top: 5px; }
+#show_workshop_description { float: left; width: 49%; background: transparent; border: thin solid; border-color: #666666; overflow: hidden; padding: 5px; margin-top: 5px; }
 #show_workshop_description h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 
 #show_workshop_description:hover { border: thin solid; border-color: #666666; }
 #show_workshop_description:hover h2 { background-color: #7147D7; color: #fff; }
 
-#show_workshop_tags { width: 49%; float: left; background: transparent; }
-#show_workshop_tags .show_workshop_tags_item { clear: both; width: 90%; padding: 5px; float: left; background: transparent; border: thin solid; border-color: #666666; margin: 5px; }
+#show_workshop_tags { width: 47%; float: right; background: transparent; clear: none; }
+#show_workshop_tags .show_workshop_tags_item { clear: none; width: 97%; padding: 5px; float: right; background: transparent; border: thin solid; border-color: #666666; margin: 5px; }
 #show_workshop_tags .show_workshop_tags_item h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
 #show_workshop_tags .show_workshop_tags_item:hover { border: thin solid; border-color: #666666; }
 #show_workshop_tags .show_workshop_tags_item:hover h2 { background-color: #7147D7; color: #fff; }
 
 .spanButtonPlaceholderDiv { background: black; width: 150px; height: 40px; }
+
+#profile_info { float: left; }
+#profile_info #profile_image { float: left; }
+#profile_info #account_info { padding: 10px; padding-top: 0; float: right; }

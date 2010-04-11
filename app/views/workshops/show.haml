@@ -7,14 +7,17 @@
         =tag.tag_names.find_by_language(get_locale.to_s).value
       -unless added_child_tags(tag, @the_instance.id).empty?
         =added_child_tags(tag, @the_instance.id).collect {|_tag| _tag.tag_names.find_by_language(get_locale.to_s).value}.join(", ")
-          
+
+%div#show_workshop_description
+  %h2
+    =t('workshop.description')
+  = simple_format(h @the_instance.description)
+
 -unless @the_instance.photos.empty?
   %div#workshop_thumbnails_show
     %h2
       =t('common.photo_gallery')
     =render '/photos/show_thumbnails.html.erb'
   
-%div#show_workshop_description
-  %h2
-    =t('workshop.description')
-  = simple_format(h @the_instance.description)
+  
+

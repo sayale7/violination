@@ -318,12 +318,14 @@ table
     :color #fff
   
 #workshop_thumbnails_show
-  :float right
+  :float left
   :width 49%
   :background transparent
   +thin_border
   :overflow hidden
   :padding 5px
+  :clear both
+  :margin-top 10px
 
   h2
     :background-image url("/images/h2bg.png")
@@ -342,7 +344,7 @@ table
 
   
 #show_workshop_description
-  :float right
+  :float left
   :width 49%
   :background transparent
   +thin_border
@@ -366,15 +368,16 @@ table
     :color #fff
 
 #show_workshop_tags
-  :width 49%
-  :float left
+  :width 47%
+  :float right
   :background transparent
+  :clear none
   
   .show_workshop_tags_item
-    :clear both
-    :width 90%
+    :clear none
+    :width 97%
     :padding 5px
-    :float left
+    :float right
     :background transparent
     +thin_border
     :margin 5px
@@ -399,3 +402,13 @@ table
   :width 150px
   :height 40px
   
+#profile_info
+  :float left
+  
+  #profile_image
+    :float left
+    
+  #account_info
+    :padding 10px
+    :padding-top 0
+    :float right

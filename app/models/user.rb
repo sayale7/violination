@@ -43,7 +43,11 @@ class User < ActiveRecord::Base
   end
   
   def full_name
-    return self.firstname << ' '<< self.lastname
+    return self.firstname + ' ' + self.lastname
+  end
+  
+  def profile_image
+    return Photo.find_by_photo_container_id_and_photo_container_type(self.id, 'User')
   end
   
   private

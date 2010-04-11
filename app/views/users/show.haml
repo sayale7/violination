@@ -1,0 +1,12 @@
+%div#profile_info
+  -unless @user.profile_image.nil?
+    = link_to image_tag("#{@user.profile_image.public_filename(:thumb)}", :width => 140),  @user.profile_image.public_filename, :title => @user.profile_image.description, :class => 'group', :rel  => 'group1'
+  -else
+    = image_tag('/images/anonymous.jpg', :width => 140)
+  %p
+    -unless @user.full_name.size == 1 
+      =@user.full_name 
+    -else 
+      =@user.username
+    %br
+    =mail_to @user.email
