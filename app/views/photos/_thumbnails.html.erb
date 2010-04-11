@@ -4,9 +4,9 @@
 <div class="new_thumbs_out">
 	<div class="new_thumbs">
 	  <% if photo.description.nil? || photo.description.to_s.eql?('') %>
-	    <%= link_to image_tag("#{photo.public_filename(:thumb)}"),  photo.public_filename, :title => 'Violination.com', :class => 'group', :rel  => 'group1' %>
+	    <%= link_to image_tag("#{photo.public_filename(:thumb)}", :width => 80),  photo.public_filename, :title => 'Violination.com', :class => 'group', :rel  => 'group1' %>
 	  <% else %>
-	    <%= link_to image_tag("#{photo.public_filename(:thumb)}"),  photo.public_filename, :title => photo.description, :class => 'group', :rel  => 'group1' %>
+	    <%= link_to image_tag("#{photo.public_filename(:thumb)}", :width => 80),  photo.public_filename, :title => photo.description, :class => 'group', :rel  => 'group1' %>
 	  <% end %>
 	</div>
 	<div class="new_thumbs_edit_delete">
