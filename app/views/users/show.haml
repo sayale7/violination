@@ -33,7 +33,7 @@
         -else
           -tagvalue = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @user.id)
           -unless tagvalue.nil?
-            =tagvalue.value
+            =simple_format (h tagvalue.value)
       -else
         -unless get_selected_child_tag_id(tag, @user).nil?
           =Tag.find(get_selected_child_tag_id(tag, @user)).tag_names.find_by_language('de').value
