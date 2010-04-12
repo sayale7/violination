@@ -90,7 +90,7 @@ $(document).ready(function() {
   //hide and toggle workshop tags
   $('.show_workshop_tags_item .row').hide();
   
-  $('.show_workshop_tags_item').toggle(function() {
+  $('.show_workshop_tags_item h2').toggle(function() {
     $(this).find('.open img').fadeOut('fast', function(){
       $(this).parent().parent().find(".close img").fadeIn('fast');
     });
