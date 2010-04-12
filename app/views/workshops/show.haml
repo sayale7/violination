@@ -15,7 +15,8 @@
         =tag.tag_names.find_by_language(get_locale.to_s).value
       -unless added_child_tags(tag, @the_instance.id).empty?
         -added_child_tags(tag, @the_instance.id).each do |tag|
-          =tag.tag_names.find_by_language(get_locale.to_s).value
+          %strong
+            =tag.tag_names.find_by_language(get_locale.to_s).value
           -unless added_child_tags(tag, @the_instance.id).empty?
             =' - '
             =added_child_tags(tag, @the_instance.id).collect {|_tag| _tag.tag_names.find_by_language(get_locale.to_s).value}.join(", ")
