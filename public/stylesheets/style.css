@@ -130,6 +130,5 @@ table tr td { padding: 3px; vertical-align: top; }
 .info { float: left; padding-left: 10px; }
 
 .row { width: 98.4%; background-image: url("/images/row_bg.png"); background-repeat: repeat-x repeat-y; padding: 1%; }
-.row .left { padding-right: 5px; float: left; background: transparent; }
 
 .row:hover { background-image: url("/images/h2bg.png"); color: white; }

@@ -16,14 +16,11 @@
       -unless added_child_tags(tag, @the_instance.id).empty?
         -added_child_tags(tag, @the_instance.id).each do |tag|
           %div.row
-            %div.left
+            %strong
               =tag.tag_names.find_by_language(get_locale.to_s).value
-            %div.left
             -unless added_child_tags(tag, @the_instance.id).empty?
-              =' - '
-              =added_child_tags(tag, @the_instance.id).collect {|_tag| _tag.tag_names.find_by_language(get_locale.to_s).value}.join(", ")
-            -else
               %br
+              =added_child_tags(tag, @the_instance.id).collect {|_tag| _tag.tag_names.find_by_language(get_locale.to_s).value}.join(", ")
           
 
 %div#show_workshop_description
