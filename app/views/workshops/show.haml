@@ -23,7 +23,7 @@
               =' - '
               =added_child_tags(tag, @the_instance.id).collect {|_tag| _tag.tag_names.find_by_language(get_locale.to_s).value}.join(", ")
             -else
-              ='  '
+              %br
           
 
 %div#show_workshop_description
