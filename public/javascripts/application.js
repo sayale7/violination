@@ -94,12 +94,12 @@ $(document).ready(function() {
     // $('.open img').fadeOut('slow', function(){
     //      $(".close img").fadeIn('slow');
     //    });
-		$('.show_workshop_tags_item .row').show(100).fadeIn(50);
+		$(this).find('.row').show(100).fadeIn(50);
   }, function() {
     // $('.close img').fadeOut('slow', function(){
     //      $(".open img").fadeIn('slow');
     //    });
-		$('.show_workshop_tags_item .row').hide(100).fadeOut(50);
+		$(this).find('.row').hide(100).fadeOut(50);
   });
 
 
