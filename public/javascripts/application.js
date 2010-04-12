@@ -91,15 +91,15 @@ $(document).ready(function() {
   $('.show_workshop_tags_item .row').hide();
   
   $('.show_workshop_tags_item').toggle(function() {
-    // $('.open img').fadeOut('slow', function(){
-    //      $(".close img").fadeIn('slow');
-    //    });
-		$(this).find('.row').show(100).fadeIn(50);
+    $(this).find('.open img').fadeOut('fast', function(){
+      $(this).parent().parent().find(".close img").fadeIn('fast');
+    });
+    $(this).find('.row').show(100).fadeIn(50);
   }, function() {
-    // $('.close img').fadeOut('slow', function(){
-    //      $(".open img").fadeIn('slow');
-    //    });
-		$(this).find('.row').hide(100).fadeOut(50);
+    $(this).find('.close img').fadeOut('fast', function(){
+      $(this).parent().parent().find(".open img").fadeIn('fast');
+    });
+    $(this).find('.row').hide(100).fadeOut(50);
   });
 
 
