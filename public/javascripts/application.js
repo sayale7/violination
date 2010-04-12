@@ -51,8 +51,12 @@ $(document).ready(function() {
   // $('a.new_instrument').click(function(){
   //   $('.instrument_kind').show();
   // });
+  
 
-  // hide workshop_description
+
+	
+	
+	// hide and workshop_description
   $('#workshop_description_form').hide();
   
   //toggle workshop description    
@@ -81,7 +85,22 @@ $(document).ready(function() {
 	  });
 		$('.new_image_upload_form, #thumbnails').hide(800).fadeOut(500);
   });
-	
+
+
+  //hide and toggle workshop tags
+  $('.show_workshop_tags_item .row').hide();
+  
+  $('.show_workshop_tags_item').toggle(function() {
+    // $('.open img').fadeOut('slow', function(){
+    //      $(".close img").fadeIn('slow');
+    //    });
+		$('.show_workshop_tags_item .row').show(100).fadeIn(50);
+  }, function() {
+    // $('.close img').fadeOut('slow', function(){
+    //      $(".open img").fadeIn('slow');
+    //    });
+		$('.show_workshop_tags_item .row').hide(100).fadeOut(50);
+  });
 
 
   // delete images

@@ -62,12 +62,10 @@ a img { border: none; }
 
 .instance_index_element { padding: 5px; }
 
-.photo_upload { float: right; clear: both; width: 99%; margin-top: 10px; padding: 5px; border: thin solid; border-color: #666666; }
-.photo_upload h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
+.photo_upload { float: left; clear: both; width: 99.9%; margin-top: 10px; border: thin solid; border-color: #666666; }
+.photo_upload p { padding: 5px; }
+.photo_upload h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: 0; padding: 5px; }
 .photo_upload h2 img { height: 16px; float: right; }
-
-.photo_upload:hover { border: thin solid; border-color: #666666; }
-.photo_upload:hover h2 { background-color: #666666; color: #fff; }
 
 #divFileProgressContainer { display: none; }
 
@@ -131,4 +129,4 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .row { width: 98.4%; background-image: url("/images/row_bg.png"); background-repeat: repeat-x repeat-y; padding: 1%; }
 
-.row:hover { background-image: url("/images/h2bg.png"); color: white; }
+.row:hover { background: white; }

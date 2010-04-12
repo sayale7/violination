@@ -190,32 +190,26 @@ a
 
   
 .photo_upload
-  :float right
+  :float left
   :clear both
-  :width 99%
+  :width 99.9%
   :margin-top 10px
-  :padding 5px
   +thin_border
+  
+  p
+    :padding 5px
 
   h2
     :background-image url("/images/h2bg.png")
     :background-repeat repeat-x
     :color #fff
-    :margin -5px
-    :margin-bottom 5px
+    :margin 0
     :padding 5px
     
     img
       :height 16px
       :float right
     
-
-.photo_upload:hover
-  +thin_border
-
-  h2
-    :background-color = !dark_gray
-    :color #fff
   
   
 #divFileProgressContainer
@@ -455,5 +449,4 @@ table
   :padding 1%
     
 .row:hover
-  :background-image url("/images/h2bg.png")
-  :color white
+  :background white
