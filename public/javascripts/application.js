@@ -90,16 +90,18 @@ $(document).ready(function() {
   //hide and toggle workshop tags
   $('.show_workshop_tags_item .row').hide();
   
-  $('.show_workshop_tags_item').toggle(function() {
-    $(this).find('.open img').fadeOut('fast', function(){
-      $(this).parent().parent().find(".close img").fadeIn('fast');
+  $('.show_workshop_tags_item h2').toggle(function() {
+    var the_div = $(this).parent();
+    the_div.find('.open img').fadeOut('fast', function(){
+      the_div.find(".close img").fadeIn('fast');
     });
-    $(this).find('.row').show(100).fadeIn(50);
+    the_div.find('.row').show(100).fadeIn(50);
   }, function() {
-    $(this).find('.close img').fadeOut('fast', function(){
-      $(this).parent().parent().find(".open img").fadeIn('fast');
+    var the_div = $(this).parent();
+    the_div.find('.close img').fadeOut('fast', function(){
+      the_div.find(".open img").fadeIn('fast');
     });
-    $(this).find('.row').hide(100).fadeOut(50);
+    the_div.find('.row').hide(100).fadeOut(50);
   });
 
 
