@@ -2,8 +2,9 @@
   -for item in @the_instances
     %div.list_index
       %div.image
-        -unless item.photos.empty?
-          = link_to image_tag("#{Photo.find_by_photo_container_id_and_photo_container_type(item.id, 'Item').public_filename(:thumb)}", :width => 140),  item.photos.first.public_filename, :title => ' ', :class => 'group', :rel  => 'group1'
+        -photo = Photo.find_by_photo_container_id_and_photo_container_type(item.id, 'Item')
+        -unless photo.nil?
+          = link_to image_tag("#{photo.public_filename(:thumb)}", :width => 140),  photo.public_filename, :title => ' ', :class => 'group', :rel  => 'group1'
         -else
           = image_tag('/images/anonymous.jpg', :width => 140)
       %div.info
