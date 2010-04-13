@@ -13,14 +13,15 @@ class SearchController < ApplicationController
   def search_item
     the_items = Array.new
 
-    unless params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
-
-    
+    if params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
+      @the_instances = Item.find_all_by_item_type(params[:taggable_type].to_s)
+    else
       all_item_and_user_values
-      @word_size_before = @item_search_words.size + @user_search_words.size
+      
+      @word_size_before = @item_search_words.uniq.size + @user_search_words.uniq.size
       @word_size_after = params[:search_input].split.size
       
-      unless (@item_search_words.size + @user_search_words.size) == params[:search_input].split.size
+      if (@item_search_words.uniq.size + @user_search_words.uniq.size) == params[:search_input].split.size
         @item_search_words.uniq.each_with_index do |word|
           tmp_items_array = Array.new
           if !the_items.empty? && word.last > 0
@@ -54,8 +55,6 @@ class SearchController < ApplicationController
       else
         @the_instances = Array.new
       end
-    else
-      @the_instances = Item.find_all_by_item_type(params[:taggable_type].to_s)
     end
 
     @search_input = params[:search_input]
