@@ -1,3 +1,13 @@
+-unless @item_search_words.nil?
+  -@item_search_words.uniq.each do |word|
+    =word
+%br
+-unless @user_search_words.nil?
+  -@user_search_words.uniq.each do |word|
+    =word
+
+%br
+    
 -for item in @the_instances
   %div.instance_index_element
     -unless item.tags.find_by_parent_id(nil).nil?
