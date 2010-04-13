@@ -12,40 +12,46 @@ class SearchController < ApplicationController
 
   def search_item
     the_items = Array.new
-    
+
     unless params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
-      
+
+    
       all_item_and_user_values
-      @item_search_words.uniq.each_with_index do |word|
-        tmp_items_array = Array.new
-        if !the_items.empty? && word.last > 0
-          the_items.each do |item|
-            the_compare_items = (search_by_tag_value(word.first, 'Item') + search_by_tag_name(word.first, 'Item')).uniq
-            the_compare_items.each do |tmp_item|
-              unless tmp_item.nil? || item.nil?
-                if tmp_item.id.to_s.eql?(item.id.to_s)
-                  tmp_items_array.push(tmp_item)
+      
+      unless (@item_search_words.size + @user_search_words.size) == params[:search_input].split.size
+        @item_search_words.uniq.each_with_index do |word|
+          tmp_items_array = Array.new
+          if !the_items.empty? && word.last > 0
+            the_items.each do |item|
+              the_compare_items = (search_by_tag_value(word.first, 'Item') + search_by_tag_name(word.first, 'Item')).uniq
+              the_compare_items.each do |tmp_item|
+                unless tmp_item.nil? || item.nil?
+                  if tmp_item.id.to_s.eql?(item.id.to_s)
+                    tmp_items_array.push(tmp_item)
+                  end
                 end
               end
             end
+            the_items = tmp_items_array
+          else
+            the_items = the_items + search_by_tag_value(word.first, 'Item') + search_by_tag_name(word.first, 'Item')
           end
-          the_items = tmp_items_array
-        else
-          the_items = the_items + search_by_tag_value(word.first, 'Item') + search_by_tag_name(word.first, 'Item')
         end
-      end
-      
-      #todo user search implementierung
-      
-      the_items_ids = Array.new
-      
-      @items = the_items.uniq
-      the_items.each do |item|
-        unless item.nil?
-          the_items_ids.push(item.id)
+
+        #todo user search implementierung
+
+        the_items_ids = Array.new
+
+        @items = the_items.uniq
+        the_items.each do |item|
+          unless item.nil?
+            the_items_ids.push(item.id)
+          end
         end
+        @the_instances = Item.find_all_by_id_and_item_type(the_items_ids, params[:taggable_type].to_s)
+      else
+        @the_instances = Array.new
       end
-      @the_instances = Item.find_all_by_id_and_item_type(the_items_ids, params[:taggable_type].to_s)
     else
       @the_instances = Item.find_all_by_item_type(params[:taggable_type].to_s)
     end
