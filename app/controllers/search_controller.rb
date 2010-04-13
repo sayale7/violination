@@ -17,6 +17,8 @@ class SearchController < ApplicationController
 
     
       all_item_and_user_values
+      @word_size_before = @item_search_words.size + @user_search_words.size
+      @word_size_after = params[:search_input].split.size
       
       unless (@item_search_words.size + @user_search_words.size) == params[:search_input].split.size
         @item_search_words.uniq.each_with_index do |word|
