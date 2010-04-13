@@ -93,11 +93,6 @@ class SearchController < ApplicationController
   
   def all_item_and_user_values
 
-    # items_through_tag_name = Array.new
-    #     items_through_tag_value = Array.new
-    # 
-    #     users_through_tag_name = Array.new
-    #     users_through_tag_value = Array.new
     @item_search_words = Array.new
     @user_search_words = Array.new
     
@@ -127,26 +122,10 @@ class SearchController < ApplicationController
         end
       end
       
-
     end
     
-    # if items_through_tag_name.empty? && !items_through_tag_value.empty?
-    #   @item_ids = items_through_tag_value.uniq
-    # end
-    # if items_through_tag_value.empty? && !items_through_tag_name.empty?
-    #   @item_ids = items_through_tag_name.uniq
-    # end
-    # if !items_through_tag_value.empty? && !items_through_tag_name.empty?
-    #   @item_ids = (items_through_tag_name.uniq & items_through_tag_value.uniq)
-    # end
-    # 
-    # if !items_through_tag_value.empty? && !items_through_tag_name.empty?
-    #   @item_ids = []
-    # end
-     
-    #@user_ids = (users_through_tag_name.uniq & users_through_tag_value.uniq)
-    
   end
+  
 
   def user_search
     the_users = Array.new

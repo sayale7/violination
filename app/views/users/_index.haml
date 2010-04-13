@@ -1,5 +1,5 @@
 - @users.each do |user|
-  %div.user_index
+  %div.list_index
     %div.image
       -unless user.profile_image.nil?
         = link_to image_tag("#{user.profile_image.public_filename(:thumb)}", :width => 140),  user.profile_image.public_filename, :title => ' ', :class => 'group', :rel  => 'group1'
@@ -18,3 +18,17 @@
           %br
         -unless user.items.find_all_by_item_type('Bow').size == 0
           = link_to t('user.bows'), bows_url(:user_id => user.id, :taggable_type => 'Bow', :contact => 1)
+          
+      %p
+        -unless user.tags.empty?
+          -user.tags.find_all_by_parent_id(nil).each do |tag|
+            -if tag.visible
+              -if tag.children.empty?
+                -if tag.value_type.to_s.eql?('preisfeld')
+                  -unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, user.id).value.nil?
+                    ='Euro '+ get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, user.id).value)
+                -else
+                  =TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, user.id).value
+              -else
+                =tagged_tag_name(tag, user)
+              %br

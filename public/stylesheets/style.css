@@ -9,11 +9,13 @@ p.error { display: none; color: red; }
 a { text-decoration: none; color: #666666; }
 a img { border: none; }
 
+a:hover { color: #000; }
+
 .right { float: right; }
 
 .text_area { width: 98%; height: 200px; font-size: 12px; padding: 3px; font-family: Verdana; }
 
-.text_box { width: 98%; height: 30px; font-size: 13px; padding: 1px; }
+.text_box { width: 98%; height: 25px; font-size: 13px; padding: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
 
 #container { clear: both; width: 90%; margin: 0 auto; margin-top: 10px; background: transparent; padding: 15px; overflow: hidden; min-height: 500px; }
 
@@ -122,7 +124,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #profile_info { width: 19%; float: left; }
 
-.user_index { clear: both; margin-bottom: 10px; overflow: hidden; }
+.list_index { clear: both; margin-bottom: 10px; overflow: hidden; }
 
 .image { float: left; }
 
