@@ -22,7 +22,7 @@
       %p
         -unless user.tags.empty?
           -user.tags.find_all_by_parent_id(nil).each do |tag|
-            -if tag.visible
+            -if tag.visible.to_s.eql?('1')
               -if tag.children.empty?
                 -if tag.value_type.to_s.eql?('preisfeld')
                   -unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, user.id).value.nil?
