@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to login_path
+      redirect_to user_path(@user)
     else
       render :action => 'new'
     end
@@ -37,6 +37,13 @@ class UsersController < ApplicationController
     else
       render :action => 'edit'
     end
+  end
+  
+  def destroy
+    @user = current_user
+    session[:user_id] = nil
+    @user.destroy
+    redirect_to users_url
   end
   
   def edit_user_taggings
