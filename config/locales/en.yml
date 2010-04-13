@@ -50,7 +50,7 @@ en:
     firstname: Firstname
     lastname: Lastname
     contact: Contact
-    personals: Edit Personal Info
+    personals: Edit my profile
     my_profile: My Profile
     edit_account: Edit Account
     workshop: Workshop
@@ -101,6 +101,7 @@ en:
     description: Description of my workshop
     my_tags: My Workshop
     my: My Workshop
+    all: All Workshops
   bow:
     all: All Bows
     mine: My Bows

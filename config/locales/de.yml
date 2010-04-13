@@ -46,7 +46,7 @@ de:
     firstname: Vorname
     lastname: Nachname
     contact: Kontakt
-    personals: Persönliches bearbeiten
+    personals: Mein Profil bearbeiten
     my_profile: Mein Profil
     edit_account: Konto bearbeiten
     workshop: Werkstätte
@@ -97,6 +97,7 @@ de:
     description: Beschreibung meiner Werkstätte
     my_tags: In meiner Werkstätte betreibe ich
     my: Meine Werkstätte
+    all: Alle Werkstätten
   bow:
     all: Alle Bögen
     mine: Meine Bögen
