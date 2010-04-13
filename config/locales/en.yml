@@ -31,6 +31,7 @@ en:
     admin: Administration
     photo_gallery: Image Gallery
     users: Violinmaker
+    workshops: Workshops
   user:
     username:Username
     email: Email Address

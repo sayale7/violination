@@ -183,7 +183,7 @@ class SearchController < ApplicationController
         #search entries from tags and tag_values
         the_users = the_users + users_through_tag_name + users_through_tag_value
         #search entries from user search
-        from_user = from_user + User.username_or_firstname_or_lastname_or_email_like(search_param)
+        from_user = from_user + User.username_or_firstname_or_lastname_like(search_param)
 
       end
 
@@ -197,49 +197,11 @@ class SearchController < ApplicationController
       @users = @users.uniq
 
     else
-      @users = User.username_or_firstname_or_lastname_or_email_like(params[:search_input])
+      @users = User.username_or_firstname_or_lastname_like(params[:search_input])
     end
 
   end
   
-  
-  
-  
-  
-  
-  def user_search_from_taggables
-    the_users = Array.new
-    users_through_tag_name = Array.new
-    users_through_tag_value = Array.new
-    params[:search_input].split.each do |search_param|
-
-      TagValue.value_like(search_param).each do |tag_value|
-        User.find_all_by_id(tag_value.taggable_id).each do |user|
-          tag = Tag.find(tag_value.tag.id)
-          if tag.taggable_type.to_s.eql?('User')
-            unless Tagging.find_by_tag_id_and_taggable_id(tag.id, user.id).nil?
-              users_through_tag_value.push(user.id)
-            end
-          end
-        end
-      end
-
-      TagName.value_like(search_param).each do |tag_name|
-        Tagging.find_all_by_tag_id(tag_name.tag_id).each do |the_tagging|
-          if (the_tagging.taggable_type.to_s.eql?('User')) 
-            users_through_tag_name.push(User.find(the_tagging.taggable_id).id)
-          end
-        end
-
-      end
-
-      the_users = users_through_tag_name + users_through_tag_value
-      the_users = the_users.uniq
-    end
-
-    @users = User.find_all_by_id(the_users)
-
-  end
 
 
   def get_users_from_workshops
