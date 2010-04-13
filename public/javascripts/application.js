@@ -169,6 +169,19 @@ $(document).ready(function() {
     }
     return false;
   });
+  
+  //ajax user search
+  $('.user_search').keyup(function(e){
+    $('.user_ajax_search').html('<img src="/images/ajax-loader.gif"/>');
+    $.post($(this).attr("action"), $(this).serialize(), null, 'script');
+		return false;
+	});
 
+  //ajax item search
+  $('.item_search').keyup(function(e){
+    $('.item_ajax_search').html('<img src="/images/ajax-loader.gif"/>');
+    $.post($(this).attr("action"), $(this).serialize(), null, 'script');
+		return false;
+	});
 
 });

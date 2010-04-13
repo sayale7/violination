@@ -1,0 +1,3 @@
+%p
+  -form_tag search_user_path, :class => 'user_search' do
+    =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"

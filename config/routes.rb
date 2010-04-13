@@ -44,6 +44,10 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :items
   
+  #search routes
+  map.search_user 'search_user', :controller => 'search', :action => 'search_user'
+  map.search_item 'search_item', :controller => 'search', :action => 'search_item'
+
   map.root :controller => "users", :action => "index"
 
   map.connect ':controller/:action/:id'

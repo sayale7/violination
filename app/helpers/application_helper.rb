@@ -13,5 +13,6 @@ module ApplicationHelper
     user = User.find(taggable_id)
     return user.tags.find_all_by_parent_id(nil)
   end
+
   
 end

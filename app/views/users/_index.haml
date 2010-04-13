@@ -1,0 +1,20 @@
+- @users.each do |user|
+  %div.user_index
+    %div.image
+      -unless user.profile_image.nil?
+        = link_to image_tag("#{user.profile_image.public_filename(:thumb)}", :width => 140),  user.profile_image.public_filename, :title => user.profile_image.description, :class => 'group', :rel  => 'group1'
+      -else
+        = image_tag('/images/anonymous.jpg', :width => 140)
+    %div.info
+      -unless user.full_name.size == 1 
+        =link_to user.full_name, user
+      -else 
+        =link_to user.username, user
+      %p
+        =link_to t('user.workshop'), "/workshop.#{user.id}"
+        %br
+        -unless user.items.find_all_by_item_type('Stringg').size == 0
+          = link_to t('user.stringgs'), stringgs_url(:user_id => user.id, :taggable_type => 'Stringg', :contact => 1)
+          %br
+        -unless user.items.find_all_by_item_type('Bow').size == 0
+          = link_to t('user.bows'), bows_url(:user_id => user.id, :taggable_type => 'Bow', :contact => 1)

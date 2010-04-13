@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     else
       @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, 1)
     end
+    @taggable_type = params[:taggable_type].to_s
     render :template  => '/items/index.haml'
   end
   
