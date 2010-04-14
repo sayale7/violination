@@ -1,4 +1,4 @@
--if true
+-if false
   -unless @word_size_before.nil?
     =@word_size_before
   -unless @word_size_after.nil?
@@ -12,6 +12,11 @@
   -unless @user_search_words.nil?
     -@user_search_words.uniq.each do |word|
       =word
+-unless @search_words.nil?
+  =@search_words.inspect
+  
+-unless @item_search_word.nil?
+  =@item_search_word.inspect
   
 -unless @the_instances.nil? 
   -for item in @the_instances
