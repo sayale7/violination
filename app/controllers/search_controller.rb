@@ -26,7 +26,7 @@ class SearchController < ApplicationController
       
       
       
-      if (@word_size_before == @word_size_after) #|| ((@word_size_before != @word_size_after) && (without_duplicates.size != with_duplicates.size))
+      if (@word_size_before == @word_size_after) || ((@word_size_before != @word_size_after) && (without_duplicates.size != with_duplicates.size))
         @item_search_words.uniq.each_with_index do |word|
           tmp_items_array = Array.new
           if !the_items.empty? && word.last > 0
