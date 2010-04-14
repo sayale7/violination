@@ -1,3 +1,17 @@
+-unless @word_size_before.nil?
+  =@word_size_before
+-unless @word_size_after.nil?
+  =@word_size_after
+  
+%br
+-unless @item_search_words.nil?
+  -@item_search_words.uniq.each do |word|
+    =word
+%br
+-unless @user_search_words.nil?
+  -@user_search_words.uniq.each do |word|
+    =word
+  
 -unless @the_instances.nil? 
   -for item in @the_instances
     %div.list_index
@@ -18,7 +32,7 @@
             =" (Email: #{mail_to 'post@violination.com'})"
           %br
           -get_added_tags(item.tags.find_by_parent_id(nil), item.id).each do |tag|
-            -if tag.visible.to_s.eql?('1')
+            -if tag.visible.to_s.eql?('1') || tag.visible.to_s.eql?('true')
               -if tag.children.empty?
                 -if tag.value_type.to_s.eql?('preisfeld')
                   -unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value.nil?
