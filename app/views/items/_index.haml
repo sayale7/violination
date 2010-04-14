@@ -45,8 +45,8 @@
             %br
         
         
-          %p
-          -unless request.url.scan(/taggable_type=(\w+)/).to_s.eql?('')
-            = link_to t('common.show'), "/#{request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize}/#{item.id}?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
-          -else
-            = link_to t('common.show'), "/#{@taggable_type.to_s.downcase.pluralize}/#{item.id}?taggable_type=#{@taggable_type.to_s}"
+        %p
+        -unless request.url.scan(/taggable_type=(\w+)/).to_s.eql?('')
+          = link_to t('common.show'), "/#{request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize}/#{item.id}?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
+        -else
+          = link_to t('common.show'), "/#{@taggable_type.to_s.downcase.pluralize}/#{item.id}?taggable_type=#{@taggable_type.to_s}"
