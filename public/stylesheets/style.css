@@ -124,7 +124,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #profile_info { width: 19%; float: left; }
 
-.list_index { clear: both; margin-bottom: 10px; overflow: hidden; }
+.list_index { clear: both; margin-bottom: 10px; overflow: hidden; padding: 10px; border: thin solid; border-color: #666666; }
 
 .image { float: left; }
 
