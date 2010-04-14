@@ -24,7 +24,9 @@ class SearchController < ApplicationController
       with_duplicates = @item_search_words.uniq +  @user_search_words.uniq
       without_duplicates = with_duplicates.uniq
       
-      if ((@item_search_words.uniq.size + @user_search_words.uniq.size) == params[:search_input].split.size) && (without_duplicates.size == with_duplicates.size)
+      
+      
+      if (@word_size_before == @word_size_after) || ((@word_size_before != @word_size_after) && (without_duplicates.size != with_duplicates.size))
         @item_search_words.uniq.each_with_index do |word|
           tmp_items_array = Array.new
           if !the_items.empty? && word.last > 0
