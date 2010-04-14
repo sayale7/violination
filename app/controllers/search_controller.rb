@@ -116,29 +116,7 @@ class SearchController < ApplicationController
   end
 
   def search_by_tag_name(word, type)
-    tpm_items = Array.new
-    TagName.value_like(word.to_s).each do |tag_name|
-      searchable = Tag.find(tag_name.tag_id).searchable.to_s
-      if (searchable.eql?('1') || searchable.eql?('true'))
-        Tagging.find_all_by_tag_id(tag_name.tag_id).each do |the_tagging|
-          if the_tagging.taggable_type.to_s.eql?(type.to_s)
-            unless type.to_s.eql?('User')
-              tpm_items.push(the_class(type).find_by_id_and_item_type(the_tagging.taggable_id, params[:taggable_type].to_s))
-            else
-              user = User.find_by_id(the_tagging.taggable_type)
-              unless user.nil?
-                user.items.each do |item|
-                  if item.item_type.to_s.eql?(params[:taggable_type].to_s)
-                    tpm_items.push(item)
-                  end
-                end
-              end
-            end
-          end
-        end
       end
-
-    end
     return tpm_items
   end
   
