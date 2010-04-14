@@ -26,7 +26,7 @@ class SearchController < ApplicationController
       
       
       
-      if (@word_size_before == @word_size_after) || ((@word_size_before != @word_size_after) && (without_duplicates.size != with_duplicates.size))
+      if (@word_size_before == @word_size_after) #|| ((@word_size_before != @word_size_after) && (without_duplicates.size != with_duplicates.size))
         @item_search_words.uniq.each_with_index do |word|
           tmp_items_array = Array.new
           if !the_items.empty? && word.last > 0
@@ -46,25 +46,25 @@ class SearchController < ApplicationController
           end
         end
 
-        # @user_search_words.uniq.each_with_index do |word|
-        #           tmp_items_array = Array.new
-        #           unless the_items.empty?
-        #             the_items.each do |item|
-        #               the_compare_items = search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
-        #               the_compare_items.each do |tmp_item|
-        #                 unless tmp_item.nil? || item.nil?
-        #                   debugger
-        #                   if tmp_item.id.to_s.eql?(item.id.to_s)
-        #                     tmp_items_array.push(tmp_item)
-        #                   end
-        #                 end
-        #               end
-        #             end
-        #             the_items = tmp_items_array
-        #           else
-        #             the_items = the_items + search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
-        #           end
-        #         end
+        @user_search_words.uniq.each_with_index do |word|
+          tmp_items_array = Array.new
+          unless the_items.empty?
+            the_items.each do |item|
+              the_compare_items = search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
+              the_compare_items.each do |tmp_item|
+                unless tmp_item.nil? || item.nil?
+                  debugger
+                  if tmp_item.id.to_s.eql?(item.id.to_s)
+                    tmp_items_array.push(tmp_item)
+                  end
+                end
+              end
+            end
+            the_items = tmp_items_array
+          else
+            the_items = the_items + search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
+          end
+        end
         #todo user search implementierung
 
         the_items_ids = Array.new
@@ -96,14 +96,15 @@ class SearchController < ApplicationController
   def search_by_tag_value(word, type)
     tpm_items = Array.new
     TagValue.value_like(word.to_s).each do |tag_value|
-      if tag_value.taggable_type.to_s.eql?(type.to_s)
+      searchable = Tag.find(tag_value.tag_id).searchable.to_s
+      if tag_value.taggable_type.to_s.eql?(type.to_s) && (searchable.eql?('1') || searchable.eql?('true'))
         unless type.to_s.eql?('User')
           tpm_items.push(the_class(type).find_by_id_and_item_type(tag_value.taggable_id, params[:taggable_type].to_s))
         else
           user = User.find_by_id(tag_value.taggable_id)
           unless user.nil?
             user.items.each do |item|
-              if item.item_type.to_s.eql?(params[:taggable_type].to_s)
+              if item.item_type.to_s.eql?(params[:taggable_type].to_s) && tag_value
                 tpm_items.push(item)
               end
             end
@@ -117,22 +118,26 @@ class SearchController < ApplicationController
   def search_by_tag_name(word, type)
     tpm_items = Array.new
     TagName.value_like(word.to_s).each do |tag_name|
-      Tagging.find_all_by_tag_id(tag_name.tag_id).each do |the_tagging|
-        if the_tagging.taggable_type.to_s.eql?(type.to_s)
-          unless type.to_s.eql?('User')
-            tpm_items.push(the_class(type).find_by_id_and_item_type(the_tagging.taggable_id, params[:taggable_type].to_s))
-          else
-            user = User.find_by_id(the_tagging.taggable_type)
-            unless user.nil?
-              user.items.each do |item|
-                if item.item_type.to_s.eql?(params[:taggable_type].to_s)
-                  tpm_items.push(item)
+      searchable = Tag.find(tag_name.tag_id).searchable.to_s
+      if (searchable.eql?('1') || searchable.eql?('true'))
+        Tagging.find_all_by_tag_id(tag_name.tag_id).each do |the_tagging|
+          if the_tagging.taggable_type.to_s.eql?(type.to_s)
+            unless type.to_s.eql?('User')
+              tpm_items.push(the_class(type).find_by_id_and_item_type(the_tagging.taggable_id, params[:taggable_type].to_s))
+            else
+              user = User.find_by_id(the_tagging.taggable_type)
+              unless user.nil?
+                user.items.each do |item|
+                  if item.item_type.to_s.eql?(params[:taggable_type].to_s)
+                    tpm_items.push(item)
+                  end
                 end
               end
             end
           end
         end
       end
+
     end
     return tpm_items
   end

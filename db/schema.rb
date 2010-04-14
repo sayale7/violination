@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100411133639) do
+ActiveRecord::Schema.define(:version => 20100414123908) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -67,7 +67,8 @@ ActiveRecord::Schema.define(:version => 20100411133639) do
     t.integer  "parent_id"
     t.integer  "position"
     t.string   "value_type"
-    t.boolean  "visible"
+    t.boolean  "visible",       :default => true
+    t.boolean  "searchable"
   end
 
   create_table "users", :force => true do |t|
