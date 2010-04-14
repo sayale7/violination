@@ -23,7 +23,8 @@
         -else
           = image_tag('/images/anonymous.jpg', :width => 140)
       %div.info
-        =t('user.contact') << ':'
+        %strong
+          =t('user.contact') << ':'
         -if item.contact.to_s.eql?('1')
           =item.user.full_name
           =" (Email: #{mail_to item.user.email})"
