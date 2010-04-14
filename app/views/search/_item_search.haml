@@ -1,5 +1,5 @@
 %p
-  -form_tag search_item_path, :class => 'item_search' do
+  -form_tag search_item_path, :class => 'item_search_' do
     =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"
     =hidden_field_tag :taggable_type, '', :value => @taggable_type
-    /submit_tag "john"
+    =submit_tag "john"

@@ -26,7 +26,7 @@ class SearchController < ApplicationController
       
       
       
-      #if (@word_size_before == @word_size_after) || ((@word_size_before != @word_size_after) && (without_duplicates.size != with_duplicates.size))
+      if (@word_size_before == @word_size_after) || ((@word_size_before != @word_size_after) && (without_duplicates.size != with_duplicates.size))
         @item_search_words.uniq.each_with_index do |word|
           tmp_items_array = Array.new
           if !the_items.empty? && word.last > 0
@@ -76,9 +76,9 @@ class SearchController < ApplicationController
           end
         end
         @the_instances = Item.find_all_by_id_and_item_type(the_items_ids, params[:taggable_type].to_s)
-      #else
-      #  @the_instances = Array.new
-      #end
+      else
+        @the_instances = Array.new
+      end
     
     
     end
@@ -99,6 +99,7 @@ class SearchController < ApplicationController
     tpm_items = Array.new
     TagValue.value_like(word.to_s).each do |tag_value|
       searchable = Tag.find(tag_value.tag_id).searchable.to_s
+      debugger
       if tag_value.taggable_type.to_s.eql?(type.to_s) && (searchable.eql?('1') || searchable.eql?('true'))
         unless type.to_s.eql?('User')
           tpm_items.push(the_class(type).find_by_id_and_item_type(tag_value.taggable_id, params[:taggable_type].to_s))

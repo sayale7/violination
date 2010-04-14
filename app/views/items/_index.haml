@@ -25,7 +25,7 @@
       %div.info
         =t('user.contact') << ':'
         -if item.contact.to_s.eql?('1')
-          =item.user.firstname.to_s << ' ' << item.user.lastname.to_s
+          =item.user.full_name
           =" (Email: #{mail_to item.user.email})"
         -else
           ='Violination.com'
