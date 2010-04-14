@@ -46,25 +46,25 @@ class SearchController < ApplicationController
           end
         end
 
-        @user_search_words.uniq.each_with_index do |word|
-          tmp_items_array = Array.new
-          unless the_items.empty?
-            the_items.each do |item|
-              the_compare_items = search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
-              the_compare_items.each do |tmp_item|
-                unless tmp_item.nil? || item.nil?
-                  debugger
-                  if tmp_item.id.to_s.eql?(item.id.to_s)
-                    tmp_items_array.push(tmp_item)
-                  end
-                end
-              end
-            end
-            the_items = tmp_items_array
-          else
-            the_items = the_items + search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
-          end
-        end
+        # @user_search_words.uniq.each_with_index do |word|
+        #           tmp_items_array = Array.new
+        #           unless the_items.empty?
+        #             the_items.each do |item|
+        #               the_compare_items = search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
+        #               the_compare_items.each do |tmp_item|
+        #                 unless tmp_item.nil? || item.nil?
+        #                   debugger
+        #                   if tmp_item.id.to_s.eql?(item.id.to_s)
+        #                     tmp_items_array.push(tmp_item)
+        #                   end
+        #                 end
+        #               end
+        #             end
+        #             the_items = tmp_items_array
+        #           else
+        #             the_items = the_items + search_by_tag_value(word.first, 'User') + search_by_tag_name(word.first, 'User')
+        #           end
+        #         end
         #todo user search implementierung
 
         the_items_ids = Array.new
