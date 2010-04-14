@@ -49,7 +49,7 @@ a:hover { color: #000; }
 
 .instance_tag { border: thin solid; border-color: #666666; padding: 10px; }
 
-.instance_tag_js { padding: 5px; display: :block; min-height: 30px; }
+.instance_tag_js { padding: 5px; display: :block; min-height: 30px; border-bottom: solid thin black; }
 
 .hidden { display: none; }
 
