@@ -95,9 +95,11 @@ class SearchController < ApplicationController
       end
     end
     @tag_values.each do |tag_value|
-      if tag_value.value.to_s.downcase.include?(word.to_s.downcase)
-        if the_class(type).exists?(tag_value.taggable_id)
-          items.push(the_class(type).find(tag_value.taggable_id))
+      TagValue.value_like(word.to_s).each do |tmp_tag_value|
+        if tmp_tag_value.id.to_s.eql?(tag_value.id.to_s)
+          if the_class(type).exists?(tag_value.taggable_id)
+            items.push(the_class(type).find(tag_value.taggable_id))
+          end
         end
       end
     end
@@ -120,9 +122,11 @@ class SearchController < ApplicationController
         nil_tags = TagValue.find_all_by_tag_id_and_value(tag.id, nil) unless nil?
         #only match with tag_values thats value not nil
         (TagValue.find_all_by_tag_id(tag.id) - nil_tags).each do |tag_value|
-          if tag_value.value.to_s.downcase.include?(word.to_s.downcase)
-            searchwords.push(word)
-            @tag_values.push(tag_value)
+          TagValue.value_like(word.to_s).each do |tmp_tag_value|
+            if tmp_tag_value.id.to_s.eql?(tag_value.id.to_s)
+              searchwords.push(word)
+              @tag_values.push(tag_value)
+            end
           end
         end
         if !tag.german_name.nil? && tag.german_name.to_s.downcase.include?(word.to_s.downcase)
