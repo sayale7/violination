@@ -1,16 +1,17 @@
--unless @word_size_before.nil?
-  =@word_size_before
--unless @word_size_after.nil?
-  =@word_size_after
+-if false
+  -unless @word_size_before.nil?
+    =@word_size_before
+  -unless @word_size_after.nil?
+    =@word_size_after
   
-%br
--unless @item_search_words.nil?
-  -@item_search_words.uniq.each do |word|
-    =word
-%br
--unless @user_search_words.nil?
-  -@user_search_words.uniq.each do |word|
-    =word
+  %br
+  -unless @item_search_words.nil?
+    -@item_search_words.uniq.each do |word|
+      =word
+  %br
+  -unless @user_search_words.nil?
+    -@user_search_words.uniq.each do |word|
+      =word
   
 -unless @the_instances.nil? 
   -for item in @the_instances
