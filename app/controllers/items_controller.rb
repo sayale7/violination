@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
-    unless params[:contact]
+    if params[:contact].to_s.eql?('0') || params[:contact].to_s.eql?('false')
       if params[:user_id]
         @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
         @user_id = params[:user_id]
@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
         @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
       end
     else
-      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, 1)
+      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true)
     end
     @taggable_type = params[:taggable_type].to_s
     session[:search_input] = nil
