@@ -5,9 +5,11 @@ class ItemsController < ApplicationController
       if params[:contact].to_s.eql?('1')
         @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true)
         @user_id = params[:user_id]
+        @contact = '1'
       else
         @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
         @user_id = params[:user_id]
+        @contact = '0'
       end
     else
       @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)

@@ -101,7 +101,7 @@ class SearchController < ApplicationController
         @the_instances = nil
       else
         unless params[:user_id].to_s.eql?('')
-          @the_instances = Item.find_all_by_id_and_item_type_and_user_id(the_items, params[:taggable_type].to_s, params[:user_id])
+          @the_instances = Item.find_all_by_id_and_item_type_and_user_id_and_contact(the_items, params[:taggable_type].to_s, params[:user_id], true)
           @user_id = params[:user_id]
         else
           @the_instances = Item.find_all_by_id_and_item_type(the_items, params[:taggable_type].to_s)
