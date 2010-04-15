@@ -33,6 +33,7 @@ en:
     users: Violinmaker
     workshops: Workshops
     visible: Visible
+    back_to_search: Back to the Searchresult
   user:
     username:Username
     email: Email Address

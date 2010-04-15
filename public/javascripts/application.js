@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   /* This is basic - uses default settings */
 
-  $("a#single_image").fancybox({
+  $("a.single_image").fancybox({
     'transitionIn'	:	'elastic',
     'transitionOut'	:	'elastic',
     'speedIn'		:	400, 

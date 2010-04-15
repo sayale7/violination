@@ -5,7 +5,7 @@
     %div.list_index
       %div.image
         -unless user.profile_image.nil?
-          = link_to image_tag("#{user.profile_image.public_filename(:thumb)}", :width => 140),  user.profile_image.public_filename, :title => ' ', :class => 'group', :rel  => 'group1'
+          = link_to image_tag("#{user.profile_image.public_filename(:thumb)}", :width => 140),  user.profile_image.public_filename, :title => ' ', :class => 'single_image'
         -else
           = image_tag('/images/anonymous.jpg', :width => 140)
       %div.info

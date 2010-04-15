@@ -84,6 +84,7 @@ class SearchController < ApplicationController
     
     @search_input = params[:search_input]
     @taggable_type = params[:taggable_type].to_s
+    session[:search_input] = params[:search_input]
 
     respond_to do |format|
       format.html {render :template  =>  '/items/index.haml'}

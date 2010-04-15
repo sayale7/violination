@@ -4,7 +4,7 @@
       %div.image
         -photo = Photo.find_by_photo_container_id_and_photo_container_type(item.id, 'Item')
         -unless photo.nil?
-          = link_to image_tag("#{photo.public_filename(:thumb)}", :width => 140),  photo.public_filename, :title => ' ', :class => 'group', :rel  => 'group1'
+          = link_to image_tag("#{photo.public_filename(:thumb)}", :width => 140),  photo.public_filename, :title => ' ', :class => 'single_image'
         -else
           = image_tag('/images/anonymous.jpg', :width => 140)
       %div.info

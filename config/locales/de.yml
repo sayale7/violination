@@ -30,6 +30,7 @@ de:
     users: Geigenbauer
     workshops: Werkstätten
     visible: Sichtbar
+    back_to_search: Zurück zum Suchergebnis
   user:
     username: Benutzername
     email: Email Adresse
