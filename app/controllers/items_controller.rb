@@ -1,17 +1,18 @@
 class ItemsController < ApplicationController
   
-  def index
-    if params[:contact].to_s.eql?('0') || params[:contact].to_s.eql?('false')
-      if params[:user_id]
+  def index    
+    if params[:user_id]
+      if params[:contact].to_s.eql?('1')
+        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true)
+        @user_id = params[:user_id]
+      else
         @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
         @user_id = params[:user_id]
       end
-      if !params[:user_id]
-        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
-      end
     else
-      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true)
+      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
     end
+    
     @taggable_type = params[:taggable_type].to_s
     session[:search_input] = nil
     render :template  => '/items/index.haml'
