@@ -24,8 +24,8 @@
 	  <span><%= t('common.instrument') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('instrument.all'), stringgs_url(:taggable_type => 'Stringg'), :class => 'pureCssMenui' %></li>
-		    <li class="pureCssMenui"><%= link_to t('instrument.mine'), stringgs_url(:user_id => current_user.id, :taggable_type => 'Stringg'), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('instrument.all'), "/items?taggable_type=Stringg", :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('instrument.mine'), "/items?taggable_type=Stringg&user_id=#{current_user.id}", :class => 'pureCssMenui' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
@@ -34,8 +34,8 @@
 	  <span><%= t('common.bows') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('bow.all'), bows_url(:taggable_type => 'Bow'), :class => 'pureCssMenui' %></li>
-		    <li class="pureCssMenui"><%= link_to t('bow.mine'), bows_url(:user_id => current_user.id, :taggable_type => 'Bow'), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('bow.all'), "/items?taggable_type=Bow", :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('bow.mine'), "/items?taggable_type=Bow&user_id=#{current_user.id}", :class => 'pureCssMenui' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
@@ -61,7 +61,7 @@
   	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
   	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
   	</li>
-    <li class="pureCssMenui"><a class="pureCssMenui" href="/stringgs?taggable_type=Stringg">
+    <li class="pureCssMenui"><a class="pureCssMenui" href="/items?taggable_type=Stringg">
   	  <span><%= t('common.instrument') %></span>
   	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
   	<!--[if lte IE 6]></td></tr></table></a><![endif]-->

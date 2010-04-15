@@ -18,7 +18,10 @@
 
 %div#edit_instance_tags_js
   %p
-    = link_to t('common.back_to_search'), "/search_item?taggable_type=#{@the_instance.item_type}&search_input=#{session[:search_input]}"
+    -unless request.url.scan(/user_id=(\w+)/).to_s.eql?('')
+      = link_to t('common.back_to_search'), "/search_item?taggable_type=#{@the_instance.item_type}&search_input=#{session[:search_input]}&user_id=#{request.url.scan(/user_id=(\w+)/).to_s}"
+    -else
+      = link_to t('common.back_to_search'), "/search_item?taggable_type=#{@the_instance.item_type}&search_input=#{session[:search_input]}"
   -if current_user && current_user.id == @the_instance.user_id
     %div#available_instance_tags_js
       = render '/taggables/available_instance_attributes_js.haml'

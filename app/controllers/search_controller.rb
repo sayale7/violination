@@ -7,16 +7,34 @@ class SearchController < ApplicationController
   
   def search_user
     init
+    the_users = Array.new
+    
     if params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
       @users = User.all
     else
+      #split up the user input
       @search_words = params[:search_input].split
+      
+      #get all search words that match a user tag (tag_name or tag_value)
       @user_search_words = get_search_words('User')
+      
+      #take the itemsearchwords away from the searchwords
+      @search_words = @search_words - @user_search_words
+      
       unless @user_search_words.empty?
-        
+        @user_search_words.each do |word|
+          if the_users.empty?
+            the_users = find_items(word, 'User')
+          else
+            the_users = the_users & find_items(word, 'User')
+          end
+        end
       end
       
+      @users = the_users
+      
     end
+    
     @search_input = params[:search_input]
     respond_to do |format|
       format.html {render :template => '/users/index.haml'}
@@ -30,7 +48,12 @@ class SearchController < ApplicationController
     the_items = Array.new
 
     if params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
-      @the_instances = Item.find_all_by_item_type(params[:taggable_type].to_s)
+      unless params[:user_id].to_s.eql?('')
+        @the_instances = Item.find_all_by_item_type_and_user_id(params[:taggable_type].to_s, params[:user_id])
+        @user_id = params[:user_id]
+      else
+        @the_instances = Item.find_all_by_item_type(params[:taggable_type].to_s)
+      end
     else
       #split up the user input
       @search_words = params[:search_input].split
@@ -77,7 +100,12 @@ class SearchController < ApplicationController
       unless @search_words.empty?
         @the_instances = nil
       else
-        @the_instances = Item.find_all_by_id_and_item_type(the_items, params[:taggable_type].to_s)
+        unless params[:user_id].to_s.eql?('')
+          @the_instances = Item.find_all_by_id_and_item_type_and_user_id(the_items, params[:taggable_type].to_s, params[:user_id])
+          @user_id = params[:user_id]
+        else
+          @the_instances = Item.find_all_by_id_and_item_type(the_items, params[:taggable_type].to_s)
+        end
       end
       
     end

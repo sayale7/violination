@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
+    session[:search_input] = nil
   end
   
   def show
