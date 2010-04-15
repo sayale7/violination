@@ -6,7 +6,17 @@ class SearchController < ApplicationController
   end
   
   def search_user
-    #user_search
+    init
+    if params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
+      @users = User.all
+    else
+      @search_words = params[:search_input].split
+      @user_search_words = get_search_words('User')
+      unless @user_search_words.empty?
+        
+      end
+      
+    end
     @search_input = params[:search_input]
     respond_to do |format|
       format.html {render :template => '/users/index.haml'}
@@ -109,11 +119,8 @@ class SearchController < ApplicationController
   def get_search_words(type)
     searchwords = Array.new
     tags = Array.new
-    if type.to_s.eql?('User')
-      tags = Tag.find_all_by_taggable_type_and_searchable('User', true)
-    else
-      tags = Tag.find_all_by_taggable_type_and_searchable(params[:taggable_type].to_s, true)
-    end
+    tags = Tag.find_all_by_taggable_type_and_searchable(type, true)
+    
     
     tags.each do |tag|
       @search_words.uniq.each do |word|

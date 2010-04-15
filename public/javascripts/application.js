@@ -172,14 +172,14 @@ $(document).ready(function() {
   
   //ajax user search
   $('.user_search').keyup(function(e){
-    $('.user_ajax_search').html('<img src="/images/ajax-loader.gif"/>');
+    $('.user_ajax_search').html('<div class="ajax_center_wide"><center>loading... </center></div>');
     $.post($(this).attr("action"), $(this).serialize(), null, 'script');
 		return false;
 	});
 
   //ajax item search
   $('.item_search').keyup(function(e){
-    $('.item_ajax_search').html('<img src="/images/ajax-loader.gif"/>');
+    $('.item_ajax_search').html('<div class="ajax_center_wide"><center>loading... </center></div>');
     $.post($(this).attr("action"), $(this).serialize(), null, 'script');
 		return false;
 	});
