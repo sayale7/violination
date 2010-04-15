@@ -1,3 +1,7 @@
+-unless request.url.scan(/from_user=(\w+)/).to_s.eql?('true')
+  %p
+    = link_to t('common.back_to_search'), "/search_user?search_input=#{session[:search_input]}"
+    
 %div#profile_info
   -unless @user.profile_image.nil?
     = link_to image_tag("#{@user.profile_image.public_filename(:thumb)}"),  @user.profile_image.public_filename, :title => '', :class => 'group', :rel  => 'group1'

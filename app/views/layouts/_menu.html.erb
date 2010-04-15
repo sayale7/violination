@@ -4,7 +4,7 @@
 	  <span><%= t('common.account') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-		    <li class="pureCssMenui"><%= link_to t('user.my_profile'), user_path(current_user), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('user.my_profile'), user_path(current_user, :from_user => true), :class => 'pureCssMenui' %></li>
 		    <li class="pureCssMenui"><%= link_to t('user.edit_account'), edit_user_path(current_user), :class => 'pureCssMenui' %></li>
 		    <li class="pureCssMenui"><%= link_to t('user.personals'), personals_path, :class => 'pureCssMenui' %></li>
 	    </ul>
@@ -15,7 +15,7 @@
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
 		    <li class="pureCssMenui"><%= link_to t('workshop.edit'), edit_workshop_url(current_user.id), :class => 'pureCssMenui' %></li>
-		    <li class="pureCssMenui"><%= link_to t('workshop.show'), workshop_url(current_user.id), :class => 'pureCssMenui' %></li>
+		    <li class="pureCssMenui"><%= link_to t('workshop.show'), workshop_url(current_user.id, :from_user => true), :class => 'pureCssMenui' %></li>
 		    <li class="pureCssMenui"><%= link_to t('workshop.all'), users_url, :class => 'pureCssMenui' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->

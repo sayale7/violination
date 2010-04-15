@@ -31,10 +31,36 @@ class SearchController < ApplicationController
         end
       end
       
-      @users = the_users
+      #get all search words that match a user tag (tag_name or tag_value) and match all without the item tags
+      unless @search_words.empty?
+        @workshop_search_words = get_search_words('Workshop') & @search_words
+        @workshop_search_words = @workshop_search_words.uniq
+        @search_words = @search_words.uniq - @workshop_search_words.uniq
+        
+        #search the user with the matching words
+        @workshop_search_words.each do |word|
+          users = Array.new
+          workshops = find_items(word, 'Workshop')
+          workshops.each do |workshop|
+            users.push(workshop.user)
+          end
+          if the_users.empty?
+            the_users = users
+          else
+            the_users = the_users & users
+          end
+        end
+      end
+      
+      unless @search_words.empty?
+        @users = nil
+      else
+        @users = the_users
+      end
       
     end
     
+    session[:search_input] = params[:search_input]
     @search_input = params[:search_input]
     respond_to do |format|
       format.html {render :template => '/users/index.haml'}

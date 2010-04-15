@@ -1,4 +1,4 @@
 %p
-  -form_tag search_user_path, :class => 'user_search_' do
+  -form_tag search_user_path, :class => 'user_search' do
     =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"
-    =submit_tag 'suchen'
+    /submit_tag 'suchen'
