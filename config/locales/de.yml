@@ -31,6 +31,7 @@ de:
     workshops: Werkstätten
     visible: Sichtbar
     back_to_search: Zurück zum Suchergebnis
+    home: Home
   user:
     username: Benutzername
     email: Email Adresse
@@ -56,6 +57,12 @@ de:
     bows: Bögen
     me: Über mich
     all: Alle
+    lng: Längengrad
+    lat: Breitengrad
+    address: Bitte Adresse zur Verifizierung der Koordinaten eingeben
+    prove_address: Adresse überprüfen
+    coordinates: Meine Koordinaten (für Google Maps)
+    near: Geigenbauer in meiner Umgebung
     admin:
       could_be_in_my_workshop: Was biete ich in meiner Werkstätte an?
       in_my_workshop: Was kann ich in meiner Werkstätte anbieten?

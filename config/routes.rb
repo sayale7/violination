@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.resources :locations
+  map.add_location_to_user 'add_location_to_user', :controller => 'locations', :action => 'add_location_to_user'
 
   #routes for Tags
   map.resources :tags
@@ -48,7 +51,7 @@ ActionController::Routing::Routes.draw do |map|
   map.search_user 'search_user', :controller => 'search', :action => 'search_user'
   map.search_item 'search_item', :controller => 'search', :action => 'search_item'
 
-  map.root :controller => "users", :action => "index"
+  map.root :controller => "welcome", :action => "index"
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

@@ -135,3 +135,5 @@ table tr td { padding: 3px; vertical-align: top; }
 .row:hover { background: white; }
 
 .ajax_center_wide { width: 100%; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; }
+
+.google_map { float: right; }

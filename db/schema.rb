@@ -9,12 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100414123908) do
+ActiveRecord::Schema.define(:version => 20100416111450) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
     t.boolean  "contact"
     t.string   "item_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.decimal  "lat",           :precision => 15, :scale => 10
+    t.decimal  "lng",           :precision => 15, :scale => 10
+    t.float    "distance"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20100414123908) do
     t.integer  "position"
     t.string   "value_type"
     t.boolean  "visible",       :default => true
-    t.boolean  "searchable"
+    t.boolean  "searchable",    :default => false
   end
 
   create_table "users", :force => true do |t|

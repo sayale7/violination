@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <%= GMap.header(:with_vml => false) %>
+  <%= @map.to_html %>
+<% end %>
+
+<div class="google_map">
+  <h1><%= t('user.near') %></h1>
+  <%= @map.div(:width => 600, :height => 400) %>
+</div>
