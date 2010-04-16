@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   def show_on_map
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true, :map_type => true)
-    @map.center_zoom_init([48.1490961000,11.5629113000],5)
+    @map.center_zoom_init([49.5874362000,10.9660867000],5)
     User.all.each do |user|
       if !(user.locations.first.lat.nil? || user.locations.first.lng.nil?)
         if user.full_name.to_s.eql?(' ')

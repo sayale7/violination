@@ -41,5 +41,5 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :de
 end
 
-# GeoKit::Geocoders::google = Ym4r::GmPlugin::ApiKey::GMAPS_API_KEY
-# GeoKit::Geocoders::provider_order = [:google]
+GeoKit::Geocoders::google = Ym4r::GmPlugin::ApiKey::GMAPS_API_KEY
+GeoKit::Geocoders::provider_order = [:google]
