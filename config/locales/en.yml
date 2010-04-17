@@ -7,6 +7,9 @@ en:
     or: or
     destroy: Destroy
     edit: Edit
+    edit_text: Edit texts
+    edit_german_text: Edit german text
+    edit_english_text: Edit english text
     show: Show
     new: New
     add: Add
@@ -36,6 +39,7 @@ en:
     back_to_search: Back to the Searchresult
     home: Home
     near: Violinmakers in my vicinity
+    active: Active
   user:
     username:Username
     email: Email Address
@@ -121,3 +125,8 @@ en:
     remaining_counts: Remaining Counts
     max_file_size: Maximum File Size
     description: Description of the Image
+  site:
+    admin: Administer Textsites
+    editorial: Editorial
+    startsite_left: Home left section
+    startsite_right: Home right section

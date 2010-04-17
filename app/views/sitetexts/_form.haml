@@ -1,0 +1,31 @@
+-form_for @sitetext do |f|
+  =f.error_messages
+
+  =f.hidden_field :textable_type, :value  => @textable_type
+  =f.hidden_field :textable_id, :value  => @textable_id
+  =f.hidden_field :german_content, :value  => @sitetext.german_content
+  =f.hidden_field :english_content, :value  => @sitetext.english_content
+  %p
+    %strong
+      =t('common.active')
+    =f.check_box :active
+    
+  %p
+    %strong
+      =t('common.archive')
+    =f.check_box :archive 
+
+  %p
+    %strong
+      = f.label :german_name, t('common.german_name')
+      = f.text_field :german_name, :class => 'text_box'
+         
+  %p
+    %strong
+      = f.label :english_name, t('common.english_name')
+      = f.text_field :english_name, :class => 'text_box'
+      
+  %p
+    =f.submit t('common.update')
+    =t('common.or')
+    = link_to t('common.cancel'), "/sitetexts?textable_type=#{@textable_type}&textable_id=#{@textable_id}"

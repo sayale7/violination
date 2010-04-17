@@ -1,0 +1,30 @@
+-content_for :head do
+  =include_tiny_mce_if_needed 
+
+-form_for @sitetext do |f|
+  =f.error_messages
+
+  =f.hidden_field :textable_type, :value  => @textable_type
+  =f.hidden_field :textable_id, :value  => @textable_id
+  =f.hidden_field :german_name, :value  => @sitetext.german_name
+  =f.hidden_field :english_name, :value  => @sitetext.english_name
+
+  %h1
+    =@sitetext.sitetextnames.find_by_language(@content.to_s).value
+  
+  -if @content.to_s.eql?('de')
+    %p
+      %strong
+        = f.text_area :german_content, :class => 'mceEditor'
+        = f.hidden_field :english_content, :value  => @sitetext.english_content
+  -if @content.to_s.eql?('en')
+    %p
+      %strong
+        = f.text_area :english_content, :class => 'mceEditor'
+        = f.hidden_field :german_content, :value  => @sitetext.german_content
+         
+      
+  %p
+    =f.submit t('common.update')
+    =t('common.or')
+    = link_to t('common.cancel'), "/sitetexts?textable_type=#{@textable_type}&textable_id=#{@textable_id}"

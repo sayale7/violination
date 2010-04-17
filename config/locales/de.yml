@@ -4,6 +4,9 @@ de:
     or: oder
     destroy: Löschen
     edit: Bearbeiten
+    edit_text: Texte bearbeiten
+    edit_german_text: Deutschen Text bearbeiten
+    edit_english_text: Englischen Text bearbeiten
     show: Anzeigen
     new: Neu
     add: Hinzufügen
@@ -32,6 +35,7 @@ de:
     visible: Sichtbar
     back_to_search: Zurück zum Suchergebnis
     home: Home
+    active: Aktiv
   user:
     username: Benutzername
     email: Email Adresse
@@ -118,7 +122,11 @@ de:
     remaining_counts: Verbleibende Anzahl
     max_file_size: Maximale Größe
     description: Beschreibung des Bildes
-  
+  site:
+    admin: Textseiten administrieren
+    editorial: Redaktionelles
+    startsite_left: Startseite linker Teil
+    startsite_right: Startseite rechter Teil
   
   date:
     formats:

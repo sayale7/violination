@@ -1,0 +1,13 @@
+one:
+  title: MyString
+  sitable_type: MyString
+  parent_id: 1
+  active: false
+  position: 1
+
+two:
+  title: MyString
+  sitable_type: MyString
+  parent_id: 1
+  active: false
+  position: 1

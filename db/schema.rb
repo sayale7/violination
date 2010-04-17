@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100416111450) do
+ActiveRecord::Schema.define(:version => 20100416185556) do
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -42,6 +42,44 @@ ActiveRecord::Schema.define(:version => 20100416111450) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_container_type"
+  end
+
+  create_table "sitenames", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "value"
+    t.string   "language"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "title"
+    t.string   "sitable_type"
+    t.integer  "parent_id"
+    t.boolean  "active"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sitetextnames", :force => true do |t|
+    t.integer  "sitetext_id"
+    t.string   "value"
+    t.string   "language"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sitetexts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "textable_type"
+    t.boolean  "active"
+    t.boolean  "archive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "textable_id"
+    t.integer  "position"
   end
 
   create_table "tag_names", :force => true do |t|

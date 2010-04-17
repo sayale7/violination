@@ -1,0 +1,21 @@
+-title @site.sitenames.find_by_language(get_locale.to_s).value
+%p
+  -for site in @site.ancestors.reverse
+    = link_to h(site.sitenames.find_by_language(get_locale.to_s).value), edit_site_path(site, :siteable_type => @siteable_type)
+    &gt;
+    %span.h1
+      =(h yield(:title))
+  -if @site.ancestors.size == 0
+    %h1
+      =(h yield(:title))
+
+= render  'form'
+
+-unless @site.children.empty?   
+  %ul
+    - @site.children.each do |site|
+      = render 'site_list', :site => site
+
+-unless @site.ancestors.size > 1
+  %p
+    = link_to t('common.new'), new_site_url(:siteable_type => @siteable_type, :parent_site => @site.id)

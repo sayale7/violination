@@ -1,0 +1,9 @@
+- title "Sites" 
+%ul
+  - @sites.each do |site|
+    = render 'site_list', :site => site
+
+
+%p
+  = link_to t('common.new'), "/sites/new?siteable_type=#{@siteable_type}"
+

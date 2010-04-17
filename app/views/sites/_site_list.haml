@@ -1,0 +1,13 @@
+-content_tag_for :li, site do   
+  =site.sitenames.find_by_language(get_locale.to_s).value
+  -unless (site.position == 0)
+    =link_to t('common.up'), move_site_up_path(:site => site, :siteable_type => @siteable_type)
+    |
+  -unless (site.position == (Site.find_all_by_parent_id_and_siteable_type(site.parent_id, @siteable_type).size-1))
+    =link_to t('common.down'), move_site_down_path(:site => site, :siteable_type => @siteable_type)
+    |
+  =link_to t('common.edit'), edit_site_path(site, :siteable_type => @siteable_type)
+  |
+  =link_to t('common.edit_text'), sitetexts_path(:textable_type => @siteable_type, :textable_id => site.id)
+  |
+  =link_to t('common.destroy'), site_path(site), :method => :delete, :confirm => t('common.confirm')

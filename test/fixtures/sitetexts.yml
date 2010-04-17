@@ -1,0 +1,15 @@
+one:
+  title: MyString
+  content: MyText
+  textable_type: MyString
+  parent_id: 1
+  active: false
+  archive: false
+
+two:
+  title: MyString
+  content: MyText
+  textable_type: MyString
+  parent_id: 1
+  active: false
+  archive: false

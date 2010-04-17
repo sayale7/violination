@@ -1,0 +1,28 @@
+-form_for @site do |f|
+  =f.error_messages
+
+  =f.hidden_field :siteable_type, :value  => @siteable_type
+
+  -if request.url.include?('parent_site')
+    =f.hidden_field :parent_id, :value => request.url.scan(/parent_site=(\w+)/).to_s
+  -else
+    =f.hidden_field :parent_id, :value => nil
+  %p
+    %strong
+      =t('common.active')
+    =f.check_box :active 
+
+  %p
+    %strong
+      = f.label :german_name, t('common.german_name')
+      = f.text_field :german_name, :class => 'text_box'
+         
+  %p
+    %strong
+      = f.label :english_name, t('common.english_name')
+      = f.text_field :english_name, :class => 'text_box'
+      
+  %p
+    =f.submit t('common.update')
+    =t('common.or')
+    = link_to t('common.cancel'), sites_path(:siteable_type => @siteable_type)

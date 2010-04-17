@@ -3,7 +3,32 @@
   <%= @map.to_html %>
 <% end %>
 
+<div class='start_left'>
+  <% unless Site.find_by_siteable_type_and_parent_id('Startleft').nil? %>
+    <h1>
+    <%= Sitetext.find_by_textable_type_and_textable_id(('Startleft'), Site.find_by_siteable_type_and_parent_id('Startleft').id).sitetextnames.find_by_language(get_locale.to_s).value %>
+    </h1>
+    
+    <p>
+    <%= Sitetext.find_by_textable_type_and_textable_id(('Startleft'), Site.find_by_siteable_type_and_parent_id('Startleft').id).sitetextnames.find_by_language(get_locale.to_s).content %>
+    </p>
+  <% end %>
+</div>
+
 <div class="google_map">
   <h1><%= t('user.near') %></h1>
-  <%= @map.div(:width => 600, :height => 400) %>
+  <%= @map.div(:width => 500, :height => 400) %>
 </div>
+
+<div class='start_right'>
+  <% unless Site.find_by_siteable_type_and_parent_id('Startright').nil? %>
+    <h1>
+    <%= Sitetext.find_by_textable_type_and_textable_id(('Startright'), Site.find_by_siteable_type_and_parent_id('Startright').id).sitetextnames.find_by_language(get_locale.to_s).value %>
+    </h1>
+    
+    <p>
+    <%= Sitetext.find_by_textable_type_and_textable_id(('Startright'), Site.find_by_siteable_type_and_parent_id('Startright').id).sitetextnames.find_by_language(get_locale.to_s).content %>
+    </p>
+  <% end %>
+</div>
+

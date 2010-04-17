@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :sites
+
+  map.resources :sitetexts
+
   
   map.resources :locations
   map.add_location_to_user 'add_location_to_user', :controller => 'locations', :action => 'add_location_to_user'
@@ -15,6 +19,13 @@ ActionController::Routing::Routes.draw do |map|
   # map.workshop 'workshop', :controller => 'workshops', :action => 'show'
   # map.edit_workshop 'edit', :controller => 'workshops', :action => 'edit'
   
+  #resources for sites
+  map.move_site_up 'move_site_up', :controller => 'sites', :action => 'move_site_up'
+  map.move_site_down 'move_site_down', :controller => 'sites', :action => 'move_site_down'
+  
+  #resources for sitexets
+  map.move_sitetext_up 'move_sitetext_up', :controller => 'sitetexts', :action => 'move_sitetext_up'
+  map.move_sitetext_down 'move_sitetext_down', :controller => 'sitetexts', :action => 'move_sitetext_down'
   
   # Added custom post action (swfupload) to the photo resource
    map.resources :photos, :collection => { :swfupload => :post }

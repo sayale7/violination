@@ -1,0 +1,32 @@
+<% title "Sitetext" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @sitetext.title %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%=h @sitetext.content %>
+</p>
+<p>
+  <strong>Textable Type:</strong>
+  <%=h @sitetext.textable_type %>
+</p>
+<p>
+  <strong>Parent:</strong>
+  <%=h @sitetext.parent_id %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%=h @sitetext.active %>
+</p>
+<p>
+  <strong>Archive:</strong>
+  <%=h @sitetext.archive %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_sitetext_path(@sitetext) %> |
+  <%= link_to "Destroy", @sitetext, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", sitetexts_path %>
+</p>

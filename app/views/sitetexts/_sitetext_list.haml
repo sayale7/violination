@@ -1,0 +1,15 @@
+-content_tag_for :li, sitetext do   
+  =sitetext.sitetextnames.find_by_language(get_locale.to_s).value
+  -unless (sitetext.position == 0)
+    =link_to t('common.up'), move_sitetext_up_path(:sitetext => sitetext)
+    |
+  -unless (sitetext.position == (Sitetext.find_all_by_textable_type_and_textable_id(@textable_type, @textable_id).size-1))
+    =link_to t('common.down'), move_sitetext_down_path(:sitetext => sitetext)
+    |
+  =link_to t('common.edit'), edit_sitetext_path(sitetext)
+  |
+  =link_to t('common.edit_german_text'), "/sitetexts/#{sitetext.id}/edit?textable_type=#{@textable_type}&textable_id=#{@textable_id}&content=de"
+  |
+  =link_to t('common.edit_english_text'), "/sitetexts/#{sitetext.id}/edit?textable_type=#{@textable_type}&textable_id=#{@textable_id}&content=en"
+  |
+  =link_to t('common.destroy'), sitetext_path(sitetext), :method => :delete, :confirm => t('common.confirm')

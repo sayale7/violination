@@ -1,0 +1,9 @@
+- title "Sitetexts" 
+
+%ul
+  - @sitetexts.each do |sitetext|
+    = render 'sitetext_list', :sitetext => sitetext
+
+
+%p
+  = link_to t('common.new'), "/sitetexts/new?textable_type=#{@textable_type}&textable_id=#{@textable_id}"
