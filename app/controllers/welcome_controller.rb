@@ -13,9 +13,9 @@ class WelcomeController < ApplicationController
     User.all.each do |user|
       if !(user.locations.first.lat.nil? || user.locations.first.lng.nil?)
         if user.full_name.to_s.eql?(' ')
-          @map.overlay_init(GMarker.new([user.locations.first.lat,user.locations.first.lng], :title => user.username, :info_window => "<a href=/users/#{user.id}>#{user.username}</a> <br/> <p>Beschreibung meiner Werkstätte:</p> <div style='width:500px;'> #{(user.workshop.description)} </div>"))
+          @map.overlay_init(GMarker.new([user.locations.first.lat,user.locations.first.lng], :title => user.username, :info_window => "<a href=/users/#{user.id}>#{user.username}</a> <br/> <p>#{user.locations.first.address}</p>"))
         else
-          @map.overlay_init(GMarker.new([user.locations.first.lat,user.locations.first.lng], :title => user.full_name, :info_window => "<a href=/users/#{user.id}>#{user.full_name}</a> <br/> <p>Beschreibung meiner Werkstätte:</p> <div style='width:500px;'> #{(user.workshop.description)} </div>"))
+          @map.overlay_init(GMarker.new([user.locations.first.lat,user.locations.first.lng], :title => user.full_name, :info_window => "<a href=/users/#{user.id}>#{user.full_name}</a> <br/> <p>#{user.locations.first.address}</p>"))
         end
       end
     end

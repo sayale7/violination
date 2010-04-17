@@ -19,6 +19,7 @@ function addAddressToInput(response) {
         document.getElementById('latitude').value = latitude;
         document.getElementById('longitude_hidden').value = longitude;
         document.getElementById('latitude_hidden').value = latitude;
+        document.getElementById('address').value = place.address;
     }
     
 }
