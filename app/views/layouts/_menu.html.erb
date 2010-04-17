@@ -45,6 +45,20 @@
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
+	
+	<li class="pureCssMenui"><a class="pureCssMenui" href="#">
+	  <span><%= t('site.editorial') %></span>
+	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	    <ul class="pureCssMenum">
+	      <% Site.find_all_by_siteable_type_and_parent_id('Editorial').each do |parent_site| %>
+		    <li class="pureCssMenui"><%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}", :class => 'pureCssMenui' %>
+		      
+		    </li>
+		    <% end %>
+	    </ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	
 	<li class="pureCssMenui"><a class="pureCssMenui" href="#">
 	  <span><%= t('common.admin') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->

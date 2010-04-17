@@ -1,0 +1,5 @@
+-@site.sitetexts.find_all_by_active_and_archive(1, 0).each do |text|
+  %h1
+    =text.sitetextnames.find_by_language(get_locale.to_s).value
+  %p
+    =text.sitetextnames.find_by_language(get_locale.to_s).content

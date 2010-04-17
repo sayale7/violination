@@ -22,6 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   #resources for sites
   map.move_site_up 'move_site_up', :controller => 'sites', :action => 'move_site_up'
   map.move_site_down 'move_site_down', :controller => 'sites', :action => 'move_site_down'
+  map.show_sites 'show_sites', :controller => 'sites', :action => 'show_sites'
   
   #resources for sitexets
   map.move_sitetext_up 'move_sitetext_up', :controller => 'sitetexts', :action => 'move_sitetext_up'

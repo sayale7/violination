@@ -80,6 +80,10 @@ class SitesController < ApplicationController
     end
   end
   
+  def show_sites
+    @site = Site.find(params[:site])
+  end
+  
   private
   
   def set_position(parent_id, siteable_type)

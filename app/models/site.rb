@@ -6,6 +6,7 @@ class Site < ActiveRecord::Base
   attr_writer :german_name, :english_name
   
   has_many :sitenames
+  has_many :sitetexts, :foreign_key => "textable_id"
   
   after_save :assign_german_site_name, :assign_english_site_name
   
