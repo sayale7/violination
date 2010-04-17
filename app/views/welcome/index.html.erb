@@ -4,14 +4,17 @@
 <% end %>
 
 <div class='start_left'>
-  <% unless Site.find_by_siteable_type_and_parent_id('Startleft').nil? %>
-    <h1>
-    <%= Sitetext.find_by_textable_type_and_textable_id(('Startleft'), Site.find_by_siteable_type_and_parent_id('Startleft').id).sitetextnames.find_by_language(get_locale.to_s).value %>
-    </h1>
-    
-    <p>
-    <%= Sitetext.find_by_textable_type_and_textable_id(('Startleft'), Site.find_by_siteable_type_and_parent_id('Startleft').id).sitetextnames.find_by_language(get_locale.to_s).content %>
-    </p>
+  <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).nil? %>
+    <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).each do |site| %>
+      <% site.sitetexts.find_all_by_active_and_archive(1, 0).each do |text| %>
+      <h1>
+        <%= text.sitetextnames.find_by_language(get_locale.to_s).value %>
+      </h1>
+      <p>
+        <%= text.sitetextnames.find_by_language(get_locale.to_s).content %>
+      </p>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
 
