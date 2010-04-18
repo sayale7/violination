@@ -132,5 +132,6 @@ en:
   site:
     admin: Administer Textsites
     editorial: Editorial
+    images: Editorial images
     startsite_left: Home left section
     startsite_right: Home right section
