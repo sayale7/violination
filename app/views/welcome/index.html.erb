@@ -2,7 +2,7 @@
   <%= GMap.header(:with_vml => false) %>
   <%= @map.to_html %>
 <% end %>
-
+<div class="site">
 <div class='start_left'>
   <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).nil? %>
     <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).each do |site| %>
@@ -40,5 +40,5 @@
         <% end %>
       <% end %>
     <% end %>
-</div>
+</div></div>
 
