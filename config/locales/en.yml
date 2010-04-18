@@ -40,6 +40,10 @@ en:
     home: Home
     near: Violinmakers in my vicinity
     active: Active
+    archive: Archive
+    align: Align
+    show_title: Show Title
+    searchable: Searchable
   user:
     username:Username
     email: Email Address

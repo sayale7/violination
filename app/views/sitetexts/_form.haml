@@ -13,7 +13,17 @@
   %p
     %strong
       =t('common.archive')
-    =f.check_box :archive 
+    =f.check_box :archive
+    
+  %p
+    %strong
+      =t('common.show_title')
+    =f.check_box :show_title
+
+  %p
+    %strong
+      =t('common.align')
+    =f.select :align, options_for_select(%w{full left right}, :selected => (@sitetext.align))
 
   %p
     %strong

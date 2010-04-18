@@ -36,6 +36,10 @@ de:
     back_to_search: Zurück zum Suchergebnis
     home: Home
     active: Aktiv
+    archive: Archiv
+    align: Ausrichtung
+    show_title: Titel anzeigen
+    searchable: In die Suche mit einbinden
   user:
     username: Benutzername
     email: Email Adresse
