@@ -1,10 +1,11 @@
--@site.sitetexts.find_all_by_active_and_archive(1, 0, :order => 'position').each do |text|
-  -if text.align.to_s.eql?('left')
-    %div.site_left
-      =text.sitetextnames.find_by_language(get_locale.to_s).content
-  -if text.align.to_s.eql?('right')
-    %div.site_right
-      =text.sitetextnames.find_by_language(get_locale.to_s).content
-  -if text.align.to_s.eql?('full')
-    %div.site_full
-      =text.sitetextnames.find_by_language(get_locale.to_s).content
+%div.site
+  -@site.sitetexts.find_all_by_active_and_archive(1, 0, :order => 'position').each do |text|
+    -if text.align.to_s.eql?('left')
+      %div.site_left
+        =text.sitetextnames.find_by_language(get_locale.to_s).content
+    -if text.align.to_s.eql?('right')
+      %div.site_right
+        =text.sitetextnames.find_by_language(get_locale.to_s).content
+    -if text.align.to_s.eql?('full')
+      %div.site_full
+        =text.sitetextnames.find_by_language(get_locale.to_s).content
