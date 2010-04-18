@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :photo_containers
+
   map.resources :sites
 
   map.resources :sitetexts

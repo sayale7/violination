@@ -43,6 +43,7 @@ $(document).ready(function() {
     'autoScale': true
   });
   
+  
 
   //hide edit link if js is enabled (show instrument)
    $('.edit_instrument').remove();

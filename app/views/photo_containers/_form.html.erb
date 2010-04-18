@@ -1,0 +1,11 @@
+<% form_for @the_instance do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => 'text_box' %>
+  </p>
+  <p>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

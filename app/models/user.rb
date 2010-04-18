@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :photos, :dependent => :destroy, :foreign_key => 'photo_container_id'
   has_one :workshop, :dependent => :destroy
   has_many :locations, :dependent => :destroy, :foreign_key => 'taggable_id'
+  has_many :photo_containers
   
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :username, :email, :password, :password_confirmation, :firstname, :lastname

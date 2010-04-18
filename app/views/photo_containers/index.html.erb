@@ -1,0 +1,16 @@
+<% title "Photo Containers" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for photo_container in @photo_containers %>
+    <tr>
+      <td><%=h photo_container.name %></td>
+      <td><%= link_to "Edit", edit_photo_container_path(photo_container) %></td>
+      <td><%= link_to "Destroy", photo_container, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Photo Container", new_photo_container_path %></p>
