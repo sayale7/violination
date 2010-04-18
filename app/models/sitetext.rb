@@ -1,5 +1,5 @@
 class Sitetext < ActiveRecord::Base
-  attr_accessible :textable_type, :textable_id, :active, :archive, :position, :german_name, :english_name, :german_content, :english_content, :align, :show_title
+  attr_accessible :textable_type, :textable_id, :active, :archive, :position, :german_name, :english_name, :german_content, :english_content, :align
   attr_writer :german_name, :english_name, :german_content, :english_content
   has_many :sitetextnames
   belongs_to :site
