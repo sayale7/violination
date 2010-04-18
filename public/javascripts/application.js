@@ -43,6 +43,17 @@ $(document).ready(function() {
     'autoScale': true
   });
   
+  $("#flash_video").fancybox({
+  	'titlePosition'	:	'over',
+  	'onComplete'	:	function() {
+  		$("#fancybox-wrap").hover(function() {
+  			$("#fancybox-title").show();
+  		}, function() {
+  			$("#fancybox-title").hide();
+  		});
+  	}
+  });
+  
   
 
   //hide edit link if js is enabled (show instrument)
