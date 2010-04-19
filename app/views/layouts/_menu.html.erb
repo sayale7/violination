@@ -50,10 +50,10 @@
 	  <span><%= t('site.editorial') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
 	    <ul class="pureCssMenum">
-	      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Editorial', nil, 1).each do |parent_site| %>
+	      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Editorial', nil, 1, :order => 'position').each do |parent_site| %>
 		    <li class="pureCssMenui"><%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}", :class => 'pureCssMenui' %>
 		      <ul class="pureCssMenum">
-		        <% parent_site.children.find_all_by_active(1).each do |site| %>
+		        <% parent_site.children.find_all_by_active(1, :order => 'position').each do |site| %>
 		          <li class="pureCssMenui"><%= link_to site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{site.id}", :class => 'pureCssMenui' %></li>
 		        <% end %>
 		      </ul>
