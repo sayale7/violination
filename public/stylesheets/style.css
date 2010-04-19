@@ -144,7 +144,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .start_left { clear: none; float: left; width: 470px; }
 
-.start_right { clear: right; float: right; margin-top: 10px; width: 500px; }
+.start_right { clear: right; float: right; margin-top: 20px; width: 500px; }
 
 .site_left { float: left; clear: left; width: 49%; }
 
