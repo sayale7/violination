@@ -5,7 +5,7 @@
 <div class="site">
 <div class='start_left'>
   <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).nil? %>
-    <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).each do |site| %>
+    <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1, :order => 'position').each do |site| %>
       <% site.sitetexts.find_all_by_active_and_archive(1, 0).each do |text| %>
       <h1>
         <%= text.sitetextnames.find_by_language(get_locale.to_s).value %>
@@ -13,7 +13,6 @@
       <p>
         <%= text.sitetextnames.find_by_language(get_locale.to_s).content %>
       </p>
-      <br/>
       <% end %>
     <% end %>
   <% end %>
@@ -26,7 +25,7 @@
 
 <div class='start_right'>
     <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startright', nil, 1).nil? %>
-      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startright', nil, 1).each do |site| %>
+      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startright', nil, 1, :order => 'position').each do |site| %>
         <% site.sitetexts.find_all_by_active_and_archive(1, 0).each do |text| %>
         <h1>
           <%= text.sitetextnames.find_by_language(get_locale.to_s).value %>
@@ -34,9 +33,9 @@
         <p>
           <%= text.sitetextnames.find_by_language(get_locale.to_s).content %>
         </p>
-          <br/>
         <% end %>
       <% end %>
     <% end %>
-</div></div>
+</div>
+</div>
 
