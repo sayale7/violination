@@ -1,3 +1,14 @@
+%h1
+  =t('search.search_mask')
+  -if request.url.to_s.include?('Bow')
+    =t('search.bow')
+  -else
+    =t('search.instrument')
+%p
+  -if request.url.to_s.include?('Bow')
+    =t('search.bow_example')
+  -else
+    =t('search.instrument_example')
 %p
   -form_tag search_item_path, :class => 'item_search' do
     =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"
@@ -5,3 +16,5 @@
     =hidden_field_tag :user_id, '', :value => @user_id
     =hidden_field_tag :contact, '', :value => @contact
     /submit_tag "suchen"
+%h1
+  =t('search.item_entries')

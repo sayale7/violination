@@ -115,7 +115,7 @@ table tr td { padding: 3px; vertical-align: top; }
 #show_workshop_tags .show_workshop_tags_item { clear: none; width: 100%; float: right; background: transparent; border: thin solid; border-color: #666666; margin: 0; padding: 0; }
 #show_workshop_tags .show_workshop_tags_item h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: 0; padding: 1%; }
 #show_workshop_tags .show_workshop_tags_item img { height: 16px; float: right; }
-#show_workshop_tags .show_workshop_tags_item:hover { border: thin solid; border-color: #666666; }
+#show_workshop_tags .show_workshop_tags_item:hover { border: thin solid; border-color: #666666; cursor: pointer; }
 #show_workshop_tags .show_workshop_tags_item:hover h2 { background-color: #7147D7; color: #fff; }
 
 #show_user_tags { width: 80%; float: right; background: transparent; clear: none; }

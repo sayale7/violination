@@ -135,3 +135,12 @@ en:
     images: Editorial images
     startsite_left: Home left section
     startsite_right: Home right section
+  search:
+    search_mask: Search for
+    item_entries: Searchentries
+    bow_example: E.g. Masterbow 4/4 
+    instrument_example: E.g. Violin Master 4/4
+    instrument: Instruments
+    bow: Bows
+    user: Workshops
+    user_example: E.g. Augustenstraße 53, 80333 München
