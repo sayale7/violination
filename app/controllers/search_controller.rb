@@ -91,11 +91,11 @@ class SearchController < ApplicationController
       @search_words = @search_words - @item_search_words 
       
       #search the items with the matching words
-      @item_search_words.each do |word|
-        if the_items.empty?
-          the_items = find_items(word, 'Item')
+      @item_search_words.each_with_index do |word|
+        if the_items.empty? and word.last.to_s.eql?('0')
+          the_items = find_items(word.first, 'Item')
         else
-          the_items = the_items & find_items(word, 'Item')
+          the_items = the_items & find_items(word.first, 'Item')
         end
       end
     
@@ -175,7 +175,6 @@ class SearchController < ApplicationController
     searchwords = Array.new
     tags = Array.new
     tags = Tag.find_all_by_taggable_type_and_searchable(type, true)
-    
     
     tags.each do |tag|
       @search_words.uniq.each do |word|
