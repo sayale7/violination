@@ -7,10 +7,9 @@
   <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).nil? %>
     <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1, :order => 'position').each do |site| %>
       <% site.sitetexts.find_all_by_active_and_archive(1, 0).each do |text| %>
-      <p>
+      <div style="width:100%">
         <%= text.sitetextnames.find_by_language(get_locale.to_s).content %>
-      </p>
-      <div style="height:1px; width:100%;"></div>
+      </div>
       <% end %>
     <% end %>
   <% end %>
@@ -25,10 +24,9 @@
     <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startright', nil, 1).nil? %>
       <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startright', nil, 1, :order => 'position').each do |site| %>
         <% site.sitetexts.find_all_by_active_and_archive(1, 0).each do |text| %>
-        <p>
+        <div style="width:100%">
           <%= text.sitetextnames.find_by_language(get_locale.to_s).content %>
-        </p>
-        <div style="height:1px; width:100%;"></div>
+        </div>
         <% end %>
       <% end %>
     <% end %>
