@@ -174,7 +174,7 @@ class SearchController < ApplicationController
   def get_search_words(type)
     searchwords = Array.new
     tags = Array.new
-    tags = Tag.find_all_by_taggable_type_and_searchable(type, true)
+    tags = Tag.find_all_by_taggable_type_and_searchable(type, true) - Tag.find_all_by_parent_id(nil)
     
     tags.each do |tag|
       @search_words.uniq.each do |word|
