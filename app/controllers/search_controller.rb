@@ -174,7 +174,7 @@ class SearchController < ApplicationController
   def get_search_words(type)
     searchwords = Array.new
     tags = Array.new
-    tags = Tag.find_all_by_taggable_type_and_searchable(type, true) - Tag.find_all_by_parent_id(nil)
+    tags = Tag.find_all_by_taggable_type_and_searchable(type, true)
     
     tags.each do |tag|
       @search_words.uniq.each do |word|
@@ -190,11 +190,11 @@ class SearchController < ApplicationController
             end
           end
         end
-        if !tag.german_name.nil? && tag.german_name.to_s.downcase.include?(word.to_s.downcase)
+        if !tag.german_name.nil? and !tag.parent_id.nil? and tag.german_name.to_s.downcase.include?(word.to_s.downcase)
           searchwords.push(word)
           @tag_names.push(TagName.find_by_language_and_tag_id('de', tag.id))
         end
-        if !tag.english_name.nil? && tag.english_name.to_s.downcase.include?(word.to_s.downcase)
+        if !tag.english_name.nil? and !tag.parent_id.nil? and tag.english_name.to_s.downcase.include?(word.to_s.downcase)
           searchwords.push(word)
           @tag_names.push(TagName.find_by_language_and_tag_id('en', tag.id))
         end
