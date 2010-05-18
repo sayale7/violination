@@ -9,7 +9,7 @@
           = image_tag('/images/anonymous.jpg', :width => 140)
       %div.info
         %strong
-          =t('user.contact') << ':'
+          =t('user.contact') << ' - '
         -if item.contact.to_s.eql?('1')
           =item.user.full_name
           =" (Email: #{mail_to item.user.email})"
@@ -20,6 +20,9 @@
         -unless item.tags.find_by_parent_id(nil).nil?
           -get_added_tags(item.tags.find_by_parent_id(nil), item.id).each do |tag|
             -if tag.visible.to_s.eql?('1') || tag.visible.to_s.eql?('true')
+              %strong
+                =tag.tag_names.find_by_language(get_locale.to_s).value.to_s
+                ="-"
               -if tag.children.empty?
                 -if tag.value_type.to_s.eql?('preisfeld')
                   -unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value.nil?
