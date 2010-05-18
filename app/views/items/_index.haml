@@ -11,7 +11,7 @@
         %strong
           =t('user.contact') << ' - '
         -if item.contact.to_s.eql?('1')
-          =item.user.full_name
+          = link_to item.user.full_name, "/users/#{item.user.id}"
           =" (Email: #{mail_to item.user.email})"
         -else
           ='Violination.com'
