@@ -24,6 +24,10 @@ class TagValuesController < ApplicationController
       german_tag_value.update_attribute(:value, german_value)
       english_tag_value.update_attribute(:value, english_value)
     end
+    if tag.value_type.to_s.eql?('link')
+      german_tag_value.update_attribute(:value, german_value.gsub("http://", ""))
+      english_tag_value.update_attribute(:value, german_value.gsub("http://", ""))
+    end
     respond_to do |format|
       format.html { 
         if error
