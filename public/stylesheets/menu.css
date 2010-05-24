@@ -39,7 +39,7 @@ ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
 	text-decoration:none;
 	padding:10px;
 	_padding-left:0;
-	font:14px Trebuchet MS;
+	font:12px Trebuchet MS;
 	color: #fff;
 	text-decoration:none;
 	cursor:default;
@@ -80,7 +80,7 @@ ul.pureCssMenu li:hover>a{
 	background-color:#666;
 	border-color:#666;
 	border-style:solid;
-	font:14px Trebuchet MS;
+	font:12px Trebuchet MS;
 	color: #ffffff;
 	text-decoration:none;
 }
@@ -89,7 +89,7 @@ ul.pureCssMenu li a:hover{
 	background-color:#666;
 	border-color:#666;
 	border-style:solid;
-	font:14px Trebuchet MS;
+	font:12px Trebuchet MS;
 	color: #999;
 	text-decoration:none;
 }

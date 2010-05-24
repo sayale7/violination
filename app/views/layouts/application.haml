@@ -9,11 +9,16 @@
   %body
     %div#popup_background 
     %div#header
-      %div#nav_left
-        =render '/layouts/menu.html.erb'
+      %div.header_left
+        %span.logo_large
+          ="Violination.com"
+        %span.logo_small
+          ="Qualität aus Geigenbauwerkstätten"
       %div#nav_right
         =image_tag 'de.png'
         =image_tag 'gb.png'
+      %div#nav_left
+        =render '/layouts/menu.html.erb'
     %div#container
       %div#flash
         - flash.each do |name, msg|

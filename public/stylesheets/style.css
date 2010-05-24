@@ -21,13 +21,17 @@ a:hover { color: #000; }
 
 .text_box { width: 95%; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
 
-#container { clear: both; width: 1000px; margin: 0 auto; margin-top: 10px; background: transparent; padding: 15px; overflow: hidden; min-height: 500px; }
+#container { clear: both; width: 1000px; margin: 0 auto; margin-top: 10px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
-#header { width: 1000px; margin: 0 auto; margin-top: 20px; height: 40px; padding: 15px; overflow: visible; }
+#header { width: 1000px; margin: 0 auto; padding: 15px; padding-top: 0px; overflow: visible; height: 80px; font-family: Verdana; color: #fff; }
 
-#nav_left { width: 89%; float: left; height: 40px; }
+.header_left { float: left; }
+.header_left span.logo_large { float: left; font-size: 23pt; }
+.header_left span.logo_small { clear: both; float: left; font-size: 10pt; }
 
-#nav_right { width: 9%; padding-top: 5px; padding-right: 1%; float: right; text-align: right; height: 35px; }
+#nav_left { clear: right; float: right; text-align: right; height: 40px; }
+
+#nav_right { padding-top: 10px; padding-right: 1%; float: right; text-align: right; height: 35px; }
 
 #content { clear: both; }
 
