@@ -27,7 +27,9 @@ a:hover { color: #000; }
 
 .header_left { float: left; }
 .header_left span.logo_large { float: left; font-size: 23pt; }
+.header_left span.logo_large a { color: #fff; }
 .header_left span.logo_small { clear: both; float: left; font-size: 10pt; }
+.header_left span.logo_small a { color: #fff; }
 
 #nav_left { clear: right; float: right; text-align: right; height: 40px; }
 
