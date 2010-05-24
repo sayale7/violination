@@ -1,6 +1,6 @@
 =hidden_field_tag :id, TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).id
 
--if tag.value_type.to_s.eql?('beschreibungsfeld')
+-if tag.value_type.to_s.eql?('beschreibungsfeld') and !request.url.to_s.include?('requests')
   %strong 
     =tag.tag_names.find_by_language(get_locale.to_s).value
   %p
@@ -40,4 +40,10 @@
     = t('common.english')
     %br
     =text_field_tag :english_value, TagValue.find_by_language_and_tag_id_and_taggable_id('en', tag.id, @the_instance.id).value, :class => 'text_box'
+    
+-if tag.value_type.to_s.eql?('beschreibungsfeld') and request.url.to_s.include?('requests')
+  %strong 
+    =tag.tag_names.find_by_language(get_locale.to_s).value
+  %p
+    =text_area_tag :german_value, TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @the_instance.id).value, :class => 'text_area'
 

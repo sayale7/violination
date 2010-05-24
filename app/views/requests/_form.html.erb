@@ -1,0 +1,14 @@
+<h1><%= t('request.steps') %></h1>
+<h2><%= t('request.step1') %></h2>
+<% form_for @request do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => 'text_box' %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :class => 'text_box' %>
+  </p>
+  <p><%= f.submit t('common.add') %></p>
+<% end %>

@@ -1,0 +1,7 @@
+<% title "Anfrage" %>
+
+<% @request.tags.find_all_by_parent_id(nil).each do |tag| %>
+  <h1><%= tag.german_name %></h1> 
+  <p><%= simple_format TagValue.find_by_taggable_id_and_tag_id(@request.id, tag.id).value %> </p>
+  <br/>
+<% end %>

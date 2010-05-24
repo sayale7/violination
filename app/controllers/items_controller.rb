@@ -17,7 +17,11 @@ class ItemsController < ApplicationController
     
     @taggable_type = params[:taggable_type].to_s
     session[:search_input] = nil
-    render :template  => '/items/index.haml'
+    unless @taggable_type.to_s.eql?('Request')
+      render :template  => '/items/index.haml'
+    else
+      render :template  => '/items/requests.haml'
+    end
   end
   
   def show
@@ -33,15 +37,16 @@ class ItemsController < ApplicationController
   
   def new
     @the_instance = Item.new
-    @the_instance.user_id = current_user.id
+    unless current_user.nil?
+      @the_instance.user_id = current_user.id
+    end
     @the_instance.item_type = params[:taggable_type].to_s
     if @the_instance.save
-      redirect_to "/#{params[:taggable_type].to_s.downcase.pluralize}/#{@the_instance.id}?taggable_type=#{params[:taggable_type].to_s}"
+      redirect_to "/#{params[:taggable_type].to_s.downcase.pluralize}/#{@the_instance.id}?taggable_type=#{params[:taggable_type].to_s}" 
     end
   end
   
   def update
-    @the_instance = get_taggable_type(params[:taggable_type].to_s).find(params[:id])
     @the_instance = get_taggable_type(params[:taggable_type].to_s).find(params[:id])
     if params[:item][:contact].to_s.eql?('1')
       contact = 1

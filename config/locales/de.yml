@@ -40,6 +40,7 @@ de:
     align: Ausrichtung
     show_title: Titel anzeigen
     searchable: In die Suche mit einbinden
+    request: Anfrage
   user:
     username: Benutzername
     email: Email Adresse
@@ -90,6 +91,8 @@ de:
       index: Alle Streichinstrument Kategorien
     bow:
       index: Alle Bogen Kategorien
+    request:
+      index: Alle Anfrage Kategorien
     workshop:
       index: Alle Werkstatt Kategorien
   session:
@@ -141,6 +144,10 @@ de:
     bow: Bögen
     user: Werkstätten
     user_example: Z.B. Augustenstraße 53, 80333 München
+  request:
+    steps: Anfrage in 2 Schritten
+    finish: Anfrage abschließen und abschicken
+    step1: Schritt 1
   
   date:
     formats:

@@ -44,6 +44,7 @@ en:
     align: Align
     show_title: Show Title
     searchable: Searchable
+    request: Request
   user:
     username:Username
     email: Email Address
@@ -94,6 +95,8 @@ en:
       index: All String Tags
     bow:
       index: All Bow Tags
+    request:
+      index: All Request Tags
     workshop:
       index: All Workshop Tags
   session:
@@ -144,3 +147,7 @@ en:
     bow: Bows
     user: Workshops
     user_example: E.g. Augustenstraße 53, 80333 München
+  request:
+    steps: Request in 2 Steps
+    finish: Finish your Request
+    step1: Step 1

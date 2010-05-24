@@ -71,6 +71,7 @@
 		    <li class="pureCssMenui"><%= link_to t('tag.workshop.index'), tags_path(:taggable_type => 'Workshop'), :class => 'pureCssMenu' %></li>
 		    <li class="pureCssMenui"><%= link_to t('tag.stringg.index'), tags_path(:taggable_type => 'Stringg'), :class => 'pureCssMenu' %></li>
 		    <li class="pureCssMenui"><%= link_to t('tag.bow.index'), tags_path(:taggable_type => 'Bow'), :class => 'pureCssMenu' %></li>
+		    <li class="pureCssMenui"><%= link_to t('tag.request.index'), tags_path(:taggable_type => 'Request'), :class => 'pureCssMenu' %></li>
 		    <li class="pureCssMenui"><%= link_to t('site.admin'), '#', :class => 'pureCssMenu' %>
 		      <ul class="pureCssMenum">
 		        <li class="pureCssMenui"><%= link_to t('site.images'), "/photo_containers", :class => 'pureCssMenui' %></li>
@@ -105,6 +106,12 @@
   	</li>
   	<li class="pureCssMenui"><a class="pureCssMenui" href="/bows?taggable_type=Bow">
   	  <span><%= t('common.bows') %></span>
+  	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+  	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+  	</li>
+  	
+  	<li class="pureCssMenui"><a class="pureCssMenui" href="/requests/new">
+  	  <span><%= t('common.request') %></span>
   	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
   	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
   	</li>
