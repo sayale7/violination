@@ -4,6 +4,14 @@ class ViolinationMailer < ActionMailer::Base
     from          "requests@violination.com"
     subject       "t(mailer.request)"
     sent_on       Time.now
-    body          {:request => request}
+    body          :request => request
+  end
+  
+  def request_to_admin
+    recipients    "thomas.kohler@gmx.at"
+    from          "requests@violination.com"
+    subject       "t(mailer.request)"
+    sent_on       Time.now
+    body          :request => request
   end
 end

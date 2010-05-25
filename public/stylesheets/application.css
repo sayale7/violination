@@ -23,8 +23,8 @@ body {
 
 #flash_notice, #flash_error {
   float:left;
-  padding: 5px 8px;
-  margin: 10px 0;
+  padding: 1%;
+  width: 98%;
 }
 
 #flash_notice {

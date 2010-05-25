@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  
   map.resources :requests
+  
+  map.send_request_email "send_request_email", :controller => 'requests', :action => 'send_request_email'
 
   map.resources :photo_containers
 

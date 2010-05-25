@@ -13,7 +13,7 @@
       = simple_format TagValue.find_by_taggable_id_and_tag_id(@request.id, tag.id).value
     
 %h1
-  = link_to t('common.send')
+  = link_to t('common.send'), send_request_email_url(:request => @the_instance)
   %span.small
     =t('common.or')
     = link_to t('common.edit'), '', :rel => 'popupContact', :class => 'popupContactClose'
