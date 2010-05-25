@@ -155,6 +155,9 @@ de:
     
   mailer:
     request: Instrument/Bogen Anfrage auf Violination.com
+    thanks_for_request: Danke für Ihre Anfrage. Ihre Anfrage wird umgehend bearbeitet!
+    send_failure: Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später nochmals!
+    send_success: Danke für Ihre Anfrage. Anfrage erfolgreich versendet und wird umgehend bearbeitet!
     
   
   date:

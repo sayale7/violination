@@ -4,7 +4,15 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Welcome to example.com, <%=h @request.name %></h1>
-    <p>Thanks for joining and have a great day!</p>
+    <h1><%= t('mailer.thanks_for_request') %>, <%=h @request.name %></h1>
+    <% @request.tags.find_all_by_parent_id(nil).each do |tag| %>
+    <h2><%= tag.tag_names.find_by_language("de").value %></h2>
+      <% taggings = @request.tags.find_all_by_parent_id(tag.id, :order => "position") %>
+      <% unless taggings.empty? %>
+          <p><%= taggings.first.tag_names.find_by_language("de").value %></p>
+      <% else %>
+          <p><%= simple_format TagValue.find_by_taggable_id_and_tag_id(@request.id, tag.id).value %></p>
+      <% end %>
+    <% end %>
   </body>
 </html>

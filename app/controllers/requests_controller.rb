@@ -52,10 +52,10 @@ class RequestsController < ApplicationController
   
   def send_request_email
     if ViolinationMailer.deliver_request_confirmation(Request.find(params[:request])) and ViolinationMailer.deliver_request_to_admin(Request.find(params[:request]))
-      flash[:notice] = t('request.send_success')
+      flash[:notice] = t('mailer.send_success')
       redirect_to root_url
     else
-      flash[:error] = t('request.send_failure')
+      flash[:error] = t('mailer.send_failure')
     end
   end
   

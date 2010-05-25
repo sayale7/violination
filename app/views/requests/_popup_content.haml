@@ -6,11 +6,11 @@
   %h2
     =tag.tag_names.find_by_language(get_locale.to_s).value
   %p
-    - taggings = added_request_child_tags(tag, @the_instance.id)
+    - taggings = @the_instance.tags.find_all_by_parent_id(tag.id, :order => "position")
     -unless taggings.empty?
       = taggings.first.tag_names.find_by_language(get_locale.to_s).value
     -else
-      = simple_format TagValue.find_by_taggable_id_and_tag_id(@request.id, tag.id).value
+      = simple_format TagValue.find_by_taggable_id_and_tag_id(@the_instance.id, tag.id).value
     
 %h1
   = link_to t('common.send'), send_request_email_url(:request => @the_instance)
