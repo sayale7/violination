@@ -18,7 +18,7 @@ class SearchController < ApplicationController
       #get the users from user attr
       the_users_from_attr = Array.new
       @search_words.each do |word|
-        users = User.firstname_like_or_lastname_like(word)
+        users = User.firstname_like_and_lastname_like(word)
         unless users.empty?
           users.each do |user|
             the_users_from_attr.push(user)
