@@ -15,6 +15,17 @@ class SearchController < ApplicationController
       #split up the user input
       @search_words = params[:search_input].split
       
+      #get the users from user attr
+      the_users_from_attr = Array.new
+      @search_words.each do |word|
+        users = User.firstname_like_or_lastname_like(word)
+        unless users.empty?
+          users.each do |user|
+            the_users_from_attr.push(user)
+          end
+        end
+      end
+      
       #get all search words that match a user tag (tag_name or tag_value)
       @user_search_words = get_search_words('User')
       
@@ -57,6 +68,13 @@ class SearchController < ApplicationController
       else
         @users = the_users
       end
+      
+      unless @users.nil?
+        @users = @users + the_users_from_attr
+      else
+        @users = the_users_from_attr
+      end
+      @users = @users.uniq
       
     end
     
