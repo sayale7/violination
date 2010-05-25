@@ -9,7 +9,7 @@ class ViolinationMailer < ActionMailer::Base
   end
   
   def request_to_admin(request)
-    recipients    "thomas.kohler@gmx.at"
+    recipients    "geigenneubau@aon.at"
     from          "requests@violination.com"
     subject       I18n.t("mailer.request")
     sent_on       Time.now
