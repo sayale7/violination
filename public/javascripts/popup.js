@@ -41,6 +41,7 @@ function centerPopup(element){
 $(document).ready(function(){
   
   $("a.request_popup").live('click', function(){
+		$('html, body').animate({scrollTop:0}, 'slow');
 		//centering with cs$('.request_content').html(
 		$.getScript(this.href);
 		centerPopup($(this).attr('rel'));
@@ -53,12 +54,13 @@ $(document).ready(function(){
 	//LOADING POPUP
 	//Click the button event!
 	$("a.popup").live('click', function(){
+		$('html, body').animate({scrollTop:0}, 'slow');
 		//centering with cs
     //$('.id_of_photo').attr('action', '/photos/'+ $(this).attr("id"));
     //$('.id_of_photo').find('.hidden_id').attr('value', $(this).attr("title"));
     //$('.id_of_photo').find('.hidden_id').attr('value', $(this).attr("title"));
 		centerPopup($(this).attr('rel'));
-		//load popup
+		//    //load popup
 		loadPopup($(this).attr('rel'));
 		return false;
 	});

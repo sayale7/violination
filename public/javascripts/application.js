@@ -129,6 +129,7 @@ $(document).ready(function() {
 	$('.edit_photo').live('submit', function(e){
 		$.post($(this).attr("action"), $(this).serialize(), null, 'script');
 		$('.popupContact').fadeOut('slow');
+		$('html, body').animate({scrollTop:2000}, 'slow');
 		return false;
 	});
 
