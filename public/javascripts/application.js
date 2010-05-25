@@ -92,6 +92,8 @@ $(document).ready(function() {
 	    $(".close img").fadeIn('slow');
 	  });
 		$('.new_image_upload_form, #thumbnails').show(500).fadeIn(100);
+		
+		$('html, body').animate({scrollTop:2000}, 'slow');
   }, function() {
     $('.close img').fadeOut('slow', function(){
 	    $(".open img").fadeIn('slow');
