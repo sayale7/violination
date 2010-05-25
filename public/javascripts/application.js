@@ -76,6 +76,7 @@ $(document).ready(function() {
   $("#workshop_description_open_link").live('click', function () { 
    $(this).fadeOut(200);
    $('#workshop_description_form').show(500).fadeIn(100);
+		$('html, body').animate({scrollTop:2000}, 'slow');
    return false
   });
   $("#workshop_description_cancel_link").live('click', function () { 
@@ -92,7 +93,6 @@ $(document).ready(function() {
 	    $(".close img").fadeIn('slow');
 	  });
 		$('.new_image_upload_form, #thumbnails').show(500).fadeIn(100);
-		
 		$('html, body').animate({scrollTop:2000}, 'slow');
   }, function() {
     $('.close img').fadeOut('slow', function(){
