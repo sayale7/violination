@@ -1,3 +1,13 @@
+=javascript 'popup'
+=render '/requests/popup.haml'
+%h2
+  =t('request.step2')
+  %p
+  
+%div.left
+  %h1
+    =link_to t("common.preview"), "/requests/#{@the_instance.id}",  :class => 'request_popup', :rel => "popup"
+  
 %div#edit_instance_tags_js
 
   %div#available_instance_tags_js
@@ -5,3 +15,5 @@
   
   %div#added_instance_tags
     = render '/taggables/added_instance_attributes_js.haml'
+  
+  

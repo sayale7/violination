@@ -44,7 +44,9 @@ en:
     align: Align
     show_title: Show Title
     searchable: Searchable
-    request: Request
+    request: My favourite Instrument/Bow !
+    preview: Preview
+    send: Send
   user:
     username:Username
     email: Email Address
@@ -150,4 +152,9 @@ en:
   request:
     steps: Request in 2 Steps
     finish: Finish your Request
-    step1: Step 1
+    step1: Schritt 1 - Geben Sie Ihren Namen und Ihre Email Adresse ein, damit wir uns mit einem passenden Angebot an Sie wenden können!
+    step2: Hier können Sie die Attribute mit denen Sie Ihr Wunschinstrument oder Ihren Wunschbogen am besten beschreiben, hinzufügen. Mittels der Auswahl- und Eingabefelder können Sie diese um Ihre eigenen
+    request: Request of
+    
+  mailer:
+    request: Instrument/Bow Request on Violination.com

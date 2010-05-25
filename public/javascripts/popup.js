@@ -1,4 +1,3 @@
-
 //SETTING UP OUR POPUP
 //0 means disabled; 1 means enabled;
 var popupStatus = 0;
@@ -40,10 +39,20 @@ function centerPopup(element){
 
 //CONTROLLING EVENTS IN jQuery
 $(document).ready(function(){
-
+  
+  $("a.request_popup").live('click', function(){
+		//centering with cs$('.request_content').html(
+		$.getScript(this.href);
+		centerPopup($(this).attr('rel'));
+		//load popup
+		loadPopup($(this).attr('rel'));
+		return false;
+	});
+  
+  
 	//LOADING POPUP
 	//Click the button event!
-	$(".popup").live('click', function(){
+	$("a.popup").live('click', function(){
 		//centering with cs
     //$('.id_of_photo').attr('action', '/photos/'+ $(this).attr("id"));
     //$('.id_of_photo').find('.hidden_id').attr('value', $(this).attr("title"));

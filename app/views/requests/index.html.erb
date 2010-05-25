@@ -1,4 +1,4 @@
-<% title "Requests" %>
+<% title "Anfragen" %>
 <table>
   <tr>
     <th>Name</th>
@@ -8,9 +8,8 @@
     <tr>
       <td><%=h request.name %></td>
       <td><%=h request.email %></td>
-      <td><%= link_to "Show", request %></td>
-      <td><%= link_to "Edit", edit_request_path(:id => request) %></td>
-      <td><%= link_to "Destroy", request, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Anzeigen", request %></td>
+      <td><%= link_to "Löschen", request, :confirm => 'Sicher?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

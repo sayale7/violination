@@ -1,0 +1,19 @@
+%h1
+  = t('request.request')
+  = "#{@the_instance.name},"
+  = @the_instance.email
+-@the_instance.tags.find_all_by_parent_id(nil).each do |tag|
+  %h2
+    =tag.tag_names.find_by_language(get_locale.to_s).value
+  %p
+    - taggings = added_request_child_tags(tag, @the_instance.id)
+    -unless taggings.empty?
+      = taggings.first.tag_names.find_by_language(get_locale.to_s).value
+    -else
+      = simple_format TagValue.find_by_taggable_id_and_tag_id(@request.id, tag.id).value
+    
+%h1
+  = link_to t('common.send')
+  %span.small
+    =t('common.or')
+    = link_to t('common.edit'), '', :rel => 'popupContact', :class => 'popupContactClose'

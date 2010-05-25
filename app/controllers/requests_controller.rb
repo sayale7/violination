@@ -5,6 +5,13 @@ class RequestsController < ApplicationController
   
   def show
     @request = Request.find(params[:id])
+    @the_instance = @request
+    respond_to do |format|
+      format.html {  }
+      format.js { 
+        render '/requests/popup.js.erb'
+      }
+    end
   end
   
   def new
@@ -42,4 +49,9 @@ class RequestsController < ApplicationController
     flash[:notice] = "Successfully destroyed request."
     redirect_to requests_url
   end
+  
+  def send_request_email
+    
+  end
+  
 end

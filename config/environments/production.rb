@@ -26,3 +26,10 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.delivery_method = :sendmail
+config.action_mailer.sendmail_settings = {
+  :location       => '/usr/sbin/sendmail',
+  :arguments      => '-i -t -f support@yourapp.com'
+}

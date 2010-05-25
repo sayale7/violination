@@ -1,0 +1,70 @@
+/*
+	Menue-styles fuer IEs
+	Am besten per Conditional Comment einbinden.
+	Fuer IE5.5 und 5.0 muessen nur geringfuegige kosmetische
+	Anpassungen vorgenommen werden (siehe Kommentare).
+*/
+
+#menue {
+display:none;
+}
+.stupidie {
+display: block;
+position: absolute;
+top: 5px;
+left: 0;
+z-index: 200;
+}
+
+a.auss {
+float: left;
+width: 8em;
+height: 1.4em;
+overflow: hidden;
+display: block;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+background-color: #dec79a;
+color: #513913; 
+border: 1px solid;
+border-color: #d0843e #78561d #78561d #d0843e;
+}
+a:hover.auss {
+overflow: visible;
+background-color: #624617;
+color: #fff;
+}
+a:hover.auss table {
+display: block;
+margin-top: 3px;
+background-color: #dec79a;
+color: #400;
+border-collapse: collapse;
+}
+
+a.inn {
+display: block;
+width: 7.9em; /* fuer 5er IEs anpassen, sonst 'zuckt' es */
+padding: 2px 0;
+font-size: 100%; /* fuer 5er IEs auf 80% reduzieren */
+font-weight: normal;
+text-align: center;
+text-decoration: none;
+border-bottom: 1px solid #78561d;
+background-color: #ecd8ae;
+color: #600;
+}
+a:visited.inn {
+background-color: #ecd8ae;
+color:#444;
+}
+a:hover.inn {
+position: relative;
+background-color: #f7eedb;
+color: #900;
+}
+span.menutag {
+display: block;
+cursor: default;
+}
