@@ -2,7 +2,7 @@ class ViolinationMailer < ActionMailer::Base
   def request_confirmation(request)
     recipients    request.email
     from          "requests@violination.com"
-    subject       "t(mailer.request)"
+    subject       t(mailer.request)
     sent_on       Time.now
     content_type  "text/html"
     body          :request => request
@@ -11,7 +11,7 @@ class ViolinationMailer < ActionMailer::Base
   def request_to_admin(request)
     recipients    "thomas.kohler@gmx.at"
     from          "requests@violination.com"
-    subject       "t(mailer.request)"
+    subject       t(mailer.request)
     sent_on       Time.now
     content_type  "text/html"
     body          :request => request
