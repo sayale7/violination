@@ -36,7 +36,6 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find(params[:id])
     if @request.update_attributes(params[:request])
-      flash[:notice] = "Successfully updated request."
       redirect_to @request
     else
       render :action => 'edit'
@@ -46,7 +45,6 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-    flash[:notice] = "Successfully destroyed request."
     redirect_to requests_url
   end
   
