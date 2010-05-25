@@ -1,0 +1,16 @@
+-title "Anfrage"
+
+%h1
+  = t('request.request')
+  = "#{@the_instance.name},"
+  = @the_instance.email
+
+-@request.tags.find_all_by_parent_id(nil).each do |tag|
+  %h2
+    =tag.tag_names.find_by_language(get_locale.to_s).value
+  %p
+    - taggings = @request.tags.find_all_by_parent_id(tag.id, :order => "position")
+    -unless taggings.empty?
+      = taggings.first.tag_names.find_by_language(get_locale.to_s).value
+    -else
+      = simple_format TagValue.find_by_taggable_id_and_tag_id(@request.id, tag.id).value

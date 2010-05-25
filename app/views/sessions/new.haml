@@ -11,10 +11,10 @@
       / = t('common.or')
       / = t('user.username')
       %br
-      = text_field_tag :login, params[:login]
+      = text_field_tag :login, params[:login], :class => 'text_box'
    %p
       =label_tag :password, t('user.password') 
       %br
-      =password_field_tag :password
+      =password_field_tag :password, '', :class => 'text_box'
    %p
       =submit_tag t('user.login')

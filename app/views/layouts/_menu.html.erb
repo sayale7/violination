@@ -62,7 +62,7 @@
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
-	
+	<% if current_user.admin %>
 	<li class="pureCssMenui"><a class="pureCssMenui" href="#">
 	  <span><%= t('common.admin') %></span>
 	  <![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
@@ -80,9 +80,11 @@
     		    <li class="pureCssMenui"><%= link_to t('site.startsite_right'), "/sites?siteable_type=Startright", :class => 'pureCssMenui' %></li>
     	    </ul>
 		    </li>
+		    <li class="pureCssMenui"><%= link_to t('request.all'), requests_path, :class => 'pureCssMenu' %></li>
 	    </ul>
 	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
+	<% end %>
 	<li class="pureCssMenui">
 	  <%= link_to t('user.logout'), logout_path, :class => 'pureCssMenui' %>
 	</li>
