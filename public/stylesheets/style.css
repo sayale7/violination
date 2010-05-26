@@ -15,13 +15,16 @@ a:hover { color: #000; }
 
 .right { float: right; }
 
+.search_text { float: right; width: 25%; }
+.search_text p { font-size: 15px; font-weight: bold; }
+
 .right_break { float: right; clear: both; padding-top: 10px; }
 
 .text_area { width: 98%; height: 200px; font-size: 12px; padding: 3px; font-family: Verdana; }
 
 .mceEditor { width: 100%; height: 400px; }
 
-.text_box { width: 95%; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
+.text_box { width: 70%; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
 
 #container { clear: both; width: 1000px; margin: 0 auto; margin-top: 10px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 

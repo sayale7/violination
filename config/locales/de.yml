@@ -113,6 +113,7 @@ de:
     attributes: Dieses Instrument hat folgende Attribute
     self_contact: Meine Kontaktdaten verwenden
     violination_contact: Anonym über die Seite
+    search_text: Versuchen Sie sich an der Live Suche! Einfach Art des Instruments, seine Größe oder andere Attribute eintippen und das gewünschte Instrument erscheint im Nu!
   workshop:
     edit: Meine Werkstatt bearbeiten
     show: Meine Werkstatt anzeigen
@@ -125,6 +126,7 @@ de:
     mine: Meine Bögen
     mine_singular: Mein Bogen
     of: Bogen von
+    search_text: Versuchen Sie sich an der Live Suche! Einfach Art des Bogens, seine Größe oder andere Attribute eintippen und der gewünschte Bogen erscheint im Nu!
   photo:
     select: Bilder auswählen
     upload_text: Bitte verwenden sie nur die Formate JPG, JPEG, GIF und PNG.
