@@ -8,7 +8,7 @@ p { font-size: 12px; }
 
 p.error { display: none; color: red; }
 
-a { text-decoration: none; color: #666666; }
+a { text-decoration: none; color: black; }
 a img { border: none; }
 
 a:hover { color: #000; }
