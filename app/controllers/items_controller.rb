@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
   def destroy
     @the_instance = get_taggable_type(params[:taggable_type].to_s).find(params[:id])
     @the_instance.destroy
-    redirect_to "/#{params[:taggable_type].to_s.downcase.pluralize}?user_id=#{current_user.id}&taggable_type=#{params[:taggable_type].to_s}"
+    redirect_to "/#{params[:taggable_type].to_s.downcase.pluralize}?user_id=#{current_user.id}&taggable_type=#{@the_instance.item_type.to_s}"
   end
   
   private

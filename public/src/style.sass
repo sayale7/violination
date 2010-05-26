@@ -15,6 +15,10 @@
   :filter alpha(opacity=#{!value * 100})
   :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{!value*100})"
 
+=round_corners
+  :-moz-border-radius 5px
+  :-khtml-border-radius 5px
+
 h1
   :font-size 18px
   :width 100%
@@ -50,9 +54,13 @@ a:hover
 .search_text
   :float right
   :width 29%
-  p
-    :font-size 15px
-    :font-weight bold
+  :background-image url('/images/shadow.gif')
+  :background-repeat repeat-x 
+  :padding 5px
+  :border thin #000 solid
+  :font-size 14px
+  :font-weight bold
+  +round_corners
 
 .right_break
   :float right
@@ -489,6 +497,7 @@ table
   :width 99%
   +thin_border
   :background white
+  +round_corners
   
 .image
   :float left

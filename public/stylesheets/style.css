@@ -15,8 +15,7 @@ a:hover { color: #000; }
 
 .right { float: right; }
 
-.search_text { float: right; width: 29%; }
-.search_text p { font-size: 15px; font-weight: bold; }
+.search_text { float: right; width: 29%; background-image: url('/images/shadow.gif'); background-repeat: repeat-x; padding: 5px; border: thin #000 solid; font-size: 14px; font-weight: bold; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
 
 .right_break { float: right; clear: both; padding-top: 10px; }
 
@@ -139,7 +138,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #profile_info { width: 19%; float: left; }
 
-.list_index { clear: both; margin-bottom: 10px; overflow: hidden; padding: 10px; width: 99%; border: thin solid; border-color: #666666; background: white; }
+.list_index { clear: both; margin-bottom: 10px; overflow: hidden; padding: 10px; width: 99%; border: thin solid; border-color: #666666; background: white; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
 
 .image { float: left; }
 

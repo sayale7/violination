@@ -29,17 +29,19 @@
 	    </ul>
 	</li>
 	
-	<li><a href="#"><%= t('common.bows') %></a>
-	    <ul>
-		    <li><%= link_to t('bow.all'), "/items?taggable_type=Bow" %></li>
-		    <li><%= link_to t('bow.mine'), "/items?taggable_type=Bow&user_id=#{current_user.id}" %></li>
-	    </ul>
-	</li>
-	
 	<li><a href="#"><%= t('common.instrument') %></a>
 	    <ul>
 		    <li><%= link_to t('instrument.all'), "/items?taggable_type=Stringg" %></li>
 		    <li><%= link_to t('instrument.mine'), "/items?taggable_type=Stringg&user_id=#{current_user.id}" %></li>
+		    <li><%= link_to t('common.new'),  "/items/new?taggable_type=Stringg" %></li>
+	    </ul>
+	</li>
+	
+	<li><a href="#"><%= t('common.bows') %></a>
+	    <ul>
+		    <li><%= link_to t('bow.all'), "/items?taggable_type=Bow" %></li>
+		    <li><%= link_to t('bow.mine'), "/items?taggable_type=Bow&user_id=#{current_user.id}" %></li>
+		    <li><%= link_to t('common.new'),  "/items/new?taggable_type=Bow" %></li>
 	    </ul>
 	</li>
 	

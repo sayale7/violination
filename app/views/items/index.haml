@@ -1,13 +1,9 @@
--if current_user
-  %p
-    = link_to t('common.new'),  request.url.scan(/taggable_type=(\w+)/).to_s.downcase.pluralize << "/new?taggable_type=#{request.url.scan(/taggable_type=(\w+)/).to_s}"
-
+=@type_of_item
 %div.search_text
-  %p
-    -if request.url.to_s.include?('Stringg')
-      =t('instrument.search_text')
-    -elsif request.url.to_s.include?('Bow')
-      =t('bow.search_text')
+  -if @taggable_type.to_s.eql?('Stringg')
+    =t('instrument.search_text')
+  -elsif @taggable_type.to_s.eql?('Bow')
+    =t('bow.search_text')
 
 = render "/search/item_search.haml"
 
