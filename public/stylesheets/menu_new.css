@@ -1,70 +1,34 @@
-/*
-	Menue-styles fuer IEs
-	Am besten per Conditional Comment einbinden.
-	Fuer IE5.5 und 5.0 muessen nur geringfuegige kosmetische
-	Anpassungen vorgenommen werden (siehe Kommentare).
+a			{ text-decoration: none; }
+ul		{ list-style: none; }
+p  { margin: 15px 0; }
+
+/* 
+	LEVEL ONE
 */
+ul.dropdown                         { position: relative; z-index:100000; }
+ul.dropdown li                      { font-weight: bold; float: left; zoom: 1; background-color: transparent; background-image: url('/images/bg.jpg'); background-repeat: repeat-x; }
+ul.dropdown a:hover		              { color: #000; }
+ul.dropdown a:active                { color: #ffa500; }
+ul.dropdown li a                    { display: block; padding: 6px 8px; color: #fff; }
+ul.dropdown li:last-child a         { border-right: none; } /* Doesn't work in IE */
+ul.dropdown li.hover,
+ul.dropdown li:hover                { background: #628934; color: black; position: relative; -moz-border-radius:3px; -khtml-border-radius:3px }
+ul.dropdown li.hover a              { color: black; }
 
-#menue {
-display:none;
-}
-.stupidie {
-display: block;
-position: absolute;
-top: 5px;
-left: 0;
-z-index: 200;
-}
 
-a.auss {
-float: left;
-width: 8em;
-height: 1.4em;
-overflow: hidden;
-display: block;
-font-weight: bold;
-text-align: center;
-text-decoration: none;
-background-color: #dec79a;
-color: #513913; 
-border: 1px solid;
-border-color: #d0843e #78561d #78561d #d0843e;
-}
-a:hover.auss {
-overflow: visible;
-background-color: #624617;
-color: #fff;
-}
-a:hover.auss table {
-display: block;
-margin-top: 3px;
-background-color: #dec79a;
-color: #400;
-border-collapse: collapse;
-}
+/* 
+	LEVEL TWO
+*/
+ul.dropdown ul 						{ width: 230px; visibility: hidden; position: absolute; top: 100%; left: 0; margin-left:-40px; }
+ul.dropdown ul li 					{ font-weight: normal; background: #f6f6f6; color: #000; 
+									  border-bottom: 1px solid #ccc; float: none; }
 
-a.inn {
-display: block;
-width: 7.9em; /* fuer 5er IEs anpassen, sonst 'zuckt' es */
-padding: 2px 0;
-font-size: 100%; /* fuer 5er IEs auf 80% reduzieren */
-font-weight: normal;
-text-align: center;
-text-decoration: none;
-border-bottom: 1px solid #78561d;
-background-color: #ecd8ae;
-color: #600;
-}
-a:visited.inn {
-background-color: #ecd8ae;
-color:#444;
-}
-a:hover.inn {
-position: relative;
-background-color: #f7eedb;
-color: #900;
-}
-span.menutag {
-display: block;
-cursor: default;
-}
+									  
+                                    /* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a					{ border-right: none; width: 100%; display: inline-block; } 
+
+/* 
+	LEVEL THREE
+*/
+ul.dropdown ul ul 					{ left: -100%; top: 0; }
+ul.dropdown li:hover > ul 			{ visibility: visible; }
