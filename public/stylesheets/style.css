@@ -11,7 +11,7 @@ p.error { display: none; color: red; }
 a { text-decoration: none; color: black; }
 a img { border: none; }
 
-a:hover { color: #000; }
+a:hover { color: !dark_gray; }
 
 .right { float: right; }
 
