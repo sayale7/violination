@@ -1,4 +1,4 @@
--unless request.url.scan(/from_user=(\w+)/).to_s.eql?('true') and false
+-unless request.url.scan(/from_user=(\w+)/).to_s.eql?('true') and true
   %p
     = link_to t('common.back_to_search'), "/search_user?search_input=#{session[:search_input]}"
 %p
