@@ -18,7 +18,7 @@
 
 %div#edit_instance_tags_js
   %p
-    -unless request.url.scan(/user_id=(\w+)/).to_s.eql?('')
+    -unless request.url.scan(/user_id=(\w+)/).to_s.eql?('') and false
       = link_to t('common.back_to_search'), "/search_item?taggable_type=#{@the_instance.item_type}&search_input=#{session[:search_input]}&user_id=#{request.url.scan(/user_id=(\w+)/).to_s}"
     -else
       = link_to t('common.back_to_search'), "/search_item?taggable_type=#{@the_instance.item_type}&search_input=#{session[:search_input]}"
