@@ -129,10 +129,8 @@ table tr td { padding: 3px; vertical-align: top; }
 #show_workshop_tags .show_workshop_tags_item:hover h2 { background-color: #7147D7; color: #fff; }
 
 #show_user_tags { width: 80%; float: right; background: transparent; clear: none; }
-#show_user_tags .show_user_tags_item { clear: none; width: 97%; padding: 5px; float: right; background: transparent; border: thin solid; border-color: #666666; margin: 5px; }
-#show_user_tags .show_user_tags_item h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
-#show_user_tags .show_user_tags_item:hover { border: thin solid; border-color: #666666; }
-#show_user_tags .show_user_tags_item:hover h2 { background-color: #7147D7; color: #fff; }
+#show_user_tags .show_user_tags_item { width: 100%; }
+#show_user_tags .show_user_tags_item span.header { font-size: 16px; }
 
 .spanButtonPlaceholderDiv { background: black; width: 150px; height: 40px; }
 
