@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
     return Photo.find_by_photo_container_id_and_photo_container_type(self.id, 'User')
   end
   
+  def location
+    Location.find_by_taggable_type_and_taggable_id('User', self.id)
+  end
+  
   private
   
   def prepare_password

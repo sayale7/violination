@@ -19,6 +19,10 @@ class Item < ActiveRecord::Base
   def maximum_file_count
     return 6
   end
+  
+  def location
+    Location.find_by_taggable_type_and_taggable_id(self.item_type, self.id)
+  end
 
   private
   
@@ -31,7 +35,7 @@ class Item < ActiveRecord::Base
   end
   
   def create_location
-    Location.find_or_create_by_taggable_id_and_taggable_type(self.id, 'Item')
+    Location.find_or_create_by_taggable_id_and_taggable_type(self.id, self.item_type)
   end
   
 end

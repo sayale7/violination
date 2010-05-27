@@ -13,7 +13,8 @@
     
   %p
     = link_to t('common.destroy'), "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?'
-    
+    ="|"
+    = link_to t('common.coordinate_input'), "/locations/#{Location.find_by_taggable_type_and_taggable_id(@the_instance.item_type, @the_instance.id).id}/edit"   
 
 
 %div#edit_instance_tags_js

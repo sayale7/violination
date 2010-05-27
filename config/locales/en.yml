@@ -47,6 +47,7 @@ en:
     request: My favourite Instrument/Bow !
     preview: Preview
     send: Send
+    coordinate_input: Fill in coordinates
   user:
     username:Username
     email: Email Address

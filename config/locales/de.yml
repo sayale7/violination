@@ -43,6 +43,7 @@ de:
     request: Wunsch - Instrument/Bogen!
     preview: Vorschau
     send: Abschicken
+    coordinate_input: Koordinaten eintragen
   user:
     username: Benutzername
     email: Email Adresse
