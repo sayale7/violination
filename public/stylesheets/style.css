@@ -149,7 +149,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .ajax_center_wide { width: 100%; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; }
 
-.google_map { float: right; clear: none; overflow: hidden; }
+.google_map { float: right; clear: none; overflow: hidden; border: medium solid; border-color: #666666; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
 
 .start_left { clear: none; float: left; width: 470px; }
 
