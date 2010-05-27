@@ -131,7 +131,7 @@ class ItemsController < ApplicationController
     end
     
     def get_map_info(item)
-      info = "<p>"
+      info = "<div style='width:250px'>"
       unless item.tags.find_by_parent_id(nil).nil?
         item.tags.find_all_by_parent_id(nil).each do |tag|
           if tag.visible.to_s.eql?('1') || tag.visible.to_s.eql?('true')
@@ -153,7 +153,7 @@ class ItemsController < ApplicationController
           end
         end
       end
-      info << "</p>"
+      info << "</div>"
     end
     
     def get_item_kind(item)
