@@ -141,7 +141,11 @@ class ItemsController < ApplicationController
               if tag.value_type.to_s.eql?('preisfeld')
                   info << "- Euro " << get_price_format(tag_value.value) << "<br/>"
               else
-                info << "- " << tag_value.value or " "  << "<br/>"
+                unless tag_value.nil? or tag_value.value.nil?
+                  info << "- " << tag_value.value  << "<br/>"
+                else
+                  info << "<br/>"
+                end
               end
             else
               info << "- " << tagged_tag_name(tag, item) << "<br/>"
