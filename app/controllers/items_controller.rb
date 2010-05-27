@@ -123,8 +123,8 @@ class ItemsController < ApplicationController
       @map = GMap.new("map_div")
       @map.control_init(:large_map => true, :map_type => true)
       @map.center_zoom_init([49.5874362000,10.9660867000],5)
-      # @map.icon_global_init( GIcon.new( :image => "/images/add.png"), "group_icon")
-      # group_icon = Variable.new("group_icon");
+      @map.icon_global_init( GIcon.new( :image => "/images/add.png", :icon_size => GSize.new( 20,20 ), :icon_anchor => GPoint.new(12,38), :info_window_anchor => GPoint.new(9,2) ), "group_icon")
+      group_icon = Variable.new("group_icon");
       locations = Location.find_all_by_taggable_type(params[:taggable_type].to_s, :group => "address")
       locations.each do |group|
         locs = Location.find_all_by_address_and_taggable_type(group.address, params[:taggable_type].to_s)
@@ -139,10 +139,10 @@ class ItemsController < ApplicationController
             item = Item.find_by_id_and_contact(location.taggable_id, true)
             debugger
             unless item.nil? or item.location.lat.nil? or item.location.lng.nil?
-                location_array.push(GMarker.new([item.location.lat,item.location.lng], :info_window => "<p>#{item.location.address}</p> <p>#{t('common.more')}</p> <p><a href='/items?contact=1&taggable_type=#{item.item_type}&user_id=#{item.user.id}'>#{t('common.show')}</a></p>"))
+                location_array.push(GMarker.new([item.location.lat,item.location.lng], :icon => group_icon, :info_window => "<p>#{item.location.address}</p> <p>#{t('common.more')}</p> <p><a href='/items?contact=1&taggable_type=#{item.item_type}&user_id=#{item.user.id}'>#{t('common.show')}</a></p>"))
             end
           end
-          @map.overlay_init(Clusterer.new(location_array, :max_visible_markers => 200, :min_markers_per_cluster => 200))
+          @map.overlay_init(Clusterer.new(location_array,  :max_visible_markers => 200, :min_markers_per_cluster => 200))
         end
       end
     end
