@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   
-  def index    
+  def index   
+    show_on_map 
     if params[:user_id]
       if params[:contact].to_s.eql?('1')
         @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true)
@@ -115,5 +116,23 @@ class ItemsController < ApplicationController
     #     format.js { render '/users/edit_inner_user_taggings.js.erb' }
     #   end
     # end
+    
+    private
+
+    def show_on_map
+      debugger
+      @map = GMap.new("map_div")
+      @map.control_init(:large_map => true, :map_type => true)
+      @map.center_zoom_init([49.5874362000,10.9660867000],5)
+      Item.find_all_by_item_type(params[:taggable_type].to_s).each do |item|
+        if !(item.locations.first.lat.nil? || item.locations.first.lng.nil?)
+          if item.user.full_name.to_s.eql?(' ')
+            @map.overlay_init(GMarker.new([item.locations.first.lat,item.locations.first.lng], :title => item.user.username, :info_window => "<p>#{item.locations.first.address}</p>"))
+          else
+            @map.overlay_init(GMarker.new([item.locations.first.lat,item.locations.first.lng], :title => item.user.full_name, :info_window => "<p>#{item.locations.first.address}</p>"))
+          end
+        end
+      end
+    end
   
 end

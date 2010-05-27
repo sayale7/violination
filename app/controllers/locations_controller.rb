@@ -8,7 +8,6 @@ class LocationsController < ApplicationController
   def update
     @location = Location.find(params[:id])
     if @location.update_attributes(params[:location])
-      #flash[:notice] = "Successfully updated location."
       redirect_to edit_location_path(@location)
     else
       render :action => 'edit'
@@ -20,6 +19,13 @@ class LocationsController < ApplicationController
       Location.find_or_create_by_taggable_id_and_taggable_type(user.id, 'User')
     end
     redirect_to '/users'
+  end
+  
+  def add_location_to_items
+    Item.all.each do |item|
+      Location.find_or_create_by_taggable_id_and_taggable_type(item.id, item.item_type)
+    end
+    redirect_to '/'
   end
   
 end

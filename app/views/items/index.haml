@@ -1,4 +1,7 @@
-=@type_of_item
+-content_for :head do
+  = GMap.header(:with_vml => false)
+  = @map.to_html
+  
 %div.search_text
   -if @taggable_type.to_s.eql?('Stringg')
     =t('instrument.search_text')
@@ -7,10 +10,13 @@
 
 = render "/search/item_search.haml"
 
-
+%div.google_map
+  = @map.div(:width => 450, :height => 400)
 
 %div.item_ajax_search
 
   = render '/items/index.haml'
+  
+
 
  

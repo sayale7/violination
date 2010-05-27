@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :locations
   map.add_location_to_user 'add_location_to_user', :controller => 'locations', :action => 'add_location_to_user'
+  map.add_location_to_user 'add_location_to_items', :controller => 'locations', :action => 'add_location_to_items'
 
   #routes for Tags
   map.resources :tags
