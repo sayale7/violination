@@ -41,9 +41,7 @@ function centerPopup(element){
 $(document).ready(function(){
   
   $("a.request_popup").live('click', function(){
-		$('html, body').animate({scrollTop:0}, 'slow');
-		//centering with cs$('.request_content').html(
-		$.getScript(this.href);
+		$('html, body').animate({scrollTop:0}, 'slow');$.getScript(this.href);
 		centerPopup($(this).attr('rel'));
 		//load popup
 		loadPopup($(this).attr('rel'));

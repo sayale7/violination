@@ -1,0 +1,23 @@
+= render '/locations/google_maps.html.erb'
+-form_for @location do |f|
+  =f.error_messages
+  %p
+    =t('user.address')
+    %br
+    =text_field_tag :address, '', :class => 'text_box', :id => 'coordinates_address'
+    =submit_tag t('user.prove_address'), :onclick => "showLocation(this.form); return false;"
+
+  %p
+    =t('user.lng')
+    %br
+    =f.text_field :lng, :class => 'text_box', :disabled => true, :id => 'longitude'
+    =f.hidden_field :lng, :id => 'longitude_hidden'
+  %p
+    =t('user.lat')
+    %br
+    =f.text_field :lat, :class => 'text_box', :disabled => true, :id => 'latitude'
+    =f.hidden_field :lat, :id => 'latitude_hidden'
+  
+  =f.hidden_field :address, :id => 'address'
+  
+  =f.submit t('common.update')

@@ -2,7 +2,14 @@ class LocationsController < ApplicationController
   
   def edit
     @location = Location.find(params[:id])
-    render :template => '/locations/edit.haml'
+    respond_to do |format|
+      format.html { 
+        render :template => '/locations/edit.haml'
+      }
+      format.js { 
+        render '/items/popup.js.erb'
+      }
+    end
   end
   
   def update

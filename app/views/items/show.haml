@@ -1,3 +1,5 @@
+=javascript 'popup'
+=render '/requests/popup.haml'
 -if @the_instance.contact.to_s.eql?('1')
   -if @the_instance.class.to_s.eql?('Bow')
     -title t('bow.of') << ' ' << @the_instance.user.username
@@ -14,7 +16,7 @@
   %p
     = link_to t('common.destroy'), "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?'
     ="|"
-    = link_to t('common.coordinate_input'), "/locations/#{Location.find_by_taggable_type_and_taggable_id(@the_instance.item_type, @the_instance.id).id}/edit"   
+    = link_to t('common.coordinate_input'), "/locations/#{Location.find_by_taggable_type_and_taggable_id(@the_instance.item_type, @the_instance.id).id}/edit",  :class => 'request_popup', :rel => "popup"
 
 
 %div#edit_instance_tags_js
