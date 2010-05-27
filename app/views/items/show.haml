@@ -1,5 +1,6 @@
 =javascript 'popup'
-=render '/requests/popup.haml'
+=render '/items/popup.haml'
+
 -if @the_instance.contact.to_s.eql?('1')
   -if @the_instance.class.to_s.eql?('Bow')
     -title t('bow.of') << ' ' << @the_instance.user.username
