@@ -130,8 +130,6 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #show_user_tags { width: 80%; float: right; background: transparent; clear: none; }
 #show_user_tags .show_user_tags_item { width: 100%; }
-#show_user_tags .show_user_tags_item span.header { font-size: 16px; }
-#show_user_tags .show_user_tags_item span.body { font-size: 13px; }
 
 .spanButtonPlaceholderDiv { background: black; width: 150px; height: 40px; }
 
