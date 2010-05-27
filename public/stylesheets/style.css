@@ -141,9 +141,9 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .info { float: left; padding-left: 10px; }
 
-.row { width: 98%; background-image: url("/images/row_bg.png"); background-repeat: repeat-x repeat-y; padding: 1%; }
+.row { width: 98.5%; background-image: url("/images/row_bg.png"); background-repeat: repeat-x repeat-y; padding: 1%; }
 
-.row:hover { background: white; }
+.row:hover { background: #628934; }
 
 .ajax_center_wide { width: 100%; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; }
 
