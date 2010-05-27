@@ -125,7 +125,7 @@ class ItemsController < ApplicationController
       @map.center_zoom_init([49.5874362000,10.9660867000],5)
       Item.find_all_by_item_type(params[:taggable_type].to_s).each do |item|
         unless item.location.lat.nil? or item.location.lng.nil?
-            @map.overlay_init(GMarker.new([item.locations.first.lat,item.locations.first.lng], :title => get_item_kind(item), :info_window => "<p>#{item.locations.first.address}</p> #{get_map_info(item)}"))
+            @map.overlay_init(GMarker.new([item.locations.first.lat,item.locations.first.lng], :title => get_item_kind(item), :info_window => "<p>#{item.locations.first.address}</p> #{get_map_info(item)} <p><a href='/items/#{item.id}?taggable_type=#{item.item_type}'>#{t('common.show')}</a></p>"))
         end
       end
     end

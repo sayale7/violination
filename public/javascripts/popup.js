@@ -26,6 +26,7 @@ function centerPopup(element){
 	var popupHeight = $('#'+ element).height();
 	var popupWidth = $('#'+ element).width();
 	//centering
+	
 	$('#'+ element).css({
 		"position": "absolute",
 		"top": windowHeight / 2 - popupHeight / 2,
@@ -37,14 +38,18 @@ function centerPopup(element){
 
 }
 
+
+
 //CONTROLLING EVENTS IN jQuery
 $(document).ready(function(){
   
   $("a.request_popup").live('click', function(){
-		$('html, body').animate({scrollTop:0}, 'slow');$.getScript(this.href);
-		centerPopup($(this).attr('rel'));
-		//load popup
-		loadPopup($(this).attr('rel'));
+    var the_link = $(this);
+		$('html, body').animate({scrollTop:0}, 'slow');
+		$.getScript(this.href, function(){
+      centerPopup(the_link.attr('rel'));
+   		loadPopup(the_link.attr('rel'));
+    });
 		return false;
 	});
   
