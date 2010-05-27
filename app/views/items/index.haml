@@ -1,6 +1,7 @@
 -content_for :head do
   = GMap.header(:with_vml => false)
   = @map.to_html
+= javascript 'clusterer'
 
 
 %div.search_text

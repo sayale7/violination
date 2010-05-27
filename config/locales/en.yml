@@ -48,6 +48,7 @@ en:
     preview: Preview
     send: Send
     coordinate_input: Fill in coordinates
+    more: More than 1 Entry
   user:
     username:Username
     email: Email Address

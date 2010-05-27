@@ -123,21 +123,26 @@ class ItemsController < ApplicationController
       @map = GMap.new("map_div")
       @map.control_init(:large_map => true, :map_type => true)
       @map.center_zoom_init([49.5874362000,10.9660867000],5)
+      # @map.icon_global_init( GIcon.new( :image => "/images/add.png"), "group_icon")
+      # group_icon = Variable.new("group_icon");
       locations = Location.find_all_by_taggable_type(params[:taggable_type].to_s, :group => "address")
       locations.each do |group|
-        if group.to_a.size == 1
-          item = Item.find(group.taggable_id)
-          unless item.location.lat.nil? or item.location.lng.nil?
+        locs = Location.find_all_by_address_and_taggable_type(group.address, params[:taggable_type].to_s)
+        if locs.size == 1
+          item = Item.find_by_id_and_contact(group.taggable_id, false)
+          unless item.nil? or item.location.lat.nil? or item.location.lng.nil?
               @map.overlay_init(GMarker.new([item.location.lat,item.location.lng], :title => get_item_kind(item), :info_window => "<p>#{item.location.address}</p> #{get_map_info(item)} <p><a href='/items/#{item.id}?taggable_type=#{item.item_type}'>#{t('common.show')}</a></p>"))
           end
         else
-          @jo = 1
-          group.each do |location|
-            item = Item.find(location.taggable_id)
-            unless item.location.lat.nil? or item.location.lng.nil?
-                @map.overlay_init(GMarker.new([item.location.lat,item.location.lng], :title => get_item_kind(item), :info_window => "<p>#{item.location.address}</p> #{get_map_info(item)} <p><a href='/items/#{item.id}?taggable_type=#{item.item_type}'>#{t('common.show')}</a></p>"))
+          location_array = Array.new
+          locs.each do |location|
+            item = Item.find_by_id_and_contact(location.taggable_id, false)
+            debugger
+            unless item.nil? or item.location.lat.nil? or item.location.lng.nil?
+                location_array.push(GMarker.new([item.location.lat,item.location.lng], :info_window => "<p>#{item.location.address}</p> <p>#{t('common.more')}</p> <p><a href='/items?contact=1&taggable_type=Stringg&user_id=6'>#{t('common.show')}</a></p>"))
             end
           end
+          @map.overlay_init(Clusterer.new(location_array, :max_visible_markers => 2, :min_markers_per_cluster => 2))
         end
       end
     end
