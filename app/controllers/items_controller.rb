@@ -142,7 +142,7 @@ class ItemsController < ApplicationController
                 location_array.push(GMarker.new([item.location.lat,item.location.lng], :info_window => "<p>#{item.location.address}</p> <p>#{t('common.more')}</p> <p><a href='/items?contact=1&taggable_type=Stringg&user_id=6'>#{t('common.show')}</a></p>"))
             end
           end
-          @map.overlay_init(Clusterer.new(location_array, :max_visible_markers => 2, :min_markers_per_cluster => 2))
+          @map.overlay_init(Clusterer.new(location_array, :max_visible_markers => 200, :min_markers_per_cluster => 200))
         end
       end
     end
