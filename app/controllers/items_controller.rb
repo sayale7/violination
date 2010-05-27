@@ -125,9 +125,82 @@ class ItemsController < ApplicationController
       @map.center_zoom_init([49.5874362000,10.9660867000],5)
       Item.find_all_by_item_type(params[:taggable_type].to_s).each do |item|
         unless item.location.lat.nil? or item.location.lng.nil?
-            @map.overlay_init(GMarker.new([item.locations.first.lat,item.locations.first.lng], :title => item.user.full_name, :info_window => "<p>#{item.locations.first.address}</p>"))
+            @map.overlay_init(GMarker.new([item.locations.first.lat,item.locations.first.lng], :title => get_item_kind(item), :info_window => "<p>#{item.locations.first.address}</p> #{get_map_info(item)}"))
         end
       end
+    end
+    
+    def get_map_info(item)
+      info = "<p>"
+      unless item.tags.find_by_parent_id(nil).nil?
+        item.tags.find_all_by_parent_id(nil).each do |tag|
+          if tag.visible.to_s.eql?('1') || tag.visible.to_s.eql?('true')
+            info << "<strong>" << tag.tag_names.find_by_language(get_locale.to_s).value.to_s << "</strong>"
+            if tag.children.empty?
+              if tag.value_type.to_s.eql?('preisfeld')
+                unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value.nil?
+                  info << "- Euro " << get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value) << "<br/>"
+                end
+              else
+                info << "- " << TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value << "<br/>"
+              end
+            else
+              info << "- " << tagged_tag_name(tag, item) << "<br/>"
+            end
+          end
+        end
+      end
+      info << "</p>"
+    end
+    
+    def get_item_kind(item)
+      unless item.tags.empty?
+        Tag.find_all_by_parent_id(item.tags.first.id).each do |the_tag|
+          tagging = Tagging.find_by_tag_id_and_taggable_id(the_tag.id, item.id)
+          unless tagging.nil?
+            return Tag.find(tagging.tag_id).tag_names.find_by_language(get_locale.to_s).value
+          end
+        end
+        return " "
+      else
+        return " "
+      end
+    end
+    
+    def get_price_format(tag_value)
+      return_string = ''
+      unless tag_value.to_s.eql?('')
+        comma = tag_value.to_s[tag_value.to_s.size - 3 ,tag_value.to_s.size]
+        string_to_split = tag_value.to_s[0 ,tag_value.to_s.size - 3].reverse
+        times_to_loop = string_to_split.to_s.size / 3
+        i = 1
+        times_to_loop.times do
+          string_to_split = string_to_split.insert((i*3)+(i-1), '.')
+          i = i + 1
+        end
+        return_string = string_to_split.reverse << comma
+        if return_string[0, 1].to_s.eql?('.')
+          return return_string[1 ,return_string.size]
+        else
+          return return_string
+        end
+      end
+    end
+    
+    def tagged_tag_name(tag, the_instance)
+      child_tags(tag).each do |child|
+        child.taggings.each do |tagging|
+          tmp_instance = the_instance.class.find(tagging.taggable_id)
+          if(tmp_instance.id == the_instance.id)
+            return Tag.find(tagging.tag_id).tag_names.find_by_language(get_locale.to_s).value
+          end
+        end
+      end
+      return ''
+    end
+    
+    def child_tags(tag)
+      return Tag.find_all_by_parent_id(tag.id, :order => "position")
     end
   
 end
