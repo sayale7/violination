@@ -8,6 +8,5 @@
 
 %div.tags_body  
   -@available_tags.each do |tag|
-    %p  
-      =tag.tag_names.find_by_language(get_locale.to_s).value
-      =link_to image_tag('/images/add.png'), add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
+    =tag.tag_names.find_by_language(get_locale.to_s).value
+    =link_to image_tag('/images/add.png'), add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)

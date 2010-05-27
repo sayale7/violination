@@ -138,8 +138,10 @@ $(document).ready(function() {
   // for toggle edit links 
   $('.instance_tag_js').live('mouseover', function(){
     $(this).find('.edit_tag_links').css('display', 'block');
+    $(this).css('background', '#628934').fadeIn("slow");
   }).live('mouseout', function(){
     $(this).find('.edit_tag_links').css('display', 'none');
+    $(this).css('background', 'transparent');
   });
   
   $('#instance_tag_without_children a, #instance_tag_with_children a, #available_instance_tags_js a').live('click', function(){

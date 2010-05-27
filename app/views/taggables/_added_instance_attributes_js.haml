@@ -3,13 +3,12 @@
     =t('instrument.attributes')
     
 -@added_tags.each do |tag|
-  %p
   -if child_tags(tag).empty?
     %div#instance_tag_without_children.instance_tag_js
-    
+  
       %div.instance_tag_show.visible
         = render '/taggables/tags_without_children_js', :tag => tag
-      
+    
       %div.instance_tag_edit.hidden
         -form_tag update_tag_values_url do 
           = render '/taggables/tags_without_children', :tag => tag

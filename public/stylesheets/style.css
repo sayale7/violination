@@ -63,13 +63,13 @@ a:hover { color: #628934; }
 
 .instance_tag { border: thin solid; border-color: #666666; padding: 10px; }
 
-.instance_tag_js { padding: 5px; display: :block; min-height: 30px; border-bottom: solid thin black; }
+.instance_tag_js { padding: 10px; display: :block; border-bottom: solid thin black; font-size: 13px; }
 
 .hidden { display: none; }
 
 .visible { display: block; }
 
-.edit_tag_links { display: none; float: right; }
+.edit_tag_links { display: none; float: right; clear: none; }
 .edit_tag_links a { float: right; }
 
 .tag_text { width: 80%; float: left; }
@@ -131,6 +131,7 @@ table tr td { padding: 3px; vertical-align: top; }
 #show_user_tags { width: 80%; float: right; background: transparent; clear: none; }
 #show_user_tags .show_user_tags_item { width: 100%; }
 #show_user_tags .show_user_tags_item span.header { font-size: 16px; }
+#show_user_tags .show_user_tags_item span.body { font-size: 13px; }
 
 .spanButtonPlaceholderDiv { background: black; width: 150px; height: 40px; }
 
