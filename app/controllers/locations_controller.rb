@@ -15,7 +15,7 @@ class LocationsController < ApplicationController
   def update
     @location = Location.find(params[:id])
     if @location.update_attributes(params[:location])
-      redirect_to edit_location_path(@location)
+      redirect_to get_redirect_string
     else
       render :action => 'edit'
     end
@@ -33,6 +33,14 @@ class LocationsController < ApplicationController
       Location.find_or_create_by_taggable_id_and_taggable_type(item.id, item.item_type)
     end
     redirect_to '/'
+  end
+  
+  def get_redirect_string
+    if @location.taggable_type.eql?('User')
+      return "/users/#{@location.taggable_id}"
+    else
+      return "/items/#{@location.taggable_id}?taggable_type=#{@location.taggable_type}"
+    end
   end
   
 end
