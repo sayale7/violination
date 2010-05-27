@@ -20,3 +20,6 @@
   =f.hidden_field :address, :id => 'address'
   
   =f.submit t('common.update')
+  %span.small
+    =t('common.or')
+    = link_to t('common.cancel'), '', :rel => 'popupContact', :class => 'popupContactClose'
