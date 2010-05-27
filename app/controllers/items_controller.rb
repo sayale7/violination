@@ -139,7 +139,7 @@ class ItemsController < ApplicationController
             item = Item.find_by_id_and_contact(location.taggable_id, true)
             debugger
             unless item.nil? or item.location.lat.nil? or item.location.lng.nil?
-                location_array.push(GMarker.new([item.location.lat,item.location.lng], :info_window => "<p>#{item.location.address}</p> <p>#{t('common.more')}</p> <p><a href='/items?contact=1&taggable_type=Stringg&user_id=6'>#{t('common.show')}</a></p>"))
+                location_array.push(GMarker.new([item.location.lat,item.location.lng], :info_window => "<p>#{item.location.address}</p> <p>#{t('common.more')}</p> <p><a href='/items?contact=1&taggable_type=#{item.item_type}&user_id=#{item.user.id}'>#{t('common.show')}</a></p>"))
             end
           end
           @map.overlay_init(Clusterer.new(location_array, :max_visible_markers => 200, :min_markers_per_cluster => 200))
