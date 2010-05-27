@@ -137,15 +137,14 @@ class ItemsController < ApplicationController
           if tag.visible.to_s.eql?('1') || tag.visible.to_s.eql?('true')
             info << "<strong>" << tag.tag_names.find_by_language(get_locale.to_s).value.to_s << "</strong>"
             if tag.children.empty?
-              if tag.value_type.to_s.eql?('preisfeld')
-                unless TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).nil?
-                  info << "- Euro " << get_price_format(TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value) or " " << "<br/>"
-                end
+              tag_value = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id)
+              if tag.value_type.to_s.eql?('preisfeld') and !tag_value.nil?
+                  info << "- Euro " << get_price_format(tag_value.value) << "<br/>"
               else
-                info << "- " << TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id).value or " " << "<br/>"
+                info << "- " << tag_value.value << "<br/>"
               end
             else
-              info << "- " << tagged_tag_name(tag, item) or " " << "<br/>"
+              info << "- " << tagged_tag_name(tag, item) << "<br/>"
             end
           end
         end
