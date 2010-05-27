@@ -49,7 +49,7 @@ a:hover { color: #628934; }
 .tags_header h2 { font-size: 13px; color: white; padding: 0; margin: 0; }
 
 .tags_body { padding: 5%; }
-.tags_body a { float: right; }
+.tags_body a { float: left; margin-right: 10px; }
 .tags_body img { height: 15px; }
 
 #added_instance_tags { border: thin solid; border-color: #666666; float: right; width: 77%; }
