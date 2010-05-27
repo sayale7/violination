@@ -9,8 +9,9 @@
     %br
   -unless @the_instance.user.items.find_all_by_item_type('Bow').size == 0
     = link_to t('user.bows'), bows_url(:user_id => @the_instance.user.id, :taggable_type => 'Bow', :contact => 1)
+    
 %div#show_workshop_tags
-  %h2
+  %h1
     =t('workshop.my_tags')
   -@added_tags.each do |tag|
     %div.show_workshop_tags_item
