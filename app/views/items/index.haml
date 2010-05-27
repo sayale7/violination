@@ -1,7 +1,8 @@
 -content_for :head do
   = GMap.header(:with_vml => false)
   = @map.to_html
-  
+
+
 %div.search_text
   -if @taggable_type.to_s.eql?('Stringg')
     =t('instrument.search_text')
