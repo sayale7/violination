@@ -138,7 +138,7 @@ class ItemsController < ApplicationController
             info << "<strong>" << tag.tag_names.find_by_language(get_locale.to_s).value.to_s << "</strong>"
             if tag.children.empty?
               tag_value = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id)
-              if tag.value_type.to_s.eql?('preisfeld') and !tag_value.nil?
+              if tag.value_type.to_s.eql?('preisfeld') and !tag_value.nil? and !tag_value.value.nil?
                   info << "- Euro " << get_price_format(tag_value.value) << "<br/>"
               else
                 info << "- " << tag_value.value << "<br/>"
