@@ -11,7 +11,7 @@ p.error { display: none; color: red; }
 a { text-decoration: none; color: #532D2A; }
 a img { border: none; }
 
-a:hover { color: #628934; }
+a:hover { color: #7C321F; }
 
 .right { float: right; }
 
@@ -135,11 +135,13 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #profile_info { width: 19%; float: left; }
 
-.list_index { clear: left; margin-bottom: 10px; overflow: hidden; padding: 10px; width: 500px; border: thin solid; border-color: #666666; background: white; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
+.list_index { clear: left; margin-bottom: 10px; overflow: hidden; padding: 10px; width: 550px; border: thin solid; border-color: #666666; background: white; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
+
+.list_index:hover { background: #628934; }
 
 .image { float: left; width: 140px; }
 
-.info { float: left; width: 340px; padding-left: 10px; }
+.info { float: left; width: 390px; padding-left: 10px; }
 
 .row { width: 98.5%; background-image: url("/images/row_bg.png"); background-repeat: repeat-x repeat-y; padding: 1%; }
 
@@ -147,7 +149,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .ajax_center_wide { width: 100%; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; }
 
-.google_map { float: right; clear: none; }
+.google_map { float: right; clear: none; overflow: hidden; }
 
 .start_left { clear: none; float: left; width: 470px; }
 
