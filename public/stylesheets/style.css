@@ -136,13 +136,13 @@ table tr td { padding: 3px; vertical-align: top; }
 
 #profile_info { width: 19%; float: left; }
 
-.list_index { clear: left; margin-bottom: 10px; overflow: hidden; padding: 10px; width: 480px; border: thin solid; border-color: #666666; background: white; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
+.list_index { clear: left; margin-bottom: 10px; overflow: hidden; padding: 10px; width: 530px; border: thin solid; border-color: #666666; background: white; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
 
 .list_index:hover { background: #628934; }
 
 .image { float: left; width: 140px; }
 
-.info { float: left; width: 300px; padding-left: 10px; }
+.info { float: left; width: 370px; padding-left: 10px; }
 
 .row { width: 98.5%; background-image: url("/images/row_bg.png"); background-repeat: repeat-x repeat-y; padding: 1%; }
 
@@ -152,7 +152,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .google_map_start { margin-top: 10px; float: right; clear: right; overflow: hidden; border: medium solid; border-color: #666666; -moz-border-radius: 5px; -khtml-border-radius: 5px; width: 500px; }
 
-.google_map { margin-top: 10px; float: right; clear: right; overflow: hidden; border: medium solid; border-color: #666666; -moz-border-radius: 5px; -khtml-border-radius: 5px; width: 450px; }
+.google_map { margin-top: 10px; float: right; clear: right; overflow: hidden; border: medium solid; border-color: #666666; -moz-border-radius: 5px; -khtml-border-radius: 5px; width: 400px; }
 
 .start_left { clear: none; float: left; width: 470px; }
 
