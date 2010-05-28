@@ -1,1 +1,2 @@
-ul.dropdown ul li					{ display: inline; width: 100%; } 
+ul.dropdown ul { width: 230px; visibility: hidden; position: absolute; top: 100%; left: 0; margin-left:0px; }
+ul.dropdown ul li	{ display: inline; width: 100%; } 
