@@ -158,7 +158,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .start_right { clear: right; float: right; margin-top: 20px; width: 500px; }
 
-.site_left { float: left; clear: left; width: 480px; }
+.site_left { float: left; width: 480px; }
 
 .site_right { float: right; width: 480px; }
 
