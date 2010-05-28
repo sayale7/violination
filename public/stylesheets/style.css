@@ -160,7 +160,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .site_left { float: left; clear: left; width: 480px; }
 
-.site_right { float: right; width: 480px; clear: right; }
+.site_right { float: right; width: 480px; clear: left; }
 
 .site_full { float: left; width: 100%; clear: both; }
 
