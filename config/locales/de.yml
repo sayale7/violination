@@ -45,6 +45,9 @@ de:
     send: Abschicken
     coordinate_input: Koordinaten eintragen
     more: Es sind mehrere Einträge vorhanden
+    manage_images: Bilder verwalten
+    manage_tags: Attribute verwalten
+    manage_description: Beschreibung verwalten
   user:
     username: Benutzername
     email: Email Adresse

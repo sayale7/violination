@@ -46,6 +46,7 @@ $(document).ready(function(){
   $("a.request_popup").live('click', function(){
     var the_link = $(this);
 		$('html, body').animate({scrollTop:0}, 'slow');
+  	$("#popup_background").fadeIn("fast");
 		$.getScript(this.href, function(){
       centerPopup(the_link.attr('rel'));
    		loadPopup(the_link.attr('rel'));
@@ -57,14 +58,11 @@ $(document).ready(function(){
 	//LOADING POPUP
 	//Click the button event!
 	$("a.popup").live('click', function(){
-		$('html, body').animate({scrollTop:0}, 'slow');
-		//centering with cs
-    //$('.id_of_photo').attr('action', '/photos/'+ $(this).attr("id"));
-    //$('.id_of_photo').find('.hidden_id').attr('value', $(this).attr("title"));
-    //$('.id_of_photo').find('.hidden_id').attr('value', $(this).attr("title"));
-		centerPopup($(this).attr('rel'));
-		//    //load popup
-		loadPopup($(this).attr('rel'));
+	  var the_link = $(this);
+		$('html, body').animate({scrollTop:0}, 'fast', function(){
+		  centerPopup(the_link.attr('rel'));
+		  loadPopup(the_link.attr('rel'));
+		});
 		return false;
 	});
 

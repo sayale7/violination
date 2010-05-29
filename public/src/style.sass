@@ -165,6 +165,7 @@ a:hover
     :float right
   img
     :height 15px
+    
   h2
     :font-size 13px
     :color white
@@ -181,6 +182,9 @@ a:hover
   img
     :height 15px
 
+#edit_instance_tags_js
+  :overflow hidden
+  :margin-top 30px
     
 #added_instance_tags
   +thin_border
@@ -188,28 +192,17 @@ a:hover
   :width 77%
 
 #workshop_description
-  :margin-top 10px
-  +thin_border
-  :float right
-  :width 99%
-  :padding 5px
+  :margin-top 20px
+  :float left
+  :margin-left 5px
+  :width 100%
   
   textarea
-    :width 99.5%
+    :width 100%
     :height 300px
-    :border none
+    +thick_border
   
-  h2
-    :margin -5px
-    :background-image url("/images/h2bg.png")
-    :background-repeat repeat-x
-    :padding 5px
-    :color white
-    :font-weight bold
 
-    img
-      :height 16px
-      :float right
 
 #added_instance_tags_full
   :width 98%
@@ -254,7 +247,7 @@ a:hover
   :float left
   :clear both
   :width 99.9%
-  :margin-top 10px
+  :margin-top 15px
   +thin_border
   
   p
@@ -297,11 +290,11 @@ a:hover
 #popup_background
   :width 100%
   :height 100%
-  :margin -10px
-  :margin-top -20px
   :display none
   :background black
   :position absolute
+  :left 0
+  :top 0
   :z-index 99999
   :background-image url('/images/ajax-loader_balken.gif')
   :background-repeat no-repeat
@@ -471,7 +464,8 @@ table
   :background black
   :width 150px
   :height 40px
-  
+
+
 #profile_info
   :width 19%
   :float left
@@ -568,4 +562,6 @@ table
 span.small
   :font-size 12px
 
-  
+.change_tab
+  :padding 5px
+  +thick_border

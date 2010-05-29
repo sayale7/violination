@@ -49,6 +49,9 @@ en:
     send: Send
     coordinate_input: Fill in coordinates
     more: More than 1 Entry
+    manage_images: Manage Images
+    manage_tags: Manage Attributes
+    manage_description: Manage Description
   user:
     username:Username
     email: Email Address

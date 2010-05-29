@@ -1,3 +1,8 @@
+%span.left
+  %p
+    = link_to t('common.manage_tags'), '', :class => "change_tab", :id => 'tags_tab'
+    = link_to t('common.manage_images'), '', :class => "change_tab", :id => 'photo_tab'
+
 %div#edit_instance_tags_js
   %div#available_instance_tags_js
     = render '/taggables/available_instance_attributes_js.haml'
@@ -12,10 +17,6 @@
 %div.photo_upload
   %h2
     =t('common.photo_gallery')
-    %span.open
-      =image_tag '/images/down.png'
-    %span.close
-      =image_tag '/images/up.png'
     
   %div.new_image_upload_form
       

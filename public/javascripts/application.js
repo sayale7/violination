@@ -70,25 +70,79 @@ $(document).ready(function() {
 	
 	
 	// hide and workshop_description
-  $('#workshop_description_form').hide();
-  
-  //toggle workshop description    
-  $("#workshop_description_open_link").live('click', function () { 
-   $(this).fadeOut(200);
-   $('#workshop_description_form').show(500).fadeIn(100);
-		$('html, body').animate({scrollTop:2000}, 'slow');
-   return false
-  });
-  $("#workshop_description_cancel_link").live('click', function () { 
-   $('#workshop_description_form').hide(800).fadeOut(500);
-   $("#workshop_description_open_link").fadeIn(500);
-   return false
-  });
+  // $('#workshop_description_form').hide();
+  // 
+  // //toggle workshop description    
+  // $("#workshop_description_open_link").live('click', function () { 
+  //  $(this).fadeOut(200);
+  //  $('#workshop_description_form').show(500).fadeIn(100);
+  //    $('html, body').animate({scrollTop:2000}, 'slow');
+  //  return false
+  // });
+  // $("#workshop_description_cancel_link").live('click', function () { 
+  //  $('#workshop_description_form').hide(800).fadeOut(500);
+  //  $("#workshop_description_open_link").fadeIn(500);
+  //  return false
+  // });
 	
 	// toggle photo_upload
-  $('.new_image_upload_form, #thumbnails, .close img').hide();
+  //$('.new_image_upload_form, #thumbnails, .close img').hide();
+  $('.photo_upload').hide();
+  $("#workshop_description").hide();
+  $("#tags_tab").css('background', '#628934').css('color', '#fff');
   
-	$('.photo_upload h2').toggle(function() {
+  $("#photo_tab").live("click", function(){
+    if($("#workshop_description").css('display') != 'none'){
+      $("#workshop_description").fadeOut(100, function(){
+        $(".photo_upload").fadeIn(100);
+      });
+      $("#description_tab").css('background', 'transparent').css('color', '#000');
+    }
+    if($("#edit_instance_tags_js").css('display') != 'none'){
+      $("#edit_instance_tags_js").fadeOut(100, function(){
+        $(".photo_upload").fadeIn(100);
+      });
+      $("#tags_tab").css('background', 'transparent').css('color', '#000');
+    }
+    $(this).css('background', '#628934').css('color', '#fff');
+    return false;
+  });
+
+  $("#tags_tab").live("click", function(){
+    if($("#workshop_description").css('display') != 'none'){
+      $("#workshop_description").fadeOut(100, function(){
+        $("#edit_instance_tags_js").fadeIn(100);
+      });
+      $("#description_tab").css('background', 'transparent').css('color', '#000');
+    }
+    if($(".photo_upload").css('display') != 'none'){
+      $(".photo_upload").fadeOut(100, function(){
+        $("#edit_instance_tags_js").fadeIn(100);
+      });
+      $("#photo_tab").css('background', 'transparent').css('color', '#000');
+    }
+    $(this).css('background', '#628934').css('color', '#fff');
+    return false;
+  });
+
+  $('#description_tab').live("click", function(){
+    if($(".photo_upload").css('display') != 'none'){
+      $(".photo_upload").fadeOut(100, function(){
+        $("#workshop_description").fadeIn(100);
+      });
+      $("#photo_tab").css('background', 'transparent').css('color', '#000');
+    }
+    if($("#edit_instance_tags_js").css('display') != 'none'){
+      $("#edit_instance_tags_js").fadeOut(100, function(){
+        $("#workshop_description").fadeIn(100);
+      }); 
+      $("#tags_tab").css('background', 'transparent').css('color', '#000');
+    } 
+    $(this).css('background', '#628934').css('color', '#fff');
+    return false;
+  });
+  
+	$('.open_photdos, .phodto_upload h2').toggle(function() {
     $('.open img').fadeOut('slow', function(){
 	    $(".close img").fadeIn('slow');
 	  });
@@ -130,15 +184,15 @@ $(document).ready(function() {
 	//update images
 	$('.edit_photo').live('submit', function(e){
 		$.post($(this).attr("action"), $(this).serialize(), null, 'script');
-		$('.popupContact').fadeOut('slow');
-		$('html, body').animate({scrollTop:2000}, 'slow');
+		$('.popupContact').fadeOut('fast');
+		$('html, body').animate({scrollTop:1000}, 'slow');
 		return false;
 	});
 
   // for toggle edit links 
   $('.instance_tag_js').live('mouseover', function(){
     $(this).find('.edit_tag_links').css('display', 'block');
-    $(this).css('background', '#628934').fadeIn("slow");
+    $(this).css('background', '#628934').css('cursor', 'pointer');
   }).live('mouseout', function(){
     $(this).find('.edit_tag_links').css('display', 'none');
     $(this).css('background', 'transparent');
@@ -156,9 +210,7 @@ $(document).ready(function() {
       $(this).parent().parent().hide();
       $(this).parent().parent().parent().find('.instance_tag_show').fadeIn('slow');
       return false;
-    }
-
-
+    } 
     else if($(this).attr('rel') == 'edit_workshop_tags'){
       $('#available_instance_tags_js').html('<img src="/images/ajax-loader.gif"/>');
       $('#added_instance_tags ').html('<img src="/images/ajax-loader.gif"/>');
@@ -170,6 +222,13 @@ $(document).ready(function() {
       $.getScript(this.href);
       return false;
     }
+  });
+  
+  $('.instance_tag_show').live('click', function(){
+    $('.instance_tag_edit').hide();
+    $('.instance_tag_show').show();
+    $(this).next().show().css('cursor', 'default');
+    $(this).hide();
   });
 
   $('.instance_tag_edit form, .instance_tag_show form').live('submit', function(){

@@ -9,6 +9,7 @@
 	    <%= link_to image_tag("#{photo.public_filename(:thumb)}", :width => 80),  photo.public_filename, :title => photo.description, :class => 'group', :rel  => 'group1' %>
 	  <% end %>
 	</div>
+  <%= render '/photos/popup.haml', :photo => photo %>
 	<div class="new_thumbs_edit_delete">
   	  <%= link_to image_tag("edit.png", :width => '20'), edit_photo_path(photo), :class => 'popup', :rel => "popup#{photo.id}", :title => photo.id %>
   	  <%= render '/photos/popup', :photo => photo %>

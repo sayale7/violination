@@ -15,10 +15,11 @@
       =f.submit t('common.update')
     
   %p
-    = link_to t('common.destroy'), "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?'
-    ="|"
-    = link_to t('common.coordinate_input'), "/locations/#{Location.find_by_taggable_type_and_taggable_id(@the_instance.item_type, @the_instance.id).id}/edit",  :class => 'request_popup', :rel => "popup"
-
+    = link_to t('common.destroy'), "/#{@the_instance.class.to_s.downcase.pluralize}/destroy/#{@the_instance.id}?taggable_type=#{@the_instance.class.to_s}", :confirm => 'Are you sure?', :class => "change_tab"
+    = link_to t('common.coordinate_input'), "/locations/#{Location.find_by_taggable_type_and_taggable_id(@the_instance.item_type, @the_instance.id).id}/edit",  :class => 'request_popup change_tab', :rel => "popup"
+    = link_to t('common.manage_tags'), '', :class => "change_tab", :id => 'tags_tab'
+    = link_to t('common.manage_images'), '', :class => "change_tab", :id => 'photo_tab'
+    
 
 %div#edit_instance_tags_js
   -if false
@@ -47,10 +48,6 @@
   %div.photo_upload
     %h2
       =t('common.photo_gallery')
-      %span.open
-        =image_tag '/images/down.png'
-      %span.close
-        =image_tag '/images/up.png'
     
     %div.new_image_upload_form
       

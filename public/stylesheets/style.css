@@ -53,12 +53,12 @@ a:hover { color: #7C321F; }
 .tags_body a { float: left; margin-right: 10px; }
 .tags_body img { height: 15px; }
 
+#edit_instance_tags_js { overflow: hidden; margin-top: 30px; }
+
 #added_instance_tags { border: thin solid; border-color: #666666; float: right; width: 77%; }
 
-#workshop_description { margin-top: 10px; border: thin solid; border-color: #666666; float: right; width: 99%; padding: 5px; }
-#workshop_description textarea { width: 99.5%; height: 300px; border: none; }
-#workshop_description h2 { margin: -5px; background-image: url("/images/h2bg.png"); background-repeat: repeat-x; padding: 5px; color: white; font-weight: bold; }
-#workshop_description h2 img { height: 16px; float: right; }
+#workshop_description { margin-top: 20px; float: left; margin-left: 5px; width: 100%; }
+#workshop_description textarea { width: 100%; height: 300px; border: medium solid; border-color: #666666; }
 
 #added_instance_tags_full { width: 98%; padding: 1%; overflow: hidden; }
 
@@ -79,7 +79,7 @@ a:hover { color: #7C321F; }
 
 .instance_index_element { padding: 5px; }
 
-.photo_upload { float: left; clear: both; width: 99.9%; margin-top: 10px; border: thin solid; border-color: #666666; }
+.photo_upload { float: left; clear: both; width: 99.9%; margin-top: 15px; border: thin solid; border-color: #666666; }
 .photo_upload p { padding: 5px; }
 .photo_upload h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: 0; padding: 5px; }
 .photo_upload h2 img { height: 16px; float: right; }
@@ -90,7 +90,7 @@ a:hover { color: #7C321F; }
 
 .popupContact { display: none; position: fixed; text-align: center; position: absolute; background: #FFFFFF; border: 5px solid #000000; z-index: 99999999; padding: 12px; font-size: 13px; overflow: auto; }
 
-#popup_background { width: 100%; height: 100%; margin: -10px; margin-top: -20px; display: none; background: black; position: absolute; z-index: 99999; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; opacity: 0.9; filter: alpha(opacity=90); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; }
+#popup_background { width: 100%; height: 100%; display: none; background: black; position: absolute; left: 0; top: 0; z-index: 99999; background-image: url('/images/ajax-loader_balken.gif'); background-repeat: no-repeat; background-position: center; opacity: 0.9; filter: alpha(opacity=90); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; }
 
 #instance_info { float: left; width: 48%; background: transparent; border: thin solid; border-color: #666666; overflow: hidden; padding: 5px; }
 #instance_info h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: -5px; margin-bottom: 5px; padding: 5px; }
@@ -169,3 +169,5 @@ table tr td { padding: 3px; vertical-align: top; }
 .request_content { width: 900px; text-align: left; }
 
 span.small { font-size: 12px; }
+
+.change_tab { padding: 5px; border: medium solid; border-color: #666666; }

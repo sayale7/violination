@@ -1,6 +1,5 @@
 %div.edit_tag_links
   =link_to image_tag('/images/delete.png', :width => 20), remove_taggings_path(:tag => tag.id, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
-  =link_to image_tag('/images/edit.png', :width => 20), '', :rel => 'edit'
   
 %strong   
   =tag.tag_names.find_by_language(get_locale.to_s).value

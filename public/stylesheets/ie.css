@@ -1,2 +1,12 @@
 ul.dropdown ul { width: 230px; visibility: hidden; position: absolute; top: 100%; left: 0; margin-left:0px; }
 ul.dropdown ul li	{ display: inline; width: 100%; } 
+
+.tags_header { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; padding: 5px; color: white; font-weight: bold; }
+.tags_header a { float: right; }
+.tags_header img { height: 15px; position:relative; margin-top:-23px; margin-right:5px;}
+.tags_header h2 { font-size: 13px; color: white; padding: 0; margin: 0; }
+
+#workshop_description { margin-top: 10px; border: thin solid; border-color: #666666; float: right; width: 99%; padding: 5px; }
+#workshop_description textarea { width: 99.5%; height: 300px; border: none; }
+#workshop_description h2 { margin: -5px; background-image: url("/images/h2bg.png"); background-repeat: repeat-x; padding: 5px; color: white; font-weight: bold; }
+#workshop_description img { height: 16px; float: right; position:relative; margin-top:-23px; margin-right:5px;}
