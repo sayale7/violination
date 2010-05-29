@@ -79,7 +79,7 @@ a:hover { color: #7C321F; }
 
 .instance_index_element { padding: 5px; }
 
-.photo_upload { float: left; clear: both; width: 99.9%; margin-top: 15px; border: thin solid; border-color: #666666; }
+.photo_upload { float: left; clear: both; width: 99.9%; margin-top: 15px; }
 .photo_upload p { padding: 5px; }
 .photo_upload h2 { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; color: #fff; margin: 0; padding: 5px; }
 .photo_upload h2 img { height: 16px; float: right; }
