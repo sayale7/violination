@@ -47,7 +47,7 @@ de:
     more: Es sind mehrere Einträge vorhanden
     manage_images: Bilder verwalten
     manage_tags: Attribute verwalten
-    manage_description: Beschreibung verwalten
+    manage_description: Beschreibung
   user:
     username: Benutzername
     email: Email Adresse

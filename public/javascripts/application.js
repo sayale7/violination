@@ -225,10 +225,15 @@ $(document).ready(function() {
   });
   
   $('.instance_tag_show').live('click', function(){
-    $('.instance_tag_edit').hide();
-    $('.instance_tag_show').show();
-    $(this).next().show().css('cursor', 'default');
-    $(this).hide();
+    var url = $(location).attr('href');
+    if (url.match("workshop") == 'workshop'){
+
+    }else{
+      $('.instance_tag_edit').hide();
+      $('.instance_tag_show').show();
+      $(this).next().show().css('cursor', 'default');
+      $(this).hide();
+    }
   });
 
   $('.instance_tag_edit form, .instance_tag_show form').live('submit', function(){
