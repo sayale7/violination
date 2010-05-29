@@ -123,7 +123,7 @@ class ItemsController < ApplicationController
       @map = GMap.new("map_div")
       @map.control_init(:large_map => true, :map_type => true)
       @map.center_zoom_init([49.5874362000,10.9660867000],5)
-      @map.icon_global_init( GIcon.new( :image => "/images/add.png", :icon_size => GSize.new( 20,20 ), :icon_anchor => GPoint.new(12,38), :info_window_anchor => GPoint.new(9,2) ), "group_icon")
+      @map.icon_global_init( GIcon.new( :image => "/images/map_add.png", :icon_size => GSize.new( 30,30 ), :icon_anchor => GPoint.new(12,38), :info_window_anchor => GPoint.new(9,2) ), "group_icon")
       group_icon = Variable.new("group_icon");
       locations = Location.find_all_by_taggable_type(params[:taggable_type].to_s, :group => "address")
       locations.each do |group|
