@@ -233,6 +233,8 @@ $(document).ready(function() {
       $('.instance_tag_show').show();
       $(this).next().show().css('cursor', 'default');
       $(this).hide();
+      var i = $(this).next().position().top;
+      $('html, body').animate({scrollTop:i}, 'slow');
     }
   });
 

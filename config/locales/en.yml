@@ -119,7 +119,7 @@ en:
     add_through_click: (Click an Attribute to add it to your Instrument)
     of: Instrument of
     info: To the instrument
-    attributes: Attributes of this Instrument
+    attributes: Added Attributes
     self_contact: Use my contact info
     violination_contact: Anonymous contact through the site
   workshop:

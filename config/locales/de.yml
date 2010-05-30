@@ -89,7 +89,7 @@ de:
     new: Neue Kategorie
     edit: Kategorie bearbeiten
     sub: Unterkategorien
-    available: Verfügbare Kategorien
+    available: Verfügbare Attribute
     added: In meiner Werkstatt vorhanden
     is_area: Beschreibungsfeld
     user:
@@ -115,7 +115,7 @@ de:
     add_through_click: (Durch anklichen eines Attributes, fügen Sie es Ihrem Instrument hinzu)
     of: Instrument von
     info: Über dieses Instrument
-    attributes: Dieses Instrument hat folgende Attribute
+    attributes: Verwendete Attribute
     self_contact: Meine Kontaktdaten verwenden
     violination_contact: Anonym über die Seite
     search_text: Versuchen Sie sich an der Live Suche! Einfach Art des Instruments, seine Größe oder andere Attribute eintippen und das gewünschte Instrument erscheint im Nu!
