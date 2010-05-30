@@ -3,6 +3,9 @@ class PhotoContainersController < ApplicationController
     @photo_containers = PhotoContainer.all
   end
   
+  def show
+    
+  end
   
   def new
     @the_instance = PhotoContainer.new

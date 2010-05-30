@@ -88,7 +88,10 @@ $(document).ready(function() {
 	
 	// toggle photo_upload
   //$('.new_image_upload_form, #thumbnails, .close img').hide();
-  $('.photo_upload').hide();
+  if ($(location).attr('href').match('photo_containers') != 'photo_containers'){
+    $('.photo_upload').hide();
+  }
+  
   $("#workshop_description").hide();
   $("#tags_tab").css('background', '#628934').css('color', '#fff');
   
@@ -196,11 +199,13 @@ $(document).ready(function() {
 
   // for toggle edit links 
   $('.instance_tag_js').live('mouseover', function(){
+    $(this).find('.message').html('<h1 style="color:#fff; float:right; clear:none">Zum bearbeiten anklicken</h1>');
     $(this).find('.edit_tag_links').css('display', 'block');
     $(this).css('background', '#628934').css('cursor', 'pointer');
   }).live('mouseout', function(){
     $(this).find('.edit_tag_links').css('display', 'none');
     $(this).css('background', 'transparent');
+    $(this).find('.message').html('');
   });
   
   $('#instance_tag_without_children a, #instance_tag_with_children a, #available_instance_tags_js a').live('click', function(){
