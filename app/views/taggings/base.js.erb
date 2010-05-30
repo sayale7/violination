@@ -5,6 +5,16 @@
     $("#available_instance_tags_js").html("<%= escape_javascript(render('/taggables/available_instance_attributes_js.haml')) %>");
     $("#added_instance_tags").html("<%= escape_javascript(render('/taggables/added_instance_attributes_js.haml')) %>");
   <% end %>
+  <% if @tag.parent_id.nil? %>
+    $(".tag_<%= Tag.find(@tag.id).id %>").parent().parent().effect("highlight", {color: '#628934'}, 2000);
+    var x = $(".tag_<%= Tag.find(@tag.id).id %>").offset().top - 160; // 100 provides buffer in viewport
+    $('html,body').animate({scrollTop: x}, 300);
+  <% else %>
+    $(".tag_<%= Tag.find(@tag.parent_id).id %>").parent().effect("highlight", {color: '#628934'}, 2000);
+    var x = $(".tag_<%= Tag.find(@tag.parent_id).id %>").offset().top - 160; // 100 provides buffer in viewport
+    $('html,body').animate({scrollTop: x}, 300);
+  <% end %>
+  
 <% end %>
 
 

@@ -28,6 +28,7 @@ class TagValuesController < ApplicationController
       german_tag_value.update_attribute(:value, german_value.gsub("http://", ""))
       english_tag_value.update_attribute(:value, german_value.gsub("http://", ""))
     end
+    @tag = tag
     respond_to do |format|
       format.html { 
         if error

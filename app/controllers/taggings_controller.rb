@@ -11,6 +11,7 @@ class TaggingsController < ApplicationController
     end
     tagging.save
     get_tags(tag.parent_id)
+    @tag = tag
     respond_to do |format|
       if parent_id.nil?
         format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
@@ -34,6 +35,7 @@ class TaggingsController < ApplicationController
     end
     tagging.destroy
     get_tags(tag.parent_id)
+    @tag = tag
     respond_to do |format|
       if parent_id.nil?
         format.html { redirect_to '/edit_' << params[:taggable_type].to_s.downcase << '_taggings?instance=' << @the_instance.id.to_s }
@@ -59,6 +61,7 @@ class TaggingsController < ApplicationController
       tagging = build_tagging_and_set_tag_values_taggable_id(params[:child_tag][:id])
       tagging.save
     end
+    @tag = tag
     # for base.js.erb
     @update = true
     respond_to do |format|

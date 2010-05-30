@@ -1,5 +1,5 @@
 %div.tag_text
-  %strong   
+  %strong{:class => "tag_#{tag.id}"}   
     =tag.tag_names.find_by_language(get_locale.to_s).value
   -if tag.value_type.to_s.eql?('preisfeld')
     %p

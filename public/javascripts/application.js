@@ -232,9 +232,10 @@ $(document).ready(function() {
       $('.instance_tag_edit').hide();
       $('.instance_tag_show').show();
       $(this).next().show().css('cursor', 'default');
+      $(this).next().css('background', '#F0E6A1');
       $(this).hide();
-      var i = $(this).next().position().top;
-      $('html, body').animate({scrollTop:i}, 'slow');
+      var x = $(this).next().offset().top - 160; // 100 provides buffer in viewport
+      $('html,body').animate({scrollTop: x}, 300);
     }
   });
 
