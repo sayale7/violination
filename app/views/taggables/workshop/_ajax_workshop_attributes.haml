@@ -6,7 +6,7 @@
   %div#instance_tag_with_children.instance_tag_js
   
     %div.instance_tag_show.visible
-      %strong   
+      %strong{:class => "tag_#{tag.id}"}   
         =tag.tag_names.find_by_language(get_locale.to_s).value
       -unless added_child_tags(tag, @the_instance.id).empty?
         =':'

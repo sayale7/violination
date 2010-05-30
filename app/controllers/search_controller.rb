@@ -135,11 +135,28 @@ class SearchController < ApplicationController
           if the_items.empty?
             the_items = items
           else
-            debugger
             the_items = the_items & items
           end
         end
       end
+      
+      #get items by their location
+      # locations = Array.new
+      # tmp_items = Array.new
+      # params[:search_input].split.each do |word|
+      #   locs = Location.address_like(word)
+      #   unless locs.empty?
+      #     locs.each do |loc|
+      #       locations.push(loc)
+      #     end
+      #   end
+      # end
+      # locations.each do |loc|
+      #   unless loc.taggable_type.eql?('User')
+      #     tmp_items.push(Item.find(loc.taggable_id))
+      #   end
+      # end
+      # the_items = (the_items + tmp_items).uniq
       
       unless @search_words.empty?
         @the_instances = nil

@@ -65,7 +65,7 @@ $(document).ready(function() {
   //   $('.instrument_kind').show();
   // });
   
-
+  $('.text_box').first().focus();
 
 	
 	
@@ -129,13 +129,17 @@ $(document).ready(function() {
   $('#description_tab').live("click", function(){
     if($(".photo_upload").css('display') != 'none'){
       $(".photo_upload").fadeOut(100, function(){
-        $("#workshop_description").fadeIn(100);
+        $("#workshop_description").fadeIn(100, function(){
+          $('.text_area').focus();
+        });
       });
       $("#photo_tab").css('background', 'transparent').css('color', '#000');
     }
     if($("#edit_instance_tags_js").css('display') != 'none'){
       $("#edit_instance_tags_js").fadeOut(100, function(){
-        $("#workshop_description").fadeIn(100);
+        $("#workshop_description").fadeIn(100, function(){
+          $('.text_area').focus();
+        });
       }); 
       $("#tags_tab").css('background', 'transparent').css('color', '#000');
     } 
