@@ -48,6 +48,7 @@ de:
     manage_images: Bilder verwalten
     manage_tags: Attribute verwalten
     manage_description: Beschreibung
+    address: Standort
   user:
     username: Benutzername
     email: Email Adresse

@@ -52,6 +52,7 @@ en:
     manage_images: Manage Images
     manage_tags: Manage Attributes
     manage_description: Description
+    address: Address
   user:
     username:Username
     email: Email Address
