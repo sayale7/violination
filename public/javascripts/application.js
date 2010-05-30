@@ -72,7 +72,8 @@ $(document).ready(function() {
 	// hide and workshop_description
   // $('#workshop_description_form').hide();
   // 
-  // //toggle workshop description    
+  //toggle workshop description    
+  $('.close').hide();
   // $("#workshop_description_open_link").live('click', function () { 
   //  $(this).fadeOut(200);
   //  $('#workshop_description_form').show(500).fadeIn(100);
