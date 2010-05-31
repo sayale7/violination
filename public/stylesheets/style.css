@@ -26,7 +26,7 @@ a:hover { color: #7C321F; }
 
 .text_box { width: 650px; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
 
-#container { clear: both; width: 1000px; margin: 0 auto; margin-top: 10px; margin-bottom: 20px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
+#container { clear: both; width: 1000px; margin: 0 auto; margin-top: 10px; margin-bottom: 30px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
 #header { width: 1000px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 80px; font-family: Verdana; color: #fff; }
 
