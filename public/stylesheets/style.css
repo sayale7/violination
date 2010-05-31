@@ -41,12 +41,12 @@ a:hover { color: #7C321F; }
 #nav_right { padding-top: 10px; padding-right: 1%; float: right; text-align: right; height: 35px; }
 
 #content { clear: both; }
-#content ul { list-style-type: circle; }
+#content ul { list-style-type: disc; }
 
 #footer { background-image: url('/images/bg.jpg'); background-repeat: repeat-x; margin: 0; bottom: 0; left: 0; width: 100%; position: fixed; font-family: Verdana; color: #fff; }
 #footer .content { width: 1000px; margin: 0 auto; text-align: center; }
-#footer .content ul { padding: 0; margin: 0; padding-bottom: 0; }
-#footer .content ul li { display: inline; margin: 0; margin-bottom: 0; }
+#footer .content ul { margin: 0; padding: 2px; }
+#footer .content ul li { display: inline; margin: 0; padding: o; }
 #footer .content ul li a { color: #fff; padding: 0.2em; padding-left: 15px; padding-right: 15px; margin: 1%; }
 #footer .content ul li a:hover { color: #000; background: #fff; font-weight: bold; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
 
