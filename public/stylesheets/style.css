@@ -1,4 +1,5 @@
 h1 { font-size: 18px; width: 450px; color: #6B464F; }
+h1 a { text-decoration: none; color: #66261D; }
 
 .h1 { font-size: 18px; }
 
@@ -41,10 +42,8 @@ a:hover { color: #7C321F; }
 #nav_right { padding-top: 10px; padding-right: 1%; float: right; text-align: right; height: 35px; }
 
 #content { clear: both; }
-#content a { font-weight: bolder; text-decoration: underline; }
+#content a { font-weight: bold; }
 #content ul { list-style-type: disc; }
-#content h1 { color: #6B464F; }
-#content h1 a { text-decoration: none; color: #66261D; }
 
 #footer { background-image: url('/images/bg.jpg'); background-repeat: repeat-x; margin: 0; bottom: 0; left: 0; width: 100%; position: fixed; font-family: Verdana; color: #fff; }
 #footer .content { width: 1000px; margin: 0 auto; text-align: center; }
