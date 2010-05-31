@@ -23,13 +23,13 @@ window.onload = function(){
 		upload_success_handler: uploadSuccess,
 		upload_complete_handler: uploadComplete,
 		button_placeholder_id: "spanButtonPlaceholder",
-		button_text_style : '.button { font-family: Verdana; font-size: 14pt; }',
+		button_text_style : '.button { font-family: Verdana; font-size: 14pt;}',
 		button_text : '<span class="button"><%= t("photo.select") %></span>',
   	button_text_left_padding : 13,
   	button_text_top_padding : 10,
 		button_width: 150,
 		button_height: 40,
-		button_window_mode: SWFUpload.WINDOW_MODE.WINDOW,
+		button_window_mode: SWFUpload.WINDOW_MODE.OPAQUE,
 		button_cursor: SWFUpload.CURSOR.HAND,
 
 		// Flash Settings
