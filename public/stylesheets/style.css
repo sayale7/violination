@@ -49,7 +49,7 @@ a:hover { color: #7C321F; }
 #content_2 a { font-weight: bold; }
 #content_2 ul { list-style-type: disc; }
 
-#adds { float: right; width: 10%; }
+#adds { float: right; width: 10%; margin-top: 60px; }
 #adds img { width: 99%; float: right; margin-bottom: 10px; }
 #adds h2 { font-weight: bold; width: 100%; text-align: right; }
 
