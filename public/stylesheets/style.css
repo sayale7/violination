@@ -41,6 +41,7 @@ a:hover { color: #7C321F; }
 #nav_right { padding-top: 10px; padding-right: 1%; float: right; text-align: right; height: 35px; }
 
 #content { clear: both; }
+#content a { font-weight: bold; }
 #content ul { list-style-type: disc; }
 
 #footer { background-image: url('/images/bg.jpg'); background-repeat: repeat-x; margin: 0; bottom: 0; left: 0; width: 100%; position: fixed; font-family: Verdana; color: #fff; }
