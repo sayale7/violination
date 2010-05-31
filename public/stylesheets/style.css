@@ -47,7 +47,7 @@ a:hover { color: #7C321F; }
 #footer .content { width: 1000px; margin: 0 auto; text-align: center; }
 #footer .content ul { margin: 0; padding: 2px; }
 #footer .content ul li { display: inline; margin: 0; padding: o; }
-#footer .content ul li a { color: #fff; padding: 0.2em; padding-left: 15px; padding-right: 15px; margin: 1%; }
+#footer .content ul li a { color: #fff; padding: 0.2em; padding-left: 8px; padding-right: 8px; margin: 1%; }
 #footer .content ul li a:hover { color: #000; background: #fff; font-weight: bold; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
 
 #available_instance_tags, #available_instance_tags_js { border: thin solid; border-color: #666666; float: left; width: 20%; }
