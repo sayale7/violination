@@ -148,11 +148,15 @@ a:hover
 
 #content
   :clear both
+  
+  ul
+    :list-style-type circle
+  
 
 #footer
   :background-image url('/images/bg.jpg')
   :background-repeat repeat-x
-  :margin 0 auto
+  :margin 0
   :bottom 0
   :left 0
   :width 100%
@@ -166,18 +170,21 @@ a:hover
     :text-align center
     
     ul
-      :padding 5px
+      :padding 0
       :margin 0
+      :padding-bottom 0
       
       li
         :display inline
-        :margin 5px
+        :margin 0
+        :margin-bottom 0
         
         a
           :color #fff
-          :padding 2px
+          :padding 0.2em
           :padding-left 15px
           :padding-right 15px
+          :margin 1%
         
         a:hover
           :color #000
