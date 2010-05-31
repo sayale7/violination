@@ -244,7 +244,7 @@ $(document).ready(function() {
       $(this).next().show().css('cursor', 'default');
       $(this).next().css('background', '#F0E6A1');
       $(this).hide();
-      var x = $(this).next().offset().top - 160; // 100 provides buffer in viewport
+      var x = $(this).next().offset().top - 150; // 100 provides buffer in viewport
       $('html,body').animate({scrollTop: x}, 300);
     }
   });

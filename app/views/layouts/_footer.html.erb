@@ -1,0 +1,7 @@
+<ul>
+  <% Site.find_all_by_siteable_type_and_parent_id_and_active('Footer', nil, 1, :order => 'position').each do |parent_site| %>
+  <li >
+    <%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}" %>
+  </li>
+  <% end %>
+</ul>

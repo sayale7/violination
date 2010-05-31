@@ -146,6 +146,7 @@ de:
     images: Bilder der Redaktion
     startsite_left: Startseite linker Teil
     startsite_right: Startseite rechter Teil
+    footer: Fusszeile
   search:
     search_mask: Suche nach
     item_entries: Suchergebnisse

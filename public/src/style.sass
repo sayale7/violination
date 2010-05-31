@@ -104,7 +104,7 @@ a:hover
   :min-height 500px
 
   
-#header 
+#header
   :width 1000px
   :margin 0 auto
   :margin-top 0
@@ -148,7 +148,41 @@ a:hover
 #content
   :clear both
 
-
+#footer
+  :background-image url('/images/bg.jpg')
+  :background-repeat repeat-x
+  :margin 0 auto
+  :bottom 0
+  :left 0
+  :width 100%
+  :position fixed
+  :font-family Verdana
+  :color #fff
+  
+  .content
+    :width 1000px
+    :margin 0 auto
+    :text-align center
+    
+    ul
+      :padding 5px
+      :margin 0
+      
+      li
+        :display inline
+        :margin 5px
+        
+        a
+          :color #fff
+          :padding 2px
+          :padding-left 15px
+          :padding-right 15px
+        
+        a:hover
+          :color #000
+          :background #fff
+          :font-weight bold
+          +round_corners
 
 #available_instance_tags, #available_instance_tags_js
   +thin_border

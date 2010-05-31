@@ -146,6 +146,7 @@ en:
     images: Editorial images
     startsite_left: Home left section
     startsite_right: Home right section
+    footer: Fusszeile
   search:
     search_mask: Search for
     item_entries: Searchentries

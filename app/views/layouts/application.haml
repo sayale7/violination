@@ -10,6 +10,7 @@
     = yield(:head) 
   %body
     %div#popup_background 
+      %div#divFileProgressContainer
     %div#header
       %div.header_left
         %span.logo_large
@@ -28,5 +29,11 @@
                     
       %div#content
         =yield
+    %div#footer
+      %div.content
+        %ul
+          %li
+            =render '/layouts/footer.html.erb'
+              
 
 /,'/fancybox/jquery.easing-1.3.pack'
