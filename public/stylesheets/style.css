@@ -45,16 +45,16 @@ a:hover { color: #7C321F; }
 #content a { font-weight: bold; }
 #content ul { list-style-type: disc; }
 
-#content_2 { clear: none; float: left; width: 78%; overflow: hidden; padding-right: 1%; border-right: thin solid; border-color: #666666; }
+#content_2 { clear: none; float: left; width: 88%; overflow: hidden; padding-right: 1%; border-right: thin solid; border-color: #666666; }
 #content_2 a { font-weight: bold; }
 #content_2 ul { list-style-type: disc; }
 
-#adds { float: right; width: 20%; }
+#adds { float: right; width: 10%; }
 #adds img { width: 99%; float: right; margin-bottom: 10px; }
 #adds p { font-weight: bold; }
 
 .add_images { padding-top: 10px; margin-top: 10px; padding: 1%; clear: right; float: right; width: 39%; border: medium solid; border-color: #666666; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
-.add_images img { width: 100%; float: right; margin-bottom: 10px; }
+.add_images img { width: 40%; float: left; margin-bottom: 10px; }
 .add_images h2 { font-weight: bold; width: 100%; text-align: right; }
 
 #footer { background-image: url('/images/bg.jpg'); background-repeat: repeat-x; margin: 0; bottom: 0; left: 0; width: 100%; position: fixed; font-family: Verdana; color: #fff; }
