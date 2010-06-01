@@ -11,7 +11,13 @@
     =t('search.instrument_example')
 %p
   -form_tag search_item_path, :class => 'itesm_search' do
-    =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"
+    %p
+      =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"
+    %p
+      =t('instrument.price_from')
+      =text_field_tag :lower_bound, @lower_bound, :class => 'price_text_box', :autocomplete => "off"
+      =t('instrument.to')
+      =text_field_tag :upper_bound, @upper_bound, :class => 'price_text_box', :autocomplete => "off"
     =hidden_field_tag :taggable_type, '', :value => @taggable_type
     =hidden_field_tag :user_id, '', :value => @user_id
     =hidden_field_tag :contact, '', :value => @contact

@@ -13,16 +13,16 @@
         -if item.contact.to_s.eql?('1')
           = link_to item.user.full_name, "/users/#{item.user.id}"
           =" (Email: #{mail_to item.user.email})"
+          -unless item.location.address.nil? or item.location.address.eql?('')
+            %strong
+              =t('common.address')
+              ="-"
+            =item.location.address
         -else
           ='Violination.com'
           =" (Email: #{mail_to 'post@violination.com'})"
         %br
-        -unless item.location.address.nil? or item.location.address.eql?('')
-          %strong
-            =t('common.address')
-            ="-"
-          =item.location.address
-          %br
+        
         -unless item.tags.find_by_parent_id(nil).nil?
           -get_added_tags(item.tags.find_by_parent_id(nil), item.id).each do |tag|
             -if tag.visible.to_s.eql?('1') || tag.visible.to_s.eql?('true')

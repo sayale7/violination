@@ -123,6 +123,8 @@ en:
     attributes: Added Attributes
     self_contact: Use my contact info
     violination_contact: Anonymous contact through the site
+    price_from: Price from
+    to: to
   workshop:
     edit: Edit my workshop
     show: Show my workshop

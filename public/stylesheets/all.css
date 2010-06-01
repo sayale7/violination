@@ -110,6 +110,10 @@ ul.dropdown ul li a					{ border-right: none; width: 100%; display: inline-block
 ul.dropdown ul ul 					{ left: -100%; top: 0; }
 ul.dropdown li:hover > ul 			{ visibility: visible; }
 
+
+/* 
+	Style.css
+*/
 h1 { font-size: 18px; width: 98%; color: #6B464F; }
 h1 a { text-decoration: none; color: #66261D; }
 
@@ -138,6 +142,8 @@ a:hover { color: #7C321F; }
 .mceEditor { width: 100%; height: 400px; }
 
 .text_box { width: 62%; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
+
+.price_text_box { width: 25.8%; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
 
 #container { clear: both; width: 960px; margin: 0 auto; margin-top: 10px; margin-bottom: 30px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
@@ -311,3 +317,4 @@ table tr td { padding: 3px; vertical-align: top; }
 span.small { font-size: 12px; }
 
 .change_tab { padding: 5px; border: medium solid; border-color: #666666; }
+

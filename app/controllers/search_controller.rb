@@ -10,7 +10,6 @@ class SearchController < ApplicationController
     else
       show_on_map
     end
-    
   end
   
   def search_user
@@ -176,7 +175,11 @@ class SearchController < ApplicationController
       end
       
     end
+    
+    @the_instances = @the_instances  & search_prices
     @search_input = params[:search_input]
+    @lower_bound = params[:lower_bound]
+    @upper_bound = params[:upper_bound]
     @taggable_type = params[:taggable_type].to_s
     session[:search_input] = params[:search_input]
 
@@ -190,6 +193,52 @@ class SearchController < ApplicationController
   end
   
   private
+  
+  def search_prices
+    price_tags = Tag.find_all_by_value_type('preisfeld')
+    price_tag_values = Array.new
+    price_tags.each do |price_tag|
+      TagValue.find_all_by_tag_id(price_tag.id, :conditions => { :value => lower_bound_price_string.to_i .. upper_bound_price_string.to_i}, :group => 'taggable_id').each do |tag_value|
+        price_tag_values.push(tag_value)
+      end
+    end
+    items = Array.new
+    price_tag_values.each do |value|
+      item = Item.find(value.taggable_id)
+      unless item.nil?
+        items.push(item)
+      end
+    end
+    return items
+  end
+  
+  def lower_bound_price_string
+    unless params[:lower_bound].empty?
+      lower_bound = params[:lower_bound].to_s
+      lower_bound = lower_bound.gsub(/\./, '')
+      # if lower_bound.include?(',')
+      #   to_cut_from = lower_bound.index(',')
+      #   lower_bound = lower_bound[0, to_cut_from]
+      # end
+      return lower_bound
+    else
+      return "0"
+    end
+  end
+  
+  def upper_bound_price_string
+    unless params[:upper_bound].empty?
+      upper_bound = params[:upper_bound].to_s
+      upper_bound = upper_bound.gsub(/\./, '')
+      # if upper_bound.include?(',')
+      #   to_cut_from = upper_bound.index(',')
+      #   upper_bound = upper_bound[0, to_cut_from]
+      # end
+      return upper_bound
+    else
+      return "10000000000"
+    end
+  end
   
   def find_items(word, type)
     items = Array.new

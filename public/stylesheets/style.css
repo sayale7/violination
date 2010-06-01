@@ -27,6 +27,8 @@ a:hover { color: #7C321F; }
 
 .text_box { width: 62%; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
 
+.price_text_box { width: 10%; height: 25px; font-size: 13px; padding: 10px; padding-top: 1px; padding-bottom: 1px; background-image: url('/images/tb_bg.tiff'); background-repeat: repeat-x; }
+
 #container { clear: both; width: 960px; margin: 0 auto; margin-top: 10px; margin-bottom: 30px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
 #header { width: 960px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 70px; font-family: Verdana; color: #fff; background-image: url('/images/logo.jpg'); background-repeat: no-repeat; background-position: -2px -35px; }
