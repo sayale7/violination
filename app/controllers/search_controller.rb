@@ -6,6 +6,7 @@ class SearchController < ApplicationController
     @tag_values = Array.new
     @tag_names = Array.new
     show_on_map
+    show_on_user_map
   end
   
   def search_user
