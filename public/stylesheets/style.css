@@ -51,10 +51,12 @@ a:hover { color: #7C321F; }
 
 #adds { float: right; width: 10%; margin-top: 55px; }
 #adds img { width: 99%; float: right; margin-bottom: 10px; border: medium solid; border-color: #666666; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
+#adds img:hover { border-color: red; }
 #adds h2 { font-weight: bold; width: 100%; text-align: right; }
 
 .add_images { padding-top: 10px; margin-top: 10px; clear: right; float: right; width: 410px; }
 .add_images img { width: 20%; float: right; clear: right; padding: 2%; margin-bottom: 10px; border: medium solid; border-color: #666666; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
+.add_images img:hover { border-color: red; }
 .add_images h2 { font-weight: bold; width: 100%; text-align: right; }
 
 #footer { background-image: url('/images/bg.jpg'); background-repeat: repeat-x; margin: 0; bottom: 0; left: 0; width: 100%; position: fixed; font-family: Verdana; color: #fff; }

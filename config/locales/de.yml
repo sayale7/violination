@@ -119,7 +119,7 @@ de:
     attributes: Verwendete Attribute
     self_contact: Meine Kontaktdaten verwenden
     violination_contact: Anonym über die Seite
-    search_text: Versuchen Sie sich an der Live Suche! Einfach Art des Instruments, seine Größe oder andere Attribute eintippen und das gewünschte Instrument erscheint im Nu!
+    search_text: Gib bitte bei deiner Instrumenten-Suche einfach die entsprechenden Attribute wie Geige, 4/4, Meisterinstrument ... ein. Oder zoome dir auf der Karte die gewünschte Umgebung heran.
   workshop:
     edit: Meine Werkstatt bearbeiten
     show: Meine Werkstatt anzeigen
@@ -127,13 +127,13 @@ de:
     my_tags: In meiner Werkstätte betreibe ich
     my: Meine Werkstätte
     all: Alle Werkstätten
-    search_text: Versuchen Sie sich an der Live Suche! Name eines Ihnen bekannten Geigenbauers oder einer Geigenbauerin eingeben, oder einen bestimmten Ort, oder einfach eine gewünschte Kategorie wie beispielsweise Geigenbau
+    search_text: Gib bitte den Namen des/der gewünschten Geigenbauers, der Geigenbauerin oder eine Ortsangabe oder Serviceleistung ein. Oder zoome dir auf der Karte die gewünschte Umgebung heran.
   bow:
     all: Alle Bögen
     mine: Meine Bögen
     mine_singular: Mein Bogen
     of: Bogen von
-    search_text: Versuchen Sie sich an der Live Suche! Einfach Art des Bogens, seine Größe oder andere Attribute eintippen und der gewünschte Bogen erscheint im Nu!
+    search_text: Gib bitte bei deiner Bogen-Suche einfach die entsprechenden Attribute wie Geigenbogen, Silber... ein. Oder zoome dir auf der Karte die gewünschte Umgebung heran.
   photo:
     select: Bilder auswählen
     upload_text: Bitte verwenden sie nur die Formate JPG, JPEG, GIF und PNG.
@@ -160,7 +160,7 @@ de:
     steps: Anfrage in 2 Schritten
     finish: Anfrage abschließen und abschicken
     step1: Schritt 1 - Geben Sie Ihren Namen und Ihre Email Adresse ein, damit wir uns mit einem passenden Angebot an Sie wenden können!
-    step2: Hier können Sie die Attribute mit denen Sie Ihr Wunschinstrument oder Ihren Wunschbogen am besten beschreiben, hinzufügen. Mittels der Auswahl- und Eingabefelder können Sie diese um Ihre eigenen Vorstellungen erweitern!
+    step2: Du bist interessiert, für dich ein Instrument oder einen Bogen zu finden? Wir helfen dir dabei! Bitte erstelle ein Profil deines Wunsch-Instrumentes. Lasse uns deine Klangvorstellung, Lieblingsmodell … wissen. Wir würden uns dann gern mit einer entsprechenden Vorauswahl an dich wenden.
     request: Anfrage von
     all: Alle Anfragen
     

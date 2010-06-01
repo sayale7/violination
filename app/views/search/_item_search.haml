@@ -10,11 +10,11 @@
   -else
     =t('search.instrument_example')
 %p
-  -form_tag search_item_path, :class => 'item_search' do
+  -form_tag search_item_path, :class => 'itesm_search' do
     =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"
     =hidden_field_tag :taggable_type, '', :value => @taggable_type
     =hidden_field_tag :user_id, '', :value => @user_id
     =hidden_field_tag :contact, '', :value => @contact
-    /submit_tag "suchen"
+    =submit_tag "suchen"
 %h1
   =t('search.item_entries')

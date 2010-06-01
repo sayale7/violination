@@ -1,8 +1,11 @@
 class SearchController < ApplicationController
+  
+  include MapHelper
 
   def init
     @tag_values = Array.new
     @tag_names = Array.new
+    show_on_map
   end
   
   def search_user
@@ -176,7 +179,10 @@ class SearchController < ApplicationController
     session[:search_input] = params[:search_input]
 
     respond_to do |format|
-      format.html {render :template  =>  '/items/index.haml'}
+      format.html {
+        render :template  =>  '/items/index.haml' 
+        #redirect_to "/items?taggable_type=#{params[:taggable_type]}"
+      }
       format.js { render '/items/index.js.erb' }
     end
   end

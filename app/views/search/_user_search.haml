@@ -4,9 +4,9 @@
 -if false
   =t('search.user_example')
 %p
-  -form_tag search_user_path, :class => 'user_search' do
+  -form_tag search_user_path, :class => 'usser_search' do
     =text_field_tag :search_input, @search_input, :class => 'text_box', :autocomplete => "off"
-    /submit_tag 'suchen'
+    =submit_tag 'suchen'
     
 %h1
   =t('search.item_entries')
