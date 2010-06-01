@@ -29,7 +29,7 @@ a:hover { color: #7C321F; }
 
 #container { clear: both; width: 960px; margin: 0 auto; margin-top: 10px; margin-bottom: 30px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
-#header { width: 960px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 70px; font-family: Verdana; color: #fff; background-image: url('/images/logo.jpg'); background-repeat: no-repeat; background-position: -2px -40px; }
+#header { width: 960px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 70px; font-family: Verdana; color: #fff; background-image: url('/images/logo.jpg'); background-repeat: no-repeat; background-position: -2px -35px; }
 
 .header_left { float: left; }
 .header_left span.logo_large { float: left; font-size: 19pt; }
@@ -64,7 +64,7 @@ a:hover { color: #7C321F; }
 #footer .content ul { margin: 0; padding: 2px; }
 #footer .content ul li { display: inline; margin: 0; padding: o; }
 #footer .content ul li a { color: #fff; padding: 0.2em; padding-left: 4px; padding-right: 4px; margin: 1%; }
-#footer .content ul li a:hover { color: #000; background: #fff; font-weight: bold; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
+#footer .content ul li a:hover { color: #000; background: #fff; -moz-border-radius: 5px; -khtml-border-radius: 5px; }
 
 #available_instance_tags, #available_instance_tags_js { border: thin solid; border-color: #666666; float: left; width: 20%; }
 
