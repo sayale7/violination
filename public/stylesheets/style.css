@@ -34,14 +34,10 @@ a:hover { color: #7C321F; }
 #header { width: 960px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 70px; font-family: Verdana; color: #fff; background-image: url('/images/logo.jpg'); background-repeat: no-repeat; background-position: -2px -35px; }
 
 .header_left { float: left; }
-.header_left span.logo_large { float: left; font-size: 19pt; }
-.header_left span.logo_large a { color: #fff; }
-.header_left span.logo_small { clear: both; float: left; font-size: 8pt; }
-.header_left span.logo_small a { color: #fff; }
 
-#nav_left { clear: right; float: right; height: 40px; width: 800px; }
+#nav_left { clear: right; float: right; width: 800px; }
 
-#nav_right { padding-top: 10px; padding-right: 1%; float: right; text-align: right; height: 35px; }
+#nav_right { padding: 0; margin: 0; padding-right: 1%; float: right; text-align: right; }
 
 #content { clear: both; }
 #content a { font-weight: bold; }
