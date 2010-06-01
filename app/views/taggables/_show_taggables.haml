@@ -16,7 +16,16 @@
           =" (Email: #{mail_to @the_instance.user.email})"
         -else
           ='Violination.com'
-          =" (Email: #{mail_to 'post@violination.com'})"     
+          =" (Email: #{mail_to 'post@violination.com'})"  
+    -if @the_instance.contact.to_s.eql?('1')
+      %tr
+        %td
+          %strong
+            =t('common.address') 
+        %td
+          -unless @the_instance.location.address.nil? or @the_instance.location.address.eql?('')
+            =@the_instance.location.address
+            
     -@added_tags.each do |tag|
       %tr
         %td
