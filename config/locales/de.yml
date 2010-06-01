@@ -149,7 +149,7 @@ de:
     startsite_left: Startseite linker Teil
     startsite_right: Startseite rechter Teil
     footer: Fusszeile
-    Header: Kopfnavigation
+    header: Kopfnavigation
   search:
     search_mask: Suche nach
     item_entries: Suchergebnisse
