@@ -5,8 +5,12 @@ class SearchController < ApplicationController
   def init
     @tag_values = Array.new
     @tag_names = Array.new
-    show_on_map
-    show_on_user_map
+    if params[:taggable_type].to_s.eql?('User')
+      show_on_user_map
+    else
+      show_on_map
+    end
+    
   end
   
   def search_user
@@ -81,7 +85,6 @@ class SearchController < ApplicationController
       @users = @users.uniq
       
     end
-    
     session[:search_input] = params[:search_input]
     @search_input = params[:search_input]
     respond_to do |format|
@@ -94,7 +97,6 @@ class SearchController < ApplicationController
   def search_item
     init
     the_items = Array.new
-
     if params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
       unless params[:user_id].to_s.eql?('')
         @the_instances = Item.find_all_by_item_type_and_user_id(params[:taggable_type].to_s, params[:user_id])
@@ -174,7 +176,6 @@ class SearchController < ApplicationController
       end
       
     end
-    
     @search_input = params[:search_input]
     @taggable_type = params[:taggable_type].to_s
     session[:search_input] = params[:search_input]

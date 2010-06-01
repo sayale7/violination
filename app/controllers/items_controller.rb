@@ -18,6 +18,8 @@ class ItemsController < ApplicationController
       @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
     end
     
+    @the_instances = @the_instances.paginate :per_page => 5, :page => params[:page]
+    
     @taggable_type = params[:taggable_type].to_s
     session[:search_input] = nil
     unless @taggable_type.to_s.eql?('Request')

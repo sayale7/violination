@@ -37,3 +37,6 @@
                 -else
                   =tagged_tag_name(tag, user)
                 %br
+
+  -unless request.url.include?('search_user')
+    =will_paginate @users

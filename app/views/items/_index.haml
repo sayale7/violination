@@ -45,3 +45,5 @@
           = link_to t('common.show'), "/#{@taggable_type.to_s.downcase.pluralize}/#{item.id}?taggable_type=#{@taggable_type.to_s}&user_id=#{@user_id}"
         -else
           = link_to t('common.show'), "/#{@taggable_type.to_s.downcase.pluralize}/#{item.id}?taggable_type=#{@taggable_type.to_s}"
+  -unless request.url.include?('search_item')
+    =will_paginate @the_instances
