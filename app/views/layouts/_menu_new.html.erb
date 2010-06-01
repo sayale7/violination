@@ -107,6 +107,10 @@
 	  <a  href="/requests/new"><%= t('common.request') %></a>
 	</li>
 	
+	<li>
+	  <%= link_to "Lounge", "http://violounge.com", :popup => true %>
+	</li>
+	
 	<li><a  href="#"><%= t('site.editorial') %></a>
 	    <ul>
 	      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Editorial', nil, 1, :order => 'position').each do |parent_site| %>
