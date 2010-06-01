@@ -192,7 +192,7 @@ table tr td { padding: 3px; vertical-align: top; }
 
 .site_full { float: left; width: 100%; clear: both; }
 
-.site img { float: left; padding-right: 10px; padding-bottom: 5px; padding-top: 1px; }
+.site img { float: left; padding-right: 10px; padding-bottom: 5px; padding-top: 2px; }
 
 .request_content { width: 900px; text-align: left; }
 
