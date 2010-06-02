@@ -83,7 +83,7 @@ p  { margin: 15px 0; }
 	LEVEL ONE
 */
 ul.dropdown                         { position: relative; z-index:100; float: right; }
-ul.dropdown li                      { float: left; zoom: 1;   background-color: #044E6C;  -moz-border-radius:3px; -khtml-border-radius:3px; margin-right:2pt;}
+ul.dropdown li                      { float: left; zoom: 1;   background-color: transparent;  -moz-border-radius:3px; -khtml-border-radius:3px; margin-right:2pt;}
 ul.dropdown a:hover		              { color: #000; }
 ul.dropdown a:active                { color: #ffa500; }
 ul.dropdown li a                    { display: block; padding: 3pt 5pt; color: #fff; }
@@ -97,7 +97,7 @@ ul.dropdown li.hover a              { color: black; }
 */
 ul.dropdown_no_child                         { float: right; padding:0; margin:0; }
 ul.dropdown_no_child a                      { font-size:10px; }
-ul.dropdown_no_child li                      { float: left; zoom: 1;  background-color: #044E6C;  -moz-border-radius:3px; -khtml-border-radius:3px; margin-right:2pt;}
+ul.dropdown_no_child li                      { float: left; zoom: 1;  background-color: transparent;  -moz-border-radius:3px; -khtml-border-radius:3px; margin-right:2pt;}
 ul.dropdown_no_child a:hover		              { color: #000; }
 ul.dropdown_no_child a:active                { color: #ffa500; }
 ul.dropdown_no_child li a                    { display: block; padding: 2pt 2pt; color: #fff; }
