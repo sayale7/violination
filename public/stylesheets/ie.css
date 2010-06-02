@@ -1,7 +1,7 @@
 ul.dropdown ul { width: 230px; visibility: hidden; position: absolute; top: 100%; left: 0; margin-left:0px; }
 ul.dropdown ul li	{ display: inline; width: 100%; }
 
-ul.dropdown_no_child ul { width: 230px; visibility: hidden; position: absolute; top: 100%; left: 0; margin-left:0px; }
+ul.dropdown_no_child ul {  position: absolute; top: 100%; left: 0; margin-left:0px; }
 ul.dropdown_no_child ul li	{ display: inline; width: 100%; } 
 
 .tags_header { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; padding: 5px; color: white; font-weight: bold; }
@@ -13,3 +13,10 @@ ul.dropdown_no_child ul li	{ display: inline; width: 100%; }
 #workshop_description textarea { width: 99.5%; height: 300px; border: none; }
 #workshop_description h2 { margin: -5px; background-image: url("/images/h2bg.png"); background-repeat: repeat-x; padding: 5px; color: white; font-weight: bold; }
 #workshop_description img { height: 16px; float: right; position:relative; margin-top:-23px; margin-right:5px;}
+
+#header{
+  height: 85px;
+}
+h1{
+  width:60%;
+}

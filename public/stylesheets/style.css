@@ -31,13 +31,13 @@ a:hover { color: #7C321F; }
 
 #container { clear: both; width: 960px; margin: 0 auto; margin-top: 10px; margin-bottom: 30px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
-#header { width: 960px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 70px; font-family: Verdana; color: #fff; background-image: url('/images/logo.png'); background-repeat: no-repeat; background-position: 0px 0px; }
+#header { width: 960px; margin: 0 auto; margin-top: 0; padding-top: 0px; overflow: visible; height: 91px; font-family: Verdana; color: #fff; background-image: url('/images/logo.png'); background-repeat: no-repeat; background-position: -2px -30px; }
 
 .header_right { float: right; }
 
 #nav_top { float: right; margin-top: -10px; height: 20px; }
 
-#nav_bottom { padding: 0; margin-top: 25px; float: right; clear: both; }
+#nav_bottom { padding: 0; width: 700px; margin-top: 25px; float: right; clear: both; }
 
 #content { clear: both; }
 #content a { font-weight: bold; }
