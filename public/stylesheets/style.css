@@ -31,7 +31,7 @@ a:hover { color: #7C321F; }
 
 #container { clear: both; width: 960px; margin: 0 auto; margin-top: 10px; margin-bottom: 30px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
-#header { width: 960px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 70px; font-family: Verdana; color: #fff; background-image: url('/images/logo.jpg'); background-repeat: no-repeat; background-position: -2px -35px; }
+#header { width: 960px; margin: 0 auto; margin-top: 0; padding: 15px; padding-top: 0px; overflow: visible; height: 70px; font-family: Verdana; color: #fff; background-image: url('/images/logo.png'); background-repeat: no-repeat; background-position: -2px -30px; }
 
 .header_left { float: left; }
 
@@ -57,7 +57,7 @@ a:hover { color: #7C321F; }
 .add_images img:hover { border-color: red; }
 .add_images h2 { font-weight: bold; width: 100%; text-align: right; }
 
-#footer { background-image: url('/images/bg.jpg'); background-repeat: repeat-x; margin: 0; bottom: 0; left: 0; width: 100%; position: fixed; font-family: Verdana; color: #fff; }
+#footer { background-image: url('/images/background.png'); background-repeat: repeat-x; margin: 0; bottom: 0; left: 0; width: 100%; position: fixed; font-family: Verdana; color: #fff; }
 #footer .content { width: 1000px; margin: 0 auto; text-align: center; }
 #footer .content ul { margin: 0; padding: 2px; }
 #footer .content ul li { display: inline; margin: 0; padding: o; }
