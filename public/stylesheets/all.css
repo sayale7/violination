@@ -86,7 +86,7 @@ ul.dropdown                         { position: relative; z-index:100; float: ri
 ul.dropdown li                      { float: left; zoom: 1;  background-image: url('/images/nav_background.png'); background-repeat: repeat-x;  -moz-border-radius:3px; -khtml-border-radius:3px; margin-right:5px;}
 ul.dropdown a:hover		              { color: #000; }
 ul.dropdown a:active                { color: #ffa500; }
-ul.dropdown li a                    { display: block; padding: 6pt 6pt; color: #fff; }
+ul.dropdown li a                    { display: block; padding: 3pt 3pt; color: #fff; }
 ul.dropdown li:last-child a         { border-right: none; } /* Doesn't work in IE */
 ul.dropdown li.hover,
 ul.dropdown li:hover                { background: #628934; color: black; position: relative; -moz-border-radius:3px; -khtml-border-radius:3px }
