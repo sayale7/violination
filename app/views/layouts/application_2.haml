@@ -14,11 +14,11 @@
     %div#popup_background 
       %div#divFileProgressContainer
     %div#header
-      %div.header_left
-      %div#nav_right
-        =render '/layouts/header.html.erb'
-      %div#nav_left
+      %div.header_right
+      %div#nav_top
         =render '/layouts/menu_new.html.erb'
+      %div#nav_bottom
+        =render '/layouts/header.html.erb'
     %div#container
       %div#flash
         - flash.each do |name, msg|
