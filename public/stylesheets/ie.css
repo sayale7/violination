@@ -1,5 +1,8 @@
 ul.dropdown ul { width: 230px; visibility: hidden; position: absolute; top: 100%; left: 0; margin-left:0px; }
-ul.dropdown ul li	{ display: inline; width: 100%; } 
+ul.dropdown ul li	{ display: inline; width: 100%; }
+
+ul.dropdown_no_child ul { width: 230px; visibility: hidden; position: absolute; top: 100%; left: 0; margin-left:0px; }
+ul.dropdown_no_child ul li	{ display: inline; width: 100%; } 
 
 .tags_header { background-image: url("/images/h2bg.png"); background-repeat: repeat-x; padding: 5px; color: white; font-weight: bold; }
 .tags_header a { float: right; }
