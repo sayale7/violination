@@ -125,6 +125,7 @@ en:
     violination_contact: Anonymous contact through the site
     price_from: Price from
     to: to
+    new: Create new instrument
   workshop:
     edit: Edit my workshop
     show: Show my workshop
@@ -137,6 +138,7 @@ en:
     mine: My Bows
     mine_singular: My Bow
     of: Bow of
+    new: Create new bow
   photo:
     select: Choose Images
     remaining_counts: Remaining Counts

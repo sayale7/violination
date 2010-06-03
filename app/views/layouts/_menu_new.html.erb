@@ -29,7 +29,7 @@
 	    <ul>
 		    <li><%= link_to t('instrument.all'), "/items?taggable_type=Stringg" %></li>
 		    <li><%= link_to t('instrument.mine'), "/items?taggable_type=Stringg&user_id=#{current_user.id}" %></li>
-		    <li><%= link_to t('common.new'),  "/items/new?taggable_type=Stringg" %></li>
+		    <li><%= link_to t('instrument.new'),  "/items/new?taggable_type=Stringg" %></li>
 	    </ul>
 	</li>
 	
@@ -37,7 +37,7 @@
 	    <ul>
 		    <li><%= link_to t('bow.all'), "/items?taggable_type=Bow" %></li>
 		    <li><%= link_to t('bow.mine'), "/items?taggable_type=Bow&user_id=#{current_user.id}" %></li>
-		    <li><%= link_to t('common.new'),  "/items/new?taggable_type=Bow" %></li>
+		    <li><%= link_to t('bow.new'),  "/items/new?taggable_type=Bow" %></li>
 	    </ul>
 	</li>
 	

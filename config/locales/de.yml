@@ -122,6 +122,7 @@ de:
     search_text: Gib bitte bei deiner Instrumenten-Suche einfach die entsprechenden Attribute wie Geige, 4/4, Meisterinstrument ... ein. Oder zoome dir auf der Karte die gewünschte Umgebung heran.
     price_from: Preis von
     to: bis
+    new: Neues Instrument anlegen
   workshop:
     edit: Meine Werkstatt bearbeiten
     show: Meine Werkstatt anzeigen
@@ -136,6 +137,7 @@ de:
     mine_singular: Mein Bogen
     of: Bogen von
     search_text: Gib bitte bei deiner Bogen-Suche einfach die entsprechenden Attribute wie Geigenbogen, Silber... ein. Oder zoome dir auf der Karte die gewünschte Umgebung heran.
+    new: Neuen Bogen anlegen
   photo:
     select: Bilder auswählen
     upload_text: Bitte verwenden sie nur die Formate JPG, JPEG, GIF und PNG.
