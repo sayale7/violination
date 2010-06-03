@@ -1,7 +1,11 @@
 <ul class="dropdown_no_child">
-  <% Site.find_all_by_siteable_type_and_parent_id_and_active('Header', nil, 1, :order => 'position').each do |parent_site| %>
-		  <li >
-		    <%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}" %>
-		  </li>
-	<% end %>
+
+		<% if get_locale.to_s.eql?('de') %>
+		  <li><strong><%= link_to 'deutsch', '#' %></strong></li>
+		  <li><%= link_to 'english', '#' %></li>
+		<% else %>
+		  <li><%= link_to 'deutsch', '#' %></li>
+		  <li><strong><%= link_to 'english', '#' %></strong></li>
+		<% end %>
+
 </ul>

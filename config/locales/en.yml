@@ -150,6 +150,7 @@ en:
     startsite_right: Home right section
     footer: Footer
     header: Header
+    service: Service
   search:
     search_mask: Search for
     item_entries: Searchentries

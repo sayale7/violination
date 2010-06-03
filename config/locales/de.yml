@@ -150,6 +150,7 @@ de:
     startsite_right: Startseite rechter Teil
     footer: Fusszeile
     header: Kopfnavigation
+    service: Service
   search:
     search_mask: Suche nach
     item_entries: Suchergebnisse

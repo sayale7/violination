@@ -41,21 +41,38 @@
 	    </ul>
 	</li>
 	
-	<li><a  href="#"><%= t('site.editorial') %></a>
-	    <ul>
-	      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Editorial', nil, 1, :order => 'position').each do |parent_site| %>
-		    <li ><%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}" %>
-		      <% unless parent_site.children.empty? %>
-		      <ul>
-		        <% parent_site.children.find_all_by_active(1, :order => 'position').each do |site| %>
-		          <li ><%= link_to site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{site.id}" %></li>
-		        <% end %>
-		      </ul>
-		      <% end %>
-		    </li>
-		    <% end %>
-	    </ul>
-	</li>
+	<li>
+    <a  href="#">
+      <%= t('site.editorial') %>
+    </a>
+    <ul>
+      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Editorial', nil, 1, :order => 'position').each do |parent_site| %>
+      <li ><%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}" %>
+        <% unless parent_site.children.empty? %>
+        <ul>
+          <% parent_site.children.find_all_by_active(1, :order => 'position').each do |site| %>
+          <li ><%= link_to site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{site.id}" %></li>
+          <% end %>
+        </ul>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+    
+    
+  <li>
+    <a  href="#">
+      <%= t('site.service') %>
+    </a>
+    <ul>
+      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Header', nil, 1, :order => 'position').each do |parent_site| %>
+      <li >
+        <%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}" %>
+      </li>
+      <% end %>
+    </ul>
+  </li>
 	
 	<% if current_user.admin %>
 	<li ><a href="#"><%= t('common.admin') %></a>
@@ -127,6 +144,19 @@
 		    <% end %>
 	    </ul>
 	</li>
+	
+	<li>
+    <a  href="#">
+      <%= t('site.service') %>
+    </a>
+    <ul>
+      <% Site.find_all_by_siteable_type_and_parent_id_and_active('Header', nil, 1, :order => 'position').each do |parent_site| %>
+      <li >
+        <%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}" %>
+      </li>
+      <% end %>
+    </ul>
+  </li>
 	
   <li >
 	  <%= link_to t('user.login'), login_path %>
