@@ -13,7 +13,7 @@
         -if item.contact.to_s.eql?('1')
           = link_to item.user.full_name, "/users/#{item.user.id}"
           =" (Email: #{mail_to item.user.email})"
-          -unless item.location.address.nil? or item.location.address.eql?('')
+          -unless item.location.address.nil?
             %br
             %strong
               =t('common.address')

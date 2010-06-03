@@ -17,14 +17,13 @@
         -else
           ='Violination.com'
           =" (Email: #{mail_to 'post@violination.com'})"  
-    -if @the_instance.contact.to_s.eql?('1')
+    -if @the_instance.contact.to_s.eql?('1') and !@the_instance.location.address.nil?
       %tr
         %td
           %strong
             =t('common.address') 
         %td
-          -unless @the_instance.location.address.nil? or @the_instance.location.address.eql?('')
-            =@the_instance.location.address
+          =@the_instance.location.address
             
     -@added_tags.each do |tag|
       %tr
