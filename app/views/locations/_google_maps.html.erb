@@ -1,11 +1,11 @@
 <% if request.url.to_s.include?('www.') %>
 <script
 	src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAuhwT7uBsmRtiCbPsilW88BSxsGsNsGaGFua-aUakP3VKKmziVxQj7zvABvmGYoBzb3RxcDPu94lEVg"
-	type="text/javascript"></script>
+	type="text/javascript"></script>                          
 <% elsif request.subdomains.first.to_s.eql?('de') %>
 <script
 	src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAuhwT7uBsmRtiCbPsilW88BR46FPUkB9-w9KRp9IxPnme1fEpjxSmPbrTE6jSjtfu0PSbhohiqR9YuQ"
-	type="text/javascript"></script>
+	type="text/javascript"></script>                          
 <% elsif request.subdomains.first.to_s.eql?('en') %>
 <script
 	src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAuhwT7uBsmRtiCbPsilW88BQeiR_yjAgcy3oysuNqEOJBZwhEARTFeQZPi4edN9q3yGeYyw2m6vKn2Q"
