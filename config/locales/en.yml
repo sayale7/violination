@@ -54,8 +54,8 @@ en:
     manage_description: Description
     address: Address
   user:
-    username:Username
-    email: Email Address
+    username: Username
+    email: Email Address
     password: Password
     password_confirmation: Confirm Password
     edit: Edit User
@@ -113,7 +113,7 @@ en:
     invalid_credentials: Your Login or Password are invalid!
   instrument:
     all: All Strings
-    mine: My String
+    mine: My Strings
     mine_singular: My String
     tags_to_add: Available String Attributes
     added_tags: Attributes of my String
