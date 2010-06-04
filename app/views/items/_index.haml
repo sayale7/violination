@@ -9,7 +9,8 @@
           = image_tag('/images/anonymous.jpg', :width => 140)
       %div.info
         %strong
-          =t('user.contact') << ' - '
+          =t('user.contact')
+          = ' - '
         -if item.contact.to_s.eql?('1')
           = link_to item.user.full_name, "/users/#{item.user.id}"
           =" (Email: #{mail_to item.user.email})"

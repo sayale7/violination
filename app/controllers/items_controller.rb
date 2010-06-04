@@ -6,18 +6,21 @@ class ItemsController < ApplicationController
     show_on_map 
     if params[:user_id]
       if params[:contact].to_s.eql?('1')
-        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true, :order => 'updated_at')
+        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true)
         @user_id = params[:user_id]
         @contact = '1'
       else
-        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s, :order => 'updated_at')
+        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
         @user_id = params[:user_id]
         @contact = '0'
       end
     else
-      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s, :order => 'updated_at')
+      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
     end
-    
+    instance_array = Array.new
+    @the_instances.each do |the_instance|
+      instance_array.push(the_instance.id)
+    end
     @the_instances = @the_instances.paginate :per_page => 5, :page => params[:page]
     
     @taggable_type = params[:taggable_type].to_s
