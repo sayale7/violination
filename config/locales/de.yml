@@ -26,7 +26,7 @@ de:
     number_format: Bitte verwenden Sie dieses Format für Zahlen. Z.B. '12000,00'
     number_validate_error: Bitte beachten Sie das Format bei der Eingabe
     account: Mein Konto
-    instrument: Instrumente
+    instruments: Instrumente
     bows: Bögen
     admin: Administration
     photo_gallery: Bilder Gallerie

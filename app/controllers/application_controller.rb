@@ -24,12 +24,12 @@ class ApplicationController < ActionController::Base
   
   def english
     I18n.default_locale = 'en'
-    redirect_to request.url
+    redirect_to :back
   end
   
   def german
     I18n.default_locale = 'de'
-    redirect_to reques.url
+    redirect_to :back
   end
   
   def set_default_url_for_mails
