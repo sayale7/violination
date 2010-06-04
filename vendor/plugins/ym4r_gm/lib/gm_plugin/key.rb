@@ -27,6 +27,7 @@ module Ym4r
       end
       
       def self.get(options = {})
+        debugger
         if options.has_key?(:key)
           options[:key]
         elsif GMAPS_API_KEY.is_a?(Hash)

@@ -9,7 +9,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sites
 
   map.resources :sitetexts
-
+  
+  map.english 'english', :controller => 'application', :action => 'english'
+  map.english 'german', :controller => 'application', :action => 'german'
   
   map.resources :locations
   map.add_location_to_user 'add_location_to_user', :controller => 'locations', :action => 'add_location_to_user'
