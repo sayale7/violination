@@ -33,3 +33,5 @@ config.action_mailer.sendmail_settings = {
   :location       => '/usr/sbin/sendmail',
   :arguments      => '-i -t -f support@yourapp.com'
 }
+
+config.action_controller.session = {:domain => '.violination.com'}

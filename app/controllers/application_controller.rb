@@ -5,21 +5,28 @@ class ApplicationController < ActionController::Base
   include Authentication
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  
+  before_filter :set_locale
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   helper :all
   helper_method :get_locale
   
-  #Setting the locale through subdomains
-  # def set_locale
-  #   # if this is nil then I18n.default_locale will be used
-  #   if request.url.to_s.include?('www.')
-  #     I18n.locale = "de"
-  #   else
-  #     I18n.locale = request.subdomains.first
-  #   end
-  # end
+  def set_locale
+    # if this is nil then I18n.default_locale will be used
+    if request.url.to_s.include?('www.')
+      I18n.locale = "de"
+    else
+      I18n.locale = request.subdomains.first
+    end
+  end
+  
+  def set_default_url_for_mails
+    if request.subdomains.first != nil
+      ActionMailer::Base.default_url_options[:host] = request.subdomains.first + ".violination.com"
+    end
+  end
   
   private
   
