@@ -84,6 +84,7 @@ en:
     address: Please fill in your address to verify the coordinates
     prove_address: Prove Address
     coordinates: My Coordinates (for Google Maps)
+    near: Manufacturer near your place!
     admin:
       could_be_in_my_workshop: What is in my workshop?
       in_my_workshop: What could be in my workshop?
