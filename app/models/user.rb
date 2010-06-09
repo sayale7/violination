@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   has_many :bows, :dependent => :destroy
   has_many :photos, :dependent => :destroy, :foreign_key => 'photo_container_id'
   has_one :workshop, :dependent => :destroy
-  has_many :locations, :dependent => :destroy, :foreign_key => 'taggable_id'
   has_many :photo_containers
   
   # new columns need to be added here to be writable through mass assignment
@@ -18,6 +17,7 @@ class User < ActiveRecord::Base
   before_save :prepare_password
   after_save :create_workshop
   after_save :create_location
+  before_destroy :destroy_location
   
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true
@@ -78,5 +78,11 @@ class User < ActiveRecord::Base
   
   def create_location
     Location.find_or_create_by_taggable_id_and_taggable_type(self.id, 'User')
+  end
+  
+  
+  def destroy_location
+    location = Location.find_by_taggable_type_and_taggable_id('User', self.id)
+    location.destroy
   end
 end

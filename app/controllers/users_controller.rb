@@ -44,9 +44,13 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    @user = current_user
-    session[:user_id] = nil
-    @user.destroy
+    if current_user and current_user.admin == true
+      @user = User.find(params[:id])
+      session[:user_id] = nil
+      @user.destroy
+    else
+      flash[:error] = "Sie sind nicht befugt jemanden zu löschen"
+    end
     redirect_to users_url
   end
   

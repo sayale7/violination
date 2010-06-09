@@ -7,10 +7,10 @@ class Item < ActiveRecord::Base
   has_many :tags, :order => 'position', :through => :taggings
   has_many :tags_over_value, :through => :tag_values
   has_many :photos, :dependent => :destroy, :foreign_key => 'photo_container_id'
-  has_many :locations, :dependent => :destroy, :foreign_key => 'taggable_id'
   belongs_to :user
   
   after_save :create_location
+  before_destroy :destroy_location
   
   def maximum_file_size
     return '1 MB'
@@ -36,6 +36,11 @@ class Item < ActiveRecord::Base
   
   def create_location
     Location.find_or_create_by_taggable_id_and_taggable_type(self.id, self.item_type)
+  end
+  
+  def destroy_location
+    location = Location.find_by_taggable_type_and_taggable_id(self.item_type, self.id)
+    location.destroy
   end
   
 end
