@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :tags_over_value, :through => :tag_values
   has_many :items, :dependent => :destroy
   has_many :bows, :dependent => :destroy
-  has_many :photos, :dependent => :destroy, :foreign_key => 'photo_container_id'
+  has_many :photos
   has_one :workshop, :dependent => :destroy
   has_many :photo_containers
   
@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   after_save :create_workshop
   after_save :create_location
   before_destroy :destroy_location
+  before_destroy :destroy_photos
+  
   
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true
@@ -84,5 +86,12 @@ class User < ActiveRecord::Base
   def destroy_location
     location = Location.find_by_taggable_type_and_taggable_id('User', self.id)
     location.destroy
+  end
+  
+  def destroy_photos
+    photos = Photo.find_all_by_taggable_type_and_taggable_id('User', self.id)
+    photos.each do |photo|
+      photo.destroy
+    end
   end
 end
