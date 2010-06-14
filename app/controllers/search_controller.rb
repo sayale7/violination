@@ -145,23 +145,27 @@ class SearchController < ApplicationController
         end
       end
       
+      
+      
       #get items by their location
-      # locations = Array.new
-      # tmp_items = Array.new
-      # params[:search_input].split.each do |word|
-      #   locs = Location.address_like(word)
-      #   unless locs.empty?
-      #     locs.each do |loc|
-      #       locations.push(loc)
-      #     end
-      #   end
-      # end
+      locations = Array.new
+      tmp_items = Array.new
+      params[:search_input].split.each do |word|
+        locs = Location.address_like(word)
+        unless locs.empty?
+          locs.each do |loc|
+            unless loc.taggable_type.eql?('User')
+              tmp_items.push(Item.find(loc.taggable_id))
+            end
+          end
+        end
+      end
       # locations.each do |loc|
       #   unless loc.taggable_type.eql?('User')
       #     tmp_items.push(Item.find(loc.taggable_id))
       #   end
       # end
-      # the_items = (the_items + tmp_items).uniq
+      the_items = (the_items + tmp_items).uniq
       
       unless @search_words.empty?
         @the_instances = nil
@@ -176,7 +180,9 @@ class SearchController < ApplicationController
       
     end
     
-    @the_instances = @the_instances  & search_prices
+    unless @the_instances.nil?
+      @the_instances = @the_instances  & search_prices
+    end
     @search_input = params[:search_input]
     @lower_bound = params[:lower_bound]
     @upper_bound = params[:upper_bound]
