@@ -166,7 +166,7 @@ class SearchController < ApplicationController
       #   end
       # end
       if the_items.empty?
-        the_items = tmp_items.uniq
+        the_items = tmp_items
       elsif tmp_items.empty?
         the_items = the_items
       else
