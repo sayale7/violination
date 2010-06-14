@@ -165,7 +165,13 @@ class SearchController < ApplicationController
       #     tmp_items.push(Item.find(loc.taggable_id))
       #   end
       # end
-      the_items = (the_items & tmp_items).uniq
+      if the_items.empty?
+        the_items = tmp_items.uniq
+      elsif tmp_items.empty?
+        the_items = the_items
+      else
+        the_items = (the_items & tmp_items).uniq
+      end
       
       unless @search_words.empty?
         @the_instances = nil
