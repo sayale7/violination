@@ -183,7 +183,8 @@ class SearchController < ApplicationController
     
     
     unless @the_instances.nil?
-      unless params[:lower_bound].nil? and params[:upper_bound].nil?
+      if params[:lower_bound].to_s.eql?("") and params[:upper_bound].to_s.eql?("")
+      else
         @the_instances = @the_instances & search_prices
       end
     end
