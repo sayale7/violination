@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
   has_many :tag_values, :as => :taggable, :dependent => :destroy
   has_many :tags, :order => 'position', :through => :taggings
   has_many :tags_over_value, :through => :tag_values
-  has_many :photos
+  has_many :photos, :foreign_key => 'photo_container_id'
   belongs_to :user
   
   after_save :create_location
@@ -45,7 +45,7 @@ class Item < ActiveRecord::Base
   end
   
   def destroy_photos
-    photos = Photo.find_all_by_taggable_type_and_taggable_id('Item', self.id)
+    photos = Photo.find_all_by_photo_container_type_and_photo_container_id('Item', self.id)
     photos.each do |photo|
       photo.destroy
     end

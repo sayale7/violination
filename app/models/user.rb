@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :tags_over_value, :through => :tag_values
   has_many :items, :dependent => :destroy
   has_many :bows, :dependent => :destroy
-  has_many :photos
+  has_many :photos, :foreign_key => 'photo_container_id'
   has_one :workshop, :dependent => :destroy
   has_many :photo_containers
   
@@ -89,7 +89,7 @@ class User < ActiveRecord::Base
   end
   
   def destroy_photos
-    photos = Photo.find_all_by_taggable_type_and_taggable_id('User', self.id)
+    photos = Photo.find_all_by_photo_container_type_and_photo_container_id('User', self.id)
     photos.each do |photo|
       photo.destroy
     end
