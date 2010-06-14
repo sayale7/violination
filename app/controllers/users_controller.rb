@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   include MapHelper
   
   def index
-    @users = User.all(:order => 'updated_at desc').paginate :per_page => 5, :page => params[:page]
+    @users = (User.all - User.find_all_by_id(1)).paginate :per_page => 5, :page => params[:page]  #(:order => 'updated_at desc').
     session[:search_input] = nil
     show_on_user_map
   end
