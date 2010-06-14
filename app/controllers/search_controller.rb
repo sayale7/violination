@@ -123,27 +123,27 @@ class SearchController < ApplicationController
       end
     
       #get all search words that match a user tag (tag_name or tag_value) and match all without the item tags
-      unless @search_words.empty?
-        @user_search_words = get_search_words('User') & @search_words
-        @user_search_words = @user_search_words.uniq
-        @search_words = @search_words.uniq - @user_search_words.uniq
-        
-        #search the user with the matching words
-        @user_search_words.each do |word|
-          items = Array.new
-          users = find_items(word, 'User')
-          users.each do |user|
-            user.items.find_all_by_item_type(params[:taggable_type].to_s).each do |item|
-              items.push(item)
-            end
-          end
-          if the_items.empty?
-            the_items = items
-          else
-            the_items = the_items & items
-          end
-        end
-      end
+      # unless @search_words.empty?
+      #   @user_search_words = get_search_words('User') & @search_words
+      #   @user_search_words = @user_search_words.uniq
+      #   @search_words = @search_words.uniq - @user_search_words.uniq
+      #   
+      #   #search the user with the matching words
+      #   @user_search_words.each do |word|
+      #     items = Array.new
+      #     users = find_items(word, 'User')
+      #     users.each do |user|
+      #       user.items.find_all_by_item_type(params[:taggable_type].to_s).each do |item|
+      #         items.push(item)
+      #       end
+      #     end
+      #     if the_items.empty?
+      #       the_items = items
+      #     else
+      #       the_items = the_items & items
+      #     end
+      #   end
+      # end
       
       
       
@@ -151,7 +151,7 @@ class SearchController < ApplicationController
       locations = Array.new
       tmp_items = Array.new
       params[:search_input].split.each do |word|
-        locs = Location.address_like(word)
+        locs = Location.address_like(word).find_all_by_taggable_type(params[:taggable_type].to_s)
         unless locs.empty?
           locs.each do |loc|
             unless loc.taggable_type.eql?('User')
@@ -160,23 +160,21 @@ class SearchController < ApplicationController
           end
         end
       end
-      # locations.each do |loc|
-      #   unless loc.taggable_type.eql?('User')
-      #     tmp_items.push(Item.find(loc.taggable_id))
-      #   end
-      # end
-      if the_items.empty?
+      
+      
+      if the_items.empty? and !tmp_items.empty?
         the_items = tmp_items
-      elsif tmp_items.empty?
+      elsif tmp_items.empty? and !the_items.empty?
         the_items = the_items
       else
         the_items = (the_items & tmp_items).uniq
       end
       
-      unless @search_words.empty?
+      
+      if the_items.empty?
         @the_instances = nil
       else
-        unless params[:user_id].to_s.eql?('')
+        unless params[:user_id].to_s.eql?("")
           @the_instances = Item.find_all_by_id_and_item_type_and_user_id_and_contact(the_items, params[:taggable_type].to_s, params[:user_id], true)
           @user_id = params[:user_id]
         else
@@ -186,9 +184,9 @@ class SearchController < ApplicationController
       
     end
     
-    unless @the_instances.nil?
-      @the_instances = @the_instances  & search_prices
-    end
+    
+    @the_instances = (@the_instances + (@the_instances  & search_prices)).uniq
+   
     @search_input = params[:search_input]
     @lower_bound = params[:lower_bound]
     @upper_bound = params[:upper_bound]
