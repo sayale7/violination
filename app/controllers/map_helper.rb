@@ -51,7 +51,7 @@ module MapHelper
           if tag.children.empty?
             tag_value = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, item.id)
             if tag.value_type.to_s.eql?('preisfeld')
-                info << "- Euro " << get_price_format(tag_value.value) or "" << "<br/>"
+                info or "" << "- Euro " << get_price_format(tag_value.value) or ""  << "<br/>"
             else
               unless tag_value.nil? or tag_value.value.nil?
                 info << "- " << tag_value.value  << "<br/>"
