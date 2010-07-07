@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
   
   def english
     I18n.default_locale = 'en'
+    redirect_to :back
   end
   
   def german
