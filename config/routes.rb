@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.english 'english', :controller => 'application', :action => 'english'
   map.german 'german', :controller => 'application', :action => 'german'
+  map.set_locale_by_hand 'set_locale_by_hand', :controller => 'application', :action => 'set_locale_by_hand'
   
   map.resources :locations
   map.add_location_to_user 'add_location_to_user', :controller => 'locations', :action => 'add_location_to_user'
