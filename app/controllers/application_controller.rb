@@ -45,7 +45,11 @@ class ApplicationController < ActionController::Base
   private
   
   def get_locale
-    return request.subdomains.first or "de"
+    if request.subdomains.first.to_s.eql?('')
+      return I18n.locale
+    else
+      return request.subdomains.first
+    end
   end
   
 end
