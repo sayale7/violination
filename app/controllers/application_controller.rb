@@ -18,20 +18,23 @@ class ApplicationController < ActionController::Base
     if request.url.to_s.include?('www.')
       redirect_to "http://violination.com"
     end
-    if request.url.to_s.include?('www.')
-      I18n.locale = "de"
+  
+    unless session[:locale].nil?
+      I18n.default_locale = session[:locale].to_s 
     else
-      I18n.locale = request.subdomains.first
+      I18n.default_locale = 'de'
     end
   end
   
   def english
-    I18n.default_locale = 'en'
+    #I18n.default_locale = 'en'
+    session[:locale] = "en"
     redirect_to :back
   end
   
   def german
-    I18n.default_locale = 'de'
+    #I18n.default_locale = 'de'
+    session[:locale] = "de"
     redirect_to :back
   end
   
@@ -44,7 +47,11 @@ class ApplicationController < ActionController::Base
   private
   
   def get_locale
-    return I18n.locale
+    unless session[:locale].nil?
+      return session[:locale].to_s 
+    else
+      return 'de'
+    end
   end
   
 end
