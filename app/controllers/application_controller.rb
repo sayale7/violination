@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def set_locale
     # if this is nil then I18n.default_locale will be used
     if request.url.to_s.include?('www.')
-      redirect_to "http://de.violination.com"
+      redirect_to "http://violination.com"
     end
     if request.url.to_s.include?('www.')
       I18n.locale = "de"
