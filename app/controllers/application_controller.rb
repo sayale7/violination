@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
     if request.url.to_s.include?('www.')
       redirect_to "http://violination.com"
     end
+    if request.url.to_s.include?('www.')
+      I18n.locale = "de"
+    else
+      I18n.locale = request.subdomains.first
+    end
   end
   
   def english
