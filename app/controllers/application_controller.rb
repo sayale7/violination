@@ -14,7 +14,10 @@ class ApplicationController < ActionController::Base
   helper_method :get_locale
   
   def set_locale
-    
+    # if this is nil then I18n.default_locale will be used
+    if request.url.to_s.include?('www.')
+      redirect_to "/"
+    end
   end
   
   def english
