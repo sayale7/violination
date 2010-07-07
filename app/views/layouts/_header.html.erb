@@ -2,10 +2,10 @@
 
 		<% if get_locale.to_s.eql?('de') %>
 		  <li><strong><%= link_to 'deutsch', german_url %></strong></li>
-		  <li><%= link_to 'english', english_url %></li>
+		  <li><%= link_to 'english', '#' %></li>
 		<% else %>
 		  <li><%= link_to 'deutsch', german_url %></li>
-		  <li><strong><%= link_to 'english', english_url %></strong></li>
+		  <li><strong><%= link_to 'english', '#' %></strong></li>
 		<% end %>
 
 </ul>
