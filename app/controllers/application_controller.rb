@@ -26,14 +26,12 @@ class ApplicationController < ActionController::Base
   end
   
   def english
-    #I18n.default_locale = 'en'
-    redirect_to "en.#{request.domain}"
+    I18n.default_locale = 'en'
   end
   
   def german
-    redirect_to "en.#{request.domain}"
-    # I18n.default_locale = 'de'
-    #     redirect_to :back
+    I18n.default_locale = 'de'
+    redirect_to :back
   end
   
   def set_default_url_for_mails
@@ -45,11 +43,7 @@ class ApplicationController < ActionController::Base
   private
   
   def get_locale
-    if request.subdomains.first.to_s.eql?('')
-      return I18n.locale
-    else
-      return request.subdomains.first
-    end
+    return I18n.locale
   end
   
 end
