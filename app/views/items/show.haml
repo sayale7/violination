@@ -7,7 +7,7 @@
   -else
     -title t('instrument.of') << ' ' << @the_instance.user.username
 
--if current_user && current_user.id == @the_instance.user_id
+-if (current_user && current_user.id == @the_instance.user_id) or (current_user and current_user.admin == true) 
   %span.right
     -form_for Item.find(@the_instance.id), :method => :put do |f|
       =hidden_field :taggable_type, '', :value => @the_instance.class.to_s
