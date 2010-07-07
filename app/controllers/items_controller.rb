@@ -6,16 +6,16 @@ class ItemsController < ApplicationController
     show_on_map 
     if params[:user_id]
       if params[:contact].to_s.eql?('1')
-        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true)
+        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type_and_contact(params[:user_id], params[:taggable_type].to_s, true, :order => "created_at desc")
         @user_id = params[:user_id]
         @contact = '1'
       else
-        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s)
+        @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_user_id_and_item_type(params[:user_id], params[:taggable_type].to_s, :order => "created_at desc")
         @user_id = params[:user_id]
         @contact = '0'
       end
     else
-      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s)
+      @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s, :order => "created_at desc")
     end
     instance_array = Array.new
     @the_instances.each do |the_instance|

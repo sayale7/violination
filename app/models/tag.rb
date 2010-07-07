@@ -2,7 +2,7 @@ class Tag < ActiveRecord::Base
   
   acts_as_tree
   
-  attr_accessible :taggable_type, :taggable_id, :parent_id, :position, :value_type, :german_name, :english_name, :visible, :searchable
+  attr_accessible :taggable_type, :taggable_id, :parent_id, :position, :value_type, :german_name, :english_name, :visible, :searchable, :important
   attr_writer :german_name, :english_name
   
   has_many :tag_names, :dependent => :destroy

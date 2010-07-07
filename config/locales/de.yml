@@ -49,6 +49,8 @@ de:
     manage_tags: Attribute verwalten
     manage_description: Beschreibung
     address: Standort
+    important: (bitte auswählen - wichtig für die Suchfunktion)
+    important_tag: Wichtiges Feld (Soll ausgewählt werden)
   user:
     username: Benutzername
     email: Email Adresse

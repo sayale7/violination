@@ -53,6 +53,8 @@ en:
     manage_tags: Manage Attributes
     manage_description: Description
     address: Address
+    important: (please choose - important for the search!)
+    important_tag: Wichtiges Feld (Soll ausgewählt werden)
   user:
     username: Username
     email: Email Address
@@ -84,7 +86,7 @@ en:
     address: Please fill in your address to verify the coordinates
     prove_address: Prove Address
     coordinates: My Coordinates (for Google Maps)
-    near: Manufacturer near your place!
+    near: Violinmakers in your area
     admin:
       could_be_in_my_workshop: What is in my workshop?
       in_my_workshop: What could be in my workshop?
@@ -101,7 +103,7 @@ en:
     user:
       index: All User Tags
     stringg:
-      index: All String Tags
+      index: All Instrument Tags
     bow:
       index: All Bow Tags
     request:
@@ -113,9 +115,9 @@ en:
     destroyed: You are successfully logged out!
     invalid_credentials: Your Login or Password are invalid!
   instrument:
-    all: All Strings
-    mine: My Strings
-    mine_singular: My String
+    all: All Instruments
+    mine: My Instruments
+    mine_singular: My Instrument
     tags_to_add: Available String Attributes
     added_tags: Attributes of my String
     add_through_click: (Click an Attribute to add it to your Instrument)
@@ -126,7 +128,7 @@ en:
     violination_contact: Anonymous contact through the site
     price_from: Price from
     to: to
-    new: Create new instrument
+    new: Post a instrument
   workshop:
     edit: Edit my workshop
     show: Show my workshop
@@ -134,12 +136,13 @@ en:
     my_tags: My Workshop
     my: My Workshop
     all: All Workshops
+    search_text: Please enter the name of a violinmaker, or a location, or a requested service. Or zoom into the area on the map
   bow:
     all: All Bows
     mine: My Bows
     mine_singular: My Bow
     of: Bow of
-    new: Create new bow
+    new: Post a bow
   photo:
     select: Choose Images
     remaining_counts: Remaining Counts

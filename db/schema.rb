@@ -9,31 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100525204255) do
-
-  create_table "instruments", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20100706084257) do
 
   create_table "items", :force => true do |t|
-    t.integer  "user_id"
-    t.boolean  "contact"
-    t.string   "item_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "item_type"
+    t.integer  "contact",    :default => 1
   end
 
   create_table "locations", :force => true do |t|
     t.decimal  "lat",           :precision => 15, :scale => 10
     t.decimal  "lng",           :precision => 15, :scale => 10
-    t.float    "distance"
     t.integer  "taggable_id"
     t.string   "taggable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "address"
+    t.float    "distance"
   end
 
   create_table "photo_containers", :force => true do |t|
@@ -52,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20100525204255) do
     t.integer  "width"
     t.integer  "height"
     t.integer  "photo_container_id"
-    t.string   "description",          :limit => 1000, :default => "Violination.com"
+    t.string   "description",          :limit => 1000
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_container_type"
@@ -99,7 +93,7 @@ ActiveRecord::Schema.define(:version => 20100525204255) do
     t.datetime "updated_at"
     t.integer  "textable_id"
     t.integer  "position"
-    t.string   "align"
+    t.string   "align",         :default => "full"
   end
 
   create_table "tag_names", :force => true do |t|
@@ -135,8 +129,9 @@ ActiveRecord::Schema.define(:version => 20100525204255) do
     t.integer  "parent_id"
     t.integer  "position"
     t.string   "value_type"
-    t.boolean  "visible",       :default => true
-    t.boolean  "searchable",    :default => false
+    t.integer  "visible",       :default => 1
+    t.integer  "searchable",    :default => 0
+    t.integer  "important_tag", :default => 0
   end
 
   create_table "users", :force => true do |t|
@@ -148,7 +143,7 @@ ActiveRecord::Schema.define(:version => 20100525204255) do
     t.datetime "updated_at"
     t.string   "firstname",     :default => ""
     t.string   "lastname",      :default => ""
-    t.boolean  "admin"
+    t.boolean  "admin",         :default => false, :null => false
   end
 
   create_table "workshops", :force => true do |t|

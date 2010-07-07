@@ -10,4 +10,7 @@
   -@available_tags.each do |tag|
     %p
       =link_to image_tag('/images/add.png'), add_taggings_path(:tag => tag, :taggable_id => @the_instance.id, :taggable_id => @the_instance.id, :taggable_type => tag.taggable_type)
-      =tag.tag_names.find_by_language(get_locale.to_s).value
+      = tag.tag_names.find_by_language(get_locale.to_s).value
+      -if tag.important_tag.to_s.eql?("1") or tag.important_tag.to_s.eql?("true")
+        %b
+          =t("common.important")

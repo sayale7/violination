@@ -40,6 +40,8 @@ class TagsController < ApplicationController
   def update
     @tag = Tag.find(params[:id])
     if @tag.update_attributes(params[:tag])
+      @tag.important_tag = params[:tag][:important_tag]
+      @tag.save
       redirect_to edit_tag_path(@tag, :taggable_type => @tag.taggable_type)
     else
       render :action => 'edit'
