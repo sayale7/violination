@@ -34,7 +34,7 @@ module Ym4r
         if options.has_key?(:host)
           if options[:host].to_s.eql?('de')
             'ABQIAAAAuhwT7uBsmRtiCbPsilW88BR46FPUkB9-w9KRp9IxPnme1fEpjxSmPbrTE6jSjtfu0PSbhohiqR9YuQ'
-          elsif if options[:host].to_s.eql?('en')
+          elsif options[:host].to_s.eql?('en')
             'ABQIAAAAuhwT7uBsmRtiCbPsilW88BQeiR_yjAgcy3oysuNqEOJBZwhEARTFeQZPi4edN9q3yGeYyw2m6vKn2Q'
           else
             'ABQIAAAAuhwT7uBsmRtiCbPsilW88BSxsGsNsGaGFua-aUakP3VKKmziVxQj7zvABvmGYoBzb3RxcDPu94lEVg'
