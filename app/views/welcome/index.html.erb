@@ -3,7 +3,9 @@
   <%= @map.to_html %>
 <% end %>
 <div class="site">
-	<%= I18n.locale %>
+	<% if current_user and current_user.admin == true %>
+		<%= I18n.locale %>
+	<% end %>
 <div class='start_left'>
   <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).nil? %>
     <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1, :order => 'position').each do |site| %>
