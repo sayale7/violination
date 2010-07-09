@@ -27,12 +27,13 @@ class ApplicationController < ActionController::Base
   
   def english
     #I18n.default_locale = 'en'
-    redirect_to "http://en.#{request.domain}"
+    request.url = 
+    redirect_to "http://en.#{request.domain << request.request_uri}"
   end
   
   def german
     #I18n.default_locale = 'de'
-    redirect_to "http://de.#{request.domain}"
+    redirect_to "http://de.#{request.domain << request.request_uri}"
   end
   
   def set_default_url_for_mails

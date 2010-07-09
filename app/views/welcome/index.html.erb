@@ -4,6 +4,7 @@
 <% end %>
 <div class="site">
 <div class='start_left'>
+	<% debugger %>
   <% unless Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1).nil? %>
     <% Site.find_all_by_siteable_type_and_parent_id_and_active('Startleft', nil, 1, :order => 'position').each do |site| %>
       <% site.sitetexts.find_all_by_active_and_archive(1, 0, :order => 'position').each do |text| %>
