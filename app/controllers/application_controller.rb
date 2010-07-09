@@ -16,7 +16,9 @@ class ApplicationController < ActionController::Base
   def set_locale
     # if this is nil then I18n.default_locale will be used
     if request.url.to_s.include?('www.') or request.subdomains.first.to_s.eql?('')
-      redirect_to "http://de.#{request.domain}"
+        if request.url.to_s.include?('.com')
+          redirect_to "http://de.#{request.url}"
+        end
     end
     unless I18n.locale.to_s.eql?(request.subdomains.first.to_s)
       I18n.locale = request.subdomains.first.to_s
@@ -25,12 +27,12 @@ class ApplicationController < ActionController::Base
   
   def english
     #I18n.default_locale = 'en'
-    redirect_to "http://en.#{request.domain}"
+    redirect_to "http://en.#{request.url}"
   end
   
   def german
     #I18n.default_locale = 'de'
-    redirect_to "http://de.#{request.domain}"
+    redirect_to "http://de.#{request.url}"
   end
   
   def set_default_url_for_mails
@@ -47,7 +49,11 @@ class ApplicationController < ActionController::Base
   private
   
   def get_locale
-    return I18n.locale
+    if request.url.to_s.include?('.com')
+      I18n.locale
+    else
+      I18n.default_locale
+    end
   end
   
 end
