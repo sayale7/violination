@@ -157,6 +157,7 @@ en:
     footer: Footer
     header: Header
     service: Service
+    functional: Functional
   search:
     search_mask: Search for
     item_entries: Searchentries

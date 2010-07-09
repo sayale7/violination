@@ -155,6 +155,7 @@ de:
     footer: Fusszeile
     header: Kopfnavigation
     service: Service
+    functional: Fachliches
   search:
     search_mask: Suche nach
     item_entries: Suchergebnisse

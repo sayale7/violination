@@ -58,7 +58,25 @@
       <% end %>
     </ul>
   </li>
-    
+   
+	<li>
+    <a  href="#">
+      <%= t('site.functional') %>
+    </a>
+    <ul>
+      <% Site.find_all_by_siteable_type_and_parent_id_and_active('functional', nil, 1, :order => 'position').each do |parent_site| %>
+      <li ><%= link_to parent_site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{parent_site.id}" %>
+        <% unless parent_site.children.empty? %>
+        <ul>
+          <% parent_site.children.find_all_by_active(1, :order => 'position').each do |site| %>
+          <li ><%= link_to site.sitenames.find_by_language(get_locale.to_s).value, "/show_sites?site=#{site.id}" %></li>
+          <% end %>
+        </ul>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </li>
     
   <li>
     <a  href="#">
@@ -85,6 +103,7 @@
 		      <ul>
 		        <li><%= link_to t('site.images'), "/photo_containers" %></li>
     		    <li><%= link_to t('site.editorial'), "/sites?siteable_type=Editorial" %></li>
+						<li><%= link_to t('site.functional'), "/sites?siteable_type=Functional" %></li>
     		    <li><%= link_to t('site.footer'), "/sites?siteable_type=Footer" %></li>
     		    <li><%= link_to t('site.header'), "/sites?siteable_type=Header" %></li>
     		    <li><%= link_to t('site.startsite_left'), "/sites?siteable_type=Startleft" %></li>

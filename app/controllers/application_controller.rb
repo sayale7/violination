@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     if request.url.to_s.include?('www.') or request.subdomains.first.to_s.eql?('')
       redirect_to "http://de.#{request.domain}"
     end
-    unless I18.locale.to_s.eql?(request.subdomains.first.to_s)
+    unless I18n.locale.to_s.eql?(request.subdomains.first.to_s)
       I18n.locale = request.subdomains.first.to_s
     end
   end
