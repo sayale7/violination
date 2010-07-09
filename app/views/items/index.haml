@@ -1,5 +1,5 @@
 -content_for :head do
-  = GMap.header(:with_vml => false)
+  = GMap.header(:with_vml => false, :host => get_subdomain)
   = @map.to_html
 = javascript 'clusterer'
 
