@@ -1,11 +1,11 @@
 <ul class="dropdown_no_child">
 
 		<% if get_locale.to_s.eql?('de') %>
-		  <li><strong><%= link_to 'deutsch', german_url %></strong></li>
-		  <li><%= link_to 'english', english_url %></li>
+		  <li><strong><%= link_to 'deutsch', "http://de.#{request.domain << request.request_uri}" %></strong></li>
+		  <li><%= link_to 'english', "http://ed.#{request.domain << request.request_uri}" %></li>
 		<% else %>
-		  <li><%= link_to 'deutsch', german_url %></li>
-		  <li><strong><%= link_to 'english', english_url %></strong></li>
+		  <li><%= link_to 'deutsch', "http://de.#{request.domain << request.request_uri}" %></li>
+		  <li><strong><%= link_to 'english', "http://en.#{request.domain << request.request_uri}" %></strong></li>
 		<% end %>
 
 </ul>

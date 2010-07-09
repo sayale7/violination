@@ -27,7 +27,6 @@ class ApplicationController < ActionController::Base
   
   def english
     #I18n.default_locale = 'en'
-    debugger
     redirect_to "http://en.#{request.domain}"
   end
   
