@@ -17,19 +17,28 @@ module Ym4r
       end
       
       def self.get(options = {})
-        if options.has_key?(:key)
-          options[:key]
-        elsif GMAPS_API_KEY.is_a?(Hash)
-          #For this environment, multiple hosts are possible.
-          #:host must have been passed as option
-          if options.has_key?(:host)
-            GMAPS_API_KEY[options[:host]]
+        # if options.has_key?(:key)
+        #           options[:key]
+        #         elsif GMAPS_API_KEY.is_a?(Hash)
+        #           #For this environment, multiple hosts are possible.
+        #           #:host must have been passed as option
+        #           if options.has_key?(:host)
+        #             GMAPS_API_KEY[options[:host]]
+        #           else
+        #             raise AmbiguousGMapsAPIKeyException.new(GMAPS_API_KEY.keys.join(","))
+        #           end
+        #         else
+        #           #Only one possible key: take it and ignore the :host option if it is there
+        #           GMAPS_API_KEY
+        #         end
+        if options.has_key?(:host)
+          if options[:host].to_s.eql?('de')
+            'ABQIAAAAuhwT7uBsmRtiCbPsilW88BR46FPUkB9-w9KRp9IxPnme1fEpjxSmPbrTE6jSjtfu0PSbhohiqR9YuQ'
+          elsif if options[:host].to_s.eql?('en')
+            'ABQIAAAAuhwT7uBsmRtiCbPsilW88BQeiR_yjAgcy3oysuNqEOJBZwhEARTFeQZPi4edN9q3yGeYyw2m6vKn2Q'
           else
-            raise AmbiguousGMapsAPIKeyException.new(GMAPS_API_KEY.keys.join(","))
+            'ABQIAAAAuhwT7uBsmRtiCbPsilW88BSxsGsNsGaGFua-aUakP3VKKmziVxQj7zvABvmGYoBzb3RxcDPu94lEVg'
           end
-        else
-          #Only one possible key: take it and ignore the :host option if it is there
-          GMAPS_API_KEY
         end
       end
     end
