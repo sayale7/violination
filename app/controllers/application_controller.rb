@@ -17,8 +17,7 @@ class ApplicationController < ActionController::Base
     # if this is nil then I18n.default_locale will be used
     if request.url.to_s.include?('www.') or request.subdomains.first.to_s.eql?('')
         if request.url.to_s.include?('.com')
-          request.subdomains.first = 'de'
-          redirect_to request.url
+          redirect_to "http://de.#{request.domain}"
         end
     end
     unless I18n.locale.to_s.eql?(request.subdomains.first.to_s)
