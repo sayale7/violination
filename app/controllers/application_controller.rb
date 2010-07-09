@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   private
   
   def get_locale
-    return I18n.default_locale
+    return I18n.locale
   end
   
 end
