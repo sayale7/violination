@@ -38,9 +38,9 @@
           %p
             =link_to TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @user.id).value, "http://#{TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @user.id).value}", :popup => true 
         -else
-          -tagvalue = TagValue.find_by_language_and_tag_id_and_taggable_id('de', tag.id, @user.id)
+          -tagvalue = TagValue.find_by_language_and_tag_id_and_taggable_id(get_locale.to_s, tag.id, @user.id)
           -unless tagvalue.nil?
             =simple_format (h tagvalue.value)
       -else
         -unless get_selected_child_tag_id(tag, @user).nil?
-          =Tag.find(get_selected_child_tag_id(tag, @user)).tag_names.find_by_language('de').value
+          =Tag.find(get_selected_child_tag_id(tag, @user)).tag_names.find_by_language(get_locale.to_s).value
