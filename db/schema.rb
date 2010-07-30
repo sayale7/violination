@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100706084257) do
+ActiveRecord::Schema.define(:version => 20100730143113) do
 
   create_table "items", :force => true do |t|
     t.datetime "created_at"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20100706084257) do
     t.integer  "visible",       :default => 1
     t.integer  "searchable",    :default => 0
     t.integer  "important_tag", :default => 0
+    t.text     "searchables"
   end
 
   create_table "users", :force => true do |t|

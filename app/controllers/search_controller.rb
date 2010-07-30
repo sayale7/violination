@@ -255,8 +255,8 @@ class SearchController < ApplicationController
   def find_items(word, type)
     items = Array.new
     @tag_names.each do |tag_name|
-      if tag_name.value.to_s.downcase.include?(word.to_s.downcase)
-        Tagging.find_all_by_tag_id_and_taggable_type(tag_name.tag_id, type.to_s).each do |tagging|
+      if tag_name.searchables.to_s.downcase.include?(word.to_s.downcase)
+        Tagging.find_all_by_tag_id_and_taggable_type(tag_name.id, type.to_s).each do |tagging|
           if the_class(type).exists?(tagging.taggable_id)
             items.push(the_class(type).find(tagging.taggable_id))
           end
@@ -294,14 +294,14 @@ class SearchController < ApplicationController
             end
           end
         end
-        if !tag.german_name.nil? and !tag.parent_id.nil? and tag.german_name.to_s.downcase.include?(word.to_s.downcase)
+        if !tag.parent_id.nil? and tag.searchables.to_s.downcase.to_s.include?(word.to_s.downcase)#!tag.german_name.nil? and !tag.parent_id.nil? and tag.german_name.to_s.downcase.include?(word.to_s.downcase)
           searchwords.push(word)
-          @tag_names.push(TagName.find_by_language_and_tag_id('de', tag.id))
+          @tag_names.push(tag)
         end
-        if !tag.english_name.nil? and !tag.parent_id.nil? and tag.english_name.to_s.downcase.include?(word.to_s.downcase)
-          searchwords.push(word)
-          @tag_names.push(TagName.find_by_language_and_tag_id('en', tag.id))
-        end
+        # if !tag.english_name.nil? and !tag.parent_id.nil? and tag.english_name.to_s.downcase.include?(word.to_s.downcase)
+        #   searchwords.push(word)
+        #   @tag_names.push(TagName.find_by_language_and_tag_id('en', tag.id))
+        # end
       end
     end
     return searchwords.uniq
