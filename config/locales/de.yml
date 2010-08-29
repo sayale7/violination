@@ -132,13 +132,13 @@ de:
     my_tags: In meiner Werkstätte betreibe ich
     my: Meine Werkstätte
     all: Alle Werkstätten
-    search_text: Gib bitte den Namen des/der gewünschten Geigenbauers, der Geigenbauerin oder eine Ortsangabe oder Serviceleistung ein. Oder zoome dir auf der Karte die gewünschte Umgebung heran.
+    search_text: Geben Sie bitte den Namen des/der gewünschten Geigenbauers, der Geigenbauerin oder eine Ortsangabe oder Serviceleistung ein. Oder zoome Sie sich auf der Karte die gewünschte Umgebung heran.
   bow:
     all: Alle Bögen
     mine: Meine Bögen
     mine_singular: Mein Bogen
     of: Bogen von
-    search_text: Gib bitte bei deiner Bogen-Suche einfach die entsprechenden Attribute wie Geigenbogen, Silber... ein. Oder zoome dir auf der Karte die gewünschte Umgebung heran.
+    search_text:  Geben Sie bitte bei Ihrer Suche entsprechende Attribute wie Geige, Cello … Profi, Anfänger, Student … Meister, Schul… oder nur den Ort ein oder zoomen Sie auf der Karte Ihre gewünschte Umgebung heran.
     new: Neuen Bogen anlegen
   photo:
     select: Bilder auswählen
