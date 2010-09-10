@@ -8,7 +8,6 @@
     -if request.user_agent.to_s.include?('MSIE 7.0')
       = render '/layouts/ie.html.erb'
     = yield(:head) 
-		=render  '/layouts/analytics.html.erb'
   %body
     %div#popup_background 
       %div#divFileProgressContainer
@@ -30,6 +29,7 @@
         %ul
           %li
             =render '/layouts/footer.html.erb'
+=render  '/layouts/analytics.html.erb'
               
 
 /,'/fancybox/jquery.easing-1.3.pack'
