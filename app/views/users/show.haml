@@ -13,6 +13,7 @@
     -else 
       =@user.username
     %br
+    = @user.public
     -if @user.public == true
       =mail_to @user.email
     %p
