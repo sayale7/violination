@@ -16,6 +16,10 @@
   
 %p
    = f.label :email, t('user.email')
+   = "("
+   = f.check_box :public
+   = f.label :public, t('email.public')
+   = ")"
    %br
    = f.text_field :email, :class => 'text_box'
 

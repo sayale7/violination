@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :photo_containers
   
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation, :firstname, :lastname
+  attr_accessible :username, :email, :password, :password_confirmation, :firstname, :lastname, :public
   
   attr_accessor :password
   before_save :prepare_password

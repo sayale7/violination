@@ -178,3 +178,6 @@ en:
   mailer:
     request: Instrument/Bow Request on Violination.com
     thanks_for_request: Danke für Ihre Anfrage. Ihre Anfrage wird umgehend bearbeitet!
+  
+  email:
+    public: Public

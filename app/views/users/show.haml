@@ -13,7 +13,8 @@
     -else 
       =@user.username
     %br
-    =mail_to @user.email
+    -if @user.public == true
+      =mail_to @user.email
     %p
       =link_to t('user.workshop'), "/workshop.#{@user.id}"
       %br
