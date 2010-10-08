@@ -17,6 +17,19 @@ class ItemsController < ApplicationController
     else
       @the_instances = get_taggable_type(params[:taggable_type].to_s).find_all_by_item_type(params[:taggable_type].to_s, :order => "created_at desc")
     end
+		unless params[:the_type].nil?
+			@the_instances.each do |the_instance|
+				is_in_there = false
+	      the_instance.tags.each do |tag|
+					if !tag.searchables.nil? and tag.searchables.downcase.include?(params[:the_type].to_s)
+						is_in_there = true
+					end
+				end
+				unless is_in_there
+					@the_instances = @the_instances - the_instance.to_a
+				end
+	    end
+		end
     instance_array = Array.new
     @the_instances.each do |the_instance|
       instance_array.push(the_instance.id)

@@ -31,7 +31,7 @@ de:
     admin: Administration
     photo_gallery: Bilder Gallerie
     users: Geigenbauer
-    workshops: Werkstätten
+    workshops: Geigenbauer
     visible: Sichtbar
     back_to_search: Zurück zum Suchergebnis
     home: Home
@@ -62,7 +62,7 @@ de:
     signup: Registrieren
     have_account: Sie haben bereits ein Konto?
     dont_have_account: Sie haben noch kein Konto?
-    login: Einloggen
+    login: Geigenbauer-Login
     logout: Ausloggen
     my_workshop: Meine Werkstätte
     firstname: Vorname

@@ -1,13 +1,6 @@
 -title t('user.login')
 
-%p
-   ="Sehr geehrte Geigenbauerin, sehr geehrter Geigenbauer,"
-%p
-   ="die Teilnahme an der Geigenbau-Bühne im Internet ist für Sie möglich. Lassen Sie sich mit Ihren Instrumenten und Bögen finden."
-   %br
-   ="Um sich einloggen zu können, bedarf es Ihrer Registrierung. Bitte wenden Sie sich dafür via mail@violination.com an mich. Sie erhalten dann umgehend die Teilnahmebedingungen und den Registrierungs-Link."
-%p
-   ="Ihr Christian Gann"
+
 =#t('user.dont_have_account')
 =#link_to t('user.signup'), signup_path
 
@@ -25,3 +18,12 @@
       =password_field_tag :password, '', :class => 'text_box'
    %p
       =submit_tag t('user.login')
+
+%p
+   ="Sehr geehrte Geigenbauerin, sehr geehrter Geigenbauer,"
+%p
+   ="die Teilnahme an der Geigenbau-Bühne im Internet ist für Sie möglich. Lassen Sie sich mit Ihren Instrumenten und Bögen finden."
+   %br
+   ="Um sich einloggen zu können, bedarf es Ihrer Registrierung. Bitte wenden Sie sich dafür via mail@violination.com an mich. Sie erhalten dann umgehend die Teilnahmebedingungen und den Registrierungs-Link."
+%p
+   ="Ihr Christian Gann"

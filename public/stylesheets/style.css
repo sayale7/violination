@@ -37,7 +37,7 @@ a:hover { color: #7C321F; }
 
 #nav_top { float: right; margin-top: -5px; height: 20px; }
 
-#nav_bottom { padding: 0; width: 900px; margin-top: 35px; float: right; clear: both; }
+#nav_bottom { padding: 0; width: 1000px; margin-top: 35px; float: right; clear: both; }
 
 #content { clear: both; }
 #content a { font-weight: bold; }
