@@ -29,6 +29,9 @@ class ItemsController < ApplicationController
 					@the_instances = @the_instances - the_instance.to_a
 				end
 	    end
+			if params[:the_type].to_s.downcase.eql?('geige')
+				@the_instances = @the_instances - Item.find(162).to_a
+			end
 		end
     instance_array = Array.new
     @the_instances.each do |the_instance|
