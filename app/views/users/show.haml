@@ -15,9 +15,10 @@
     %br
     -if @user.public == true
       =mail_to @user.email
-    %p
-      =link_to t('user.workshop'), "/workshop.#{@user.id}"
-      %br
+    %p	
+      -unless @user.id.to_s.eql?('3')
+        =link_to t('user.workshop'), "/workshop.#{@user.id}"
+        %br
       -unless @user.items.find_all_by_item_type('Stringg').size == 0
         = link_to t('user.stringgs'), stringgs_url(:user_id => @user.id, :taggable_type => 'Stringg', :contact => 1)
         %br

@@ -17,7 +17,7 @@ class SearchController < ApplicationController
     the_users = Array.new
     
     if params[:search_input].empty? || params[:search_input].to_s.eql?(' ')
-      @users = User.all
+      @users = User.all - User.find_all_by_id(1)
     else
       #split up the user input
       @search_words = params[:search_input].split
@@ -81,7 +81,7 @@ class SearchController < ApplicationController
       else
         @users = the_users_from_attr
       end
-      @users = @users.uniq
+      @users = @users.uniq - User.find_all_by_id(1)
       
     end
     session[:search_input] = params[:search_input]
