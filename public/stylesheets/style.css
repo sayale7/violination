@@ -31,7 +31,7 @@ a:hover { color: #7C321F; }
 
 #container { clear: both; width: 960px; margin: 0 auto; margin-top: 10px; margin-bottom: 30px; background: transparent; padding: 15px; padding-top: 0px; overflow: hidden; min-height: 500px; }
 
-#header { width: 960px; margin: 0 auto; margin-top: 0; padding-top: 0px; overflow: visible; height: 91px; font-family: Verdana; color: #fff; background-image: url('/images/logo.png'); background-repeat: no-repeat; background-position: -2px -3px; }
+#header { width: 960px; margin: 0 auto; margin-top: 0; padding-top: 0px; overflow: visible; height: 91px; font-family: Verdana; color: #fff; background-image: url('/images/logo_mit_a.png'); background-repeat: no-repeat; background-position: -2px -3px; }
 
 .header_right { float: right; }
 
